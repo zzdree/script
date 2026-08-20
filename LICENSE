@@ -1,4 +1,4 @@
-PROPRIETARY AND CONFIDENTIAL RESEARCH WORK
+PROPRIETARY AND ACADEMIC RESEARCH LICENSE (ALL RIGHTS RESERVED)
 
 Hak Cipta (c) 2026 Andreas Restuawanta Christwara
 NIM: 5312422036
@@ -7,12 +7,31 @@ Fakultas Teknik, Universitas Negeri Semarang (UNNES)
 
 Dosen Pembimbing: Khoirudin Fathoni, S.T., M.T. (NIP: 19900929292015041001)
 
-SELURUH HAK CIPTA DILINDUNGI UNDANG-UNDANG (ALL RIGHTS RESERVED).
+==============================================================================
+PEMBERITAHUAN HAK CIPTA DAN KETENTUAN PENGGUNAAN
+==============================================================================
 
-Naskah skripsi, source code firmware, model matematis, diagram arsitektur,
-dan data penelitian di dalam repositori ini merupakan karya intelektual pribadi
-dan bersifat RAHASIA (PRIVATEy / PROPRIETARY).
+Seluruh naskah tugas akhir/skripsi, diagram arsitektur, dokumen penelitian, 
+serta source code firmware di dalam repositori ini merupakan karya intelektual 
+asli milik Penulis dan dilindungi oleh Undang-Undang Hak Cipta Republik Indonesia.
 
-Dilarang keras menyalin, mendistribusikan ulang, memgdifikasi, mempublikasikan,
-atau memanfaatkan sebagian maupun seluruh isi repositori ini tanpa izin tertulis
-resmi dari pemegang hak cipta dan Universitas Negeri Semarang.
+Dengan mengakses repositori ini secara publik di GitHub, Anda menyetujui ketentuan:
+
+1. HANYA UNTUK REFERENSI BACA (VIEW & REFERENCE ONLY):
+   Repositori ini dibuka untuk publik semata-mata sebagai bukti portofolio 
+   akademik dan transparansi pengujian penelitian sarjana.
+
+2. LARANGAN PLAGIARISME & PENGGUNAAN TANPA IZIN:
+   Dilarang keras menyalin, memperbanyak, mendistribusikan ulang, memodifikasi, 
+   menerbitkan kembali, atau menggunakan sebagian maupun seluruh isi naskah, 
+   model matematika, dan kode program ini untuk kepentingan tugas akhir lain, 
+   publikasi ilmiah pihak ketiga, atau kepentingan komersial tanpa izin tertulis 
+   resmi dari Penulis dan Universitas Negeri Semarang.
+
+3. SITASI RESMI:
+   Segala bentuk rujukan ide atau kutipan dari penelitian ini wajib menyertakan 
+   sitasi akademik resmi ke naskah skripsi Penulis.
+
+Untuk keperluan izin penggunaan atau kolaborasi riset:
+Kontak: Andreas Restuawanta Christwara (GitHub: @zzdree)
+Universitas Negeri Semarang, Indonesia.
