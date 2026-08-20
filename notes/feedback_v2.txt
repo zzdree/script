@@ -1,0 +1,324 @@
+==============================================
+  FEEDBACK ZZLIGHT LUXORA — v2 (Terstruktur)
+==============================================
+
+Sumber: feedback_v1.txt (mentah, tidak terstruktur)
+Tujuan: Dokumentasi feedback yang rapi per bagian UI
+
+==============================================
+1. BRANDING & IDENTITAS
+==============================================
+
+- Nama aplikasi fix: ZZLUXORA
+- Nama di taskbar & title bar: ZZLUXORA
+- Icon/logo: gambar lampu putih, background hitam
+- Icon taskbar dan title bar menggunakan logo yang sama
+
+==============================================
+2. SPLASH SCREEN
+==============================================
+
+- Durasi: 3 detik
+- Tampilan: icon + tulisan besar (ZZLUXORA)
+- Referensi style: tampilan splash seperti Grandma lighting console, tapi dikreasikan sendiri
+- Fungsi: loading indicator saat program pertama kali dibuka
+
+==============================================
+3. HEADER / TITLE BAR
+==============================================
+
+Layout header (kiri ke kanan):
+  [Icon + ZZLUXORA] [Nama Project / Path File Project]
+
+- Hapus tulisan "ZZLIGHT LUXORA" dari area header bawah
+- Nama project dan path file ditampilkan di header windows, di samping icon + ZZLUXORA
+
+Status bar di header (rata kanan):
+  [Art-Net Connected/Disconnected] [Play/Pause]
+
+- Art-Net status: hijau = connected, merah = disconnected
+- Play/Pause: cukup 1 tombol toggle, bukan 2 tombol terpisah
+- Tombol blackout: icon lingkaran hitam di sebelah kanan play/pause
+  → Fungsi: set semua slider mixer ke 0 (channel master + channel 1-512)
+
+Menu bar (rata kiri):
+  [File] [View] [Help]
+
+==============================================
+4. MENU: FILE
+==============================================
+
+Items:
+  Open Project       (Ctrl+O)
+  Save Project       (Ctrl+S)
+  Save As Project    (Ctrl+Shift+S)
+  Exit               (tanpa shortcut)
+
+- Semua kecuali Exit: buka popup file explorer
+- Format file: .zlx (zzluxora)
+- Default filename: untitled.zlx
+
+==============================================
+5. MENU: VIEW
+==============================================
+
+Items:
+  Program            (Ctrl+1)
+  Fixture List       (Ctrl+2)
+  Fixture Editor     (Ctrl+3)
+  Settings           (Ctrl+4)
+  About              (Ctrl+5)
+
+- Tambahkan marker (titik atau segitiga) untuk menunjukkan sidebar mana yang sedang aktif
+
+==============================================
+6. MENU: HELP
+==============================================
+
+Items:
+  About              (Ctrl+H)  ← (salah di v1, seharusnya shortcut)
+  Keyboard Shortcuts
+
+- Keyboard Shortcuts window:
+  → Kurangi penggunaan emoji/icon
+  → Hapus tulisan "v4 Native Art-Net"
+  → Header atas: tulisan "Shortcut" saja
+  → Di bawah header baru tabel keyboard shortcuts
+  → Tabel: sesuaikan dengan semua fitur yang ada (koordinasi dan kroscek)
+  → Tombol Close: ada di atas dan bawah (yang bawah rata tengah)
+
+- Shortcut "Art-Net": ketika dipencet, buka tab Output
+- Shortcut "Play/Pause": toggle play atau pause
+
+==============================================
+7. SIDEBAR
+==============================================
+
+Sidebar toggle:
+  - Icon hamburger (3 strip) di pojok kiri atas
+  - Icon hamburger tetap sama saat sidebar buka/tutup (tidak berubah)
+  - Item sidebar di bawah hamburger: icon masing-masing (disesuaikan)
+
+Ketika program belum load .zlx:
+  - Sidebar tertutup secara default
+  - Tidak membuka tab apa-apa
+  - Muncul tulisan prompt (silahkan buka project, dll)
+  - Tetap tampilkan icon + ZZLUXORA tapi samar-samar/transparan
+  - Sidebar baru bisa dibuka setelah user buka/load project
+
+Items sidebar:
+  1. Program
+  2. Fixture List
+  3. Fixture Editor
+  4. Settings
+  5. About
+
+==============================================
+8. SIDEBAR: PROGRAM — TAB ADDRESS
+==============================================
+
+- Ada judul + deskripsi (sudah benar)
+- Tombol yang tersedia:
+  → Auto Patch (ada popup menu tersendiri, perlu dibuatkan)
+  → Clear All Patch (ada popup konfirmasi, sudah oke)
+  → Tambahkan tombol lain selain 2 di atas
+- Keterangan di paling kanan: tulisan kurang besar, perbesar
+
+Grid address:
+  - Maks 24 kotak per baris (horizontal)
+  - Jumlah baris: sesuai kebutuhan, bisa scroll vertikal
+  - Kotak kosong: angka posisi di pojok kanan
+  - Kotak terisi: keterangan channel di tengah, angka tetap di pojok
+  - Warna kotak menyesuaikan type channel:
+    → Dimmer: icon lampu
+    → Red: blok merah
+    → Strobe: icon/disain khusus
+    → Sesuaikan dengan data dari Fixture Editor
+
+==============================================
+9. SIDEBAR: PROGRAM — TAB ANALYZE (CORE SKRIPSI)
+==============================================
+
+- Ada judul + deskripsi (sudah oke)
+- Keterangan di seberang: tulisan kurang besar, perbesar
+
+Tombol:
+  - Load Audio (support 4 ekstensi file audio)
+  - Analyze
+  - Remove Song
+  - Export to Scene
+
+Aturan tombol:
+  - Load Audio: selalu aktif
+  - Analyze, Remove Song, Export to Scene: disabled sampai song dipilih
+  - Analyze: bisa digunakan ulang jika user kurang puas dengan hasil
+  - Remove Song: aktif hanya saat song ter-select
+  - Export to Scene: aktif hanya setelah hasil analyze tersedia
+
+Song list:
+  - Song yang dipilih muncul di kotak kiri
+
+Progress bar:
+  - Ada progress bar + deskripsi
+  - Deskripsi berubah tiap 3 detik, berisi penjelasan proses ilmiah yang sedang dilakukan
+
+Core analyze:
+  - Perhitungan mengacu pada script skripsi (script_andreas_v3) dan script_math_model.md
+  - UI/UX, layout, dan flow disesuaikan oleh developer
+
+==============================================
+10. SIDEBAR: PROGRAM — TAB SCENES
+==============================================
+
+- Ada judul + deskripsi (sudah oke)
+- Hapus tombol "Regenerate Scene" (sudah ada tombol Analyze di tab Analyze)
+- Kotak kiri: song list (sudah benar)
+- Kotak kanan: hasil mapping scene dari analyze
+  → Perlu desain bagian chorus, pre-chorus, dll (section lagu)
+  → Scene bisa dikumpulkan dan dijadikan Chase
+
+==============================================
+11. SIDEBAR: PROGRAM — TAB CHASE
+==============================================
+
+- Ada judul + deskripsi (masih berantakan, perlu dirapikan)
+- Kotak kiri: song list
+- Kotak kanan: control chase
+  → Isi: kumpulan scene, fade timing, dll
+  → Perlu didesain dan dibuatkan oleh developer
+
+==============================================
+12. SIDEBAR: PROGRAM — TAB PAGE (BARU)
+==============================================
+
+- Tab tambahan: Page
+- Isi: custom page untuk tombol-tombol scene dan chase yang sudah dibuat
+- Layout dan interaksi: disesuaikan oleh developer
+
+==============================================
+13. SIDEBAR: PROGRAM — TAB MIXER
+==============================================
+
+- Ada judul + deskripsi (sudah oke)
+- Layout slider (kiri ke kanan):
+  → [Master Dimmer] [Channel 1] [Channel 2] ... [Channel 512]
+  → Total: 513 slider
+  → Slider full dari kiri ke kanan, bisa scroll horizontal
+
+- Bentuk slider: referensi Grandma lighting console
+  → Ada slider + tombol (kotak)
+  → Value: 0-255 per channel dan master
+
+- Tombol Refresh: pojok kanan atas
+
+==============================================
+14. SIDEBAR: PROGRAM — TAB PREVIEW
+==============================================
+
+- Ada judul + deskripsi (sudah oke)
+- Isi: visual fixture (saat ini hanya PAR LED)
+  → Bentuk visual: lingkaran saja
+  → Bisa di-select dan digeser (drag)
+  → Sidebar kanan: panel untuk mengatur posisi X dan Y
+- Sudut pandang: tampak depan
+
+==============================================
+15. SIDEBAR: PROGRAM — TAB OUTPUT
+==============================================
+
+- Ada judul + deskripsi (sudah oke)
+- Kolom output Art-Net:
+  → Scan IP seperti QLC+
+  → IP wajib yang harus ada:
+    * localhost 127.0.0.1
+    * 192.168.4.1 (modul ESP32, mode AP)
+    * Custom (user input)
+  → Tidak ada setting universe dan FPS
+- Tombol: hanya Save saja
+  → Karena connect/disconnect/blackout sudah ada di header (tombol kanan atas)
+
+==============================================
+16. FIXTURE LIST (sidebar)
+==============================================
+
+- Buka ke bawah (bukan ke kanan)
+- Ada tombol segitiga kebawah untuk expand
+- Isi: daftar fixture dari folder fixtures
+- Interaksi: drag and drop fixture ke tab Address
+
+==============================================
+17. FIXTURE EDITOR (sidebar)
+==============================================
+
+- Ada judul + deskripsi
+- Area utama: kotak besar (embedded window, tidak keluar dari kotak)
+  → Bisa digeser, boleh ditumpuk (window-in-window)
+- Tombol: Open dan New
+  → Open: popup file explorer, format .json
+  → New: popup program baru untuk buat fixture baru
+
+Form editor fixture:
+  - Kolom: Name, Manufacturer, Channel count (ada tombol <> untuk adjust)
+  - Tabel channel di bawah (jumlah baris sesuai channel count)
+  - Kolom tabel: Channel, Label, Type
+  - Type options: Dimmer, RGB, Warna (pelangi), Strobe, Empty, dll
+  - Tombol Save di bawah
+  - Header: sesuaikan + tombol close
+
+==============================================
+18. SIDEBAR: SETTINGS
+==============================================
+
+- Disesuaikan sesuai kebutuhan (belum ada detail spesifik)
+
+==============================================
+19. SIDEBAR: ABOUT
+==============================================
+
+- Ada judul + deskripsi (sudah oke)
+- Detail info (urutan):
+  1. Application
+  2. Deskripsi
+  3. Author
+  4. NIM
+  5. Prodi
+  6. Jurusan
+  7. Fakultas
+  8. Universitas
+  9. Judul Skripsi
+- Hapus tulisan "About" yang muncul sebagai bug
+
+==============================================
+20. DESAIN & RESPONSIVITAS
+==============================================
+
+- Style: modern minimalis, nuansa Grandma3 + QLC+
+- Cocok untuk production use
+- Responsif terutama saat buka/tutup sidebar dan fixture list
+- Sesuaikan warna, ukuran teks, spacing di semua elemen
+- Kurangi emoji/icon berlebihan
+
+==============================================
+21. INSTALLER & UNINSTALLER
+==============================================
+
+Installer:
+  - Instalasi ke: Program Files atau Program Files (x86)
+  - Data disimpan di: AppData Local atau AppData Roaming
+  - Sebelum install: hapus folder app yang lama di Program Files, lalu copy fresh (tidak menimpa)
+  - Opsi saat install: keep atau hapus data di AppData (clean install vs upgrade)
+
+Uninstaller:
+  - Folder di Program Files: dihapus bersih
+  - Opsi: keep pengaturan/data di AppData atau ikut dihapus
+  - Folder bersih setelah uninstall (kecuali user pilih keep settings)
+
+Kebutuhan: untuk testing dan publish
+
+==============================================
+
+Catatan:
+- Feedback ini berasal dari user review terhadap desain dan fitur ZZLUXORA v5
+- Core analyze mengacu pada perhitungan skripsi (script_andreas_v3 dan script_math_model.md)
+- Perencanaan upgrade v5→v6 perlu didokumentasikan di folder markdowns (app_upgrade.md)
+- Perlu komparasi v5 vs v6, saran, dan koreksi dari developer

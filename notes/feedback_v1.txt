@@ -1,0 +1,190 @@
+oke, saya mau kasih feedback banyak
+buat image, isinya logo, icon lampu aja, lampunya putih, backgroundnya hitam, terus untuk nama app nya fix zzlight, nggak yg lain
+
+icon di taskbar sama di jendela ubah jadi itu ya, sekalian namanya zzluxora
+
+ketika open program, ada splash screen 3 detik untuk loading, nah tampilannya icon dan tulisan yg gede ya, referensi logo dan tulisan dih grandma gitu, tapi sesuaikan dan kreasikan aja, atur ajaa
+
+pojok atas kiri ada 3 menu udah benar
+di bagian file, ada open project, save project, save as project, exit
+shortcut juga udah bener, yg exit ga usah kasih shortcut
+ketiga nya klo diklik muncul popup file explorer, aman joss
+terus extensi nya, zzluxora-zlx
+save project dan save ass project juga sama, untitled zlx dan eztensi zzluxora zlx, aman aja
+
+di bagian view, ada program, fixture list, fixture editor, settings, about, mungkin kasih marker titik atau segitiga, kalau kita sedang di sidebar apa
+shortcut juga udah benar
+
+di bagian help, ada about, salah, harusnya shortcut, nanti diubah
+terus windows keyboard shortcut juga aman, mungkin kurangi emoji icon aja, sama tulisan v4 native artnet hapus aja
+untuk header, tulisannya langsung shortcut aja
+terus bawah baru keyboard shortcut
+tabel dan isinya aman, mungkin disesuaikan sama fitur fitur lain aja, koordinasi dan kroscek selalu
+tombol close juga aman, ada diatas dan dibawah, yg bawah taruh tengah aja
+artnet klo dipencet masuk ke tab output
+klo play or pause ya gitu aja
+tambahan icon lingkaran hitam di kanan untuk fungsi blackout, semua slider di mixer 0 semua dari channel master hngga 1-512
+
+lanjut kebawah, tulisan zzlight luxora hapus aja, ga perlu
+untuk nama project taruh di header windows aja ga sih, sampingnya icon+zzluxora, taruh sampingnya aja, mungkin path file project kali ya
+
+tulisan artnet connected/disconnected tetep perlu, klo konek warna hijau, kalau diskonek warna merah, sampingnya ada tulisan play atau stop, tapi jangan pake 2 tombol dan Tulisan, cukup pake 1 tombol, play atau pause aja
+
+tulisan file view help kan rata kiri, tulisan status artnet dan icon playstop juga sejajar, tapi ada di seberang, rata kanan
+
+lanjut sidebar, betul ada icon strip 3 atau hamburger
+
+terus klo program belum load zlx, sidebar tertutup, ga buka tab apa apa, muncul tulisan silahkan bla bla bla, atur aja, tetap kasih icon + zzluxora, tapi samar samar aja
+
+terus kita buka sidebar klo mau run program
+
+isi sidebar udah benar, ada program, fixture list, fixture editor, settings, about
+sidebar klo buka tutup, tetap ixon hamburger, ga berubah
+terus yg dibawahnya jadi icon masing masing, disesuaikan, aman aja
+
+di sidebar program
+udah benar ada judul nya, program, sama deskripsinya
+
+bawahnya ada berjejer tab
+
+tab address, ada judul + deskripsi, benar
+
+terus tombol mungkin tambahin, ngga cuma clear all patch dan auto patch sequential aja
+
+terus auto patch ini ada pop up menu tersendiri, nanti buatin dan atur aja
+terus clear all ada pop upnya keren, aman
+di paling kanan ada keterangan juga udah bagus, tapi kurang gede tulisannya
+
+terus untuk kotak kotak, untuk yg kotak kesamping, maks 24 kotak, untuk kebawah ya sesuaikan aja, yg penting bisa si scroll aja, atur ajaa
+
+terus untu detail kotak, klo kosong, nnti angka posisi di pojok kanan
+klo keisi, ada keterangan channel di tengah, angka tetap di pojok, untuk warna kotak, nnti sesuaikan sama channel, klo channel dimmer ya icon lampu, channel red ya blok merah, strobe ya apa gitu, atur aja, sesuaikan sama fixture dan fixture editor, saling koordinasi
+
+lanjut tab analyze, ini yang dijasikan core skripsi
+sudah ada judul dan deskripsi, mantap, di seberang ada keterangan, cuma kurang gede
+
+ada beberapa tombol, load audio, support 4 extensi, mantap, analyze, remove song, export to scene
+ketiga tombol ini harusnya gabisa ditekan klo song belum di pilih
+
+dan song klo udah dipilih akan muncul di kotak kiri
+
+terus ada progress bar dan deskripsi, aman, mungkin deskripsi berubah tiap 3 detik, kasih keterangan apa gitu kek, kayak penjelasan program ilimiahnya, mksdnya apa aja yg dilakuin untuk analyze ini
+
+untuk yg bagian core analyze, aku serahkan kepada kamu semua atur aja enaknya gimana, baik dari perhitungan, ui ux dll
+
+terus tombol analyze boleh digunakan kembali klo kita kurang puas dengan hasilnya, tombol remov song boleh dipake klo kita select song, tombol export to scene boleh dipake klo udh ada hasil analyze nya, sisanya atur aja
+
+lanjut tab scenes
+udh ada judul + deskripsi, mantap
+
+tombol regenerate scene gausah deh, kan udah ada tombol analyze
+kotak kiri juga benar, nanti songlist ada disitu
+
+untuk yg kanan aku masih bingung, coba kamu yg buat deh, sesuaikan dan atur aja enaknya gimana
+
+kyknya ada chorus, prechorus, dll ga sih?
+terus selanjutnya bisa dijadikan chase dari kumpulan scene itu?
+
+lanjut tab chase
+judul+deskripsi ada, tapi masih berantakan
+
+sama seperti tadi, ada kotak songlist, terus ada control chase di sampingnya, isinya kumpulan scene, fade, dll, atur aja, buatkan pokoknya
+
+lanjut tab selanjutnya
+tambahan tab page
+
+isinya custom page untuk tombol tombol scene dan chase yang udah dibuat
+
+atur aja bagian ini
+
+lanjut tab mixer
+
+sama, ada judul + deskripsi, aman
+
+nah layoutnya ini, paling kiri harusnya slider master dimmer, sampingnya slider channel 1-512
+
+saya mau full dari kiri ke kanan slidernya
+
+untuk bentuk slider, referensi dari grandma, ada slider dan tombol nya gitu, tombolnya  kotak ga sih
+
+terus untuk value nnya 0-255 aja per channel dan master
+
+terus ada tombol refresh taruh kanan atas aja
+
+total ada 513 slider, dan bisa di scroll ke samsping
+
+lanjut ada tab preview
+betul ada judul + deskripsi
+
+isinya harusnya fixture, karena hanya terbatas parled sementara, visual ya hanya lingkaran aja, dan bisa di select dan digeser, tambahkan ada sidebar kanan, untuk mengatur posisi x dan y
+
+btw kita lihat dari tampak depan ya
+
+atur aja deh baiknya gimana tampilannya
+
+untuk tab output, udh benar ada judul + deskripsi
+
+dibawahnya harusnya ada beberapa kolom, scan aja artnet kayak di qlc+, ada beberapa ip, dan ada tambahan wajib localhost 127, mode ap 192.168.4.1 dari modul, serta custom
+
+terus untuk universe dan fps gaada
+untuk tombol ada save aja, karena connect disconnect blackout udh ada di header atas kanan
+
+lanjut di fixture list, kita ga buka di kanan, tapi ke bawah
+jadi ada tombol segitiga kebawah gitu, ntr isinya list fixture yg ada di folder fixtures, tinggal drag n drop aja ke tab address
+
+lanjut fixture editor, udh ada judul + deskripsi
+bawahnya ada kotak gede, ada tombol open dan new
+
+klo open, ada popup file explorer, extensi json
+klo new, ada popup program baru, isinya untuk buat fixture
+programnya sama klo kita open fixture
+
+program nya tidak boleh kaluar dari kotak, dan bisa digeer geser, tumpuk windows pun boleh
+
+isinya ada kolom nama, manufacture, channel, ada <>, terus bawahnya ada channel mamping dan deskripsinya
+untuk tabel mengikuti jumlah channel
+
+isi tabel ada channel, label, type
+
+type ada dimmer, rgb, warna pelangi giu, strobe, empty, dll atu aja
+
+terus ada tombol save dibawah
+
+header, sesuaikan, sama ada tombol close juga
+
+lanjut sidebar setting, sesuaikan aja dehh
+terus sidebar about, jujur bagus
+
+tpi klo boleh saran bagusin lagi
+
+judul + deskripsi udah oke
+
+untuk detail
+application, deskripsi, author, nim, prodi, jurusan, fakultas, unic, judul, urutannya gitu btw
+
+terus dibawah ada tulisan about sepertinya bug, hapus aja
+
+saya mau tampilannya sesuai design md, ada nyawa grandma3 dan qlc+, konsep modern minimalis, yg cocok untuk production
+
+terus saya mau tampilan yg responsif, terutama ketika buka tutup sidebar dan fixture list
+
+dan sesuaikan warna, ukuran teks, dan lainnya
+
+atur aja sebaik mungkin sesuai req saya
+
+buat perencanaanya dulu di folder markdowns, file app upgrade md, saya lihat dulu baru kita eksekusi
+
+jelasin juga komparasi nya dengan versi 5, apa yg baru, terus apa yg mau kembangkan juga, saran dan koreksi kamu juga saya perlukan
+
+oke, untuk core analyze, ambil dari file skripsi saya, di script andreas v3, kamu harus ambil perhitungan darisitu, atau bahkan ambil dari script math model md, lalu kita akan build app v6, ngga v5, karena v5 itu yg malah yg skearang, md yg kamu baca itu review v4, app yg sebelumnya, tambahkan perencanaan diatas ke markdown app upgrade md dulu, saya baca, kalau ada perubahan saya akan bilang, klo tidak langsung eksekusi, buat dulu md nya yaa
+
+tambahan
+
+oke, tambahan, aku mau app ini ada installernya, nnti terinstal ke program files atau program files x86, untuk data nnti ada di appdata local atau roaming
+ketika kita instal installernya, seperti installer yg lain gitu, atur aja, yg pasti untuk kebutuhan testing
+ketika instal, folder app di program files atau program files x86 akan dihapus dulu baru di copy kesana file app nya, jadi tidak ditimpa, biar fresh gitu, ngga ketumpuk
+terus untuk yg ada di app data, ada opsi untuk tetap ada atau mau hapus, clean instal gitu
+
+terus ada uninstal nya juga, akumau folder program bersih, terus ada opsi keep pengatura atau ikut dihapus, bisa kah?
+
+untuk kebutuhan testing dan nnti pas di publish, bisa clean instal dan uninstal gituhhh, bisa?

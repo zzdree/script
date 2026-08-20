@@ -1,1 +1,19 @@
+# Python Virtual Environment (Re-creatable)
 .venv/
+env/
+venv/
+
+# External cloned repository
+qlcplus/
+
+# Build and bytecode
+__pycache__/
+*.pyc
+.pytest_cache/
+results/
+
+# System & temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp

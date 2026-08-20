@@ -1,0 +1,4576 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TUGAS 
+AKHIR 
+Sarjana 
+Diploma 
+ 
+ 
+ 
+UNIVERSITAS NEGERI SEMARANG 
+2 0 2 4 
+
+---PAGE BREAK---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PANDUAN 
+TUGAS AKHIR 
+SARJANA DAN DIPLOMA 
+ 
+UNIVERSITAS NEGERI SEMARANG 
+2024 
+
+---PAGE BREAK---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+---PAGE BREAK---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+---PAGE BREAK---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+---PAGE BREAK---
+ 
+ 
+ 
+ 
+PANDUAN 
+TUGAS AKHIR 
+SARJANA DAN DIPLOMA 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+UNIVERSITAS NEGERI SEMARANG 
+2024 
+
+---PAGE BREAK---
+20202o ada 
+   da 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA 
+UNIVERSITAS NEGERI SEMARANG 2024 
+ 
+Tim Penyusun: 
+Dr. Eko Sugiarto, M.Pd. 
+Dr. rer.nat. Adi Nur Cahyono, M.Pd. 
+Dr. Atika Wijaya, S.A.P., M.Si. 
+Sri Sumartiningsih, M.Kes., Ph.D. 
+Arif Widiyatmoko, M.Pd., Ph.D. 
+Sandy Arief, M.Sc., Ph.D. 
+Dr. Siti Nuzulia, S.Psi., M.Si. 
+Prof. Dr. Ratna Dewi Kusumaningtyas, MT. 
+Dr. Rofi Wahanisa, M.H. 
+dr. Amelia Fitra Khasanah 
+Dina Nur Anggraini Ningrum, M.Kes., Ph.D. 
+ 
+Editor: Prof. Dr. Zaenuri Mastur, SE, M.Si, Akt. 
+ 
+Administrasi & Publikasi: 
+Agestia Putri Nusantari, S.Pd., M.Pd. 
+ 
+Desain Sampul & Layout: 
+Dr. Eko Sugiarto, M.Pd. 
+ 
+ 
+UNIVERSITAS NEGERI SEMARANG 
+Gedung H Kampus Sekaran, Gunungpati, 
+Kota Semarang, Januari, 2024 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+v 
+ 
+K A T A P E N G A N T A R 
+Prof. Dr. Zaenuri Mastur, SE, M.Si., Akt. 
+Wakil Rektor Bidang Akademik dan Kemahasiswaan 
+Universitas Negeri Semarang 
+ 
+ 
+ 
+niversitas 
+Negeri 
+Semarang 
+(UNNES) 
+berkomitmen 
+untuk 
+menghasilkan lulusan yang berkualitas dan berdaya saing dalam 
+lingkup nasional dan global. UNNES memiliki peran penting sebagai 
+pranata 
+pendidikan 
+tinggi 
+untuk 
+memenuhi 
+kebutuhan-kebutuhan 
+pembangunan nasional melalui peran keilmuan para dosen dan 
+mahasiswanya melalui kegiatan penelitian, pengajaran, dan pengabdian 
+kepada masyarakat. Peranan yang ada dan iklim akademik yang 
+diberlakukan di UNNES tersebut mencerminkan keberadaannya untuk 
+menjalankan fungsi-fungsi strategi melalui pendidikan tinggi. 
+ 
+Sebuah universitas tidak mungkin bisa menjalankan fungsinya 
+dengan baik apabila tidak ada iklim akademi, salah satunya dibangun melalui 
+penyusunan tugas akhir. Dalam konteks ini, UNNES merupakan lembaga 
+ilmiah untuk mengembangkan ilmu pengetahuan. Dengan demikian, hasil- 
+hasil penelitian dan publikasi ilmiah mahasiswa harus dijamin kualitasnya 
+sebagai bagian dari produk ilmu pengetahuan. 
+ 
+UNNES juga turut mendukung program pemerintah, di antaranya 
+Permendikbudristek Nomor 53 Tahun 2023 tentang Penjamin Mutu 
+Pendidikan Tinggi yang bertujuan untuk memberi kesempatan seluas- 
+luasnya kepada mahasiswa untuk meningkatkan kompetensinya, baik soft 
+skills maupun hard skills, agar lebih siap dan relevan dengan kebutuhan 
+zaman. Salah satu dukungan UNNES ialah dengan memberikan kesempatan 
+mahasiswa memilih jenis-jenis tugas akhir sesuai kapasitasnya, yang dapat 
+dilakukan secara berkelompok di dalam prodi yang sama, antar prodi dalam 
+satu fakultas, maupun antarfakultas. Penyusunan tugas akhir juga dapat 
+bersumber dari luar kampus yang telah ditempuh oleh mahasiswa 
+U
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+vi 
+ 
+ 
+ 
+Berdasarkan itu, Bidang Akademik UNNES merasa perlu melakukan 
+akselerasi akademik guna mendorong mahasiswa menyelesaikan tugas akhir 
+dengan lancar dan tepat waktu. Panduan tugas akhir dan publikasi Ilmiah ini 
+disusun untuk mengimplementasikan kebijakan akademik sekaligus 
+memberi arah yang jelas kepada mahasiswa untuk menyelesaikan studinya. 
+Mudah-mudahan hadirnya buku panduan yang telah disusun oleh Tim 
+Penyusun dapat bermanfaat bagi mahasiswa dalam menyelesaikan tugas 
+akhir dan publikasi ilmiah maupun bagi pengelola fakultas, prodi dan dosen- 
+dosen dalam memberikan bimbingan. 
+ 
+ 
+Terima kasih. 
+
+---PAGE BREAK---
+P R A K A T A 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+vii
+P
+ 
+ 
+ 
+ 
+ 
+ 
+uji dan syukur Penulis panjatkan ke hadirat Allah Swt. Atas limpahan 
+rahmatnya sehingga Buku “Panduan Tugas Akhir Sarjana dan Diploma 
+UNNES 2024” ini selesai disusun. Tugas akhir yang disingkat dengan 
+TA adalah karya ilmiah yang disusun oleh mahasiswa menurut kaidah 
+keilmuan dan ditulis berdasarkan kaidah bahasa Indonesia yang baku di 
+bawah arahan dosen pembimbing. TA ini merupakan salah satu syarat 
+untuk menyelesaikan studi pada jenjang program diploma dan sarjana. 
+Sebagai upaya standardisasi TA dalam lingkup UNNES, maka diperlukan 
+pedoman penulisan tugas akhir yang digunakan di semua jenjang dengan 
+mempertimbangkan Permendikbudristek Nomor 53 Tahun 2023 serta tanpa 
+mengabaikan kekhasan bidang ilmu di tiap fakultas/Prodi. 
+Buku panduan ini secara khusus disusun untuk melaksanakan 
+kebijakan 
+akademik 
+Universitas 
+Negeri 
+Semarang 
+yang 
+memberi 
+kesempatan kepada mahasiswa memilih jenis TA yang diinginkan untuk 
+menyelesaikan studinya, meliputi: (1) skripsi, (2) proyek, (3) prototipe, (4) 
+publikasi ilmiah, dan (5) penyetaraan prestasi kejuaraan dengan tugas akhir. 
+Manfaat buku pedoman TA ini sebagai berikut. Pertama, 
+memberikan panduan umum kepada mahasiswa UNNES dalam menyusun 
+tugas akhir. Melalui kriteria yang disampaikan di dalam panduan, diharapkan 
+muncul persamaan persepsi para mahasiswa, dosen, dan pengelola program 
+studi di lingkungan UNNES. Kedua, menyediakan panduan bagi dosen 
+UNNES dalam melaksanakan pembimbingan tugas akhir. Mahasiswa dan 
+dosen pembimbing dapat menyesuaikan format (struktur), isi (substansi), 
+dan kaidah tata tulis selama proses penulisan dan pembimbingan. 
+Sasaran 
+buku 
+panduan 
+ini 
+ialah 
+mahasiswa, 
+pengelola 
+fakultas/prodi, dan dosen pembimbing. Panduan ini juga dapat digunakan 
+oleh mahasiswa semester awal sebagai referensi untuk merencanakan tugas 
+akhir mereka. Panduan ini agar bisa ditindaklanjuti dalam bentuk kebijakan 
+yang lebih operasional bila diperlukan. Panduan ini dilengkapi petunjuk yang 
+operasional 
+yang 
+bersifat 
+umum, 
+sehingga 
+fakultas/prodi 
+dapat 
+menyesuaikan panduan ini berdasarkan karakteristik bidang ilmu secara 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+viii 
+ 
+ 
+ 
+lebih khusus. Semoga buku panduan ini dapat digunakan dengan sebaik- 
+baiknya. 
+ 
+ 
+ 
+Semarang, Januari 2024 
+Tim Penulis 
+
+---PAGE BREAK---
+D A F T A R I S I 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ix 
+ 
+ 
+ 
+ 
+Kata Pengantar —v 
+Prakata —vii 
+Daftar Isi —ix 
+ 
+BAB 1 PENDAHULUAN —1 
+A. Pengertian Tugas Akhir —2 
+B. Jenis-Jenis Tugas Akhir —3 
+C. Fungsi dan Tujuan Panduan Tugas Akhir —4 
+D. Kode Etik Tugas Akhir dan Publikasi Ilmiah —4 
+ 
+BAB 2 KETENTUAN UMUM TUGAS AKHIR —7 
+A. Kriteria Tugas Akhir —7 
+B. Topik Tugas Akhir —7 
+C. Pembimbing Tugas Akhir —8 
+D. Proposal Tugas Akhir —9 
+E. Penguji Tugas Akhir —9 
+F. Penilaian/Ujian Tugas Akhir —9 
+ 
+BAB 3 KETENTUAN SKRIPSI —11 
+A. Kriteria Skripsi —11 
+B. Contoh Topik Skripsi —11 
+C. Penulisan Proposal Skripsi —13 
+D. Penulisan Laporan —13 
+E. Penilaian/Ujian Skripsi —16 
+F. Contoh Format —20 
+ 
+BAB 4 KETENTUAN PROYEK —27 
+A. Kriteria Proyek —27 
+B. Contoh Topik Proyek —27 
+C. Penulisan Proposal Proyek —29 
+D. Penulisan Laporan Proyek —31 
+E. Pedoman Penilaian Proyek —32 
+F. Contoh Format —34 
+ 
+BAB 5 KETENTUAN PROTOTIPE —41 
+A. Kriteria Prototipe —41 
+B. Contoh Topik Prototipe —41 
+C. Penulisan Proposal Prototipe —43 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+x 
+ 
+ 
+ 
+D. Penulisan Laporan Prototipe —45 
+E. Pedoman Penilaian Prototipe —46 
+F. Contoh Format —48 
+ 
+BAB 6 KETENTUAN PUBLIKASI ILMIAH —55 
+A. Kriteria Publikasi Ilmiah —55 
+B. Contoh Lingkup dan Judul Publikasi Ilmiah —56 
+C. Penulisan Proposal Penulisan Artikel Ilmiah —57 
+D. Penulisan Laporan Publikasi Ilmiah untuk Keperluan 
+Ujian Tugas Akhir —58 
+E. Penyimpanan Laporan Publikasi Ilmiah ke Repositori 
+Perpustakaan UNNES —59 
+F. Pedoman Penilaian Publikasi Ilmiah —60 
+G. Contoh Format —62 
+ 
+BAB 7 KETENTUAN PENYETARAAN PRESTASI KEJUARAN —71 
+A. Kriteria Penyetaraan Prestasi Kejuaraan Karya Tulis Ilmiah —71 
+B. Kriteria Penyetaraan Prestasi Kejuaraan Nonkarya Tulis Ilmiah —71 
+C. Contoh Topik Penyetaraan Prestasi Kejuaraan —71 
+D. Penulisan Laporan Penyetaraan Kejuaraan —72 
+E. Pedoman Penilaian Penyetaraan Kejuaraan —74 
+F. Contoh Format —76 
+ 
+BAB 8 PERSYARATAN & PROSEDUR PELAKSANAAN 
+TUGAS AKHIR —83 
+A. Persyaratan —83 
+B. Prosedur —84 
+ 
+BAB 9 KAIDAH KEBAHASAAN, SITASI & REFERENSI —89 
+A. Kaidah Kebahasaan —89 
+B. Kaidah Penulisan Sitasi dan Referensi —91 
+BAB 10 PENUTUP —93 
+DAFTAR PUSTAKA —95 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+1
+P
+ 
+ 
+ 1 
+PENDAHULUAN 
+ 
+erguruan tinggi adalah salah satu tiang utama kemajuan bangsa, 
+terutama dalam konteks meningkatkan pertumbuhan ekonomi, 
+industrialisasi, dan adaptasi terhadap perubahan era Revolusi Industri 
+4.0 serta Masyarakat 5.0. Peran perguruan tinggi di Indonesia 
+memiliki signifikansi penting dalam menyumbangkan kontribusi untuk 
+pembangunan masyarakat, serta berperan sebagai penyedia sumber daya 
+manusia yang sangat dibutuhkan untuk mendukung kelangsungan 
+kehidupan sosial, ekonomi, politik, dan kebudayaan. Universitas Negeri 
+Semarang (UNNES) memiliki visi “Menjadi Universitas Bereputasi Dunia dan 
+Pelopor Kecemerlangan Pendidikan yang Berwawasan Konservasi” 
+ 
+ sebagai penyedia sumber daya manusia masa depan dalam 
+menangani berbagai tantangan, baik di tingkat lokal, nasional, maupun 
+internasional. 
+Dalam upaya memberikan peluang sebanyak-banyaknya kepada 
+mahasiswa 
+untuk 
+menyelesaikan 
+studi 
+serta 
+merujuk 
+pada 
+Permendikbudistek Nomor 53 Tahun 2023 tentang Penjamin Mutu 
+Pendidikan Tinggi, UNNES menyediakan jenis-jenis tugas akhir yang dapat 
+dipilih oleh mahasiswa, yaitu: (a) skripsi, (b) proyek, (c) prototipe, (d) publikasi 
+ilmiah, dan (e) penyetaraan prestasi kejuaraan. Kelima jenis tugas akhir 
+tersebut dapat dilaksanakan oleh mahasiswa sarjana maupun diploma. Tugas 
+akhir dapat dikerjakan secara mandiri atau dalam kelompok kecuali publikasi 
+ilmiah, sesuai dengan pedoman yang diatur dalam panduan ini. Pilihan tugas 
+akhir merupakan bagian integral dari perjalanan akademik mahasiswa, dan 
+sangat tergantung pada tujuan pribadi serta persyaratan program studi yang 
+bersangkutan. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+2 
+ 
+ 
+ 
+Tabel 1.1 Klasifikasi Tugas Universitas Negeri Semarang 
+Berdasarkan Jenjang dan Pengusul 
+ 
+Tugas Akhir 
+Jenjang 
+Mahasiswa Pengusul 
+D-3 
+S-1 
+Kelompok 
+Individu 
+Skripsi 
+- 
+V 
+V 
+V 
+Proyek 
+V 
+V 
+V 
+V 
+Prototipe 
+V 
+V 
+V 
+V 
+Publikasi Ilmiah 
+V 
+V 
+- 
+V 
+Penyetaraan Prestasi kejuaraan 
+V 
+V 
+V 
+V 
+ 
+Tugas akhir dapat ditempuh oleh mahasiswa sebagai salah satu 
+syarat untuk menyelesaikan studi pada program diploma maupun sarjana. 
+Tugas akhir untuk program sarjana dan diploma dibedakan berdasarkan 
+beban SKS, kedalaman kajian, dan kompleksitasnya. Bagian pendahuluan ini 
+secara khusus akan menjelaskan secara konseptual tugas akhir mahasiswa di 
+lingkungan UNNES untuk program diploma dan sarjana. 
+ 
+ 
+A.PENGERTIAN TUGAS AKHIR 
+Tugas akhir (TA) merupakan salah satu mata kuliah wajib lulus bagi 
+mahasiswa pada semua program studi di Universitas Negeri Semarang 
+(UNNES) program diploma, sarjana, magister, dan doktor. Tugas akhir 
+dapat dibuat melalui proses penelitian, pengembangan, maupun kajian 
+ilmiah yang dilakukan mahasiswa sebagai salah satu persyaratan 
+penyelesaian studi. Kegiatan TA di Universitas Negeri Semarang dapat 
+dilaksanakan secara individu maupun berkelompok, tetapi pelaporannya 
+tetap disusun secara individu di bawah bimbingan dosen pembimbing 
+yang ditetapkan dengan SK Dekan. Agar pelaksanaan TA dapat berjalan 
+dengan efektif, diperlukan pedoman penyusunan TA bagi mahasiswa, 
+dosen pembimbing, penguji, program studi, fakultas, dan pihak-pihak 
+yang terkait. 
+
+---PAGE BREAK---
+3 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+B. JENIS-JENIS TUGAS AKHIR 
+1. Skripsi 
+Skripsi adalah laporan hasil penelitian kualitatif, kuantitatif, atau 
+campuran, yang ditulis oleh mahasiswa dan dipertanggungjawabkan 
+melalui mekanisme ujian sebagai salah satu persyaratan untuk 
+memperoleh gelar sarjana. 
+2. Proyek 
+Proyek adalah kegiatan inovatif dan kolaboratif yang relevan dengan 
+bidang ilmu secara individu maupun kelompok yang terstruktur untuk 
+membangun kecerdasan majemuk yang memiliki dampak sosial 
+(kelompok masyarakat, industri, atau institusi mitra). 
+3. Prototipe 
+Prototipe yaitu rancangan produk, model, desain, atau sistem kerja 
+dengan tujuan pengujian konsep atau proses kerja sebagai solusi Ipteks 
+yang dapat memiliki potensi dampak fungsional atau komersial. 
+4. Publikasi Ilmiah 
+Publikasi ilmiah berarti mahasiswa memublikasikan naskah artikel 
+ilmiahnya ke penerbit jurnal nasional maupun internasional. Proses 
+penulisan hingga publikasi ilmiah juga didampingi oleh dosen 
+pembimbing sebagai co-author dan penulis korespondensi yang 
+kompeten dan relevan pada bidang yang ditulis. 
+5. Penyetaraan Prestasi Kejuaraan 
+a. Penyetaraan Prestasi Kejuaraan Karya Tulis Ilmiah 
+Rekognisi yang diberikan kepada mahasiswa yang memiliki prestasi pada 
+Program Kreativitas Mahasiswa (PKM) dalam Pekan Ilmiah Mahasiswa 
+Nasional (PIMNAS), kompetisi karya tulis ilmiah dari kementerian lain, 
+atau kompetisi karya ilmiah internasional yang terpercaya. 
+b. Penyetaraan Prestasi Kejuaraan Nonkarya Tulis Ilmiah 
+Rekognisi yang diberikan kepada mahasiswa yang memiliki prestasi luar 
+biasa pada kompetisi nasional maupun internasional resmi pada bidang 
+olah raga, seni, agama, sains, teknologi, dan sosial humaniora 
+diselenggarakan oleh kementeriaan. 
+
+---PAGE BREAK---
+4 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+C. DASAR, FUNGSI DAN TUJUAN PANDUAN TUGAS AKHIR 
+1. Dasar  
+1) Permendikbudristek Nomor 53 Tahun 2023 Tentang Penjaminan Mutu 
+Pendidikan Tinggi. 
+2) Panduan Akademik Universitas Negeri Semarang tahun 2024. 
+3) Peraturan Rektor Universitas Negeri Semarang No.4 Tahun 2022 Tentang 
+Pedoman Yudisium 
+2. Fungsi Panduan Tugas Akhir 
+Panduan tugas akhir merupakan acuan bagi mahasiswa, dosen, program 
+studi dan fakultas di lingkungan UNNES dalam pelaksanaan tugas akhir 
+mulai tahap identifikasi gagasan, proposal, penelitian, penyusunan 
+laporan, ujian, dan penilaian. 
+ 
+3. Tujuan Pedoman Tugas Akhir 
+Panduan ini diharapkan dapat memberikan bantuan kepada mahasiswa, 
+dosen pembimbing, dosen penguji, pengelola fakultas, koordinator 
+program studi, serta semua pihak yang terlibat dalam memahami 
+langkah-langkah penyusunan proposal, proses bimbingan, pengajuan 
+ujian, pelaksanaan ujian, dan penilaian. Dengan demikian pelaksanaan 
+tugas akhir akan berjalan dengan efisien dan sesuai jadwal. 
+ 
+D.KODE ETIK TUGAS AKHIR DAN PUBLIKASI ILMIAH 
+Mahasiswa harus memenuhi kode etik penelitian dalam membuat tugas akhir 
+yang meliputi aplikasi fundamental prinsip-prinsip aktivitas penelitian ilmiah 
+sebagai berikut. 
+ 
+1. Jujur 
+Melaporkan data, hasil, dan metode penelitian secara jujur. Tidak 
+melakukan fabrication (membuat atau memalsukan data atau hasil), 
+falsification 
+(memanipulasi 
+material, 
+peralatan, 
+ataupun 
+proses; 
+mengubah data atau hasil penelitian sehingga data dan hasil tidak sesuai 
+dengan kondisi yang sebenarnya), atau plagiarisme (kegiatan penjiplakan 
+atau pencurian tulisan orang lain atau tulisan sendiri dan menjadikan 
+tulisan tersebut seolah-olah miliknya). Plagiarisme tidak ditoleransi. 
+ 
+ 
+
+---PAGE BREAK---
+5 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+2. Objektif 
+Menghindari bias penelitian dalam analisis data, interpretasi data, dan 
+melaporkan hasil penelitian sebagaimana data yang diperoleh. 
+ 
+3. Integritas 
+Memberikan informed-consent sebelum melakukan penelitian dan 
+mematuhi aturan yang sudah ditulis dan disepakati dalam informed- 
+consent. Misalnya, menginformasikan tujuan penelitian, durasi penelitian, 
+dan prosedur penelitian kepada subjek penelitian; menyadari hak-hak 
+subjek penelitian untuk menarik diri dari partisipasinya dalam penelitian; 
+menjelaskan sejelas mungkin akan risiko, ketidaknyamanan, maupun 
+kosekuensi yang akan terjadi sebagai subjek penelitian, begitu juga 
+dengan manfaat penelitian; batasan kerahasiaan dalam penelitian; dan 
+kontak penelitian apabila subjek penelitian menginginkan informasi lebih 
+dalam tentang penelitian maupun hasil penelitian. 
+ 
+4. Hati-hati 
+Menghidari keteledoran dalam melakukan penelitian; berhati-hati dan 
+secara kritis menguji dan mendiskusikan hasil penelitian kepada pihak- 
+pihak yang lebih ahli sebelum membuat simpulan. 
+ 
+5. Terbuka 
+Bersedia berbagi data, hasil, ide, instrumen, maupun sumber penelitian 
+yang dibutuhkan kepada ilmuwan lain apabila diperlukan selama tidak 
+melanggar privasi dan kerahasiaan subjek penelitian. 
+ 
+6. Menghargai Hak Intelektual 
+Memberikan kredit atau pengakuan terhadap penggunaan properti 
+kekayaan intelektual milik orang lain dalam karya ilmiah yang ditulis. 
+Misalnya selalu menuliskan sumber pustaka yang dikutip, meminta izin 
+kepada pemegang properti intelektual untuk menggunakan karya cipta 
+tertentu yang tidak bisa digunakan secara bebas. 
+ 
+7. Rahasia 
+Menghargai privasi dan kerahasiaan subjek penelitian. Misalnya, tidak 
+menyebarluaskan data individu kepada pihak lain yang tidak 
+berkepentingan, 
+menyamarkan 
+identitas 
+subjek 
+penelitian, 
+dan 
+menggunakan data yang diperoleh hanya untuk kepentingan penelitian. 
+8. Tidak Diskriminatif 
+Menghindari diskriminasi berdasarkan jenis kelamin, ras, etnis, atau faktor 
+lain yang tidak berhubungan dengan kompetensi dan integritas ilmiah. 
+
+---PAGE BREAK---
+6 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+9. Melindungi Subjek Manusia dan Hewan 
+Meminimalisasi bahaya, risiko, memaksimalkan manfaat penelitian, 
+menghormati hak-hak dan harga diri subjek penelitian, privasi, otonomi 
+ketika melakukan penelitian dengan menggunakan subjek manusia, 
+menunjukkan rasa hormat dan perhatian kepada subjek binatang, dan 
+tidak melakukan tindakan yang tidak diperlukan dalam penelitian dengan 
+subjek hewan. 
+ 
+10. Publikasi yang Bertanggung Jawab 
+Publikasikan secara jujur hasil penelitian dan menghindari publikasi 
+ganda. 
+Kode etik penelitian ilmiah diatur dalam Peraturan Menteri Pendidikan, 
+Kebudayaan, Riset, dan Teknologi Republik Indonesia Nomor 39 Tahun 
+2021 tentang Integritas Akademik dalam Menghasilkan Karya Ilmiah dan  
+Permendiknas 
+No. 
+17 
+Tahun 
+2010 
+tentang 
+Pencegahan 
+dan 
+Penanggulangan Plagiat di Perguruan Tinggi. Pasal 12 Ayat 1 dan 2 
+dinyatakan secara eksplisit mengenai sanksi tindakan plagiat baik untuk 
+mahasiswa, dosen, peneliti, maupun tenaga kependidikan. Menurut Pasal 12 
+Ayat 1, disebutkan, mahasiswa yang terbukti melakukan tindakan plagiat 
+dapat diberikan sanksi berupa: 
+a. teguran; 
+b. peringatan tertulis; 
+c. penundaan pemberian sebagian hak mahasiswa; 
+d. pembatalan nilai satu atau beberapa mata kuliah yang diperoleh 
+mahasiswa; 
+e. pemberhentian dengan hormat dari status sebagai mahasiswa; 
+f. pemberhentian tidak dengan hormat dari status sebagai mahasiswa; 
+g. pembatalan ijazah apabila mahasiswa telah lulus dari suatu program. 
+ 
+Berkenaan dengan tanggungjawab publikasi,  juga merujuk pada peraturan 
+Rektor UNNEs yang terkait.  
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+7
+ 
+ 
+ 2 
+KETENTUAN UMUM 
+TUGAS AKHIR 
+ 
+ 
+A. KRITERIA TUGAS AKHIR 
+1) Tugas akhir ditulis oleh mahasiswa dengan bimbingan dosen yang 
+sesuai dengan bidang ilmu atau keahliannya. 
+2) Tugas akhir diusulkan oleh mahasiswa sesuai dengan prosedur yang 
+telah dijelaskan dalam panduan ini. 
+3) Tugas akhir ditulis dalam bahasa Indonesia yang baik dan benar 
+sesuai dengan kaidah penulisan ilmiah. Untuk kelas internasional atau 
+program studi tertentu, tugas akhir dapat ditulis dalam bahasa minat 
+(bahasa Inggris, bahasa Arab, bahasa Prancis, bahasa Jawa, dan 
+lainnya) dengan menuliskan abstrak dalam bahasa minat tersebut 
+dan bahasa Indonesia. 
+4) Tugas akhir ditulis dengan mengikuti sistematika yang telah 
+ditentukan dalam panduan ini. 
+5) Tugas akhir merupakan karya asli mahasiswa yang bersifat orisinal 
+dan terbebas dari unsur plagiarisme yang dibuktikan dengan 
+pengujian level similaritas oleh prodi/fakultas/universitas dan 
+pemeriksaan substansi oleh dosen pembimbing. 
+6) Kebijakan penyetaraan prestasi kejuaraan dengan tugas akhir diatur 
+sesuai dengan peraturan rektor yang berlaku. 
+7) Tugas akhir yang telah dinyatakan selesai oleh dosen pembimbing 
+dapat diuji oleh tim penguji yang ditetapkan oleh prodi dan disahkan 
+melalui surat tugas dekan melalui mekanisme tertentu. 
+ 
+B. TOPIK TUGAS AKHIR 
+1) Sumber topik tugas akhir dapat berasal dari mahasiswa atau dosen 
+yang dapat bersumber dari isu-isu, kajian empiris atau dari kegiatan 
+di luar kampus sesuai dengan bidang studi. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+8 
+ 
+ 
+ 
+2) Topik tugas akhir harus bersifat aktual dan merujuk pada 
+permasalahan yang relevan dengan program studi. 
+3) Topik tugas akhir yang dipilih mahasiswa wajib melalui proses 
+verifikasi oleh tim verifikator prodi dan disetujui oleh koordinator 
+program studi. 
+4) Topik diusulkan oleh mahasiswa melalui prosedur pengusulan sesuai 
+dengan ketentuan yang berlaku. 
+5) Topik yang telah disetujui oleh koordinator program studi, 
+selanjutnya dikembangkan menjadi proposal tugas akhir dengan 
+bimbingan dosen pembimbing. 
+ 
+C. PEMBIMBING TUGAS AKHIR 
+1) Dosen pembimbing harus memiliki bidang ilmu/keahlian yang 
+relevan dengan topik tugas akhir. 
+2) Dosen pembimbing tugas akhir yang akan ditetapkan tidak sedang 
+tugas belajar dengan biaya negara/lembaga eksternal lain atau tidak 
+sedang menjalani hukuman disiplin. 
+3) Dosen yang berhak menjadi pembimbing tugas akhir diploma dan 
+sarjana adalah dosen yang sekurang-kurangnya berkualifikasi 
+akademik magister dalam jabatan akademik sekurang-kurangnya 
+asisten ahli. 
+4) Tugas akhir program diploma dan sarjana dibimbing oleh satu orang 
+pembimbing internal UNNES, atau dapat melibatkan pembimbing 
+eksternal UNNES sebagai pembimbing kedua yang memenuhi 
+persyaratan. 
+5) Penetapan 
+dosen 
+pembimbing 
+tugas 
+akhir 
+dilakukan 
+oleh 
+koordinator 
+prodi 
+dan 
+disahkan 
+oleh 
+SK 
+dekan, 
+dengan 
+mempertimbangkan beban kerja dosen dan relevansi bidang 
+kepakaran. 
+6) Mahasiswa wajib melakukan bimbingan kepada dosen pembimbing 
+secara aktif dengan tetap menjaga etika berkomunikasi. 
+7) Dosen pembimbing wajib memberikan layanan bimbingan kepada 
+mahasiswa sesuai SK yang diberikan dengan tetap menjaga etika 
+berkomunikasi. 
+8) Penggantian pembimbing dapat diusulkan oleh mahasiswa maupun 
+dosen kepada koorprodi dengan kondisi sebagai berikut. 
+a) Mahasiswa tidak aktif melakukan bimbingan kepada dosen. 
+b) Dosen   pembimbing    tidak    dapat    menjalankan    tugasnya 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+9 
+ 
+membimbing karena meninggal, sakit, pensiun, tugas belajar 
+dengan biaya negara/eksternal, cuti, atau sebab lain yang 
+mengakibatkan terhambatnya proses bimbingan. 
+c) Alasan-alasan lain yang dianggap penting untuk melakukan 
+pergantian pembimbing. 
+9) Mahasiswa atau dosen dapat mengusulkan pergantian pembimbing 
+bila sudah pernah melakukan proses bimbingan atau setelah 
+mempertimbangkan kondisi dan alasan pergantian. 
+ 
+D.PROPOSAL TUGAS AKHIR 
+1) Mahasiswa yang memilih tugas akhir berupa skripsi, proyek, 
+prototipe, dan publikasi ilmiah harus menyusun proposal tugas akhir. 
+2) Mahasiswa yang memilih penyetaraan prestasi kejuaraan dengan 
+tugas akhir tidak perlu menyusun proposal tugas akhir. 
+3) Proposal tugas akhir disusun berdasarkan pada topik yang telah 
+disetujui sebelumnya. 
+4) Proposal tugas akhir disusun di bawah bimbingan pembimbing. 
+5) Proposal tugas akhir disusun berdasarkan sistematika yang diatur 
+dalam panduan ini. 
+6) Proposal tugas akhir program diploma dan sarjana dapat diujikan 
+oleh prodi masing-masing. 
+ 
+E. PENGUJI TUGAS AKHIR 
+1) Dosen yang berhak menjadi penguji tugas akhir diploma dan sarjana 
+adalah dosen yang sekurang-kurangnya berkualifikasi akademik 
+Magister dalam jabatan akademik sekurang-kurangnya Asisten Ahli. 
+2) Bagi penguji eksternal UNNES wajib memiliki kompetensi yang sesuai 
+dengan karakteristik program studi dan memenuhi ketentuan 
+administrasi. 
+a) Penguji dengan status dosen luar UNNES mengikuti kriteria yang 
+sama dengan poin E.1) 
+b) Penguji dengan status praktisi harus memenuhi ketentuan: 
+(1) kualifikasi akademik minimal diploma 3 untuk menguji 
+program diploma 3, sarjana/spesialis untuk menguji 
+program sarjana, magister untuk menguji program master, 
+dan doktor untuk menguji program doktor. 
+(2) memiliki pengalaman profesional di bidangnya. 
+(3) memiliki sertifikat kompetensi dari LSP yang terpercaya. 
+
+---PAGE BREAK---
+10 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+F. PENILAIAN/UJIAN TUGAS AKHIR 
+1) Ujian dapat dilakukan bila bimbingan telah diselesaikan sekurang- 
+kurangnya 12 kali untuk satu pembimbing atau 16 kali bila dua 
+pembimbing yang dibuktikan dengan validasi selesai bimbingan 
+melalui Sitedi. 
+2) Naskah laporan tugas akhir dapat diujikan bila telah disetujui oleh 
+dosen pembimbing. 
+3) Tugas akhir berupa Skripsi, Proyek, dan Prototipe tetap dilengkapi 
+dengan naskah draf artikel, namun tidak wajib dipublikasikan. 
+4) Penguji utama tugas akhir program diploma dan sarjana adalah 
+dosen yang tidak menjadi pembimbing mahasiswa yang diuji. 
+5) Unsur tim penguji tugas akhir diploma sebagai berikut: 
+• Ketua 
+: Dekan/WD/Kalab 
+• Sekretaris 
+: Koorprodi 
+• Penguji 1 
+: penguji selain pembimbing 
+• Penguji 2 
+: Pembimbing 
+ 
+6) Unsur tim penguji tugas akhir sarjana sebagai berikut: 
+• Ketua 
+: Dekan/WD/Kalab 
+• Sekretaris 
+: Koorprodi 
+• Penguji 1 
+: penguji selain pembimbing 
+• Penguji 2 
+: penguji selain pembimbing 
+• Penguji 3 
+: pembimbing 
+ 
+7) Mahasiswa yang akan melaksanakan ujian tugas akhir harus 
+memenuhi persyaratan administratif dan prosedur yang ditentukan 
+oleh fakultas atau prodi dengan merujuk panduan ini. 
+8) Ujian bagi mahasiswa yang terlibat dalam TA berkelompok 
+antarfakultas tetap dilakukan di fakultas atau prodi masing-masing. 
+9) Khusus naskah artikel ilmiah yang berhasil terbit atau accepted pada 
+jurnal internasional terindeks SCOPUS/WoS, jurnal nasional SINTA 1 
+atau SINTA 2 mendapat reward penilaian sangat baik (A) tanpa 
+mekanisme sidang tugas akhir, namun tetap mengusulkan 
+penilai/penguji dan memenuhi persyaratan yudisium. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+11 
+S 
+ 
+ 
+ 3 
+KETENTUAN SKRIPSI 
+ 
+ 
+kripsi adalah salah satu bentuk produk ilmu pengetahuan, bahkan ini 
+menjadi ciri akademik sebuah universitas yang diperankan oleh 
+mahasiswa (Shils, 1993). Skripsi didasarkan pada kaidah selingkung 
+dengan mempertimbangkan pada kelogisan sajian ilmiah. Mahasiswa dapat 
+melakukan penyusunan proposal atau laporan akhir skripsi dengan merujuk 
+pada kriteria dan sistematika berikut ini. 
+ 
+A. KRITERIA SKRIPSI 
+a. Skripsi ditempuh oleh mahasiswa pada program sarjana. 
+b. Topik skripsi dapat bersumber dari isu atau permasalahan yang sesuai 
+dengan bidang ilmu mahasiswa. 
+c. Skripsi ditulis berdasarkan data empirik yang dijelaskan secara logis 
+dan 
+sistematis 
+melalui 
+metodologi 
+penelitian 
+tertentu 
+serta 
+penelaahan pustaka yang relevan. 
+d. Skripsi dapat dilakukan bersama-sama dengan tim (sekelompok 
+mahasiswa yang tergabung dalam tim) baik dari prodi yang sama, 
+prodi dalam satu fakultas, atau prodi antarfakultas. Selanjutnya hasil 
+kerja tim tersebut harus dilaporkan secara individu dengan mengambil 
+sudut pandang permasalahan masing-masing anggota tim. 
+e. Skripsi dipertahankan sendiri oleh mahasiswa di hadapan tim penguji 
+atau yang telah ditetapkan dengan surat tugas dekan. 
+ 
+B. CONTOH TOPIK SKRIPSI 
+Tabel 3.1 berikut ini menyajikan berbagai topik skripsi yang dapat 
+dijadikan contoh bagi para mahasiswa. 
+
+---PAGE BREAK---
+12 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Tabel 3.1 Contoh Topik Skripsi dan Susunan Pengusul 
+dalam Satu Prodi yang Sama 
+ 
+Topik 
+Mahasiswa/ 
+Prodi 
+Judul 
+Pembimbing 
+Kajian hukum terhadap 
+pemerintahan Desa 
+Jatiroto, Kecamatan 
+Kayen, Kabupaten Pati 
+Mahasiswa 
+ke-1, Prodi 
+Ilmu Hukum 
+Fungsi Badan 
+Permusyawaratan Desa 
+(BPD) dalam Legislasi 
+Peraturan Desa (Studi 
+kasus di Desa Jatiroto, 
+Kecamatan Kayen, 
+Kabupaten Pati) 
+Dr. Adil Budiman, 
+M.H. 
+Mahasiswa 
+ke-2, Prodi 
+Ilmu Hukum 
+Analisis Yuridis Penerapan 
+Prinsip Good Governance 
+oleh Kepala Desa Jatiroto, 
+Kecamatan Kayen, 
+Kabupaten Pati) 
+Dr. Adil Budiman, 
+M.H. 
+Mahasiswa 
+ke-3, Prodi 
+Ilmu Hukum 
+Dampak Penerbitan 
+Sertipikat Hak Atas Tanah 
+Secara Massal Swadaya 
+Terhadap Pembebanan 
+Hak Tanggungan di Desa 
+Jatiroto, Kecamatan Kayen, 
+Kabupaten Pati 
+Dr. Adil Budiman, 
+M.H. 
+ 
+Tabel 3.2 Contoh Topik Skripsi dan Susunan Pengusul Antarprodi 
+dalam Satu Fakultas yang Sama 
+ 
+Topik 
+Mahasiswa/ Prodi/ 
+Fakultas 
+Judul 
+Pembimbing 
+Pemanfaatan 
+Mikroalga Spirulina 
+Platensis sebagai 
+Pewarna Alam untuk 
+Batik 
+Mahasiswa ke-1 
+Prodi Pendidikan 
+Tata Busana, 
+Fakultas Teknik 
+Pemanfaatan 
+Mikroalga Spirulina 
+Platensis sebagai 
+Pewarna Alam Colet 
+dengan Teknik 
+Malam Dingin 
+Dr. Busanawati, 
+M.Si. 
+Mahasiswa ke-2 
+Prodi Teknik Kimia, 
+Fakultas Teknik 
+Prarancangan 
+Ekstraktor pada 
+Pabrik Zat Warna 
+Alam dari Mikroalga 
+Spirulina Platensis 
+Kapasitas 5000 
+Ton/Tahun 
+Dr. Kimianto, 
+M.Sc. 
+Mahasiswa ke-3 
+Prodi Teknik Kimia, 
+Fakultas Teknik 
+Prarancangan 
+Evaporator pada 
+Pabrik Zat Warna 
+Alam dari Mikroalga 
+Spirulina Platensis 
+Kapasitas 5000 Ton/ 
+Tahun 
+Dr. Kimiasari, M.T. 
+
+---PAGE BREAK---
+13 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Tabel 3.3 Contoh Topik Skripsi dan Susunan Pengusul Antarfakultas 
+ 
+ 
+Topik 
+Mahasiswa/ 
+Prodi 
+Judul 
+Pembimbing 
+Pengembangan 
+Sandal Akupuntur 
+Berbahan dari Kulit 
+Durian 
+Mahasiswa ke- 
+1, 
+Prodi Biologi 
+(FMIPA) 
+Analisis Varietas Durian 
+yang Potensial sebagai 
+Bahan Dasar Sandal 
+Akupuntur Berbahan dari 
+Kulit Durian 
+Dr. dr. Nadhira, M.Sc. 
+Mahasiswa ke- 
+2, 
+Prodi Seni 
+Rupa/ DKV 
+(FBS) 
+Analisis Persepsi Visual 
+pada Desain Produk dan 
+Kemasan Sandal 
+Akupuntur Berbahan 
+Kulit Durian 
+Berorientasi Ekraf 
+Dr. Asmara, M.Sn. 
+Mahasiswa ke- 
+3, Prodi 
+Manajemen 
+(FE) 
+Studi Kelayakan Ekonomi 
+Produk Sandal Akupuntur 
+Berbahan Kulit 
+Durian 
+Dra. Sri Sundari, M.M 
+Mahasiswa 
+ke-4, Prodi 
+Ikor (FIK) 
+Efektivitas Penggunaan 
+Sandal Akupuntur 
+Berbahan Kulit Durian 
+Terhadap Peningkatan 
+Kebugaran 
+Dr. Mulyanti, 
+M.Kes 
+ 
+C. PENULISAN PROPOSAL SKRIPSI 
+Proposal penelitian dapat dianggap sebagai langkah awal sebuah penelitian. 
+Bahkan apabila seorang peneliti telah mampu menyusun sebuah proposal 
+penelitian, sesunggahnya dia dapat dikatakan telah memulai penelitiannya 
+(Creswell & Creswell J. D., 2018; Patten, M.L. 2017; Rohidi, 2010). 
+ 
+1. Format Proposal Skripsi 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,15 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah = 3 cm. 
+
+---PAGE BREAK---
+14 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+2. Sistematika Penulisan Isi Proposal Skripsi 
+Penulisan proposal mengikuti sistematika dan ketentuan berikut ini. 
+a. Bagian Awal Proposal Skripsi 
+1) Sampul (soft cover). 
+Sampul menggunakan warna sesuai fakultas (logo, judul, tujuan 
+penulisan laporan, nama dan NIM, fakultas, universitas, dan tahun 
+pengesahan). 
+2) Halaman Judul. 
+Halaman judul memiliki format yang sama dengan sampul luar yang 
+dicetak pada kertas putih serupa dengan bagian yang lain. 
+3) Persetujuan Pembimbing. 
+4) Daftar Isi. 
+5) Daftar Tabel (jika ada). 
+6) Daftar Gambar (jika ada). 
+7) Daftar Istilah atau Daftar Singkatan (jika ada). 
+8) Daftar Lampiran (bila perlu). 
+ 
+b. Bagian Utama Proposal Skripsi 
+1. PENDAHULUAN 
+Bab ini berisi uraian tentang latar belakang atau justifikasi ilmiah dan 
+permasalahan yang akan diteliti. Alasan penelitian tersebut perlu 
+diungkapkan melalui pemaparan fenomena nyata yang ditemui 
+peneliti, penelitian yang pernah dilakukan sebelumnya terkait 
+fenomena tersebut, serta kesenjangan yang terjadi antara kondisi saat 
+ini dengan kondisi yang seharusnya menurut kajian peneliti, serta state 
+of the art penelitian. Bab ini perlu dicantumkan tujuan khusus 
+penelitian, manfaat penelitian, keutamaan penelitian, temuan yang 
+ditargetkan, dan kontribusi penelitian terhadap ilmu pengetahuan 
+sesuai dengan bidang ilmu pengusul. Secara sistematis, pendahuluan 
+terdiri atas: 
+1.1 Latar Belakang 
+Berisi penjelasan mengenai alasan mengapa masalah yang 
+dikemukakan dalam topik skripsi: menarik, penting, perlu diteliti. 
+1.2 Batasan Masalah (bila ada) 
+1.3 Rumusan Masalah 
+Berisi perumusan masalah yang ditulis secara singkat, padat, dan 
+sistematis tentang permasalahan yang diteliti. 
+1.4 Tujuan Penelitian 
+Berisi 
+tentang 
+upaya 
+penyelesaian 
+masalah 
+(mengetahui, 
+menganalisis, menghitung, memastikan parameter- parameter 
+
+---PAGE BREAK---
+15 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+yang relevan dengan topik tulisan). pastikan tujuan ini akan 
+terjawab di dalam laporan skripsi. 
+1.5 Manfaat Penelitian 
+Berisi uraian tentang faedah yang diharapkan dari sisi ilmu 
+pengetahuan dan teknologi, maupun dari sisi penerapannya. 
+Manfaat dapat bersifat teoretis maupun praktis. 
+1.6 Kebaruan Penelitian 
+Berisi uraian yang menunjukkan perbedaan dan/atau perbaikan 
+dibandingkan dengan penelitian terdahulu (Martin, 2014). Untuk 
+skripsi, penulis dapat menunjukkan kebaruan dari segi konsep, 
+konteks, metode, ilmu dan teknologi. 
+2. KAJIAN PUSTAKA 
+2.1 Tinjauan Pustaka 
+Bab ini menguraikan hasil temuan peneliti lain yang diperoleh dari 
+pustaka acuan serta menjadi landasan disusunnya penelitian. 
+Tinjauan pustaka bukan sekadar kumpulan hasil penelitian, 
+melainkan berupa rangkaian hasil yang sudah dikenali melalui 
+beberapa alur pikir tentang terjadinya suatu peristiwa ilmiah dari 
+suatu topik ilmiah yang akan dikaji atau diteliti. 
+2.2 Landasan Teoretik 
+Landasan teoretik berisi konstruksi teori atau konsep yang 
+mendasari suatu pembahasan dalam penelitian. 
+2.3 Kerangka Berpikir (bila ada) 
+2.4 Hipotesis Teoretis (bila ada) 
+3. METODE PENELITIAN 
+Bab ini mengungkapkan metode penelitian yang akan diterapkan, 
+tahapan penelitian yang akan dilaksanakan, prosedur penelitian, luaran 
+dan indikator capaian yang terukur di setiap tahapan, teknik 
+pengumpulan data, analisis data, cara penafsiran, dan penyimpulan 
+hasil penelitian. Bagi penelitian yang dilaksanakan melalui eksperimen 
+di laboratorium, perlu disajikan rincian alat dan bahan yang digunakan 
+beserta informasi yang penting untuk diketahui mengenai alat dan 
+bahan tersebut. Bagi penelitian yang menggunakan metode survei 
+agar melampirkan kuesioner lengkap sebagai lampiran. Perlu juga 
+dituliskan desain penelitian yang akan dilakukan. 
+3.1 Pendekatan, Jenis, dan Prosedur Penelitian 
+3.2 Lokasi dan Waktu Penelitian 
+3.3 Subjek Penelitian/Sampel dan Populasi 
+
+---PAGE BREAK---
+16 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+3.4 Variabel Penelitian dan Definisi Operasional (bila ada) 
+3.5 Hipotesis Statistik (bila ada) 
+3.6 Data dan Sumber Data 
+3.7 Teknik Pengumpulan Data 
+3.8 Teknik Keabsahan Data 
+3.9 Teknik Analisis Data 
+3.10 Etika Penelitian (Bila Ada) 
+ 
+c. Bagian Akhir Proposal Skripsi 
+1) Daftar Pustaka 
+2) Lampiran Biodata Penulis 
+3) Lampiran SK pembimbing 
+4) Lampiran instrumen 
+ 
+D.PENULISAN LAPORAN SKRIPSI 
+1. Format Laporan Skripsi 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,5 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri         = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah   = 3 cm. 
+ 
+2. Sistematika Penulisan Isi Laporan Skripsi 
+a. Bagian Awal Laporan Skripsi 
+1) 
+Sampul (hard cover) 
+2) 
+Halaman Judul 
+3) 
+Persetujuan Pembimbing 
+4) 
+Pengesahan Tim Penguji 
+5) 
+Pernyataan Keaslian 
+6) 
+Moto dan Persembahan 
+7) 
+Abstrak dan Abstract (English) 
+Abstrak ditulis dengan spasi 1.0 (single space). Komponen 
+penulisan abstrak terdiri atas judul, nama penulis, nama 
+pembimbing, 
+tujuan 
+penulisan, 
+metode, 
+dan 
+substansi 
+hasil/temuan. 
+
+---PAGE BREAK---
+17 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+8) 
+Prakata 
+9) 
+Daftar Isi 
+10) Daftar Gambar (bila ada) 
+11) Daftar Tabel (bila ada) 
+12) Daftar Istilah (jika ada) 
+ 
+b. Bagian Utama Laporan Skripsi 
+BAB 1. PENDAHULUAN 
+Bab ini berisi uraian tentang latar belakang atau justifikasi ilmiah dan 
+permasalahan yang akan diteliti. Alasan penelitian tersebut perlu 
+diungkapkan melalui pemaparan fenomena nyata yang ditemui 
+peneliti, penelitian yang pernah dilakukan sebelumnya terkait 
+fenomena tersebut, serta kesenjangan yang terjadi antara kondisi saat 
+ini dengan kondisi yang seharusnya menurut kajian peneliti, serta state 
+of the art penelitian. Bab ini perlu dicantumkan tujuan khusus 
+penelitian, manfaat penelitian, keutamaan penelitian, temuan yang 
+ditargetkan, dan kontribusi penelitian terhadap ilmu pengetahuan 
+sesuai dengan bidang ilmu pengusul. Secara sistematis, pendahuluan 
+terdiri atas: 
+1.1 Latar Belakang 
+Berisi penjelasan mengenai alasan mengapa masalah yang 
+dikemukakan dalam topik skripsi: menarik, penting, perlu diteliti. 
+1.2 Batasan Masalah (bila ada) 
+1.3 Rumusan Masalah 
+Berisi perumusan masalah yang ditulis secara singkat, padat, dan 
+sistematis tentang permasalahan yang diteliti. 
+1.4 Tujuan Penelitian 
+Berisi 
+tentang 
+upaya 
+penyelesaian 
+masalah 
+(mengetahui, 
+menganalisis, menghitung, memastikan parameter- parameter 
+yang relevan dengan topik tulisan). Tujuan harus terjawab di dalam 
+abstrak, pembahasan, maupun simpulan. 
+1.5 Manfaat Penelitian 
+Berisi uraian tentang faedah yang diharapkan dari sisi ilmu 
+pengetahuan dan teknologi, maupun dari sisi penerapannya. 
+Manfaat dapat bersifat teoretis maupun praktis. 
+1.6 Kebaruan Penelitian 
+Berisi uraian yang menunjukkan perbedaan dan/atau perbaikan 
+dibandingkan dengan penelitian terdahulu. Untuk skripsi, penulis 
+
+---PAGE BREAK---
+18 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+dapat menunjukkan kebaruan dari segi konsep, metode, ilmu dan 
+teknologi. 
+BAB 2. KAJIAN PUSTAKA 
+2.1 Tinjauan Pustaka 
+2.2 Landasan Teoretik 
+2.3 Kerangka Berpikir (bila ada) 
+2.4 Hipotesis Teoretis (bila ada) 
+BAB 3. METODE PENELITIAN 
+3.1 Pendekatan, Jenis, dan Prosedur Penelitian 
+3.2 Lokasi dan Waktu Penelitian 
+3.3 Subjek Penelitian/Sampel dan Populasi 
+3.4 Variabel Penelitian dan Definisi Operasional (bila ada) 
+3.5 Hipotesis Statistik (bila ada) 
+3.6 Data dan Sumber Data 
+3.7 Teknik Pengumpulan Data 
+3.8 Teknik Keabsahan Data 
+3.9 Teknik Analisis Data 
+3.10 Etika Penelitian (Bila Ada) 
+BAB 4. HASIL DAN PEMBAHASAN 
+BAB 5. PENUTUP 
+5.1 Simpulan 
+5.2 Saran 
+ 
+d. Bagian Akhir Laporan Skripsi 
+1) Daftar Pustaka 
+2) Lampiran Biodata Penulis 
+3) Lampiran SK Pembimbing 
+4) Lampiran SK Penguji 
+5) Lampiran lainnya bila diperlukan (Izin etik, dll.) 
+ 
+E. PEDOMAN PENILAIAN SKRIPSI 
+1. Penilaian Skripsi 
+Kelulusan ujian skripsi ditentukan oleh dewan penguji yang terdiri atas 
+tim dosen penguji dengan kepakaran yang relevan dengan topik yang diuji 
+sebagai hasil kesepakatan dan sekurang-kurangnya harus mencapai minimal 
+nilai B. Dosen yang menguji wajib memberikan nilai. Aspek yang dinilai 
+selama ujian skripsi meliputi: 
+
+---PAGE BREAK---
+19 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+ 
+ 
+a. isi tugas akhir, 
+b. sikap ilmiah (wawasan ilmu, kemampuan presentasi, kelancaran jawaban, 
+perilaku selama ujian, dsb.) 
+Penilaian ujian skripsi dilakukan berupa angka terhadap aspek dalam 
+bidang ilmunya. Penilaian yang dilakukanoleh penguji perlu memperhatikan 
+komponen-komponen penilaian yang dijelaskan pada panduan ini. 
+ 
+2. Kriteria Penilaian 
+ 
+Tabel 3.1 Kriteria Penilaian Ujian Tugas Akhir (Skripsi) 
+ 
+Aspek 
+Komponen 
+Kriteria Penilaian 
+Bobot 
+1 
+Isi 
+Urgensi 
+Orisinalitas 
+Kebaruan 
+Metodologi 
+Hasil dan Capaian 
+60% 
+2 
+Sikap Ilmiah 
+Wawasan bidang ilmu 
+Penguasaan materi 
+Kemampuan presentasi 
+Ketepatan jawaban 
+Kelancaran jawaban 
+40% 
+Jumlah 
+100% 
+ 
+Nilai ujian tugas akhir adalah nilai rata-rata dari masing-masing 
+penguji berupa angka dari 0 sampai 100. Secara khusus dalam penilaian 
+tugas akhir, mahasiswa dapat memublikasikan karyanya melalui platform 
+media sosial masing-masing. Jumlah likes atau respons pengunjung menjadi 
+tambahan penilaian tersendiri yang dapat dipertimbangkan oleh tim penguji. 
+ 
+3. Hasil Ujian Tugas Akhir 
+a. Diterima tanpa revisi 
+b. Diterima dengan revisi 
+c. Tidak diterima 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+2 20 
+ 
+ 0202o ada
+da 
+4. Konversi Nilai 
+Tabel 3.2 Konversi Nilai Angka ke Huruf 
+ 
+RENTANG NILAI ANGKA 
+NILAI
+HURUF 
+BOBOT
+NILAI 
+KRITERIA 
+86 ≤ Nilai Angka ≤ 100 
+A 
+4,00 
+Sangat baik 
+81≤ Nilai Angka ≤ 85 
+AB 
+3,50 
+Lebih dari baik 
+71 ≤ Nilai Angka ≤ 80 
+B 
+3,00 
+Baik 
+66 ≤ Nilai Angka ≤ 70 
+BC 
+2,50 
+Lebih dari cukup 
+61 ≤ Nilai Angka ≤ 65 
+C 
+2,00 
+Cukup 
+56 ≤ Nilai Angka ≤ 60 
+CD 
+1,50 
+Kurang dari cukup 
+51 ≤ Nilai Angka ≤ 55 
+D 
+1,00 
+Kurang 
+Nilai Angka <  51 
+E 
+0,00 
+Gagal 
+Berdasarkan pada Panduan Akademik UNNES 
+ 
+5. Keterangan 
+a. Revisi adalah perbaikan baik yang berkenaan dengan teknik penulisan
+(minor) maupun berkenaan dengan isi/substansi (mayor). 
+b. Pengumuman hasil ujian tugas akhir dilakukan oleh ketua tim penguji
+saat ujian berakhir. 
+c. Mahasiswa 
+yang 
+dinyatakan 
+lulus 
+dengan 
+perbaikan 
+dapat
+melaksanakan perbaikan sesuai saran atau masukan dari pembimbing
+dalam durasi waktu selama-lamanya 90 hari kalender. 
+d. Mahasiwa yang dinyatakan tidak lulus ujian dapat diberi kesempatan
+mengikuti ujian ulang sebanyak-banyaknya dua kali selama masa
+studinya. 
+e. Similarity level maksimal 25% atau sesuai ketentuan yg berlaku. 
+f. Selama belum menyelesaikan revisi tugas akhir, mahasiswa dilarang
+mengikuti wisuda dan mengambil ijazah, meminta transkrip nilai sesuai
+dengan batas waktu yang telah ditetapkan. Bukti menyelesaikan revisi
+adalah menyerahkan formulir yang sudah ditandatangani oleh tim
+penguji sebagai keterangan bahwa telah menyelesaikan revisi. 
+F. CONTOH FORMAT 
+Contoh format dan penulisan sampul, pengesahan, dan pernyataan
+disajikan berikut ini. 
+
+---PAGE BREAK---
+21 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Proposal Skripsi (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana ……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Proposal Skripsi 
+ 
+ 
+
+---PAGE BREAK---
+22 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Skripsi (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana ……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Laporan Skripsi 
+ 
+*Besarnya logo harus 
+proporsional serta dengan 
+perbandingan ukuran P:L = 
+1:1 (dengan tanpa teks 
+UNNES) 
+
+---PAGE BREAK---
+23 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+Contoh Format Punggung Skripsi 
+JUDUL 
+
+---PAGE BREAK---
+24 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Persetujuan Pembimbing 
+ 
+ 
+PERSETUJUAN PEMBIMBING 
+ 
+ 
+ 
+Skripsi berjudul “ ...................................................... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah disetujui untuk diajukan ke penilaian proposal/ujian skripsi. 
+ 
+ 
+ 
+Semarang, …………. 
+Pembimbing 
+ 
+ 
+ 
+ 
+Nama & NIP 
+
+---PAGE BREAK---
+25 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Pengesahan Tim Penguji 
+ 
+ 
+PENGESAHAN PENGUJI 
+ 
+Skripsi berjudul “ ..................................................... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah dipertahankan dalam ujian …. pada hari …., tanggal …. tahun 
+….. 
+ 
+Tim Penguji 
+ 
+ 
+Ketua Penguji 
+Nama 
+NIP 
+Sekretaris 
+Nama 
+NIP 
+Penguji 1 
+Nama 
+NIP 
+Penguji 2 
+Nama 
+NIP 
+Penguji 3/Pembimbing 
+Nama 
+NIP 
+
+---PAGE BREAK---
+26 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Pernyataan Penulis 
+ 
+ 
+PERNYATAAN 
+ 
+Skripsi yang ditulis berjudul “……” merupakan karya ilmiah asli dan 
+bukan hasil plagiasi dari karya ilmiah orang lain. Pendapat atau temuan 
+orang lain yang dikutip di dalam skripsi ini telah ditulis berdasarkan kode 
+etik ilmiah. Berdasarkan pernyataan ini, saya siap menanggung sanksi 
+hukum apabila ditemukan pelanggaran terhadap integritas akademik 
+dalam karya ini. 
+ 
+ 
+ 
+Semarang, ……………. 
+Yang menyatakan 
+ 
+ 
+(Materai 10.000) 
+ 
+ 
+ 
+Nama & NIM 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+27 
+ 
+ 
+ 4 
+KETENTUAN PROYEK 
+ 
+ 
+A. KRITERIA PROYEK 
+a. Proyek dapat berupa kegiatan: (1) proyek seni, (2) proyek teknologi, 
+(3) proyek kesehatan, (4) proyek olahraga, (5) proyek pendidikan, (6) 
+proyek kemanusiaan, atau proyek lain. 
+b. Proyek 
+dapat 
+bersumber 
+dari 
+permasalahan-permasalahan 
+masyarakat yang sesuai dengan bidang studi atau bidang keahlian 
+mahasiswa. 
+c. Proyek dilakukan secara terstruktur atas dasar hasil identifikasi 
+masalah, pengamatan, dan/atau penelaahan pustaka yang relevan. 
+d. Proyek yang dilaksanakan harus memiliki mitra kegiatan. 
+e. Proyek harus dapat memberikan alternatif penyelesaian masalah 
+sehingga dapat memiliki dampak sosial (masyarakat, industri, atau 
+institusi). 
+f. Proyek bisa dilakukan secara kolaboratif baik individu maupun 
+kelompok dari prodi yang sama, prodi dalam satu fakultas, atau prodi 
+antarfakultas untuk membangun kecerdasan majemuk. 
+g. Proyek yang dilaksanakan individu maupun kelompok harus 
+dilaporkan secara individu dengan mengambil sudut pandang 
+permasalahan yang berbeda-beda antaranggota tim. Contoh judul- 
+judul dari prodi yang sama, prodi dalam satu fakultas, atau prodi 
+antarfakultas dijelaskan dalam Tabel berikut. 
+ 
+B. CONTOH TOPIK PROYEK 
+Tabel berikut ini menyajikan contoh pemilihan topik dan susunan pengusul 
+baik secara mandiri maupun kelompok. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+28 
+ 
+ 
+ 
+Tabel 4.1 Contoh Topik Proyek dan Susunan Pengusul 
+dalam Satu Prodi yang Sama 
+ 
+Topik 
+Mahasiswa/ 
+Prodi 
+Judul 
+Pembimbing 
+Proyek Seni: 
+Diversifikasi produk 
+batik pesisir Semarang 
+Mahasiswa ke-1, 
+Prodi Seni Rupa 
+DiversifikasiI produk 
+batik pesisir 
+Semarang melalui 
+Penciptaan Motif 
+Dr. Estetikawati, 
+M.F.A. 
+dengan Sumber 
+Mitra yang terlibat: 
+Gagasan Mangrove 
+Kelompok Batik 
+Citarum 
+Mahasiswa ke-2, 
+Prodi Seni Rupa 
+DiversifikasiI Produk 
+Batik Pesisir 
+Semarang melalui 
+Penciptaan Motif 
+dengan Sumber 
+Gagasan Mitologi 
+Dr. Estetikawati, 
+M.F.A. 
+Mahasiswa ke-3, 
+Prodi Seni Rupa 
+DiversifikasiI Produk 
+Batik Pesisir 
+Semarang melalui 
+Penciptaan Motif 
+dengan Sumber 
+Gagasan Ikon Kota 
+Semarang 
+Dr. Estetikawati, 
+M.F.A. 
+ 
+Tabel 4.2 Contoh Topik Proyek dan Susunan Pengusul Antarprodi 
+dalam Satu Fakultas yang Sama 
+ 
+Topik 
+Mahasiswa/ 
+Prodi/ 
+Fakultas 
+Judul 
+Pembimbing 
+Proyek Pendidikan: 
+Penguatan literasi 
+berbasis digital 
+storytelling pada 
+anak sekolah dasar 
+Mitra: 
+SD IT Mutiara Hati 
+Mahasiswa ke-1 
+Prodi PGSD, 
+Fakultas Ilmu 
+Pendidikan dan 
+Psikologi 
+Penggunaan Digital 
+Storytelling untuk 
+Menguatkan Literasi 
+Baca Tulis Siswa di 
+SD IT Mutiara Hati 
+Dr. Didaktianto. 
+M.Pd. 
+Mahasiswa ke-2 
+Prodi Teknologi 
+Pendidikan, 
+Fakultas Ilmu 
+Pendidikan dan 
+Psikologi 
+Penggunaan Digital 
+Storytelling untuk 
+Menguatkan Literasi 
+Numerasi Siswa di 
+SD IT Mutiara Hati 
+Dr. Numerika, 
+M.Si. 
+Mahasiswa ke-3 
+Prodi Bimbingan 
+dan Konseling, 
+Fakultas Ilmu 
+Pendidikan dan 
+Psikologi 
+Penggunaan Digital 
+Storytelling untuk 
+Menguatkan Literasi 
+Interpersonal Siswa 
+di SD IT Mutiara Hati 
+Konselina, Ph.D. 
+
+---PAGE BREAK---
+29 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Tabel 4.3 Contoh Topik Proyek dan Susunan Pengusul Antarfakultas 
+ 
+Topik 
+Mahasiswa/ 
+Prodi/ Fakultas 
+Judul 
+Pembimbing 
+Proyek Teknologi: 
+Optimalisasi 
+pembelajaran digital 
+melalui pemanfaatan 
+augmented reality 
+Mitra: Perpusda 
+Kudus 
+Mahasiswa ke-1, 
+Prodi Teknik 
+Informatika, 
+Fakultas Teknik 
+Pengembangan 
+Aplikasi si-Buku 
+Berbasis Android 
+untuk Otomasi 
+Perpustakaan Daerah 
+Babupaten Kudus 
+Dr. Eng. 
+Androitanto, 
+M.Sc. 
+Mahasiswa ke-2, 
+Prodi DKV, 
+Fakultas Bahasa 
+dan Seni 
+Desain UI/UX pada 
+aplikasi si-Buku 
+Berbasis Android 
+untuk Menguatkan 
+Otomasi Perpustakaan 
+Daerah Babupaten 
+Kudus 
+Dr. Desainia 
+Kurniawati, M.Ds. 
+Mahasiswa ke-3, 
+Prodi Pendidikan 
+Sosiologi & 
+Antropologi 
+Fakultas Ilmu 
+Sosial dan Ilmu 
+Politik 
+Sosialisasi Berjangka 
+Pemanfaatan Aplikasi 
+si-Buku bagi para 
+Pengunjung 
+Perpustakaan Daerah 
+Babupaten Kudus 
+Sosiawan, Ph.D. 
+ 
+ 
+C. PENULISAN PROPOSAL PROYEK 
+1. Format Proposal Proyek 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,15 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah = 3 cm. 
+ 
+2. Sistematika Penulisan Isi Proposal Proyek 
+Penulisan proposal mengikuti sistematika dan ketentuan berikut ini. 
+a. Bagian Awal Proposal Proyek 
+1) Sampul (soft cover) 
+2) Halaman Judul 
+3) Persetujuan Pembimbing 
+
+---PAGE BREAK---
+30 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+4) Daftar Isi 
+5) Daftar Tabel (jika ada) 
+6) Daftar Gambar (jika ada) 
+7) Daftar Istilah (jika ada) 
+ 
+b. Bagian Utama Proposal Proyek 
+1. PENDAHULUAN 
+1.1 Gambaran Umum Masyarakat Sasaran 
+Berisi uraian profil masyarakat sasaran dan penjelasan mengenai alasan 
+mengapa perlu dilakukan proyek seni, proyek teknologi, proyek 
+kesehatan, 
+proyek 
+olahraga, 
+proyek 
+pendidikan, 
+dan 
+proyek 
+kemanusiaan. 
+1.2 Permasalahan 
+Berisi permasalahan yang dihadapi pada masyarakat sasaran 
+1.3 Solusi Pemecahan Masalah 
+Jelaskan solusi yang Anda tawarkan sebagai bagian dari proyek ini, 
+termasuk keunggulan dan kelemahan dari solusi tersebut. 
+1.4 Tujuan Proyek 
+Berisi tentang upaya penyelesaian masalah (mengetahui, menganalisis, 
+menghitung, memastikan parameter-parameter yang relevan dengan 
+topik tulisan). 
+1.5 Kontribusi Proyek bagi Masyarakat Sasaran 
+Berisi uraian tentang faedah yang diharapkan dari proyek yang dilakukan. 
+2. KAJIAN PUSTAKA 
+2.1 Tinjauan Pustaka 
+Jelaskan hasil temuan penelitian atau proyek lain yang diperoleh dari 
+pustaka acuan sebagai landasan disusunnya proyek ini. Tinjauan Pustaka 
+atau tinjauan literatur dapat diperoleh melalui penelisiran publikasi 
+artikel penelitian, artikel pengabdian, laporan kegiatan, buku, dan 
+sumber lainnya yang terpercaya. 
+2.2 Landasan Teoretik 
+Landasan teori atau konsep yang relevan yang mendasari suatu 
+pembahasan dalam proyek yang dilakukan. 
+3. METODE PELAKSANAAN 
+Bab ini mengungkapkan metode pelaksanaan yang diterapkan dan indikator 
+capaian yang terukur di setiap tahapan proyek. 
+3.1 Pendekatan Pelaksanaan Proyek 
+3.2 Lokasi dan Waktu Pelaksanaan 
+
+---PAGE BREAK---
+31 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+3.3 Mitra yang Terlibat 
+3.4 Prosedur Pelaksanaan Proyek 
+3.5 Penerapan IPTEKS 
+3.6 Teknik Monitoring dan Evaluasi Proyek 
+ 
+c. Bagian Akhir Proposal Proyek 
+Daftar Pustaka 
+Lampiran Biodata Penulis 
+Lampiran SK pembimbing 
+Lampiran Pernyataan Kesediaan Mitra 
+ 
+D. PENULISAN LAPORAN PROYEK 
+1. Format Laporan Proyek 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,5 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri         = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah   = 3 cm. 
+ 
+3. Sistematika Penulisan Isi Laporan Proyek 
+a. Bagian Awal Laporan Proyek 
+1) 
+Sampul 
+2) 
+Halaman Judul 
+3) 
+Persetujuan Pembimbing 
+4) 
+Pengesahan Tim Penguji 
+5) 
+Pernyataan Keaslian 
+6) 
+Moto dan Persembahan 
+7) 
+Abstrak Abstract (English) 
+8) 
+Prakata 
+9) 
+Daftar Isi 
+10) Daftar Gambar (bila ada) 
+11) Daftar Tabel (bila ada) 
+12) Daftar Istilah (jika ada) 
+
+---PAGE BREAK---
+32 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+b. Bagian Utama Laporan Proyek 
+BAB 1. PENDAHULUAN 
+1.1 Gambaran Umum Masyarakat Sasaran 
+1.2 Permasalahan 
+1.3 Solusi Pemecahan Masalah 
+1.4 Tujuan Proyek 
+1.5 Kontribusi Proyek bagi Masyarakat Sasaran 
+ 
+BAB 2. KAJIAN PUSTAKA 
+2.3 Tinjauan Pustaka 
+2.4 Landasan Teoretik 
+BAB 3. METODE PELAKSANAAN 
+3.1 Pendekatan Pelaksanaan Proyek 
+3.2 Lokasi dan Waktu Pelaksanaan 
+3.3 Mitra yang Terlibat 
+3.4 Prosedur Pelaksanaan Proyek 
+3.5 Penerapan IPTEKS 
+3.6 Teknik Monitoring dan Evaluasi Proyek 
+BAB 4. HASIL DAN PEMBAHASAN 
+BAB 5. PENUTUP 
+5.1 Simpulan 
+5.2 Saran 
+ 
+c. Bagian Akhir Laporan Proyek 
+Daftar Pustaka 
+Lampiran Biodata Penulis 
+Lampiran SK Pembimbing 
+Lampiran SK Penguji 
+Lampiran Publikasi Media Massa 
+Lampiran Pernyataan Pelaksanaan Keterlibatan Mitra 
+Lampiran lainnya (dokumentasi, dan sebagainya_ 
+ 
+E. PEDOMAN PENILAIAN PROYEK 
+1. Penilaian Proyek 
+Kelulusan ujian proyek ditentukan oleh tim penguji, sekurang-kurangnya 
+harus mencapai minimal nilai B. Proyek studi menekankan pada kemampuan 
+mahasiswa menyelesaikan persoalan mikro dan makro (Geraldi & Söderlund, 
+2017). Aspek yang dinilai selama ujian proyek meliputi: 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+33 
+ 
+ 20202o ada
+da 
+a.
+Aspek isi proyek 
+b. Aspek sikap ilmiah 
+Penilaian ujian proyek dilakukan berupa angka terhadap aspek dalam 
+bidang ilmunya, dengan komponen-komponen penilaian berikut ini. 
+2. Kriteria Penilaian 
+Tabel 4.4 Pedoman Penilaian Ujian Tugas Akhir (Proyek) 
+Kriteria Penilaian 
+Bobot 
+1 
+Isi 
+Urgensi 
+Orisinalitas
+Kebaruan
+Metodologi 
+Hasil dan Capaian 
+60% 
+2
+Sikap Ilmiah
+Wawasan bidang ilmu
+Penguasaan materi
+Kemampuan presentasi.
+Ketepatan jawaban. 
+Kelancaran jawaban. 
+40% 
+Jumlah 
+100% 
+Nilai ujian tugas akhir adalah nilai rata-rata dari masing-masing
+penguji berupa angka dari 0 sampai 100. Secara khusus dalam penilaian
+tugas akhir mahasiswa dapat memublikasikan karyanya melalui platform
+media sosial dan media massa. Jumlah likes atau respons pengunjung
+menjadi tambahan penilaian tersendiri yang dapat dipertimbangkan. 
+3. Konversi Nilai 
+Tabel 4.5 Konversi Nilai Angka ke Huruf 
+RENTANG NILAI ANGKA 
+NILAI
+HURUF 
+BOBOT
+NILAI 
+KRITERIA 
+86 ≤ Nilai Angka ≤ 100 
+A 
+4,00 
+Sangat baik 
+81≤ Nilai Angka ≤ 85 
+AB 
+3,50 
+Lebih dari baik 
+71 ≤ Nilai Angka ≤ 80 
+B 
+3,00 
+Baik 
+66 ≤ Nilai Angka ≤ 70 
+BC 
+2,50 
+Lebih dari cukup 
+61 ≤ Nilai Angka ≤ 65 
+C 
+2,00 
+Cukup 
+56 ≤ Nilai Angka ≤ 60 
+CD 
+1,50 
+Kurang dari cukup 
+51 ≤ Nilai Angka ≤ 55 
+D 
+1,00 
+Kurang 
+Nilai Angka <  51 
+E 
+0,00 
+Gagal 
+(Berdasarkan pada Panduan Akademik UNNES) 
+
+---PAGE BREAK---
+34 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+4. Hasil Ujian Tugas Akhir 
+1) Diterima tanpa revisi 
+2) Diterima dengan revisi 
+3) Tidak diterima 
+ 
+5. Keterangan 
+a. Revisi adalah perbaikan baik yang berkenaan dengan teknik 
+penulisan (minor) maupun berkenaan dengan isi/substansi 
+(mayor). 
+b. Pengumuman hasil ujian tugas akhir dilakukan oleh ketua tim 
+penguji saat ujian berakhir. 
+c. Mahasiswa yang dinyatakan lulus dengan perbaikan dapat 
+melaksanakan perbaikan sesuai saran atau masukan dari 
+pembimbing dalam durasi waktu selama-lamanya 90 hari 
+kalender. 
+d. Mahasiwa yang dinyatakan tidak lulus ujian dapat diberi 
+kesempatan mengikuti ujian ulang sebanyak-banyaknya dua 
+kali selama masa studinya. 
+e. Similarity level maksimal 25% atau sesuai ketentuan yg berlaku. 
+f. Selama belum menyelesaikan revisi tugas akhir, mahasiswa 
+dilarang mengikuti wisuda dan mengambil ijazah, meminta 
+transkrip nilai sesuai dengan batas waktu yang telah ditetapkan. 
+Bukti menyelesaikan revisi adalah menyerahkan formulir yang 
+sudah ditandatangani oleh tim penguji sebagai keterangan 
+bahwa telah menyelesaikan revisi tugas akhir. 
+ 
+F. CONTOH FORMAT 
+Contoh format dan penulisan sampul, persetujuan, pengesahan, dan 
+pernyataan disajikan berikut ini. 
+
+---PAGE BREAK---
+35 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Proposal Proyek ….. (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana ……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Proposal Proyek 
+ 
+ 
+*Besarnya logo harus 
+proporsional serta dengan 
+perbandingan ukuran P:L = 
+1:1 (dengan tanpa teks 
+UNNES) 
+
+---PAGE BREAK---
+36 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Proyek ……(14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana/Diploma……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Laporan Proyek 
+ 
+ 
+ 
+
+---PAGE BREAK---
+37 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Punggung Laporan Proyek 
+JUDUL 
+
+---PAGE BREAK---
+38 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Persetujuan Pembimbing 
+ 
+ 
+PERSETUJUAN PEMBIMBING 
+ 
+ 
+ 
+Proyek berjudul “ ...................................................... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah disetujui untuk diajukan ke penilaian proposal/ujian proyek. 
+ 
+ 
+ 
+Semarang, …………. 
+Pembimbing 
+ 
+ 
+ 
+ 
+Nama & NIP 
+
+---PAGE BREAK---
+39 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Pengesahan Tim Penguji 
+ 
+ 
+PENGESAHAN PENGUJI 
+ 
+Proyek berjudul “ ..................................................... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah dipertahankan dalam ujian …. pada hari …., tanggal …. tahun 
+….. 
+ 
+Tim Penguji 
+ 
+ 
+Ketua Penguji 
+Nama 
+NIP 
+Sekretaris 
+Nama 
+NIP 
+Penguji 1 
+Nama 
+NIP 
+Penguji 2 
+Nama 
+NIP 
+Penguji 3/Pembimbing 
+Nama 
+NIP 
+
+---PAGE BREAK---
+40 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Pernyataan Penulis 
+ 
+ 
+PERNYATAAN 
+ 
+Proyek yang ditulis berjudul “……” merupakan karya asli dan bukan 
+hasil plagiasi dari karya orang lain. Pendapat atau temuan orang lain yang 
+dikutip di dalam proyek ini telah ditulis berdasarkan kode etik ilmiah. 
+Berdasarkan pernyataan ini, saya siap menanggung sanksi hukum 
+apabila ditemukan pelanggaran terhadap integritas akademik dalam 
+karya ini. 
+ 
+ 
+ 
+Semarang, ……………. 
+Yang menyatakan 
+ 
+ 
+(Materai 10.000) 
+ 
+ 
+Nama & NIM 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+41 
+ 
+ 
+ 5 
+KETENTUAN PROTOTIPE 
+ 
+ 
+A. KRITERIA POROTIPE 
+1) 
+Prototipe dapat berupa rancangan produk fisik atau digital pada 
+bidang karya seni, olah raga, teknologi, kesehatan, dan sosial- 
+budaya. 
+2) 
+Gagasan 
+prototipe 
+dapat 
+bersumber 
+dari 
+permasalahan- 
+permasalahan masyarakat yang sesuai dengan bidang studi atau 
+bidang keahlian mahasiswa. 
+3) 
+Prototipe berorientasi untuk pengujian konsep atau proses kerja. 
+4) 
+Prototipe diharapkan memiliki potensi dampak fungsional atau 
+komersial. 
+5) 
+Prototipe dirancang secara terstruktur berdasarkan prosedur ilmiah 
+yang relevan. 
+6) 
+Prototipe dapat dilakukan secara individu maupun kelompok dari 
+prodi yang sama, prodi dalam satu fakultas, atau prodi antarfakultas. 
+7) 
+Prototipe yang dihasilkan harus terdaftar pada HKI DJKI. 
+8) 
+Prototipe dapat dilakukan secara individu maupun kelompok dari 
+prodi yang sama, prodi dalam satu fakultas, atau prodi antarfakultas. 
+Contoh judul-judul dari prodi yang sama, prodi dalam satu fakultas, 
+atau prodi antarfakultas dijelaskan dalam Tabel berikut. 
+ 
+B. CONTOH TOPIK PROTOTIPE 
+Tabel berikut ini menyajikan contoh pemilihan topik dan susunan pengusul 
+baik secara mandiri maupun kelompok. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+42 
+ 
+ 
+ 
+Tabel 5.1 Contoh Topik Prototipe dan Susunan Pengusul 
+dalam Satu Prodi yang Sama 
+ 
+Topik 
+Mahasiswa/ 
+Prodi 
+Judul 
+Pembimbing 
+Perancangan naskah 
+drama anak berbasis 
+lingkungan sosial 
+budaya 
+Mahasiswa ke-1, 
+Prodi Sastra 
+Indonesia 
+Perancangan Naskah 
+Drama Anak 
+Bermuatan Nilai 
+Budaya Banyumasan 
+Dr. Litera, M.Hum. 
+Mahasiswa ke-2, 
+Prodi Sastra 
+Indonesia 
+Perancangan Naskah 
+Drama Anak 
+Bermuatan Nilai 
+Budaya Pesisir Jawa 
+Dr. Litera, M.Hum. 
+Mahasiswa ke-3, 
+Prodi Sastra 
+Indonesia 
+Perancangan Naskah 
+Drama Anak 
+Bermuatan Nilai 
+Budaya Cirebon 
+Dr. Litera, M.Hum. 
+ 
+Tabel 5.2 Contoh Topik Prototipe dan Susunan Pengusul Antarprodi dalam Satu 
+Fakultas yang Sama 
+ 
+Topik 
+Mahasiswa/ 
+Prodi 
+Judul 
+Pembimbing 
+Perancangan 
+perangkat 
+pembelajaran sains 
+berbasis etnosains 
+kurikulum merdeka 
+Mahasiswa ke-1 
+Prodi Pendidikan 
+Kimia, Fakultas MIPA 
+Perancangan E- 
+Modul Pembelajaran 
+Kimia Fase F Berbasis 
+Etnosains untuk 
+Materi Pokok Asam- 
+Basa 
+Dr. Kimiawati. 
+M.Pd. 
+Mahasiswa ke-2 
+Prodi Pendidikan 
+Fisika, Fakultas MIPA 
+Perancangan LKPD 
+Pembelajaran Fisika 
+Fase F Berbasis 
+Etnosains untuk 
+Materi Pokok 
+Gelombang 
+Elektromagnetik 
+Dr. Fisikawati, 
+M.Sc. 
+Mahasiswa ke-3 
+Prodi Pendidikan 
+Biologi, Fakultas 
+MIPA 
+Perancangan Model 
+Pembelajaran Biologi 
+Fase F Berbasis 
+Etnosains untuk 
+Materi Pokok 
+Struktur dan Fungsi 
+Sel 
+Bio Putranto, 
+Ph.D. 
+
+---PAGE BREAK---
+43 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Tabel 5.3 Contoh Topik Prototipe dan Susunan Pengusul Antarfakultas 
+ 
+Topik 
+Mahasiswa/ 
+Prodi 
+Judul 
+Pembimbing 
+Mahasiswa ke- Perancangan Bahasa 
+Dr. rer.nat. 
+Perancangan sistem 
+informasi keuangan 
+BUMDES berbasis 
+website 
+1, 
+Prodi Teknik 
+Informatika, 
+Fakultas 
+Teknik 
+Pemrograman pada 
+Website SIKEU- 
+BUMDES 
+Websitanto, M.Sc. 
+Mahasiswa ke- Perancangan Flowchart Dr. Eko Nomiawan, 
+2, 
+System dan Basis Data 
+M.Si. 
+Prodi 
+untuk Website SIKEU- 
+Pendidikan 
+BUMDES 
+Ekonomi 
+Mahasiswa ke- Perancangan Desain 
+Seniawati, M.Sn. 
+3, 
+Identitas Visual untuk 
+Ph.D. 
+Prodi Seni 
+Website SIKEU- 
+Rupa, Fakultas 
+BUMDES 
+Bahasa dan 
+Seni 
+ 
+ 
+C. PENULISAN PROPOSAL PROTOTIPE 
+1. Format Proposal Prototipe 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,15 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri         = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah   = 3 cm. 
+ 
+2. Sistematika Penulisan Isi Proposal Prototipe 
+Penulisan proposal mengikuti sistematika dan ketentuan berikut ini. 
+a. Bagian Awal Proposal Prototipe 
+1) Sampul (soft cover) 
+2) Halaman Judul 
+3) Persetujuan Pembimbing 
+4) Daftar Isi 
+
+---PAGE BREAK---
+44 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+5) Daftar Tabel (jika ada) 
+6) Daftar Gambar (jika ada) 
+7) Daftar Istilah (jika ada) 
+ 
+d. Bagian Utama Proposal Prototipe 
+1. PENDAHULUAN 
+1.1 Latarbelakang 
+Berisi uraian urgensi perancangan protipe. Fenomena atau persoalan 
+yang menjadi alasan perancangan prototipe dapat diungkapkan. Bila 
+perlu, dapat dikuatkan dukungan dengan literatur atau data yang 
+mendukung. 
+1.2 Rumusan masalah 
+Tuliskan permasalahan yang akan dipecahkan melalui perancangan 
+prototipe. Permasalahan dapat dituliskan dalam bentuk pernyataan atau 
+kalimat tanya. 
+1.3 Tujuan Prototipe 
+Jelaskan tujuan yang merujuk pada solusi yang ditawarkan melalui 
+prototipe ini. 
+1.4 Manfaat Prototipe 
+Berisi manfaat yang dapat dikontribusikan secara nyata dari perancangan 
+prototipe. 
+1.5 Potensi Dampak Fungsional/Komersial 
+Berisi uraian potensi dampak penerapan prototipe atau dampak 
+komersial dari prototipe. 
+ 
+2. KAJIAN PUSTAKA 
+2.5 Tinjauan Pustaka 
+Jelaskan literatur prototipe terdahulu sebagai acuan perancangan 
+prototipe. Tinjauan pustaka atau tinjauan literatur dapat diperoleh 
+melalui penelusiran publikasi artikel penelitian, artikel pengabdian, 
+laporan kegiatan, buku, dan sumber lainnya yang terpercaya. 
+2.6 Landasan Teoretik 
+Landasan teori atau konsep yang relevan yang mendasari suatu 
+perancangan prototipe yang dilakukan. 
+ 
+3. METODE PELAKSANAAN 
+Bab ini mengungkapkan metode pelaksanaan yang diterapkan dan indikator 
+capaian yang terukur di setiap tahapan prototipe. 
+
+---PAGE BREAK---
+45 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+3.1 Pendekatan Perancangan 
+3.2 Lokasi dan Waktu 
+3.3 Prosedur Perancangan 
+3.4 Teknik Perancangan 
+3.5 Teknik Uji Kelayakan Hasil 
+ 
+e. Bagian Akhir Proposal Prototipe 
+Daftar Pustaka 
+Lampiran Biodata Penulis 
+Lampiran Draf Karya/Sketsa/Storyboard/Storyline 
+Lampiran SK pembimbing 
+ 
+D. PENULISAN LAPORAN PROTOTIPE 
+1. Format Laporan Prototipe 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,5 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri         = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah   = 3 cm. 
+ 
+2. Sistematika Penulisan Isi Laporan Prototipe 
+a. Bagian Awal Laporan Prototipe 
+1) 
+Sampul 
+2) 
+Halaman Judul 
+3) 
+Persetujuan Pembimbing 
+4) 
+Pengesahan Tim Penguji 
+5) 
+Pernyataan Keaslian 
+6) 
+Moto dan Persembahan 
+7) 
+Abstrak 
+8) 
+Prakata 
+9) 
+Daftar Isi 
+10) Daftar Gambar (bila ada) 
+11) Daftar Tabel (bila ada) 
+12) Daftar Istilah (jika ada) 
+
+---PAGE BREAK---
+46 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+d. Bagian Utama Laporan Prototipe 
+BAB 1. PENDAHULUAN 
+1.1 Latarbelakang 
+1.2 Rumusan masalah 
+1.3 Tujuan Prototipe 
+1.4 Manfaat Prototipe 
+1.5 Potensi Dampak Fungsional/Komersial 
+BAB 2. KAJIAN PUSTAKA 
+2.7 Tinjauan Pustaka 
+2.8 Landasan Teoretik 
+BAB 3. METODE PELAKSANAAN 
+3.1 Pendekatan Perancangan 
+3.2 Lokasi dan Waktu 
+3.3 Prosedur Perancangan 
+3.4 Teknik Perancangan 
+3.5 Teknik Uji Kelayakan Hasil 
+BAB 4. HASIL DAN PEMBAHASAN 
+BAB 5 PENUTUP 
+5.1 Simpulan 
+5.2 Saran 
+ 
+e. Bagian Akhir Laporan Prototipe 
+Daftar Pustaka 
+Lampiran Biodata Penulis 
+Lampiran SK Pembimbing 
+Lampiran SK Penguji 
+Lampiran Luaran HKI 
+Lampiran Publikasi Media Masa atau Media Sosial 
+Lampiran lain yang diperlukan 
+ 
+E. PEDOMAN PENILAIAN PROTOTIPE 
+1. Penilaian Prototipe 
+Kelulusan ujian proyek ditentukan oleh dewan penguji yang terdiri atas 
+tim dosen penguji dengan kepakaran yang relevan dengan topik yang 
+diuji sebagai hasil kesepakatan dan sekurang-kurangnya harus mencapai 
+minimal nilai B. Dosen yang menguji wajib memberikan nilai. Aspek yang 
+
+---PAGE BREAK---
+47 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+dinilai selama ujian prototipe meliputi: 
+a. Aspek isi, 
+b. Sikap ilmiah 
+Penilaian ujian prototipe dilakukan berupa angka terhadap aspek dalam 
+bidang 
+ilmunya. 
+Penilaian 
+yang 
+dilakukan 
+oleh 
+penguji 
+perlu 
+memperhatikan komponen-komponen penilaian yang dijelaskan pada 
+panduan ini. 
+ 
+2. Kriteria Penilaian 
+Tabel 5.4 Pedoman Penilaian Tugas Akhir (Prototipe) 
+ 
+Aspek 
+Komponen 
+Kriteria Penilaian 
+Bobot 
+1 
+Isi 
+Urgensi 
+Orisinalitas 
+Kebaruan 
+Metodologi 
+Hasil dan Capaian 
+60% 
+2 
+Sikap Ilmiah 
+Wawasan bidang ilmu 
+Penguasaan materi 
+Kemampuan presentasi. 
+Ketepatan jawaban. 
+Kelancaran jawaban. 
+40% 
+Jumlah 
+100% 
+ 
+Nilai ujian tugas akhir (prototipe) adalah nilai rata-rata dari masing- 
+masing penguji berupa angka dari 0 sampai 100. Secara khusus dalam 
+penilaian tugas akhir mahasiswa dapat memublikasikan karyanya melalui 
+platform media sosial dan media massa. Jumlah likes atau respons 
+pengunjung 
+menjadi 
+tambahan 
+penilaian 
+tersendiri 
+yang 
+dapat 
+dipertimbangkan oleh tim penguji. 
+ 
+3. Hasil Ujian Tugas Akhir 
+1) Diterima tanpa revisi 
+2) Diterima dengan revisi 
+3) Tidak diterima 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+2 48 
+ 
+ 0202o ada
+da 
+4. Konversi Nilai 
+Tabel 6.3 Konversi Nilai Angka ke Huruf 
+RENTANG NILAI ANGKA 
+NILAI
+HURUF 
+BOBOT
+NILAI 
+KRITERIA 
+86 ≤ Nilai Angka ≤ 100 
+A 
+4,00 
+Sangat baik 
+81≤ Nilai Angka ≤ 85 
+AB 
+3,50 
+Lebih dari baik 
+71 ≤ Nilai Angka ≤ 80 
+B 
+3,00 
+Baik 
+66 ≤ Nilai Angka ≤ 70 
+BC 
+2,50 
+Lebih dari cukup 
+61 ≤ Nilai Angka ≤ 65 
+C 
+2,00 
+Cukup 
+56 ≤ Nilai Angka ≤ 60 
+CD 
+1,50 
+Kurang dari cukup 
+51 ≤ Nilai Angka ≤ 55 
+D 
+1,00 
+Kurang 
+Nilai Angka <  51 
+E 
+0,00 
+Gagal 
+5.Keterangan 
+a.
+Revisi adalah perbaikan baik yang berkenaan dengan teknik
+penulisan (minor) maupun berkenaan dengan isi/substansi (mayor). 
+b.
+Pengumuman hasil ujian tugas akhir dilakukan oleh ketua tim
+penguji saat ujian berakhir. 
+c.
+Mahasiswa yang dinyatakan lulus dengan perbaikan dapat
+melaksanakan perbaikan sesuai saran atau masukan dari
+pembimbing dalam durasi waktu selama-lamanya 90 hari kalender. 
+d.
+Mahasiwa yang dinyatakan tidak lulus ujian dapat diberi
+kesempatan mengikuti ujian ulang sebanyak-banyaknya dua kali
+selama masa studinya. 
+e.
+Similarity level maksimal 25% atau sesuai ketentuan yg berlaku. 
+f.
+Selama belum menyelesaikan revisi tugas akhir, mahasiswa dilarang
+mengikuti wisuda dan mengambil ijazah, meminta transkrip nilai
+sesuai dengan batas waktu yang telah ditetapkan. Bukti
+menyelesaikan revisi adalah menyerahkan formulir yang sudah
+ditandatangani oleh tim penguji sebagai keterangan bahwa telah
+menyelesaikan revisi tugas akhir. 
+F. CONTOH FORMAT 
+Contoh format dan penulisan sampul, persetujuan, pengesahan, dan
+pernyataan disajikan berikut ini. 
+
+---PAGE BREAK---
+49 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Proposal Prototipe (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana/Diploma……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Proposal Prototipe 
+ 
+ 
+*Besarnya logo harus 
+proporsional serta dengan 
+perbandingan ukuran P:L = 
+1:1 (dengan tanpa teks 
+UNNES) 
+
+---PAGE BREAK---
+50 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Prototipe (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana/Diploma……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Laporan Prototipe 
+ 
+
+---PAGE BREAK---
+51 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Punggung Laporan Prototipe 
+JUDUL 
+
+---PAGE BREAK---
+52 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Persetujuan Pembimbing 
+ 
+ 
+PERSETUJUAN PEMBIMBING 
+ 
+ 
+ 
+Prototipe berjudul “ .................................................. ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah disetujui untuk diajukan ke penilaian proposal/ujian prototipe. 
+ 
+ 
+ 
+Semarang, …………. 
+Pembimbing 
+ 
+ 
+ 
+ 
+Nama & NIP 
+
+---PAGE BREAK---
+53 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Pengesahan Tim Penguji 
+ 
+ 
+PENGESAHAN PENGUJI 
+ 
+Prototipe berjudul “ ................................................. ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah dipertahankan dalam ujian …. pada hari …., tanggal …. tahun 
+….. 
+ 
+Tim Penguji 
+ 
+ 
+Ketua Penguji 
+Nama 
+NIP 
+Sekretaris 
+Nama 
+NIP 
+Penguji 1 
+Nama 
+NIP 
+Penguji 2 
+Nama 
+NIP 
+Penguji 3/Pembimbing 
+Nama 
+NIP 
+
+---PAGE BREAK---
+54 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Pernyataan Penulis 
+ 
+ 
+PERNYATAAN 
+ 
+Prototipe yang ditulis berjudul “……” merupakan karya asli dan bukan 
+hasil plagiasi dari karya orang lain. Pendapat atau temuan orang lain yang 
+dikutip di dalam prototipe ini telah ditulis berdasarkan kode etik ilmiah. 
+Berdasarkan pernyataan ini, saya siap menanggung sanksi hukum 
+apabila ditemukan pelanggaran terhadap integritas akademik dalam 
+karya ini. 
+ 
+ 
+ 
+Semarang, ……………. 
+Yang menyatakan 
+ 
+ 
+(Materai 10.000) 
+ 
+ 
+Nama & NIM 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+55 
+ 
+ 
+ 6 
+KETENTUAN PUBLIKASI ILMIAH 
+ 
+ 
+A. KRITERIA PUBLIKASI ILMIAH 
+1) 
+Publikasi ilmiah dapat digunakan sebagai salah satu jenis tugas akhir 
+mahasiswa program Sarjana dan Diploma di UNNES. 
+2) 
+Publikasi ilmiah dapat dilakukan pada jurnal nasional terindeks 
+SINTA 1-6, jurnal internasional, atau jurnal internasional terindeks 
+SCOPUS/WoS. 
+3) 
+Jurnal internasional yang tidak terindeks SCOPUS/WoS merujuk 
+pada PO PAK Dikti yang berlaku. 
+4) 
+Publikasi ilmiah sebagai sebuah tugas akhir tidak dapat dilakukan 
+secara berkelompok dengan mahasiswa lain untuk kepentingan 
+yang sama. 
+5) 
+Artikel ilmiah dapat ditulis berdasarkan hasil penelitian, hasil 
+kegiatan luar kampus, systematic review, atau hasil kegiatan ilmiah 
+lainnya. 
+6) 
+Publikasi ilmiah dilakukan pada jurnal bereputasi dengan bahasa 
+Indonesia, bahasa Inggris, atau bahasa asing lainnya sesuai dengan 
+ketentuan jurnal yang dituju. 
+7) 
+Publikasi ilmiah dilakukan atas dasar persetujuan dengan dosen 
+pembimbing yang ditetapkan melalui SK Dekan. 
+8) 
+Proposal artikel ilmiah ditulis sesuai dengan format dan sistematika 
+yang ditentukan dalam panduan ini, sedangkan manuskrip untuk 
+kepentingan submission dan publikasi mengikuti kaidah template 
+jurnal yang dituju. 
+9) 
+Publikasi ilmiah harus mencantumkan nama mahasiswa yang 
+bersangkutan sebagai penulis pertama (first author) dengan 
+menyertakan dosen pembimbing sebagai penulis kedua (co-
+author) dan penulis korespondensi (corresponding author). 
+10) Publikasi ilmiah dapat dinilai atau diujikan dalam sidang tugas akhir 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+56 
+ 
+ 
+ 
+bila sudah terbit (published) atau sekurang-kurangnya dalam status 
+diterima (accepted) pada salah satu jurnal ilmiah sesuai dengan 
+ketentuan panduan ini. 
+11) Mahasiswa yang berhasil menerbitkan artikel atau accepted pada 
+jurnal internasional terindeks SCOPUS, WoS, SINTA 1, atau SINTA 2 
+mendapat reward penilaian sangat baik (A) tanpa mekanisme 
+sidang tugas akhir, namun tetap mengusulkan penilai/penguji dan 
+memenuhi persyaratan yudisium. 
+12) Mahasiswa yang berhasil menerbitkan artikel pada jurnal nasional 
+terindeks Sinta 3-6 atau jurnal internasional harus mempertahankan 
+tulisannya dalam sidang tugas akhir di depan tim penguji yang 
+ditetapkan dengan surat tugas Dekan. 
+ 
+B. CONTOH LINGKUP DAN JUDUL PUBLIKASI ILMIAH 
+ 
+Tabel 6.1 Contoh Topik dan Judul Publikasi 
+ 
+Lingkup 
+Judul Artikel 
+Penerbit 
+Seni 
+Between Aesthetics and Function: 
+Transformations and Use of Batik 
+Motifs in Urban Interiors in 
+Indonesia 
+International Society 
+for the Study of 
+Vernacular 
+Settlements 
+(SCOPUS) 
+Pendidikan 
+High school science teachers’ 
+assessment literacy for inquiry- 
+based science instruction 
+International Journal 
+of Science Education 
+(SCOPUS) 
+Linguistik 
+Konstruksi Kausatif dalam Bahasa 
+Melayu Langkat 
+Jurnal Lingua 
+(SINTA 3) 
+Sosial- 
+Budaya 
+How Does Social Capital Work in 
+Developing Karimunjawa Maritime 
+Tourism? 
+Jurnal Komunitas 
+(SINTA 2) 
+Ekonomi 
+Determinant of Property Price 
+Through the Monetary Variables: 
+an ARDL Approach 
+Jurnal Ekonomi 
+Pembengunan 
+(SINTA 2) 
+Sains 
+Synthesis And Characterization of 
+Nano Chitosan-Avocado Seed 
+Starch as Edible Films 
+Jurnal Kimia Riset 
+(SINTA 3) 
+Kesehatan 
+Tuberculosis Risk Mapping in 
+Yogyakarta in 2020: An Ecological 
+Study 
+ UJPH 
+ 
+Teknologi 
+Implementasi Machine Learning 
+dalam Deteksi Risiko Tinggi 
+Diabetes Melitus pada Kehamilan 
+JTIIK (SINTA 2) 
+
+---PAGE BREAK---
+57 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+C. PENULISAN PROPOSAL ARTIKEL ILMIAH 
+1. Format Proposal Penulisan Artikel 
+a. 
+Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,15 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. 
+Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+kiri       = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah = 3 cm. 
+ 
+2. Sistematika Isi Proposal Penuliasan Artikel 
+Penulisan proposal mengikuti sistematika dan ketentuan berikut ini. 
+a. Bagian Awal Proposal Penulisan Artikel 
+1) Sampul (soft cover) 
+2) Halaman Judul 
+3) Persetujuan Pembimbing 
+4) Daftar Isi 
+ 
+b. Bagian Utama Proposal Penulisan Artikel 
+1. PENDAHULUAN 
+1.1 Latar Belakang 
+Berisi penjelasan mengenai alasan mengapa masalah yang 
+dikemukakan dalam topik: menarik, penting, perlu diteliti. 
+1.2 Rumusan Masalah 
+Berisi research question yang ditulis secara singkat, padat, dan 
+sistematis tentang permasalahan yang diteliti. 
+1.4 Tujuan 
+Berisi 
+tentang 
+upaya 
+penyelesaian 
+masalah 
+(mengetahui, 
+menganalisis, menghitung, memastikan parameter- parameter 
+yang relevan dengan topik tulisan). Pastikan tujuan akan terjawab 
+di dalam abstrak, pembahasan, maupun simpulan. 
+1.5 Manfaat 
+Berisi uraian tentang faedah yang diharapkan dari sisi ilmu 
+pengetahuan dan teknologi, maupun dari sisi penerapannya. 
+Manfaat dapat bersifat teoretis maupun praktis. 
+
+---PAGE BREAK---
+58 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+1.6 Kebaruan 
+Berisi uraian yang menunjukkan perbedaan dan/atau perbaikan 
+dibandingkan dengan penelitian terdahulu. 
+2. TINJAUAN PUSTAKA 
+Penulis dapat menjelaskan hasil-hasil penelitian atau studi terdahulu 
+untuk memetakan dan menilai area penelitian untuk menyadarkan 
+urgensi dan membenarkan pertanyaan ilmiah. Tinjauan Pustaka dalam 
+sebuah artikel juga dapat memberikan dasar untuk membangun model 
+konseptual, teori baru, atau memetakan perkembangan suatu bidang 
+penelitian tertentu dari waktu ke waktu. Dengan demikian, 
+kemutakhiran tinjauan pustaka dari jurnal-jurnal bereputasi sangat 
+dianjurkan. 
+3. METODE 
+Bab ini mengungkapkan metode penelitian atau studi yang akan 
+diterapkan, tahapan penelitian yang akan dilaksanakan, prosedur 
+penelitian, luaran dan indikator capaian yang terukur di setiap tahapan, 
+teknik pengumpulan data, analisis data, cara penafsiran, dan 
+penyimpulan hasil penelitian. Penelitian dengan pendekatan kualitatif, 
+kuantitatif, maupun campuran perlu dijelaskan secara spesifik metode 
+penelitian yang digunakan. Penyusunan subbab dalam proposal 
+penulisan artikel ilmiah dapat ditentukan oleh dosne pembimbing 
+Bersama mahasiswa sesuai dengan kebutuhan dan karakteristik studi 
+masing-masing. 
+ 
+e. Bagian Akhir Proposal Penulisan Artikel Ilmiah 
+1) Daftar Pustaka 
+2) Lampiran Biodata Penulis 
+3) Lampiran SK pembimbing 
+4) Lampiran homepage/identitas jurnal yang akan dituju 
+5) Lampiran lain yang diperlukan 
+ 
+D. PENULISAN LAPORAN PUBLIKASI ILMIAH UNTUK 
+KEPERLUAN UJIAN TUGAS AKHIR 
+1. Format Bagian Awal dan Akhir Laporan 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,5 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+
+---PAGE BREAK---
+59 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+kiri = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah = 3 cm. 
+ 
+2. Sistematika Penulisan Isi Laporan Publikasi Ilmiah 
+a. Bagian Awal 
+1) Sampul 
+Sampul hard cover dengan warna sesuai fakultas (logo, judul, tujuan 
+penulisan laporan, nama dan NIM, fakultas, universitas, dan tahun 
+pengesahan (contoh pada Lampiran). 
+2) Halaman Judul 
+Halaman ini memiliki format yang sama dengan sampul luar yang dicetak 
+pada kertas putih serupa dengan bagian yang lain. 
+3) Persetujuan Pembimbing 
+4) Pengesahan Penguji 
+5) Pernyataan 
+6) Moto dan Persembahan 
+7) Prakata 
+ 
+b. Bagian Utama Laporan Publikasi Ilmiah 
+Bagian ini berisi naskah artikel yang telah dipublikasikan atau accepted yang 
+disajikan berdasarkan template manuskrip jurnal masing-masing. 
+c. Bagian Akhir 
+1) Lampiran Biodata Penulis 
+2) Lampiran SK Pembimbing 
+3) Lampiran SK Penguji 
+4) Lampiran tautan (link) homepage jurnal dan URL artikel yang telah 
+terbit, atau bukti accepted (LoA) bagi naskah yang belum terbit. 
+5) Lampiran pernyataan bermaterai 10.000 tentang komitmen 
+menyelesaikan proses korespondensi sampai dengan publish bagi 
+naskah yang belum terbit, yang diketahui koorprodi dan dosen 
+pembimbing. 
+6) Lampiran bukti korespondensi (meliputi proses submit, notifikasi 
+submit, reviu, revisi, pembayaran, acceptance). 
+7) Lampiran lainnya bila diperlukan oleh Prodi (izin etik, dll.) 
+
+---PAGE BREAK---
+60 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+E. PENYIMPANAN LAPORAN PUBLIKASI ILMIAH KE 
+REPOSITORI PERPUSTAKAAN UNNES 
+Mahasiswa berkewajiban mengirimkan softcopy naskah laporan yang telah 
+diujikan dan disahkan tim penguji ke repository UNNES “tanpa 
+mencantumkan isi artikel” di dalamnya, dengan format sebagai berikut. 
+ 
+1. Format Bagian Awal dan Akhir Laporan 
+Sesuai dengan format untuk keperluan ujian/sidang publikasi. 
+2. Sistematika Penulisan Isi laporan 
+a. Bagian Awal 
+Sesuai dengan sistematika untuk keperluan ujian/sidang publikasi. 
+ 
+b. Bagian Utama Laporan 
+1) Berisi tautan: (a) homepage jurnal, (b) URL artikel bagi artikel yang 
+sudah terbit. 
+2) Berisi keterangan acceptance bagi artikel yang belum terbit, 
+meliputi: (a) nama jurnal, (b) tautan homepage jurnal, (c) keterangan 
+volume, nomor, tahun akan terbit, dan (d) bukti accepted (LoA). 
+3) Tidak perlu mencantumkan isi artikel. 
+c. Bagian Akhir 
+1) Lampiran Biodata Penulis 
+2) Lampiran SK Pembimbing 
+3) Lampiran SK Penguji 
+4) Lampiran bukti korespondensi (meliputi proses submit, notifikasi 
+submit, reviu, revisi, pembayaran, acceptance). 
+5) Lampiran pernyataan bermaterai 10.000 tentang komitmen 
+menyelesaikan proses korespondensi sampai dengan publish bagi 
+naskah yang belum terbit, yang diketahui koorprodi dan dosen 
+pembimbing. 
+6) Lampiran lainnya bila diperlukan oleh Prodi (izin etik, dll.) 
+ 
+F. PEDOMAN PENILAIAN PUBLIKASI ILMIAH 
+1. Penilaian Publikasi Ilmiah 
+a. Kelulusan ujian proyek ditentukan oleh dewan penguji yang terdiri 
+atas tim dosen penguji dengan kepakaran yang relevan dengan topik 
+yang diuji sebagai hasil kesepakatan dan sekurang-kurangnya harus 
+mencapai minimal nilai B. 
+
+---PAGE BREAK---
+61 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+b. Dosen penguji wajib memberikan nilai, meskipun mahasiswa 
+mendapatkan reward tanpa mekanisme sidang/ujian karena telah 
+berhasil publikasi pada jurnal terindeks SINTA 1, SINTA 2, atau 
+SCOPUS/WoS. 
+c. Aspek yang dinilai dalam ujian publikasi ilmiah meliputi: 
+1) Reputasi jurnal, 
+2) Aspek isi, 
+3) Sikap ilmiah 
+ 
+Penilaian ujian publikasi ilmiah dilakukan berupa angka terhadap aspek 
+dalam bidang ilmunya. Penilaian yang dilakukan oleh penguji perlu 
+memperhatikan komponen-komponen penilaian yang dijelaskan pada 
+panduan ini. 
+ 
+2. Kriteria Penilaian 
+ 
+a. 
+Penilaian Sidang Tugas Akhir (Publikasi) 
+ 
+Tabel 6.1 Pedoman Penilaian Sidang Tugas Akhir 
+(Publikasi) 
+ 
+Aspek 
+Komponen 
+Kriteria Penilaian 
+Bobot 
+1 
+Reputasi 
+Jurnal 
+• Jurnal terindeks Scopus/WoS, Sinta 1, 
+dan Sinta 2 
+• Jurnal terindeks Sinta 3 
+• Jurnal terindeks Sinta 4 
+• Jurnal terindeks Sinta 5 
+• Jurnal terindeks Sinta 6 
+30% 
+2 
+Isi 
+• Urgensi 
+• Orisinalitas 
+• Kebaruan 
+• Metodologi 
+• Hasil dan Capaian 
+40% 
+3 
+Sikap Ilmiah 
+• Wawasan bidang ilmu 
+• Penguasaan materi 
+• Kemampuan presentasi. 
+• Ketepatan jawaban. 
+• Kelancaran jawaban. 
+30% 
+Jumlah 
+100% 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+2 62 
+ 
+ 0202o ada
+da 
+b.
+Penilaian Publikasi Ilmiah Tanpa Mekanisme Sidang bagi PUBLIKASI
+SCOPUS/Wos, SINTA 1, dan SINTA 2 
+Tabel 6.2 Pedoman Penilaian Tanpa Sidang 
+Aspek 
+Komponen 
+Kriteria Penilaian 
+Bobot 
+1 
+Reputasi
+Jurnal 
+• Jurnal terindeks Scopus/WoS, Sinta 1,
+dan Sinta 2 
+50% 
+2 
+Isi 
+• Urgensi 
+• Orisinalitas 
+• Kebaruan 
+• Metodologi 
+• Hasil dan Capaian 
+50% 
+Jumlah 
+100% 
+Nilai ujian tugas akhir (publikasi ilmiah) adalah nilai rata-rata dari
+masing-masing penguji berupa angka dari 0 sampai 100. Secara khusus
+dalam penilaian tugas akhir mahasiswa dapat memublikasikan karyanya
+melalui platform media sosial dan media massa. Jumlah likes atau respons
+pengunjung 
+menjadi 
+tambahan 
+penilaian 
+tersendiri 
+yang 
+dapat
+dipertimbangkan oleh tim penguji. 
+3. Konversi Nilai 
+Tabel 6.3 Konversi Nilai Angka ke Huruf 
+RENTANG NILAI ANGKA 
+NILAI
+HURUF 
+BOBOT
+NILAI 
+KRITERIA 
+86 ≤ Nilai Angka ≤ 100 
+A 
+4,00 
+Sangat baik 
+81≤ Nilai Angka ≤ 85 
+AB 
+3,50 
+Lebih dari baik 
+71 ≤ Nilai Angka ≤ 80 
+B 
+3,00 
+Baik 
+66 ≤ Nilai Angka ≤ 70 
+BC 
+2,50 
+Lebih dari cukup 
+61 ≤ Nilai Angka ≤ 65 
+C 
+2,00 
+Cukup 
+56 ≤ Nilai Angka ≤ 60 
+CD 
+1,50 
+Kurang dari cukup 
+51 ≤ Nilai Angka ≤ 55 
+D 
+1,00 
+Kurang 
+Nilai Angka <  51 
+E 
+0,00 
+Gagal 
+4. Hasil Ujian Tugas Akhir 
+a. Diterima 
+b. Tidak diterima 
+
+---PAGE BREAK---
+63 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+5. Keterangan 
+a. Pengumuman hasil ujian publikasi ilmiah dilakukan oleh ketua dewan 
+penguji saat ujian berakhir. 
+b. Publikasi diterima apabila mahasiswa telah memenuhi kaidah ilmiah 
+dalam penulisan dan publikasi artikel ilmiah. 
+c. Publikasi tidak diterima apabila mahasiswa terbukti melanggar kode 
+etik ilmiah dalam publikasi, misalnya tindakan plagiasi, publikasi 
+ganda, atau perjokian artikel. 
+d. Similarity level maksimal 25% atau sesuai ketentuan yg berlaku. 
+e. Mahasiwa yang dinyatakan tidak lulus ujian dapat diberi kesempatan 
+melakukan publikasi ulang dan mengikuti ujian ulang sebanyak- 
+banyaknya dua kali selama masa studinya. 
+ 
+G. CONTOH FORMAT 
+Contoh format dan penulisan sampul, persetujuan, pengesahan, dan 
+pernyataan disajikan berikut ini. 
+
+---PAGE BREAK---
+64 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Proposal Artikel Ilmiah (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana ……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Proposal Penulisan Artikel Ilmiah 
+ 
+*Besarnya logo harus 
+proporsional serta dengan 
+perbandingan ukuran P:L = 
+1:1 (dengan tanpa teks 
+UNNES) 
+
+---PAGE BREAK---
+65 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Publikasi Ilmiah (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana/Diploma……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Sampul Laporan Publikasi Ilmiah 
+ 
+ 
+ 
+
+---PAGE BREAK---
+66 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Punggung Laporan Publikasi Ilmiah 
+ 
+* Punggung buku tidak perlu dituliskan apabila naskah laporan publikasi 
+tidak memiliki ketebalan yang cukup. 
+ 
+JUDUL 
+
+---PAGE BREAK---
+67 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Persetujuan Pembimbing 
+ 
+ 
+PERSETUJUAN PEMBIMBING 
+ 
+ 
+ 
+Publikasi ilmiah berjudul “ ....................................... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah disetujui untuk diajukan ke penilaian proposal/ujian publikasi. 
+ 
+ 
+ 
+Semarang, …………. 
+Pembimbing 
+ 
+ 
+ 
+ 
+Nama & NIP 
+
+---PAGE BREAK---
+68 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Pengesahan Tim Penguji 
+ 
+ 
+PENGESAHAN PENGUJI 
+ 
+Publikasi ilmiah berjudul “ ...................................... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah dipertahankan dalam ujian …. pada hari …., tanggal …. tahun 
+….. 
+ 
+Tim Penguji 
+ 
+ 
+Ketua Penguji 
+Nama 
+NIP 
+Sekretaris 
+Nama 
+NIP 
+Penguji 1 
+Nama 
+NIP 
+Penguji 2 
+Nama 
+NIP 
+Penguji 3/Pembimbing 
+Nama 
+NIP 
+
+---PAGE BREAK---
+69 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Pernyataan Penulis 
+ 
+ 
+PERNYATAAN 
+ 
+Publikasi ilmiah yang ditulis berjudul “……” merupakan karya asli dan 
+bukan hasil plagiasi dari karya orang lain. Pendapat atau temuan orang 
+lain yang dikutip di dalam prototipe ini telah ditulis berdasarkan kode 
+etik ilmiah. Berdasarkan pernyataan ini, saya siap menanggung sanksi 
+hukum apabila ditemukan pelanggaran terhadap integritas akademik 
+dalam karya ini. 
+ 
+ 
+ 
+Semarang, ……………. 
+Yang menyatakan 
+ 
+ 
+(Materai 10.000) 
+ 
+ 
+Nama & NIM 
+
+---PAGE BREAK---
+70 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+71 
+ 
+ 
+ 7 
+KETENTUAN PENYETARAAN 
+PRESTASI KEJUARAAN 
+ 
+ 
+A. KRITERIA PENYETARAAN PRESTASI KEJUARAAN 
+KARYA TULIS ILMIAH 
+Prestasi kejuaraan yang dapat disetarakan ialah kejuaraan yang 
+diselenggarakan oleh instansi resmi atau instansi terpercaya, baik dari 
+dalam negeri maupun luar negeri. Prestasi kejuaraan yang dapat 
+disetarakan minimal pada lingkup nasional. Secara khusus, kriteria 
+prestasi kejuaraan karya ilmiah yang dapat disetarakan dengan tugas 
+akhir sarjana dan diploma mengikuti Peraturan Rektor UNNES No. 37 
+tahun 2019 tentang Penghargaan Akademik kepada Mahasiswa 
+Berprestasi atau peraturan terbaru yang masih berlaku. 
+ 
+B. KRITERIA PENYETARAAN PRESTASI KEJUARAAN 
+NONKARYA TULIS ILMIAH 
+Secara khusus, kriteria prestasi kejuaraan nonkarya ilmiah yang dapat 
+disetarakan dengan tugas akhir sarjana dan diploma mengikuti 
+Peraturan Rektor UNNES No. 37 tahun 2019 tentang Penghargaan 
+Akademik kepada Mahasiswa Berprestasi atau peraturan terbaru yang 
+masih berlaku. 
+ 
+C. CONTOH TOPIK PENYETARAAN PRESTASI KEJUARAAN 
+Tabel berikut ini menyajikan contoh pemilihan topik dan susunan 
+pengusul baik secara mandiri maupun kelompok. Contoh ini juga 
+mencakup kelompok dalam satu prodi, antarprodi dalam satu fakultas, 
+atau antarfakultas. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+72 
+ 
+ 
+ 
+Tabel 7.1 Contoh Topik dan Judul Penyetaraan Prestasi 
+Kejuaraan Karya Ilmiah 
+ 
+Judul Karya 
+Tulis yang 
+Dilombakan 
+Mahasiswa/ 
+Prodi 
+Judul Laporan 
+Pembimbing 
+Negosiasi 
+identitas 
+Tekstil Troso 
+sebagai Ikon 
+Budaya 
+Jepara 
+(Medali Emas 
+Presentasi 
+PKM-PSH 
+PIMNAS 2023) 
+Mahasiswa ke- 
+1, 
+Judul laporan dapat 
+disesuaikan dengan 
+bidang ilmu masing- 
+masing 
+Nama dosen 
+pembimbing 
+Mahasiswa ke- 
+2, 
+Mahasiswa ke- 
+3, 
+ 
+Tabel 7.2 Contoh Topik dan Judul Penyetaraan Prestasi 
+Kejuaraan Nonkarya Ilmiah 
+ 
+Nama Kejuaraan 
+Mahasiswa/ 
+Prodi 
+Judul Laporan 
+Pembimbing 
+Kejuaraan Bulu 
+Tangkis Ganda Putra 
+pada ASEAN GAMES 
+2023 
+Susi Susana, 
+Prodi Ilmu 
+Keolahragaan, 
+Fakultas Ilmu 
+Keolahragaan 
+Judul laporan 
+dapat disesuaikan 
+dengan bidang 
+ilmu masing- 
+masing 
+Nama dosen 
+pembimbing 
+Alan 
+Budisukmana, 
+PJKR, 
+Fakultas Ilmu 
+Keolahragaan 
+ 
+D. PENULISAN LAPORAN PENYETARAAN KEJUARAAN 
+1. Format Umum Laporan Penyetaraan kejuaraan 
+a. Tipe huruf menggunakan Times New Roman ukuran 12. 
+b. Teks menggunakan jarak baris 1,5 spasi dan perataan teks 
+menggunakan rata kiri-kanan. 
+c. Tata letak halaman menggunakan ukuran kertas A4, satu kolom, 
+dengan margin: 
+
+---PAGE BREAK---
+73 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+kiri = 4 cm, 
+kanan = 3 cm, 
+atas = 3 cm, 
+bawah = 3 cm. 
+ 
+2. Sistematika Laporan Penyetaraan Prestasi Kejuaraan 
+a. Bagian Awal 
+1) Sampul hard cover dengan warna sesuai fakultas 
+2) Judul 
+3) Pengesahan Tim Penilai 
+4) Pernyataan 
+5) Moto dan Persembahan 
+6) Prakata 
+b. Bagian Utama 
+BAB I PENDAHULUAN 
+1.1 Latar Belakang 
+Bagian ini berisi alasan atau kondisi yang melatarbelakangi karya tulis 
+ilmiah, atau partisipasi mengikuti cabang kejuaraan berdasarkan 
+perspektif bidang ilmu masing-masing. 
+1.2 Tujuan Kegiatan 
+1.3 Manfaat Kegiatan 
+ 
+BAB II LANDASAN TEORETIK 
+Tuliskan konsep-konsep atau teori yang dapat digunakan untuk mendasari 
+pembahasan yang relevan dengan cabang kejuaraan yang diikuti. 
+BAB III METODE PELAKSANAAN KEGIATAN 
+3.1 Strategi yang Dilakukan 
+Uraikan strategi saat latihan maupun saat perlombaan dilakukan, 
+termasuk peran pembimbing dalam kegiatan tersebut. 
+3.2 Waktu dan Tempat Kegiatan 
+Uraikan waktu dan tempat kegiatan latihan maupun pelaksanaan 
+perlombaan. 
+3.3 Sarana dan Prasarana Kegiatan 
+Uraikan peralatan dan fasilitas yang digunakan dalam latihan maupun 
+perlombaan 
+BAB III HASIL KEGIATAN DAN PEMBAHASAN 
+Bagian ini berisi refleksi terhadap kejuaran yang sudah diikuti berdasarkan 
+bidang ilmu masing-masing. Penulisan bab pembahasan ini dapat dibagi ke 
+dalam subbab tertentu yang disesuaikan dengan kebutuhan atau 
+kompleksitas kegiatan yang dilakukan. 
+
+---PAGE BREAK---
+74 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+c. Bagian Akhir 
+1) Daftar Pustaka 
+2) Lampiran Sertifikat prestasi kejuaraan 
+3) Lampiran Biodata Penulis 
+4) Lampiran SK Pembimbing 
+5) Lampiran SK Penilai 
+6) Lampiran bukti pemberitaan media dan foto/tautan video kegiatan 
+ 
+E. PEDOMAN PENILAIAN PENYETARAAN KEJUARAAN 
+1. Penilaian Penyetaraan Kejuaraan 
+Kelulusan ujian proyek ditentukan oleh dewan penguji yang terdiri atas 
+tim dosen penguji dengan kepakaran yang relevan dengan topik yang 
+diuji sebagai hasil kesepakatan dan sekurang-kurangnya harus mencapai 
+minimal nilai B. Dosen yang menguji wajib memberikan nilai. Aspek yang 
+dinilai selama ujian prototipe meliputi: 
+a. Capaian prestasi 
+b. Isi 
+c. Sikap ilmiah 
+Penilaian ujian penyetaraan prestasi dilakukan berupa angka terhadap 
+aspek dalam bidang kegiatannya. Penilaian yang dilakukan oleh penguji 
+perlu memperhatikan kriteria penilaian yang dijelaskan pada panduan ini. 
+2. Kriteria Penilaian 
+ 
+Tabel 7.3 Pedoman Penilaian Tugas Akhir (Prototipe) 
+ 
+Aspek 
+Komponen 
+Kriteria Penilaian 
+Bobot 
+1 
+Capaian 
+prestasi 
+Sertifikat Juara 1, 2, 3 Internasional 
+Sertifikat Juara 1, 2, 3 Nasional 
+50 % 
+2 
+Isi 
+Urgensi 
+Orisinalitas 
+Kebaruan 
+Metodologi 
+Hasil dan Capaian 
+30 % 
+3 
+Sikap Ilmiah 
+Wawasan bidang ilmu 
+Penguasaan materi 
+Kemampuan presentasi 
+Ketepatan jawaban 
+Kelancaran jawaban 
+20% 
+Jumlah 
+100% 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+75 
+ 
+ 20202o ada
+da 
+Nilai penyetaraan prestasi kejuaraan sebagai tugas akhir adalah nilai
+rata-rata dari masing-masing penguji berupa angka dari 0 sampai 100.Secara
+khusus dalam penilaian tugas akhir mahasiswa dapat memublikasikan
+karyanya melalui platform media sosial dan media massa. Jumlah likes atau
+respons pengunjung menjadi tambahan penilaian tersendiri yang dapat
+dipertimbangkan oleh tim penguji. 
+3. Konversi Nilai 
+Tabel 7.4 Konversi Nilai Angka ke Huruf 
+RENTANG NILAI ANGKA 
+NILAI
+HURUF 
+BOBOT
+NILAI 
+KRITERIA 
+86 ≤ Nilai Angka ≤ 100 
+A 
+4,00 
+Sangat baik 
+81 ≤ Nilai Angka ≤85 
+AB 
+3,50 
+Lebih dari baik 
+71 ≤ Nilai Angka ≤ 80 
+B 
+3,00 
+Baik 
+66 ≤ Nilai Angka ≤ 70 
+BC 
+2,50 
+Lebih dari cukup 
+61 ≤ Nilai Angka ≤ 65 
+C 
+2,00 
+Cukup 
+56 ≤ Nilai Angka ≤ 60 
+CD 
+1,50 
+Kurang dari cukup 
+51 ≤ Nilai Angka ≤ 55 
+D 
+1,00 
+Kurang 
+Nilai Angka <  51 
+E 
+0,00 
+Gagal 
+(Berdasarkan pada Panduan Akademik UNNES) 
+ 
+4. Hasil Ujian Tugas Akhir 
+a.
+Diterima 
+b.
+Tidak diterima 
+5. Keterangan 
+c.
+Pengumuman hasil ujian penyetaraan prestasi kejuaraan
+dilakukan oleh ketua dewan penguji saat ujian berakhir. 
+d.
+Penyetaraan prestasi kejuaraan diterima apabila mahasiswa
+telah memenuhi bukti kejuaraan dan kaidah ilmiah dalam
+penulisan laporan. 
+e.
+Penyetaraan prestasi kejuaraan tidak diterima apabila
+mahasiswa terbukti melanggar kode etik ilmiah dalam
+pelaporan, misalnya pemalsuan sertifikat prestasi dan tindakan
+plagiasi laporan. 
+
+---PAGE BREAK---
+76 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+d. Similarity level maksimal 25% atau sesuai ketentuan yg 
+berlaku. 
+e. Mahasiwa yang dinyatakan tidak diterima hasil ujiannya dapat 
+diberi kesempatan melakukan ujian penyetaraan ulang 
+sebanyak-banyaknya dua kali atau mengganti pilihan tugas 
+akhir lainnya selama masa studinya. 
+ 
+F. CONTOH FORMAT 
+Contoh format dan penulisan sampul, persetujuan, pengesahan, dan 
+pernyataan disajikan berikut ini. 
+
+---PAGE BREAK---
+77 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+JUDUL (14 pt) 
+Penyetaraan Prestasi Kejuaraan (14 pt) 
+diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Sarjana ……… (12 pt) 
+oleh 
+Nama 
+NIM (12 pt) 
+NAMA PRODI 
+NAMA FAKULTAS 
+UNIVERSITAS NEGERI SEMARANG 
+SEMARANG, TAHUN (12 pt) 
+ 
+Contoh Format Laporan Penyetaraan Prestasi Kejuaraan 
+ 
+ 
+*Besarnya logo harus 
+proporsional serta dengan 
+perbandingan ukuran P:L = 
+1:1 (dengan tanpa teks 
+UNNES) 
+
+---PAGE BREAK---
+78 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Punggung Laporan Kejuaraan 
+ 
+* Punggung buku tidak perlu dituliskan apabila naskah laporan tidak 
+memiliki ketebalan yang cukup 
+ 
+JUDUL 
+
+---PAGE BREAK---
+79 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Persetujuan Pembimbing 
+ 
+ 
+PERSETUJUAN PEMBIMBING 
+ 
+ 
+ 
+Penyetaraan Prestasi Kejuaraan berjudul “ ............... ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah disetujui untuk diajukan ke penilaian proposal/ujian prototipe. 
+ 
+ 
+ 
+Semarang, …………. 
+Pembimbing 
+ 
+ 
+ 
+ 
+Nama & NIP 
+
+---PAGE BREAK---
+80 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Contoh Format Halaman Pengesahan Tim Penguji 
+ 
+ 
+PENGESAHAN PENGUJI 
+ 
+Penyetaraan Prestasi Kejuaraan berjudul “ .............. ” yang disusun oleh 
+nama 
+  
+: 
+NIM 
+  
+: 
+Prodi/Fakultas 
+: 
+telah dipertahankan dalam ujian …. pada hari …., tanggal …. tahun 
+….. 
+ 
+Tim Penguji 
+ 
+ 
+Ketua Penguji 
+Nama 
+NIP 
+Sekretaris 
+Nama 
+NIP 
+Penguji 1 
+Nama 
+NIP 
+Penguji 2 
+Nama 
+NIP 
+Penguji 3/Pembimbing 
+Nama 
+NIP 
+
+---PAGE BREAK---
+81 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+ 
+Contoh Format Pernyataan Penulis 
+ 
+ 
+PERNYATAAN 
+ 
+Penyetaraan Prestasi Kejuaraan yang ditulis berjudul “……” merupakan 
+karya asli dan bukan hasil plagiasi dari karya orang lain. Pendapat atau 
+temuan orang lain yang dikutip di dalam prototipe ini telah ditulis 
+berdasarkan kode etik ilmiah. Berdasarkan pernyataan ini, saya siap 
+menanggung sanksi hukum apabila ditemukan pelanggaran terhadap 
+integritas akademik dalam karya ini. 
+ 
+ 
+ 
+Semarang, ……………. 
+Yang menyatakan 
+ 
+ 
+(Materai 10.000) 
+ 
+ 
+Nama & NIM 
+
+---PAGE BREAK---
+82 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+83 
+ 
+ 8 
+PERSYARATAN & PROSEDUR 
+PELAKSANAAN TUGAS AKHIR 
+ 
+ 
+A. PERSYARATAN 
+1. Syarat Pendaftaran Tugas Akhir 
+a. Mahasiswa program sarjana Universitas Negeri Semarang (UNNES), 
+dapat menyusun tugas akhir/publikasi ilmiah setelah menyelesaikan 
+sekurang-kurangnya 110 SKS, dan telah menempuh semua mata kuliah 
+wajib tanpa nilai E tanpa nilai E. 
+b. Mahasiswa program diploma UNNES dapat menyusun tugas akhir dan 
+publikasi ilmiah setelah menyelesaikan semua mata kuliah sekurang- 
+kurangnya 75 SKS, dan telah menempuh semua mata kuliah wajib 
+tanpa nilai E. 
+c. Kartu hasil studi (KHS) semester sebelumnya. 
+d. Mahasiswa telah lulus semua mata kuliah yang disyaratkan oleh prodi 
+dengan minimal nilai C, misalnya statistika, metodologi penelitian, 
+metode penciptaan seni, atau mata kuliah lain. 
+e. Memiliki topik tugas akhir yang disetujui oleh koorprodi 
+f. Telah mencatumkan mata kuliah tugas akhir/publikasi ilmiah dalam 
+kartu rencana studi (KRS). 
+2. Syarat Pelaksanaan Tugas Akhir 
+a. Topik telah disetujui oleh koordinator program studi, yang dapat 
+diakses melalui sistem informasi online Sitedi yang terintegrasi dengan 
+Sikadu pada URL http://apps.unnes.ac.id/23 
+b. Telah 
+mengisi 
+KRS 
+Tugas 
+Akhir 
+di 
+Sikadu 
+melalui 
+URL 
+http://apps.unnes.ac.id/23 yang disetui dosen wali. 
+c. SK pembimbing yang ditetapkan Dekan. 
+d. Pelaksanaan bimbingan tecatat pada sistem bimbingan online Sitedi 
+yang terintegrasi dengan Sikadu pada URL http://apps.unnes.ac.id/23. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+84 
+ 
+ 
+ 
+3. Syarat Persetujuan Proposal Tugas Akhir 
+a. Memiliki SK Pembimbing 
+b. Menulis proposal tugas akhir sesuai dengan panduan penulisan 
+c. Telah menjalankan bimbingan proposal tugas akhir sekurang- 
+kurangnya 4 (empat) kali dibuktikan dengan catatan pembimbingan 
+di Sitedi yang terintegrasi pada Sikadu https://apps.unnes.ac.id/23. 
+d. Dosen pembimbing menyetujui proposal dan instrumen dilanjutkan 
+ke tahap berikutnya. 
+4. Syarat Pengajuan Izin Penelitian/Kegiatan Tugas Akhir 
+a. Memiliki naskah proposal yang disetujui oleh pembimbing, mahasiswa 
+mengurus surat perizinan penelitian pada dekan. 
+b. Pengajukan ethical clearance dapat dilakukan terkait subjek penelitian 
+baik menggunakan manusia maupun hewan. 
+c. Mengajukan izin penelitian/tugas akhir kepada dekan sesuai dengan 
+alur pengajuan di fakultas. 
+d. Surat izin penelitian dapat digunakan untuk mengurus perizinan pada 
+lembaga/instansi/mitra terkait penelitian/tugas akhir.  
+5. Syarat Sidang/Ujian Tugas Akhir 
+a. Naskah laporan tugas akhir yang telah disetujui oleh dosen 
+pembimbing untuk diujikan. 
+b. Bahan presentasi 
+c. Menyelesaikan administrasi persiapan ujian tugas akhir sesuai dengan 
+pedoman yudisium UNNES yang berlaku. 
+d. Surat Tugas Tim Penguji dari Dekan. 
+ 
+B. PROSEDUR 
+1. Prosedur Pengajuan Topik 
+a. Mahasiswa yang telah memenuhi persyaratan membuat usulan topik 
+tugas akhir kepada koorprodi untuk diverifikasi oleh tim prodi. 
+b. Koordinator 
+prodi 
+menyetujui 
+usulan 
+topik 
+dengan 
+mempertimbangkan kelayakan dan kesesuaian dengan roadmap 
+penelitian dan pengabdian. 
+c. Topik yang tidak disetujui oleh koordinator program studi dapat 
+dikembalikan kepada mahasiswa untuk direvisi. 
+d. Koordinator prodi mengusulkan SK Pembimbing kepada Dekan setelah 
+mempertimbangkan topik penelitian yang diajukan mahasiswa. 
+e. Dekan menerbitkan SK pembimbing. 
+
+---PAGE BREAK---
+85 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+Tabel 8.1 Alur Pengajuan Topik dan Penetapan Pembimbing 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Prosedur Bimbingan Tugas Akhir 
+a. Mahasiswa menyerahkan salinan SK Pembimbing kepada dosen 
+pembimbing masing-masing. 
+b. Mahasiswa mulai menyusun proposal dengan mengikuti pedoman. 
+c. Mahasiswa mengajukan bimbingan dengan membawa proposal yang 
+telah disusun. 
+d. Dosen 
+pembimbing 
+memberikan 
+layanan 
+bimbingan 
+dalam 
+penyusunan proposal tugas akhir, kelengkapan instrumen, dan 
+memberikan reviu atau penilaian kelayakan. 
+e. Proposal tugas akhir yang belum layak dapat dikembalikan kepada 
+mahasiswa untuk direvisi. 
+f. Dosen menyetujui naskah proposal tugas akhir yang telah dinyatakan 
+layak dan siap dilanjutkan ke proses pengumpulan data, pelaksanaan 
+proyek, prototipe, atau penulisan manuskrip publikasi. 
+
+---PAGE BREAK---
+86 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+g. Mahasiswa melaksanakan kegiatan penelitian/tugas akhir. 
+h. Mahasiswa menyusun laporan tugas akhir. 
+i. Dosen memberi bimbingan selama proses penulisan, pelaporan, dan 
+memberikan reviu. 
+j. Laporan tugas akhir yang belum disetujui dapat dikembalikan kepada 
+mahasiswa untuk direvisi. 
+k. Dosen menyetujui laporan dan mengakhiri bimbingan Sitedi. 
+l. Koorprodi mengusulkan ujian dan Surat Tugas Penguji 
+Tabel 8.2 Alur Bimbingan Tugas Akhir 
+ 
+
+---PAGE BREAK---
+87 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+3. Prosedur Ujian Tugas Akhir 
+a. Mahasiswa menyerahkan naskah laporan tugas akhir dan Surat Tugas 
+Penguji kepada masing-masing penguji. 
+b. Tim penguji menguji dan menilai tugas akhir mahasiswa dalam sidang 
+tugas akhir yang dipimpin oleh ketua penguji. 
+c. Mahasiswa 
+memberi 
+jawaban/pernyataan/sanggahan/konfirmasi 
+sesuai dengan pertanyaan atau reviu dari tim penguji dalam sidang. 
+d. Tim penguji menyampaikan keputusan hasil sidang tugas akhir 
+dengan merujuk pada pedoman penilaian tugas akhir. 
+e. Tugas akhir yang telah diterima (tanpa revisi) dapat langsung 
+disahkan oleh tim penguji. 
+f. Tugas akhir yang diterima dengan revisi atau tidak diterima dapat 
+disampaikan kepada mahasiswa untuk revisi. 
+ 
+Tabel 8.3 Alur Pelaksanaan Ujian Tugas Akhir 
+ 
+
+---PAGE BREAK---
+88 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+89 
+ 
+ 
+ 
+ 
+ 9 
+KAIDAH KEBAHASAAN, SITASI 
+& REFERENSI 
+ 
+ 
+A. KAIDAH KEBAHASAAN 
+Tugas akhir sebagai karya ilmiah merupakan produk ilmu pengetahuan yang 
+berisikan tulisan ilmiah baik yang disusun untuk keperluan akademik 
+maupun keperluan profesional. Dalam konteks perluan akademik, karya 
+ilmiah dapat berwujud makalah, tugas akhir, skripsi, tesis, disertasi, atau 
+artikel ilmiah yang dipublikasikan. Karya tulis ilmiah merupakan mekanisme 
+utama di mana para akademisi atau ilmuwan berkomunikasi secara ilmiah 
+melalui aktivitas penulisan ilmiah. Karya ilmiah harus berisi data, fakta, dan 
+realita yang disajikan secara jelas dan setepat mungkin. Oleh karena itu, 
+penggunaan bahasa dalam penulisan karya ilmiah bersifat baku, berbeda 
+dengan gaya penulisan populer pada media massa atau karya sastra yang 
+cenderung estetik dan imajinatif. 
+Penulisan 
+judul 
+karya 
+tulis 
+ilmiah 
+harus 
+secara 
+tegas 
+merepresentasikan fokus penelitian dan ruang lingkup masalah yang dikaji. 
+Bahkan judul harus ditulis secara spesifik dan tidak ambigu. Misalnya, 
+“Ekspresi Simbolik Ilustrator Perempuan dalam Merespons Isu Gender”. Judul 
+yang lain misalnya “Keefektifan Media Pembelajaran Berbasis Augmented 
+Reality terhadap Penguasaan Kosakata Bahasa Indonesia bagi Penutur 
+Asing”. Sesungguhnya tidak ada aturan khusus dalam penulisan judul karya 
+tulis ilmiah, yang penting penulisannya jelas dan tidak bias. Beberapa kaidah 
+umum yang kerap kita jumpai ialah pencantuman variabel-variabel 
+penelitian pada judul dalam pendekatan kuantitatif. Sementara itu, dalam 
+pendekatan kualitatif, yang terpenting ialah mencantumkan fokus penelitian 
+atau teks dan konteks penelitian. Bagaimanapun, penulis harus memastikan 
+agar judul tetap ditulis secara jelas, ringkas, tanpa mengorbankan informasi. 
+Bagian awal yang juga penting dari karya tulis ilmiah ialah abstrak. 
+Abstrak merupakan ringkasan singkat dari tujuan dan hasil terpenting dari 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+90 
+ 
+ 
+ 
+penelitian atau kajian. Pokok-pokok abstrak biasanya memuat latar 
+belakang, tujuan khusus, metode, ringkasan hasil, dan interpretasi singkat 
+dari data yang dibahas. Isi karya tulis ilmiah diawali dengan penulisan 
+pendahuluan. 
+Pendahuluan adalah tempat penulis menempatkan posisi penting 
+dari penelitiannya dalam konteks tertentu sesuai dengan fokus kajian 
+masing-masing. Pendahuluan juga tempat penulis memberikan alasan 
+penting (urgensi) untuk penelitian. Beberapa penulis memulai dari 
+menghadirkan narasi yang meyakinkan argumennya. Ada juga yang memulai 
+dari membangun gap dalam permasalahan yang diteliti. Penulis juga 
+diharapkan dapat merujuk dari hasil penelitian orang lain yang telah 
+diterbitkan sebelumnya sebagai pijakan untuk menempatkan posisi penting 
+penelitian. Rujukan ini dapat membantu memperkuat argumen atau 
+hipotesis yang dibangun oleh penulis. 
+Karya ilmiah ditulis dengan mengacu pada teori atau konsep yang 
+digunakan. Konsep atau teori tersebut akan menjadi sistem penjelasan 
+terhadap masalah yang diteliti. Ada pula yang menyebut bahwa teori 
+merupakan ‘pisau analisis’. Teori atau konsep dipilih/dirumuskan untuk 
+menjelaskan, memprediksi, dan memahami fenomena atas permasalahan 
+yang diteliti. Teori atau konsep dapat membantu penulis untuk memperluas 
+pengetahuan sekaligus juga batas-batas asumsi kritis. Penulis juga dapat 
+menyusun kerangka teoretik dalam bentuk bagan atau skema agar 
+menunjukkan interelasi antarteori dari suatu kajian penelitian. Kerangka teori 
+dapat memperjelas mengapa data yang berkenaan dengan masalah 
+penelitian harus dikaji. 
+Salah satu ciri karya tulis ilmiah ialah terdapat metode ilmiah yang 
+digunakan secara sistematik. Metode penelitian berkenaan dengan upaya 
+sistematik dalam pengumpulan dan pengolahan data. Terdapat tiga 
+pendekatan penelitian, yaitu pendekatan kuantitatif, kualitatif, dan 
+campuran. Masing-masing dilatarbelakangi oleh paradigma ilmu tertentu 
+dan memiliki jenis atau desain-desain penelitian tertentu. Penulisan metode 
+penelitian perlu menyertakan lokasi dan deskripsi lokasi untuk studi 
+lapangan, partisipan yang ditetapkan, pengumpulan data, dan teknik analisis 
+yang digunakan. 
+Pembahasan hasil penelitian berisikan data dan penyajian data 
+lapangan. Sedangkan pembahasan dilakukan melalui interpretasi peneliti 
+berdasarkan teori yang digunakan. Penulisan hasil dan pembahasan harus 
+diatur secara logis dan mudah dipahami, misalnya sajian dalam tabel, 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+91 
+ 
+gambar, atau keduanya. Setiap tabel dan gambar dalam pembahasan harus 
+sesuai dengan urutan penampilan. 
+Penulisan ilmiah di Indonesia harus menggunakan bahasa Indonesia 
+secara baik dan benar sesuai dengan kaidah kebahasaan. Bahkan penulisan 
+ilmiah senantiasa ketat dan kaku. Hal ini dilakukan agar informasi ilmiah yang 
+disajikan tidak bias dipahami atau tidak memiliki makna ganda. Ragam 
+bahasa imliah dalam kaidah penulisan ialah sebagai berikut: 
+1. Baku 
+Penulisan ilmiah harus menggunakan kata-kata baku sesuai dengan PUEBI 
+atau bahasa internasional. Selain itu juga menggunakan kalimat-kalimat 
+efektif dalam membangun sebuah tulisan. 
+2. Konvensi 
+Terdapat ketentuan-ketentuan yang bersifat institusional dalam penulisan 
+ilmiah. Ketentuan ini lazim disebut sebagai kaidah selingkung. Tiap-tiap 
+institusi misalnya universitas, penerbit jurnal, dan penerbit buku memiliki 
+kaidah selingkung. Dengan demikian, penulis harus menyesuaikan pada 
+institusi yang diikuti. 
+3. Formal 
+Ciri penulisan ilmiah ialah ditulis secara formal karena ditujukan untuk 
+keperluan komunikasi formal. Hal ini tentu berbeda dengan penulisan 
+nonformal seperti komunikasi pada media sosial atau karya sastra. 
+ 
+B. KAIDAH PENULISAN SITASI DAN REFERENSI 
+1. Jumlah sitasi yang digunakan dalam penulisan laporan skripsi, proyek, dan 
+prototipe mengikuti perarturan UNNES yang berlaku. 
+2. Gaya penulisan sitasi dan referensi untuk tugas akhir tidak ditentukan 
+secara spesifik dalam panduan ini. 
+3. Gaya penulisan sitasi dan referensi yang dapat digunakan, di antaranya: 
+a. APA (American Psychological Association), 
+b. IEEE (Institute of Electrical and Electronics Engineers), 
+c. MLA (Modern Language Association), 
+d. Chicago, 
+e. Harvard, atau 
+f. 
+ACS (American Chemical Society). 
+4. Fakultas atau prodi dapat menetapkan penggunaan gaya sitasi dan 
+referensi yang paling relevan dengan kebutuhan dan kekhasan bidang 
+
+---PAGE BREAK---
+92 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+ilmu masing-masing. 
+5. Penulisan sitasi dan referens harus dilakukan dengan menggunakan 
+reference management systems yang standar (Mendelay, EndNote, 
+Zotero, dll.). 
+6. Gaya penulisan sitasi dan referensi untuk tugas akhir berupa publikasi 
+ilmiah disesuaikan dengan kaidah jurnal ilmiah yang dituju. 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+93 
+P
+ 
+ 
+ 
+  10 
+P E N U T U P 
+ 
+anduan tugas akhir membantu memastikan bahwa tugas akhir yang 
+dihasilkan oleh mahasiswa UNNES dapat   memenuhi   standar 
+akademik yang ditetapkan oleh UNNES. Hal ini membantu menjaga 
+kualitas pendidikan tinggi di semua program studi. Panduan tugas akhir 
+juga dapat memberikan pedoman mengenai bagaimana menyusun dan 
+menyajikan 
+informasi 
+secara 
+ilmiah. 
+Ini 
+membantu 
+mahasiswa 
+mengembangkan keterampilan komunikasi yang penting dalam dunia 
+akademik dan profesional. 
+Dalam penutup buku panduan ini, kami ingin menyampaikan 
+kepada pembaca agar dapat memanfaatkan ini sebagai panduan untuk 
+menyelesaikan tugas akhir dengan tepat waktu, baik, dan lancar.. 
+Penggunaan buku panduan yang bijak dapat membantu mahasiswa 
+mengatasi berbagai tantangan yang mungkin hadapi selama penyusunan 
+tugas akhir. 
+
+---PAGE BREAK---
+94 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+
+---PAGE BREAK---
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+95 
+ 
+ 
+ 
+D A F T A R P U S T A K A 
+ 
+ 
+Creswell, J. W., & Creswell, J. D. (2018). Research design: Qualitative, quantitative, 
+and mixed methods approaches. Los Angeles, California: Sage Publications.  
+Febriani, M. & Sugiarto, E. (2020). Memahami Karya Tulis Ilmiah; dari Hakikat 
+hingga Problematiknya. Semarang: LPPM UNNES. 
+Geraldi, J. & Söderlund, J. (2017). Project studies: What it is and where it's going. 
+International Journal of Project Management, 6(1). https://doi.org/10.1016 
+/j.ijproman.2017.06.004 
+Martin, E. (2014). How to Write an Effective Article. Current Sociology, 62(7), 949–
+955. https://doi.org/10.1177/0011392114556034 
+Peraturan Rektor UNNES No. 37/2019 tentang Pemberian Penghargaan Akademik 
+kepada Mahasiswa Berprestasi Luar Biasa. 
+Permendikbudristek RI No. 53/2023 tentang Penjaminan Mutu Pendidikan Tinggi. 
+Patten, M.L. (2017). Understanding Research Methods: An Overview of the 
+Essentials (10th ed.). Routledge. https://doi.org/10.4324/9781315213033 
+Rohidi, T.R. (2012). Research Methodology in Arts. Semarang: Prima Cipta 
+Nusantara. 
+Shils, E. (1993). Etika Akademik Pendidikan Tinggi. Jakarta: Obor Foundation. 
+Sugiarto, E., et al. (2022). Panduan Tugas Akhir dan Publikasi Universitas Negeri 
+Semarang Tahun 2022. Semarang: UNNES. 
+Tim Penyusun UNNES (2024). Panduan Akademik Universitas Negeri Semarang. 
+Semarang: UNNES. 
+
+---PAGE BREAK---
+96 
+PANDUAN TUGAS AKHIR SARJANA DAN DIPLOMA UNNES 2024 
+ 
+ 
+ 
+ 
+
+---PAGE BREAK---
+ 
+2024 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TUGAS 
+AKHIR 
+Sarjana 
+Diploma 
+ 
+ 
+ 
+ 
+
+---PAGE BREAK---
