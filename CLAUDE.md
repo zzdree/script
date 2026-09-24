@@ -7,7 +7,7 @@ Dokumen ini adalah **single source of truth** dan instruksi operasional untuk Cl
 ## 📌 1. Identitas Akademik & Penelitian
 
 - **Peneliti:** Andreas Restuawanta Christwara (`NIM: 5312422036`)
-- **Dosen Pembimbing:** Khoirudin Fathoni, S.T., M.T. (`NIP: 19900929292015041001`)
+- **Dosen Pembimbing:** Mario Norman Syah, S.Pd., M.Eng. (`NIP: 199304212024061001`)
 - **Institusi:** Program Studi S1 Teknik Komputer, Jurusan Teknik Elektro, Fakultas Teknik, Universitas Negeri Semarang (UNNES)
 - **Judul Skripsi:** 
   > *"Rancang Bangun Sistem Audio-Reactive Lighting Design Berbasis Analisis Mood Lagu Rohani dengan Pemetaan Warna HSV-RGBW dan Protokol Art-Net DMX512"*
@@ -22,7 +22,7 @@ Dokumen ini adalah **single source of truth** dan instruksi operasional untuk Cl
 - **Draf Eksisting (v3):** `script_projects/script_andreas_v3.docx` (Bab 1, 2, dan 3 yang telah dipresentasikan ke Dosen Pembimbing).
 - **Target Selanjutnya (v4):** Membuat naskah **`script_andreas_v4.docx`** yang telah merevisi dan menyempurnakan seluruh catatan bimbingan.
 
-### PR Utama dari Dosen Pembimbing (Khoirudin Fathoni, S.T., M.T.):
+### PR Utama dari Dosen Pembimbing (Mario Norman Syah, S.Pd., M.Eng.):
 > **"Disuruh belajar lagi tentang FFT, ngulitin lagi lah, terus menjabarkan lengkap di proposal."**
 
 Claude wajib mendalami, menguliti secara matematis, dan menguraikan secara komprehensif teori serta implementasi:
@@ -75,21 +75,17 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
 - **Target Rilis Berikutnya:** **ZZLUXORA v10** (fresh development & clean architecture).
 
 ### Strategi & Tahapan Pengembangan Software:
-1. **Fase 1: UI/UX First (Konsol Profesional grandMA3 & QLC+ Style)**
-   - Fokus utama menyelesaikan antarmuka pengguna terlebih dahulu sesuai `notes/feedback_v2.txt` dan koleksi visual di `image_references/`.
-   - Desain bertema gelap (*industrial stage lighting console*), modern-minimalis, tanpa emoji/ikon berlebihan.
-   - Navigasi & Modul:
-     - **Header Bar:** Icon + Logo ZZLUXORA, Nama Project / Path File `.zlx`, Status Art-Net (Hijau/Merah), Toggle Button Play/Pause, Tombol Lingkaran Blackout (zero all faders).
-     - **Menu Bar:** File (Open, Save, Save As `.zlx`, Exit), View (Program, Fixture List, Fixture Editor, Settings, About), Help (Shortcut Table).
-     - **Sidebar Program:** Tab Address (Grid DMX maks 24 kolom horizontal, auto-patch, clear-patch), Tab Analyze (Load Audio, Run FFT/MIR, Progress Bar saintifik, export scene), Tab Scenes & Chase (pemetaan verse/chorus/bridge ke transisi lighting), Tab Page, Tab Mixer (513 slider fader: 1 Master Dimmer + 512 Channel DMX), Tab Preview (visualisasi 2D PAR LED tampak depan), Tab Output (Scan IP Art-Net, Localhost 127.0.0.1, AP ESP32 192.168.4.1).
-     - **Fixture Editor:** Form modal untuk custom fixture JSON (mapping channel: Dimmer, RGBW, Strobe, dll).
-2. **Fase 2: Audio Engine (MIR, FFT, & Mood Mapping)**
-   - Integrasi pustaka audio (NumPy, SciPy, Librosa/PyAudio).
-   - Ekstraksi real-time / batch: RMS, Centroid, Chroma, MFCC.
-   - Pemetaan ke Model Afektif Russell (Valence-Arousal 2D plane).
-   - Algoritma konversi warna: $(V, A) \to (H, S)$ ➔ Dimmer $V_{lum}$ ➔ HSV to RGB ➔ Physical 4-Channel RGBW ($W = \min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$).
-3. **Fase 3: Networking & Art-Net Output Engine**
-   - Transmisi UDP socket Port 6454 (Universe 0) ke IP target (ESP32 node atau visualizer eksternal).
+1. **Fase 1: Engine System / Core First (Fokus Utama Saat Ini)**
+   - Pembangunan Audio Engine komputasional murni:
+     - Pipeline FFT (Cooley-Tukey Radix-2 DIT) & STFT (Hann Windowing, $f_s = 22.050\text{ Hz}$, $N=2048$, $H=512$).
+     - Ekstraksi 4 fitur spektral utama: RMS Energy, Spectral Centroid, Chroma STFT (12-semitone pitch classes), dan MFCC (13 koefisien).
+     - Pemetaan afektif Russell 2D Plane (Valence-Arousal).
+     - Konversi ruang warna: $(V, A) \to (H, S)$ ➔ Dimmer $V_{\text{lum}} = \text{RMS}_{\text{norm}}$ ➔ HSV ke RGB ➔ Physical 4-Kanal RGBW ($W = \min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$).
+     - Art-Net 4 DMX512 UDP packet generator (Universe 0, Port 6454, target output 43 FPS).
+2. **Fase 2: UI/UX Console Panggung (GrandMA3 & QLC+ Style)**
+   - Disiapkan sembari mengonsep tata letak (bisa menggunakan Figma / mockups visual).
+   - Mengacu pada `notes/feedback_v2.txt` dan koleksi visual di `image_references/`.
+   - Layout modular: Header bar, Status Art-Net + Blackout, Grid DMX Address (maks 24 kolom), Mixer 513 Fader (Master + 512 DMX), Tab Analyze, Tab Scenes/Chase, Visualizer 2D PAR LED, dan Fixture Editor.
 
 ---
 
