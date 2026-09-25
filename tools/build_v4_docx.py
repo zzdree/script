@@ -5,12 +5,15 @@ Applies strict Anti-Slop craftsmanship principles:
 1. Replaces all raw text/LaTeX formulas with professionally formatted mathematical equations (Cambria Math font, centered, with standard (2.X) and (3.X) right numbering).
 2. Cleans all inline LaTeX symbols ($x(t)$, $\tau$, etc.) into clean academic typography.
 3. Removes all fragmented equations and ASCII art box diagrams.
-4. Embeds 5 high-resolution scientific diagrams generated via 9Router with professional captions:
+4. Embeds 8 high-resolution scientific diagrams generated via 9Router with professional captions:
    - Gambar 2.1: STFT Sliding Windowing & Hann Windowing
    - Gambar 2.2: Russell 2D Affective Space mapped to Stage Lighting Colors
    - Gambar 2.3: Physical 4-Channel RGBW Decomposition Algorithm
    - Gambar 2.4: Kerangka Berpikir Penelitian (replaces ASCII box)
    - Gambar 3.1: End-to-End System Flowchart Pipeline
+   - Gambar 3.2: Skematik Rangkaian Elektronika Hardware ESP32 + MAX485
+   - Gambar 3.3: Diagram Alir Firmware ESP32 Dual-Core FreeRTOS
+   - Gambar 3.4: Denah Tata Letak Panggung & Topologi Pengujian Lapangan GIA Deliksari
 5. Updates Dosen Pembimbing to Mario Norman Syah, S.Pd., M.Eng. (NIP: 199304212024061001)
 6. Standardizes software name to ZZLUXORA
 7. Appends references [32] and [33] to DAFTAR PUSTAKA
@@ -248,13 +251,16 @@ def build_v4():
         ct_bytes = ct_bytes.replace("</Types>", '<Default Extension="png" ContentType="image/png"/></Types>')
         files["[Content_Types].xml"] = ct_bytes.encode("utf-8")
 
-    # 2. Add relationships for 5 figures
+    # 2. Add relationships for 8 figures
     image_rels = [
         ('rId10', 'media/image_stft.png'),
         ('rId11', 'media/image_russell.png'),
         ('rId12', 'media/image_rgbw.png'),
         ('rId13', 'media/image_kerangka.png'),
-        ('rId14', 'media/image_flowchart.png')
+        ('rId14', 'media/image_flowchart.png'),
+        ('rId15', 'media/image_schematic.png'),
+        ('rId16', 'media/image_firmware.png'),
+        ('rId17', 'media/image_deployment.png'),
     ]
     for r_id, target in image_rels:
         rel_tag = f'<Relationship Id="{r_id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="{target}"/>'
@@ -268,6 +274,9 @@ def build_v4():
     files["word/media/image_rgbw.png"] = open(os.path.join(img_dir, "diagram_rgbw_decomposition.png"), "rb").read()
     files["word/media/image_kerangka.png"] = open(os.path.join(img_dir, "diagram_kerangka_berpikir.png"), "rb").read()
     files["word/media/image_flowchart.png"] = open(os.path.join(img_dir, "flowchart_system_pipeline.png"), "rb").read()
+    files["word/media/image_schematic.png"] = open(os.path.join(img_dir, "diagram_hardware_schematic.png"), "rb").read()
+    files["word/media/image_firmware.png"] = open(os.path.join(img_dir, "flowchart_esp32_firmware.png"), "rb").read()
+    files["word/media/image_deployment.png"] = open(os.path.join(img_dir, "diagram_stage_deployment.png"), "rb").read()
 
     # 4. Parse document.xml and apply text updates
     tree = ET.fromstring(xml_bytes)
@@ -297,22 +306,22 @@ def build_v4():
             print("✓ Added Dosen Pembimbing Mario Norman Syah, S.Pd., M.Eng. to cover page")
             break
 
-    # Chapter 2: Replace entire old Subbab 2.2.1 (FFT + old broken feature list) up to 2.2.2
-    paragraphs = list(body.findall(f"{{{W_NS}}}p"))
+    # Chapter 2: Replace entire old Subbab 2.2.1 (FFT + old broken feature list including tables) up to 2.2.2
+    children = list(body)
     fft_start_idx = None
     fft_end_idx = None
 
-    for i, p in enumerate(paragraphs):
-        p_text = get_p_text(p)
-        if "a. *Fast Fourier Transform* (FFT)" in p_text or "Fast Fourier Transform (FFT)" in p_text:
+    for i, ch in enumerate(children):
+        ch_text = "".join(t.text for t in ch.iter(f"{{{W_NS}}}t") if t.text).strip()
+        if "a. *Fast Fourier Transform* (FFT)" in ch_text or "Fast Fourier Transform (FFT)" in ch_text:
             fft_start_idx = i
-        if fft_start_idx is not None and "2.2.2 Psikologi Persepsi Musik" in p_text:
+        if fft_start_idx is not None and "2.2.2 Psikologi Persepsi Musik" in ch_text:
             fft_end_idx = i
             break
 
     if fft_start_idx is not None and fft_end_idx is not None:
         print(f"✓ Found old Subbab 2.2.1 ({fft_start_idx} to {fft_end_idx}). Replacing with clean, beautiful mathematical derivations...")
-        old_nodes = paragraphs[fft_start_idx:fft_end_idx]
+        old_nodes = children[fft_start_idx:fft_end_idx]
 
         new_paragraphs = [
             make_p("a. Diskritisasi Sinyal Audio dan Kriteria Nyquist-Shannon", bold=True),
@@ -529,18 +538,46 @@ def build_v4():
     paragraphs = list(body.findall(f"{{{W_NS}}}p"))
     for p in paragraphs:
         p_text = get_p_text(p)
-        if "^2}{\\sum" in p_text or "^2}{\sum" in p_text or p_text in ["X(k)", "X(k)^2"]:
+        if r"^2}{\sum" in p_text or "^2}{\\sum" in p_text or p_text in ["X(k)", "X(k)^2"]:
             body.remove(p)
             print(f"✓ Removed fragmented formula artifact: {p_text}")
         elif "│" in p_text and ("START" in p_text or "Audio Input" in p_text or "Inisialisasi Hardware" in p_text):
             if "Inisialisasi Hardware" in p_text:
-                desc_p1 = make_p("Modul penerima ARTNET-DMX berbasis ESP32 menjalankan dua proses konkuren pada inti prosesor terpisah (FreeRTOS Dual-Core): (1) Core 0 menangani protokol jaringan nirkabel (penerima paket Art-Net UDP port 6454, mode Station atau SoftAP Captive Portal 192.168.4.1), dan (2) Core 1 mengendalikan sinyal fisik DMX512 melalui Hardware Serial UART2 ke transceiver MAX485 pada laju 250.000 bps dengan fitur proteksi auto-blackout jika sinyal terputus.")
-                body.insert(list(body).index(p), desc_p1)
+                desc_schem = make_p("Rangkaian perangkat keras modul penerima ARTNET-DMX Node dirancang menggunakan mikrokontroler ESP32 DevKit V1 yang dihubungkan ke modul transceiver RS-485 MAX485 untuk membangkitkan sinyal diferensial DMX512 fisik ke konektor XLR 3-pin, serta modul LCD 16×2 dengan antarmuka I2C PCF8574 sebagai penampil status operasional. Skematik interkoneksi pengkabelan pin disajikan pada Gambar 3.2.")
+                p_img_schem = make_image_p("rId15", 15, cx=4400000, cy=4400000)
+                p_cap_schem = make_caption_p("Gambar 3.2", "Skematik Rangkaian Elektronika Modul Penerima ARTNET-DMX Node Berbasis ESP32 DevKit V1, Transceiver MAX485, Display LCD 16×2 I2C, dan Port Output DMX512 XLR 3-Pin")
+
+                desc_firm = make_p("Modul penerima ARTNET-DMX berbasis ESP32 menjalankan dua proses konkuren pada inti prosesor terpisah (FreeRTOS Dual-Core): (1) Core 0 menangani protokol jaringan nirkabel (penerima paket Art-Net UDP port 6454, mode Station atau SoftAP Captive Portal 192.168.4.1), dan (2) Core 1 mengendalikan sinyal fisik DMX512 melalui Hardware Serial UART2 ke transceiver MAX485 pada laju 250.000 bps dengan fitur proteksi auto-blackout jika sinyal terputus. Diagram alir arsitektur firmware dual-core disajikan pada Gambar 3.3.")
+                p_img_firm = make_image_p("rId16", 16, cx=4300000, cy=4700000)
+                p_cap_firm = make_caption_p("Gambar 3.3", "Diagram Alir Arsitektur Firmware ESP32 Dual-Core FreeRTOS (Core 0: Network & Web Task; Core 1: Hardware DMX512 Transmission Driver & Fail-Safe Auto-Blackout Task)")
+
+                p_idx = list(body).index(p)
+                body.insert(p_idx, desc_schem)
+                body.insert(p_idx + 1, p_img_schem)
+                body.insert(p_idx + 2, p_cap_schem)
+                body.insert(p_idx + 3, desc_firm)
+                body.insert(p_idx + 4, p_img_firm)
+                body.insert(p_idx + 5, p_cap_firm)
                 body.remove(p)
-                print("✓ Replaced ESP32 ASCII tree with clean academic narrative")
+                print("✓ Replaced ESP32 ASCII tree with clean academic narrative, Gambar 3.2 (Hardware Schematic) & Gambar 3.3 (ESP32 Firmware Flowchart)")
             elif "User memilih file audio" in p_text:
                 body.remove(p)
                 print("✓ Removed redundant ASCII flowchart")
+
+    # Embed Gambar 3.4 under Subbab 3.2.1 (Lokasi Pengujian Lapangan)
+    paragraphs = list(body.findall(f"{{{W_NS}}}p"))
+    for i, p in enumerate(paragraphs):
+        p_text = get_p_text(p)
+        if "Pengujian sistem secara end-to-end dengan lampu PAR LED RGBW" in p_text:
+            desc_deploy = make_p("Tata letak penempatan perangkat keras, pengkabelan rantai daisy DMX512, pemancar nirkabel Art-Net 4, serta posisi pengamatan 25 responden di ruang ibadah Gereja GIA Deliksari Semarang diilustrasikan secara spasial pada Gambar 3.4.")
+            p_img_deploy = make_image_p("rId17", 17, cx=4400000, cy=4400000)
+            p_cap_deploy = make_caption_p("Gambar 3.4", "Denah Tata Letak Panggung, Pengkabelan DMX512 Daisy-Chain, Topologi Jaringan Nirkabel Art-Net, dan Posisi Responden pada Pengujian Lapangan di Gereja GIA Deliksari Semarang")
+            p_idx = list(body).index(p)
+            body.insert(p_idx + 1, desc_deploy)
+            body.insert(p_idx + 2, p_img_deploy)
+            body.insert(p_idx + 3, p_cap_deploy)
+            print("✓ Embedded Gambar 3.4 (Stage Deployment & Testing Layout)")
+            break
 
     # Append references [32] and [33] to DAFTAR PUSTAKA
     paragraphs = list(body.findall(f"{{{W_NS}}}p"))
@@ -563,7 +600,7 @@ def build_v4():
         for name, content in files.items():
             zout.writestr(name, content)
 
-    print(f"\n🎉 Successfully compiled {v4_path} with 5 clean high-resolution figures & pure math!")
+    print(f"\n🎉 Successfully compiled {v4_path} with 8 clean high-resolution figures & pure math!")
     print(f"   Size: {os.path.getsize(v4_path):,} bytes")
 
 if __name__ == "__main__":

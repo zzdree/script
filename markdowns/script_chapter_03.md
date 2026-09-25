@@ -83,48 +83,19 @@ START
 END
 ```
 
-**Alur Program Modul ARTNET-DMX (ESP32):**
+> **Gambar 3.1** Diagram Alur Komputasi End-to-End Sistem ZZLUXORA dari Masukan Sinyal Audio hingga Transmisi Paket Art-Net UDP 6454.
 
-```
-START
-  │
-  ├── Inisialisasi Hardware (LCD, MAX485, Serial2)
-  │
-  ├── Baca kredensial WiFi dari memori (Preferences)
-  │
-  ├── Kredensial ada?
-  │   ├── Ya → Hubungkan ke WiFi → Berhasil?
-  │   │       ├── Ya → Mode RUN (Art-Net Receiver aktif)
-  │   │       └── Tidak → Mode AP (Captive Portal)
-  │   └── Tidak → Mode AP (Captive Portal)
-  │
-  ├── Mode AP:
-  │   ├── Buat hotspot "ARTNET-DMX"
-  │   ├── DNS hijack → Captive Portal
-  │   ├── WebServer: Setup page (scan WiFi, input SSID/pass)
-  │   ├── Art-Net Receiver tetap aktif
-  │   └── Simpan kredensial → Reboot
-  │
-  ├── Mode RUN:
-  │   ├── Art-Net Receiver (UDP port 6454)
-  │   │   ├── Parse packet Art-Net
-  │   │   ├── Filter universe 0
-  │   │   └── Update data DMX
-  │   │
-  │   ├── DMX Output Task:
-  │   │   ├── Sinkronisasi data (buffer management)
-  │   │   ├── Kirim BREAK + START CODE + 512 byte DMX
-  │   │   ├── Auto-blackout jika no signal >10s
-  │   │   └── Refresh rate sesuai standar DMX
-  │   │
-  │   ├── Auto-Reconnect WiFi:
-  │   │   ├── Disconnect <30s → Reconnect
-  │   │   └── Disconnect >30s → Reset + Reboot
-  │   │
-  │   └── WebServer: Monitor page (status real-time)
-  │
-END
-```
+**Perancangan Perangkat Keras Modul Penerima ARTNET-DMX Node:**
+
+Rangkaian perangkat keras modul penerima ARTNET-DMX Node dirancang menggunakan mikrokontroler ESP32 DevKit V1 yang dihubungkan ke modul transceiver RS-485 MAX485 untuk membangkitkan sinyal diferensial DMX512 fisik ke konektor XLR 3-pin, serta modul LCD 16×2 dengan antarmuka I2C PCF8574 sebagai penampil status operasional. Skematik interkoneksi pengkabelan pin disajikan pada Gambar 3.2.
+
+> **Gambar 3.2** Skematik Rangkaian Elektronika Modul Penerima ARTNET-DMX Node Berbasis ESP32 DevKit V1, Transceiver MAX485, Display LCD 16×2 I2C, dan Port Output DMX512 XLR 3-Pin.
+
+**Alur Program Firmware Modul ARTNET-DMX (ESP32 FreeRTOS Dual-Core):**
+
+Modul penerima ARTNET-DMX berbasis ESP32 menjalankan dua proses konkuren pada inti prosesor terpisah (FreeRTOS Dual-Core): (1) Core 0 menangani protokol jaringan nirkabel (penerima paket Art-Net UDP port 6454, mode Station atau SoftAP Captive Portal 192.168.4.1), dan (2) Core 1 mengendalikan sinyal fisik DMX512 melalui Hardware Serial UART2 ke transceiver MAX485 pada laju 250.000 bps dengan fitur proteksi auto-blackout jika sinyal terputus. Diagram alir arsitektur firmware dual-core disajikan pada Gambar 3.3.
+
+> **Gambar 3.3** Diagram Alir Arsitektur Firmware ESP32 Dual-Core FreeRTOS (Core 0: Network & Web Task; Core 1: Hardware DMX512 Transmission Driver & Fail-Safe Auto-Blackout Task).
 
 ---
 
@@ -141,6 +112,10 @@ Penelitian ini dilaksanakan di dua lokasi:
 2. **Lokasi Pengujian Lapangan:**
    - Alamat: Gereja GIA Deliksari, Semarang.
    - Kegiatan: Pengujian sistem secara *end-to-end* dengan lampu PAR LED RGBW, pengambilan data responden, dan evaluasi kesesuaian pencahayaan dalam konteks ibadah.
+
+Tata letak penempatan perangkat keras, pengkabelan rantai daisy DMX512, pemancar nirkabel Art-Net 4, serta posisi pengamatan 25 responden di ruang ibadah Gereja GIA Deliksari Semarang diilustrasikan secara spasial pada Gambar 3.4.
+
+> **Gambar 3.4** Denah Tata Letak Panggung, Pengkabelan DMX512 Daisy-Chain, Topologi Jaringan Nirkabel Art-Net, dan Posisi Responden pada Pengujian Lapangan di Gereja GIA Deliksari Semarang.
 
 ### 3.2.2 Waktu Penelitian
 
