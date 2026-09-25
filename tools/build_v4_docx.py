@@ -347,7 +347,7 @@ def build_v4():
             make_p("Fungsi Hann memiliki nilai w[0] = w[N-1] = 0 dan puncak w[(N-1)/2] = 1. Keunggulan akustik fungsi Hann adalah mampu meredam sidelobe level hingga -31,5 dB (jauh lebih baik dibandingkan rectangular window yang hanya memiliki peredaman -13 dB), sehingga menghasilkan pemisahan puncak frekuensi nada yang bersih dan meminimalkan bias pada analisis harmoni lagu."),
 
             # Insert Gambar 2.1
-            make_image_p("rId10", 10, cx=4800000, cy=3000000),
+            make_image_p("rId10", 10, cx=4300000, cy=4300000),
             make_caption_p("Gambar 2.1", "Diagram Proses Segmentasi Jendela Geser (Sliding Windowing) STFT dan Mitigasi Spectral Leakage Menggunakan Fungsi Hann Window"),
 
             make_p("f. Formulasi Diskrit STFT dan Konversi Parameter Fisik", bold=True),
@@ -395,7 +395,7 @@ def build_v4():
     for i, p in enumerate(paragraphs):
         p_text = get_p_text(p)
         if "Setiap emosi dapat direpresentasikan sebagai titik koordinat (*V*, *A*)" in p_text or "Setiap emosi dapat direpresentasikan sebagai titik koordinat (V, A)" in p_text:
-            p_img2 = make_image_p("rId11", 11, cx=4800000, cy=3000000)
+            p_img2 = make_image_p("rId11", 11, cx=4200000, cy=4200000)
             p_cap2 = make_caption_p("Gambar 2.2", "Pemetaan Afektif Dua Dimensi Valence-Arousal (Russell) ke Koordinat Warna Pencahayaan Panggung Ibadah (Praise & Worship)")
             p_idx = list(body).index(p)
             body.insert(p_idx + 1, p_img2)
@@ -490,7 +490,7 @@ def build_v4():
     for i, p in enumerate(paragraphs):
         p_text = get_p_text(p)
         if "Pendekatan ini menghasilkan warna yang lebih kaya" in p_text:
-            p_img3 = make_image_p("rId12", 12, cx=4800000, cy=3000000)
+            p_img3 = make_image_p("rId12", 12, cx=4200000, cy=4200000)
             p_cap3 = make_caption_p("Gambar 2.3", "Perbandingan Pencampuran Warna RGB Konvensional vs. Algoritma Dekomposisi 4-Kanal Physical RGBW pada Lampu PAR LED")
             p_idx = list(body).index(p)
             body.insert(p_idx + 1, p_img3)
@@ -503,7 +503,7 @@ def build_v4():
     for i, p in enumerate(paragraphs):
         p_text = get_p_text(p)
         if "┌─────────────────┐" in p_text or ("Audio Input" in p_text and "Chroma" in p_text):
-            p_img_kerangka = make_image_p("rId13", 13, cx=4800000, cy=3000000)
+            p_img_kerangka = make_image_p("rId13", 13, cx=4300000, cy=4300000)
             p_cap_kerangka = make_caption_p("Gambar 2.4", "Diagram Kerangka Berpikir Penelitian Rancang Bangun Sistem Audio-Reactive Lighting Design ZZLUXORA")
             p_idx = list(body).index(p)
             body.insert(p_idx, p_img_kerangka)
@@ -517,7 +517,7 @@ def build_v4():
     for i, p in enumerate(paragraphs):
         p_text = get_p_text(p)
         if "Alur Program ZZLUXORA" in p_text:
-            p_img4 = make_image_p("rId14", 14, cx=4800000, cy=3000000)
+            p_img4 = make_image_p("rId14", 14, cx=3900000, cy=4600000)
             p_cap4 = make_caption_p("Gambar 3.1", "Diagram Alur Komputasi End-to-End Sistem ZZLUXORA dari Masukan Sinyal Audio hingga Transmisi Paket Art-Net UDP 6454")
             p_idx = list(body).index(p)
             body.insert(p_idx + 1, p_img4)
