@@ -18,29 +18,45 @@ Dokumen ini adalah **single source of truth** dan instruksi operasional untuk Cl
 
 ## 🎯 2. Status Skripsi & Target Naskah
 
-### Berkas Naskah Eksisting & Target Iterasi:
-- **Draf Eksisting (v3):** `script_projects/script_andreas_v3.docx` (Bab 1, 2, dan 3 yang telah dipresentasikan ke Dosen Pembimbing).
-- **Target Selanjutnya (v4):** Membuat naskah **`script_andreas_v4.docx`** yang telah merevisi dan menyempurnakan seluruh catatan bimbingan.
+### Berkas Naskah & Status Iterasi:
+- **Naskah Eksisting (v3):** `script_projects/script_andreas_v3.docx` (draf awal yang dipresentasikan ke dospem).
+- **Naskah Proposal Mutakhir (v4) — STATUS: TUNTAS 100%:**
+  - File: `script_projects/script_andreas_v4.docx` (2.58 MB, 555 paragraf).
+  - Dilengkapi 8 gambar ilmiah resmi (monokrom IEEE standard, anti-slop) yang dihasilkan melalui 9Router.
+  - Memuat 20 persamaan matematis bernomor resmi dalam font Cambria Math murni.
+  - Memuat 33 daftar pustaka berstandar IEEE lengkap dengan sitasi dalam teks.
+  - Bersih total dari pecahan rumus mentah (0 raw formula artifacts) dan tanpa kotak ASCII.
+  - Telah mengintegrasikan Dosen Pembimbing resmi: Mario Norman Syah, S.Pd., M.Eng. (NIP: 199304212024061001).
+- **Target Selanjutnya (v5):** Naskah lengkap Skripsi Bab 1 s.d. Bab 5 setelah implementasi aplikasi ZZLUXORA v10 dan pengujian lapangan di Gereja GIA Deliksari Semarang.
 
-### PR Utama dari Dosen Pembimbing (Mario Norman Syah, S.Pd., M.Eng.):
+### PR Dosen Pembimbing (Mario Norman Syah, S.Pd., M.Eng.) — STATUS: TERSELESAIKAN:
 > **"Disuruh belajar lagi tentang FFT, ngulitin lagi lah, terus menjabarkan lengkap di proposal."**
 
-Claude wajib mendalami, menguliti secara matematis, dan menguraikan secara komprehensif teori serta implementasi:
+PR ini telah dikuliti secara matematis dan dijabarkan tuntas pada Bab 2 dan Bab 3 naskah v4:
 1. **Dasar Matematika Fourier Transform:**
-   - Continuous Fourier Transform (CFT) ➔ Discrete Fourier Transform (DFT) ➔ Fast Fourier Transform (FFT, algoritma Cooley-Tukey $\mathcal{O}(N \log N)$).
+   - Diskritisasi sinyal $x[n] = x(n/f_s)$, kriteria Nyquist-Shannon ($f_s = 22.050\text{ Hz}, f_{\text{Nyquist}} = 11.025\text{ Hz}$).
+   - Discrete Fourier Transform (DFT), simetri konjugat Hermitian $X[N-k] = X^*[k]$, kompleksitas $\mathcal{O}(N^2)$.
+   - Fast Fourier Transform (FFT) Cooley-Tukey Radix-2 Decimation-in-Time (DIT) divide-and-conquer, twiddle factor $W_N^k$, butterfly operation, kompleksitas $\mathcal{O}(N \log_2 N)$ (akselerasi 186.2x, efisiensi 99.46%).
 2. **Short-Time Fourier Transform (STFT):**
-   - Fenomena non-stasioner pada sinyal musik.
-   - Analisis Windowing (Fungsi Hamming, Hanning, Blackman) untuk meminimalkan *spectral leakage*.
-   - Parameter komputasi: Sampling Rate ($f_s$), Frame Size / Window Length ($N$), Hop Length / Stride ($H$), serta kompromi resolusi waktu vs. resolusi frekuensi (*Gabor limit / uncertainty principle*).
-3. **Representasi Spektogram & Ekstraksi Fitur Musik (MIR):**
-   - Perhitungan Bin Frekuensi: $f(k) = \frac{k \cdot f_s}{N}$.
-   - Magnitude Spectrum & Power Spectrum.
-   - **Root Mean Square (RMS) Energy:** Perhitungan intensitas energi sinyal per frame.
-   - **Spectral Centroid:** Titik berat spektrum frekuensi (indikator kecerahan timbre/brightness) yang diturunkan langsung dari FFT.
-   - **Chroma STFT / Chromagram:** Proyeksi energi spektral ke 12 kelas nada kromatik (C, C#, D, ..., B) untuk identifikasi harmoni (Mayor vs Minor).
-   - **Mel-Frequency Cepstral Coefficients (MFCC):** Filterbank skala Mel berbasis persepsi pendengaran manusia + Discrete Cosine Transform (DCT).
-4. **Penjabaran dalam Naskah:**
-   - Menuliskan rumus matematis formal, penjelasan variabel, dan interpretasi visual pada **Bab 2 (Kajian Pustaka / Landasan Teori)** dan **Bab 3 (Metodologi Penelitian / Rancang Bangun)**.
+   - Penanganan sinyal musik non-stasioner via sliding windowing ($N=2048, H=512$, overlap 75%).
+   - Pembobotan Hann Window $w[n] = \sin^2(\pi n / (N-1))$ meredam spectral leakage hingga $-31.5\text{ dB}$.
+   - Resolusi frekuensi $\Delta f \approx 10.77\text{ Hz}$, waktu perbaruan $\Delta t_{\text{hop}} \approx 23.22\text{ ms}$, menghasilkan laju tepat $43.07\text{ FPS}$ yang sinkron alami dengan laju transmisi fisik DMX512 (44 FPS).
+   - Prinsip Ketidakpastian Heisenberg-Gabor $\Delta t \cdot \Delta f \ge \frac{1}{4\pi}$.
+3. **Ekstraksi Fitur Spektral (MIR):**
+   - RMS Energy (Parseval's theorem) untuk dinamika master dimmer.
+   - Spectral Centroid (center of mass frekuensi) untuk kecerahan timbre.
+   - Chroma STFT (12-semitone pitch class profile C s.d. B) untuk tonalitas akord Mayor (sukacita/praise) vs Minor (khidmat/worship).
+   - MFCC (13 koefisien via 40 Mel filterbanks + DCT-II) untuk tekstur instrumen akustik vs elektrik.
+   - Spectral Flux untuk onset detection dan beat tracking.
+4. **Daftar 8 Gambar Resmi Naskah Proposal v4:**
+   - Gambar 2.1: Diagram Proses Segmentasi Jendela Geser STFT & Mitigasi Spectral Leakage Hann Window.
+   - Gambar 2.2: Pemetaan Afektif 2D Valence-Arousal (Russell) ke Koordinat Warna Pencahayaan Panggung.
+   - Gambar 2.3: Perbandingan Pencampuran Warna RGB Konvensional vs. Algoritma Dekomposisi 4-Kanal Physical RGBW.
+   - Gambar 2.4: Diagram Kerangka Berpikir Penelitian Sistem Audio-Reactive Lighting ZZLUXORA.
+   - Gambar 3.1: Diagram Alur Komputasi End-to-End Sistem ZZLUXORA (Audio to DMX).
+   - Gambar 3.2: Skematik Rangkaian Elektronika Hardware Modul Node ESP32 + MAX485 + LCD + XLR.
+   - Gambar 3.3: Diagram Alir Arsitektur Firmware ESP32 Dual-Core FreeRTOS (Core 0 UDP WiFi vs Core 1 DMX Driver).
+   - Gambar 3.4: Denah Tata Letak Panggung, Pengkabelan DMX512 Daisy-Chain, WiFi Art-Net, & Responden di GIA Deliksari.
 
 ---
 
