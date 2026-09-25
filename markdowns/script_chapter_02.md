@@ -50,36 +50,212 @@ Berdasarkan tinjauan pustaka di atas, posisi penelitian ini berada pada konteks 
 
 ### 2.2.1 Pemrosesan Sinyal Audio Digital (DSP/*MIR*)
 
-*Digital Signal Processing* (DSP) merupakan cabang ilmu yang mempelajari pemrosesan sinyal dalam domain digital, termasuk sinyal audio. Dalam konteks penelitian ini, DSP digunakan untuk mengekstraksi fitur-fitur bermakna dari *file* audio lagu rohani. Disiplin terkait, yaitu *Music Information Retrieval* (MIR), secara khusus menangani pengambilan informasi dari data musik, meliputi aspek ritme, harmoni, timbre, dan struktur [2][4].
+*Digital Signal Processing* (DSP) merupakan cabang ilmu rekayasa komputasi yang menangani representasi, transformasi, dan ekstraksi informasi dari sinyal-sinyal dalam domain digital. Dalam konteks penelitian ini, DSP menjadi pilar utama untuk mengekstraksi fitur-fitur akustik dan harmonik dari berkas audio lagu rohani. Sub-bidang yang secara khusus mendasari ekstraksi informasi musikal ini adalah *Music Information Retrieval* (MIR), yang mengkaji teknik komputasi untuk mengenali ritme, melodi, harmoni, timbre, dan dinamika struktural dari rekaman audio musik [2][4][21].
 
-#### a. *Fast Fourier Transform* (FFT) dan *Short-Time Fourier Transform* (STFT)
+#### a. Diskritisasi Sinyal Audio dan Kriteria Nyquist-Shannon
 
-FFT merupakan algoritma efisien untuk menghitung *Discrete Fourier Transform* (DFT) yang mengubah sinyal audio dari domain waktu ke domain frekuensi. STFT merupakan pengembangan FFT yang membagi sinyal menjadi segmen-segmen pendek (*window*) dan menerapkan FFT pada setiap segmen, menghasilkan representasi waktu-frekuensi yang disebut spektrogram. Secara matematis, STFT didefinisikan sebagai:
+Sinyal suara fisik yang dihasilkan oleh instrumen musik dan vokal penyembahan merupakan gelombang tekanan udara mekanik kontinu $x(t)$ dalam domain waktu kontinu ($t \in \mathbb{R}$). Ketika ditangkap oleh transduser mikrofon dan dikuantisasi oleh *Analog-to-Digital Converter* (ADC), sinyal dicuplik pada interval waktu periodik $T_s$ (detik), menghasilkan deret diskrit $x[n]$:
 
-$$STFT\{x(t)\}(\tau, \omega) = \int_{-\infty}^{\infty} x(t) \cdot w(t - \tau) \cdot e^{-j\omega t} \, dt$$
+$$x[n] = x(n \cdot T_s) = x\left(\frac{n}{f_s}\right), \quad n \in \mathbb{Z}$$
 
-di mana $x(t)$ adalah sinyal audio, $w(t)$ adalah fungsi *window* (misalnya Hann *window*), $\tau$ adalah waktu, dan $\omega$ adalah frekuensi angular [21].
+di mana $n$ adalah indeks sampel diskrit ($n = 0, 1, 2, \dots, L-1$ dengan $L$ adalah total panjang sampel) dan $f_s = \frac{1}{T_s}$ adalah frekuensi pencuplikan (*sampling rate*) dalam satuan Hertz (Hz). Berdasarkan Teorema Kriteria Nyquist-Shannon, agar deret diskrit $x[n]$ mampu merekonstruksi sinyal analog asli tanpa mengalami distorsi lipatan frekuensi (*aliasing*), frekuensi pencuplikan harus memenuhi:
 
-#### b. Fitur Audio
+$$f_s \ge 2 \cdot f_{\max}$$
 
-Berikut adalah fitur-fitur audio yang diekstraksi dalam penelitian ini:
+di mana $f_{\max}$ adalah komponen frekuensi tertinggi yang dikandung oleh sinyal audio. Spektrum pendengaran manusia mencakup rentang $20\text{ Hz}$ hingga $20.000\text{ Hz}$. Pada sistem audio CD standar digunakan $f_s = 44.100\text{ Hz}$. Namun, dalam standar komputasi MIR dan pustaka Librosa [21], sinyal audio di-*downsample* ke frekuensi standar $f_s = 22.050\text{ Hz}$. Dengan $f_s = 22.050\text{ Hz}$, frekuensi batas Nyquist adalah:
 
-1. **Tempo/BPM (*Beats Per Minute*):** Kecepatan ketukan musik per menit. Lagu *praise* umumnya memiliki tempo tinggi (120–180 BPM), sedangkan lagu *worship* bertempo rendah (60–100 BPM) [5].
+$$f_{\text{Nyquist}} = \frac{f_s}{2} = 11.025\text{ Hz}$$
 
-2. ***RMS Energy*:** Akar kuadrat rata-rata (*Root Mean Square*) dari amplitudo sinyal, merepresentasikan kenyaringan atau energi keseluruhan lagu.
-$$RMS = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
+Batas frekuensi $11.025\text{ Hz}$ ini terbukti sangat memadai untuk merepresentasikan nada dasar (*fundamental frequency* $f_0$) instrumen musik panggung (rentang nada piano dan vokal manusia berkisar antara $27{,}5\text{ Hz}$ hingga $4.200\text{ Hz}$) serta harmonik dominan instrumen musik, sekaligus menghemat beban komputasi CPU dan memori hingga $50\%$ dibandingkan pemrosesan pada laju $44.100\text{ Hz}$.
 
-3. ***Spectral Centroid*:** Titik pusat massa spektrum frekuensi, merepresentasikan "kecerahan" (*brightness*) suara. Nilai tinggi menunjukkan dominasi frekuensi tinggi.
-$$SC = \frac{\sum_{k=1}^{K} f(k) \cdot |X(k)|^2}{\sum_{k=1}^{K} |X(k)|^2}$$
-di mana $f(k)$ adalah frekuensi bin ke-$k$ dan $X(k)$ adalah magnitudo DFT pada bin ke-$k$ [21].
+#### b. Discrete Fourier Transform (DFT) dan Kompleksitas Komputasi
 
-4. **MFCC (*Mel-Frequency Cepstral Coefficients*):** Koefisien cepstral berbasis skala Mel yang merepresentasikan karakteristik timbre suara. Umumnya diambil 13 koefisien pertama [1][2].
+Sinyal audio dalam domain waktu $x[n]$ hanya merepresentasikan fluktuasi amplitudo terhadap waktu, sehingga tidak mampu memperlihatkan kandungan nada dan spektrum frekuensi yang menyusun lagu tersebut. Untuk mengubah sinyal dari domain waktu ke domain frekuensi, digunakan *Discrete Fourier Transform* (DFT).
 
-5. ***Chroma Features*:** Representasi distribusi energi pada 12 kelas nada kromatik (C, C#, D, ..., B), merepresentasikan konten harmoni dan tonalitas lagu.
+Untuk suatu blok sinyal diskrit sepanjang $N$ sampel ($n = 0, 1, \dots, N-1$), DFT mentransformasikan sampel waktu ke dalam spektrum frekuensi diskrit $X[k]$ yang berupa deret bilangan kompleks:
 
-6. ***Onset Detection*:** Deteksi titik-titik awal setiap nada atau ketukan baru dalam sinyal audio. Dalam penelitian ini, *onset detection* digunakan untuk menentukan titik perubahan *scene* pencahayaan berdasarkan perubahan dinamika audio [5].
+$$X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-j \frac{2\pi}{N} kn}, \quad k = 0, 1, \dots, N-1$$
 
-7. ***Beat Tracking*:** Pelacakan posisi ketukan (*beat*) dalam sinyal audio untuk sinkronisasi transisi pencahayaan dengan ritme musik. *Beat tracking* menjadi dasar utama penentuan waktu pergantian *scene* dan kecepatan *chase* [5].
+Berdasarkan identitas Euler $e^{-j\theta} = \cos(\theta) - j\sin(\theta)$, formulasi DFT dapat diuraikan secara eksplisit menjadi komponen riil dan imajiner:
+
+$$X[k] = \sum_{n=0}^{N-1} x[n] \cos\left(\frac{2\pi kn}{N}\right) - j \sum_{n=0}^{N-1} x[n] \sin\left(\frac{2\pi kn}{N}\right)$$
+
+di mana:
+- $j = \sqrt{-1}$ adalah unit bilangan imajiner.
+- $k$ adalah indeks komponen frekuensi diskrit (*frequency bin*).
+- $N$ adalah ukuran blok transformasi (*transform size* / *frame length*).
+- Komponen riil $\text{Re}(X[k]) = \sum_{n=0}^{N-1} x[n] \cos\left(\frac{2\pi kn}{N}\right)$.
+- Komponen imajiner $\text{Im}(X[k]) = -\sum_{n=0}^{N-1} x[n] \sin\left(\frac{2\pi kn}{N}\right)$.
+
+Karena sampel audio $x[n]$ merupakan nilai riil murni ($x[n] \in \mathbb{R}$), spektrum DFT memiliki sifat simetri konjugat Hermitian:
+
+$$X[N - k] = X^*[k]$$
+
+di mana tanda $*$ menyatakan konjugat kompleks. Konsekuensi dari sifat simetri ini adalah bahwa nilai magnitudo spektrum di atas indeks $N/2$ merupakan cerminan persis dari spektrum di bawah $N/2$ ($|X[N-k]| = |X[k]|$). Oleh karena itu, dalam komputasi ekstraksi fitur audio, kita hanya perlu menghitung dan menganalisis sebanyak:
+
+$$N_{\text{bins}} = \frac{N}{2} + 1$$
+
+komponen frekuensi positif independen, mulai dari bin $k = 0$ (komponen DC / frekuensi $0\text{ Hz}$) hingga bin $k = N/2$ (frekuensi Nyquist $f_s/2$).
+
+Ditinjau dari kompleksitas algoritma, untuk menghitung setiap bin $k$ dari persamaan definisi langsung diperlukan $N$ perkalian kompleks dan $N-1$ penjumlahan kompleks. Karena terdapat $N$ buah bin yang harus dihitung, total operasi perhitungan DFT langsung adalah:
+
+$$\text{Kompleksitas DFT} = \mathcal{O}(N^2)$$
+
+Jika panjang frame yang digunakan adalah $N = 2048$ sampel, maka satu kali evaluasi DFT langsung membutuhkan $2048^2 = 4.194.304$ operasi perkalian kompleks. Jika dalam 1 detik sinyal terdapat 43 frame audio, maka sistem harus melakukan lebih dari 180 juta operasi perkalian per detik hanya untuk transformasi dasar. Kompleksitas sebesar ini akan memicu *bottleneck* komputasi dan latensi tinggi yang tidak dapat diterima pada aplikasi pengendalian pencahayaan panggung *real-time*.
+
+#### c. Algoritma Fast Fourier Transform (FFT) Cooley-Tukey Radix-2
+
+Untuk mengatasi inefisiensi komputasi DFT langsung, sistem memanfaatkan algoritma *Fast Fourier Transform* (FFT) yang dirumuskan oleh J. W. Cooley dan J. W. Tukey pada tahun 1965 [5]. Algoritma ini mengeksploitasi periodisitas dan simetri dari faktor fase (*twiddle factor*) $W_N = e^{-j \frac{2\pi}{N}}$ melalui pendekatan *divide-and-conquer* berbasis desimasi waktu (*Decimation-in-Time* / DIT).
+
+Dengan mengasumsikan panjang frame $N$ adalah bilangan genap kelipatan dua ($N = 2^p$), deret penjumlahan $n$ pada DFT dipecah menjadi dua kelompok:
+1. Sub-deret indeks genap ($n = 2m$, dengan $m = 0, 1, \dots, \frac{N}{2}-1$)
+2. Sub-deret indeks ganjil ($n = 2m+1$, dengan $m = 0, 1, \dots, \frac{N}{2}-1$)
+
+Substitusi ke dalam persamaan DFT menghasilkan:
+
+$$X[k] = \sum_{m=0}^{\frac{N}{2}-1} x[2m] \cdot e^{-j \frac{2\pi}{N} k(2m)} + \sum_{m=0}^{\frac{N}{2}-1} x[2m+1] \cdot e^{-j \frac{2\pi}{N} k(2m+1)}$$
+
+$$X[k] = \sum_{m=0}^{\frac{N}{2}-1} x[2m] \cdot e^{-j \frac{2\pi}{N/2} km} + W_N^k \sum_{m=0}^{\frac{N}{2}-1} x[2m+1] \cdot e^{-j \frac{2\pi}{N/2} km}$$
+
+$$X[k] = E[k] + W_N^k \cdot O[k]$$
+
+di mana:
+- $E[k]$ adalah DFT berukuran $N/2$ dari sampel-sampel genap (*Even*).
+- $O[k]$ adalah DFT berukuran $N/2$ dari sampel-sampel ganjil (*Odd*).
+- $W_N^k = e^{-j \frac{2\pi k}{N}}$ adalah *twiddle factor*.
+
+Memanfaatkan sifat periodisitas $E[k + N/2] = E[k]$, $O[k + N/2] = O[k]$, dan relasi simetri $W_N^{k + N/2} = -W_N^k$, kedua bagian spektrum dapat dihitung secara simultan melalui operasi kupu-kupu (*butterfly operation*):
+
+$$\begin{cases}
+X[k] &= E[k] + W_N^k \cdot O[k] \\
+X\left[k + \frac{N}{2}\right] &= E[k] - W_N^k \cdot O[k]
+\end{cases} \quad \text{untuk } k = 0, 1, \dots, \frac{N}{2} - 1$$
+
+Melalui rekursi sebanyak $\log_2 N$ tahapan, algoritma FFT Cooley-Tukey berhasil mereduksi kompleksitas komputasi secara drastis menjadi:
+
+$$\text{Kompleksitas FFT} = \mathcal{O}(N \log_2 N)$$
+
+Pada ukuran frame $N = 2048$ sampel, algoritma FFT hanya membutuhkan:
+
+$$N \log_2 N = 2048 \times 11 = 22.528 \text{ operasi dasar}$$
+
+Dibandingkan dengan DFT langsung ($4.194.304$ operasi), algoritma FFT Cooley-Tukey memberikan **faktor percepatan sebesar 186,2 kali lipat** atau memangkas beban komputasi sebesar **$99{,}46\%$**. Efisiensi komputasi ini sangat krusial agar sistem ZZLUXORA dapat mengekstrak seluruh spektrum frekuensi audio secara instan (< 5 ms per frame) tanpa membebani prosesor komputer kontrol pencahayaan.
+
+#### d. Karakteristik Sinyal Musik Non-Stasioner dan Short-Time Fourier Transform (STFT)
+
+Meskipun FFT sangat efisien, penerapan FFT standar secara langsung terhadap keseluruhan durasi berkas lagu rohani (misalnya sebuah lagu berdurasi 4 menit) tidak dapat digunakan untuk pengendalian pencahayaan panggung. Hal ini disebabkan oleh sifat fisik sinyal musik:
+
+1. **Sinyal Musik Bersifat Non-Stasioner:**
+   Komposisi lagu rohani memiliki struktur dinamika yang terus berubah terhadap waktu (terdiri dari bagian *intro*, bait/*verse*, jembatan/*bridge*, reff/*chorus*, dan penutup). Kandungan frekuensi, harmoni akord, kenyaringan, dan tempo musik berganti dari detik ke detik.
+2. **Ketiadaan Lokalisasi Waktu pada FFT Global:**
+   FFT standar mengintegrasikan seluruh sinyal dari awal hingga akhir lagu, sehingga spektrum yang dihasilkan hanya memperlihatkan *frekuensi apa saja yang muncul di sepanjang lagu*, namun **sama sekali tidak memiliki informasi mengenai kapan frekuensi tersebut terjadi**.
+3. **Kebutuhan Sinkronisasi Pencahayaan Panggung:**
+   Tata cahaya panggung menuntut respons visual yang sinkron detik demi detik mengikuti dinamika lagu (misalnya saat lagu berpindah dari *verse* yang tenang ke *drop chorus* yang bertenaga).
+
+Oleh karena itu, transformasi yang wajib digunakan untuk analisis musik adalah **Short-Time Fourier Transform (STFT)**, yang membagi sinyal audio menjadi jendela-jendela waktu pendek (*sliding frames*) dan mengevaluasi FFT pada masing-masing jendela tersebut.
+
+#### e. Fungsi Windowing dan Mitigasi Spectral Leakage
+
+Dalam komputasi STFT, pemotongan sinyal audio menjadi segmen-segmen frame pendek secara matematis ekuivalen dengan mengalikan sinyal $x[n]$ dengan suatu fungsi pembobotan (*window function*) $w[n]$.
+
+Jika frame dipotong menggunakan jendela persegi (*Rectangular Window*):
+
+$$w_{\text{rect}}[n] = \begin{cases} 1, & 0 \le n \le N-1 \\ 0, & \text{lainnya} \end{cases}$$
+
+Di domain frekuensi, perkalian ini setara dengan operasi konvolusi sinyal dengan fungsi $\text{sinc}(f) = \frac{\sin(\pi f)}{\pi f}$. Pemotongan mendadak pada batas awal dan akhir frame menimbulkan diskontinuitas artifisial tajam pada sinyal. Akibatnya, energi frekuensi dari suatu nada murni akan menyebar dan bocor ke bin-bin frekuensi tetangga di sekitarnya dalam bentuk puncak sampingan (*sidelobes*) yang tinggi. Fenomena kebocoran ini dikenal sebagai **Spectral Leakage**.
+
+Kebocoran spektral sangat merugikan sistem pencahayaan panggung karena menyebabkan deteksi harmoni nada dan ekstraksi fitur *Chroma* menjadi tidak akurat (nada mayor dan minor menjadi bias akibat tercemar frekuensi palsu). Untuk meredam *spectral leakage*, amplitudo sinyal pada tepi frame harus diturunkan secara mulus (*tapering*) menuju nol. Pada sistem ZZLUXORA, digunakan fungsi jendela **Hann (Hanning) Window** [21]:
+
+$$w[n] = 0{,}5 \left[ 1 - \cos\left( \frac{2\pi n}{N - 1} \right) \right] = \sin^2\left( \frac{\pi n}{N - 1} \right), \quad 0 \le n \le N-1$$
+
+Fungsi Hann memiliki nilai $w[0] = w[N-1] = 0$ dan puncak $w[(N-1)/2] = 1$. Keunggulan akustik fungsi Hann adalah mampu meredam *sidelobe level* hingga **-31,5 dB** (jauh lebih baik dibandingkan *rectangular window* yang hanya memiliki peredaman -13 dB), sehingga menghasilkan pemisahan puncak frekuensi nada yang bersih dan meminimalkan bias pada analisis harmoni lagu.
+
+#### f. Formulasi Diskrit STFT dan Konversi Parameter Fisik
+
+Dengan menggabungkan fungsi pembobotan Hann window dan algoritma FFT Cooley-Tukey, formulasi matematis STFT diskrit yang diimplementasikan pada komputasi perangkat lunak ZZLUXORA didefinisikan sebagai:
+
+$$X[m, k] = \sum_{n=0}^{N-1} x[n + m \cdot H] \cdot w[n] \cdot e^{-j \frac{2\pi}{N} kn}$$
+
+di mana:
+- $m \in \{0, 1, \dots, M-1\}$ adalah **indeks frame waktu** ($M$ adalah total frame dalam lagu).
+- $k \in \left\{0, 1, \dots, \frac{N}{2}\right\}$ adalah **indeks bin frekuensi**.
+- $N$ adalah panjang jendela analisis (*Window Length* / *FFT size*), ditetapkan bernilai **2048 sampel**.
+- $H$ adalah jarak pergeseran antar jendela (*Hop Length* / *Stride*), ditetapkan bernilai **512 sampel** (terjadi *overlap* sebesar $75\%$).
+- $w[n]$ adalah fungsi jendela Hann sepanjang $N$.
+- $x[n + m \cdot H]$ adalah segmen sinyal audio pada jendela waktu ke-$m$.
+
+Hasil transformasi STFT adalah sebuah matriks bilangan kompleks $X[m, k]$ berdimensi $\left( \frac{N}{2} + 1 \right) \times M$ yang menghubungkan koordinat sel diskrit $(m, k)$ dengan besaran fisik nyata di dunia nyata:
+
+1. **Waktu Fisik ($t_m$) dalam Detik:**
+   $$t_m = \frac{m \cdot H}{f_s}$$
+2. **Frekuensi Fisik ($f_k$) dalam Hertz:**
+   $$f_k = \frac{k \cdot f_s}{N}$$
+3. **Lebar Pita per Bin Frekuensi ($\Delta f$):**
+   $$\Delta f = \frac{f_s}{N} = \frac{22050}{2048} \approx 10{,}7666\text{ Hz}$$
+4. **Interval Perbaruan Waktu Antar Frame ($\Delta t_{\text{hop}}$):**
+   $$\Delta t_{\text{hop}} = \frac{H}{f_s} = \frac{512}{22050} \approx 0{,}02322\text{ detik} = 23{,}22\text{ ms}$$
+
+Laju pembaruan data visual (*frame rate*) yang dihasilkan oleh algoritma adalah:
+
+$$\text{FPS} = \frac{1}{\Delta t_{\text{hop}}} = \frac{22050}{512} \approx 43{,}07\text{ frame per detik (fps)}$$
+
+Nilai **43,07 FPS** ini secara presisi selaras dengan laju penyegaran transmisi fisik standar **DMX512-A (44 frame per detik)**, sehingga data pencahayaan dapat langsung dialirkan ke lampu PAR LED panggung tanpa membutuhkan interpolasi atau penahanan buffer tambahan, menghasilkan transisi visual yang sangat halus (*smooth fading*) dan bebas getaran (*visual stepping*).
+
+#### g. Prinsip Ketidakpastian Waktu-Frekuensi (Heisenberg-Gabor Limit)
+
+Dalam pemrosesan sinyal waktu-frekuensi berlaku batasan fundamental fisika yang dikenal sebagai **Prinsip Ketidakpastian Gabor**:
+
+$$\Delta t \cdot \Delta f \ge \frac{1}{4\pi}$$
+
+Prinsip ini menegaskan bahwa kita tidak dapat memperoleh resolusi waktu yang sangat tinggi dan resolusi frekuensi yang sangat tinggi secara simultan menggunakan satu ukuran jendela STFT konstan:
+- **Jika ukuran jendela $N$ terlalu besar (misalnya $N = 8192$):** Resolusi frekuensi menjadi sangat tinggi ($\Delta f \approx 2{,}69\text{ Hz}$), mempermudah pembedaan nada bass, namun resolusi waktu memburuk secara drastis ($\Delta t \approx 371\text{ ms}$). Akibatnya, hentakan ketukan drum dan transien musik menjadi kabur dan terlambat dideteksi lebih dari 0,3 detik.
+- **Jika ukuran jendela $N$ terlalu kecil (misalnya $N = 256$):** Resolusi waktu sangat tajam ($\Delta t \approx 11{,}6\text{ ms}$), namun resolusi frekuensi sangat kasar ($\Delta f \approx 86{,}13\text{ Hz}$), sehingga sistem tidak dapat membedakan nada-nada musik yang berdekatan dan gagal menganalisis akord mayor/minor.
+
+Penetapan parameter $f_s = 22.050\text{ Hz}$, $N = 2048$, dan $H = 512$ pada sistem ZZLUXORA merupakan titik kompromi optimal (*golden mean*) yang terbukti secara empiris dan teoretis mampu membedakan harmoni akord musik ($\Delta f \approx 10{,}77\text{ Hz}$) sekaligus mendeteksi ketukan musik dengan latensi rendah ($\Delta t_{\text{hop}} \approx 23{,}22\text{ ms}$), berada jauh di bawah ambang batas persepsi keterlambatan visual mata manusia (< 40 ms).
+
+#### h. Penurunan Fitur Akustik Spektral Berbasis Spektrum FFT
+
+Matriks hasil STFT $X[m, k]$ merupakan representasi bilangan kompleks $X[m, k] = \text{Re}(X[m, k]) + j\,\text{Im}(X[m, k])$. Dari matriks ini diturunkan fitur-fitur akustik spektral yang menjadi input bagi model afektif pencahayaan panggung:
+
+1. **Magnitude Spectrogram dan Power Spectrogram:**
+   Magnitudo spektrum mengukur amplitudo absolut dari setiap komponen frekuensi:
+   $$|X[m, k]| = \sqrt{\text{Re}(X[m, k])^2 + \text{Im}(X[m, k])^2}$$
+   Sedangkan spektrum daya (*Power Spectrogram*) mengukur daya energi sinyal pada frame ke-$m$:
+   $$S[m, k] = |X[m, k]|^2$$
+
+2. ***Root Mean Square* (RMS) Energy:**
+   RMS Energy merepresentasikan kenyaringan (*loudness*) dan intensitas daya dinamika lagu pada frame ke-$m$. Berdasarkan Teorema Parseval, total energi dalam domain waktu setara dengan total energi dalam domain frekuensi:
+   $$\text{RMS}[m] = \sqrt{ \frac{1}{N} \sum_{n=0}^{N-1} \left| x[n + mH] \cdot w[n] \right|^2 }$$
+   Nilai RMS ini kemudian dinormalisasi ke skala $[0{,}0, 1{,}0]$ dan dipetakan secara linier sebagai pengatur intensitas **Master Dimmer** lampu panggung:
+   $$\text{RMS}_{\text{norm}}[m] = \frac{\text{RMS}[m] - \text{RMS}_{\min}}{\text{RMS}_{\max} - \text{RMS}_{\min}}$$
+
+3. ***Spectral Centroid* (Kecerahan Timbre / Brightness):**
+   *Spectral Centroid* merupakan titik pusat massa (*center of mass*) dari spektrum frekuensi audio pada frame ke-$m$. Nilai centroid menunjukkan apakah energi frekuensi lagu didominasi oleh rentang frekuensi rendah (karakter instrumen bass/drum, bernuansa hangat dan berat) atau frekuensi tinggi (karakter instrumen simbal/gitar melodi/vokal tinggi, bernuansa cerah dan tajam). Formulasi matematis eksak berbasis bin frekuensi FFT:
+   $$\text{Centroid}[m] = \frac{\sum_{k=0}^{N/2} f_k \cdot |X[m, k]|}{\sum_{k=0}^{N/2} |X[m, k]|} = \frac{\sum_{k=0}^{N/2} \left( \frac{k \cdot f_s}{N} \right) \cdot |X[m, k]|}{\sum_{k=0}^{N/2} |X[m, k]|}$$
+   di mana $f_k$ adalah frekuensi fisik bin ke-$k$ dan $|X[m, k]|$ adalah bobot magnitudo spektral. Pada sistem ZZLUXORA, nilai centroid dinormalisasi dan dihubungkan ke koordinat Arousal serta rona warna (*Hue*). Nilai centroid tinggi memicu warna-warna cerah tersaturasi (*vibrant gold/amber/white*), sedangkan centroid rendah memicu warna kontemplatif (*cool deep blue/purple*).
+
+4. ***Chroma STFT* (Pitch Class Profile 12-Semitone):**
+   Fitur *Chroma* memproyeksikan seluruh energi spektral frekuensi FFT ke dalam 12 kelas nada kromatik musik barat:
+   $$\text{Chroma} = \{C, C\sharp, D, D\sharp, E, F, F\sharp, G, G\sharp, A, A\sharp, B\}$$
+   Hubungan antara frekuensi kontinu $f$ dengan nomor nada MIDI $p$ mengikuti skala logaritmik sama rata (*equal temperament* dengan acuan nada $A_4 = 440\text{ Hz}$ pada indeks MIDI 69):
+   $$p(f) = 12 \cdot \log_2\left( \frac{f}{440} \right) + 69$$
+   Setiap bin frekuensi $k$ memiliki frekuensi fisik $f_k = \frac{k \cdot f_s}{N}$. Kelas nada kromatik $c \in \{0, 1, \dots, 11\}$ ditentukan melalui operasi modulo 12:
+   $$c(k) = \text{round}(p(f_k)) \pmod{12}$$
+   Energi pada kelas nada $c$ pada frame ke-$m$ dihitung dengan mengintegrasikan magnitudo seluruh bin FFT yang bersesuaian:
+   $$\text{Chroma}[m, c] = \sum_{k \in \mathcal{K}_c} |X[m, k]|$$
+   Vektor Chroma 12 dimensi $\mathbf{Chroma}[m]$ dikorelasikan dengan template profil tonal Krumhansl-Schmuckler untuk tangga nada Mayor ($\mathbf{T}_{\text{major}}$) dan Minor ($\mathbf{T}_{\text{minor}}$) guna mengevaluasi polaritas tangga nada lagu:
+   $$\rho_{\text{major}} = \text{corr}(\mathbf{Chroma}[m], \mathbf{T}_{\text{major}}), \quad \rho_{\text{minor}} = \text{corr}(\mathbf{Chroma}[m], \mathbf{T}_{\text{minor}})$$
+   Korelasi mayor yang lebih tinggi ($\rho_{\text{major}} > \rho_{\text{minor}}$) mengindikasikan suasana sukacita (*happy/uplifting*) dan menghasilkan nilai **Valence positif ($V > 0$)**, sedangkan korelasi minor yang dominan mengindikasikan suasana khidmat dan menghasilkan nilai **Valence negatif ($V < 0$)**.
+
+5. ***Mel-Frequency Cepstral Coefficients* (MFCC):**
+   MFCC mengekstraksi amplop spektral (*spectral envelope*) yang merepresentasikan karakteristik tekstur timbre suara vokal dan instrumen berdasarkan respons pendengaran telinga manusia. Spektrum daya FFT $S[m, k]$ disaring menggunakan $B = 40$ filter segitiga pada skala Mel ($m_{\text{mel}} = 2595 \log_{10}(1 + f/700)$), ditransformasikan ke skala logaritmik, lalu didekorelasikan melalui *Discrete Cosine Transform* (DCT-II):
+   $$\text{MFCC}[m, l] = \sum_{b=1}^B \log(\tilde{S}[m, b]) \cdot \cos\left( \frac{\pi l (b - 0{,}5)}{B} \right), \quad l = 0, 1, \dots, 12$$
+   13 koefisien MFCC pertama diambil untuk membedakan tekstur instrumen akustik (piano/gitar akustik pada lagu *worship*) dari instrumen berdistorsi (gitar elektrik/drum pada lagu *praise*).
+
+6. ***Onset Detection* dan *Beat Tracking*:**
+   *Onset Detection* mengidentifikasi titik awal transien serangan nada (*attack*) dengan menghitung fungsi kebaruan spektral (*spectral flux*) dari spektrum FFT:
+   $$\text{SF}[m] = \sum_{k=0}^{N/2} \max(0, |X[m, k]| - |X[m-1, k]|)$$
+   Titik puncak fungsi kebaruan ini menunjukkan terjadinya hentakan ketukan (*beat*) atau pergantian akord, yang digunakan oleh sistem ZZLUXORA sebagai pemicu pergantian *scene* dan *chase step* pencahayaan panggung secara otomatis.
 
 ### 2.2.2 Psikologi Persepsi Musik dan Warna
 
@@ -104,7 +280,7 @@ Penelitian Palmer *et al.* (2013) menunjukkan bahwa asosiasi warna terhadap musi
 | Frekuensi rendah dominan | Warna hangat (*warm*) | Lindborg (2021) [10] |
 | Frekuensi tinggi dominan | Warna dingin (*cool*) | Lindborg (2021) [10] |
 
-Temuan-temuan ini menjadi dasar ilmiah bagi penyusunan tabel *rule-based mapping* eksplisit yang digunakan dalam sistem ZZLIGHT-Luxora. Setiap aturan pemetaan merujuk pada referensi penelitian yang telah dipublikasikan.
+Temuan-temuan ini menjadi dasar ilmiah bagi penyusunan tabel *rule-based mapping* eksplisit yang digunakan dalam sistem ZZLUXORA. Setiap aturan pemetaan merujuk pada referensi penelitian yang telah dipublikasikan.
 
 ### 2.2.3 Model Warna dan Pemetaan Matematis
 
@@ -186,7 +362,7 @@ DMX512 (*Digital Multiplex* 512) merupakan standar komunikasi serial yang diteta
 
 #### b. Protokol *Art-Net*
 
-*Art-Net* merupakan protokol komunikasi yang dikembangkan oleh *Artistic Licence Engineering Ltd.* untuk mentransmisikan data DMX512 melalui jaringan UDP/IP [16]. *Art-Net* menggunakan *port* 6454 dan mendukung hingga 32.768 *universe* DMX. Dalam penelitian ini, *Art-Net* digunakan sebagai *transport layer* untuk mengirimkan data pencahayaan dari aplikasi ZZLIGHT-Luxora ke modul ESP32 melalui jaringan WiFi.
+*Art-Net* merupakan protokol komunikasi yang dikembangkan oleh *Artistic Licence Engineering Ltd.* untuk mentransmisikan data DMX512 melalui jaringan UDP/IP [16]. *Art-Net* menggunakan *port* 6454 dan mendukung hingga 32.768 *universe* DMX. Dalam penelitian ini, *Art-Net* digunakan sebagai *transport layer* untuk mengirimkan data pencahayaan dari aplikasi ZZLUXORA ke modul ESP32 melalui jaringan WiFi.
 
 Struktur paket *Art-Net* (*ArtDmx*) terdiri dari: *header* identifikasi ("Art-Net\0"), *OpCode* (0x5000), nomor *universe*, panjang data, dan 512 byte data DMX.
 
@@ -209,7 +385,7 @@ Dalam penelitian ini, ESP32 berfungsi sebagai *Art-Net node* yang menerima paket
 
 QLC+ (*Q Light Controller Plus*) merupakan perangkat lunak *open-source* untuk pengendalian pencahayaan panggung yang mendukung berbagai protokol termasuk DMX512, *Art-Net*, dan sACN [22]. Dalam arsitektur sistem penelitian ini, QLC+ berfungsi sebagai *intermediary* opsional:
 
-1. Menerima data *Art-Net* dari ZZLIGHT-Luxora sebagai *Input Universe* melalui *virtual adapter*.
+1. Menerima data *Art-Net* dari ZZLUXORA sebagai *Input Universe* melalui *virtual adapter*.
 2. Meneruskan data tersebut sebagai *Output Universe* melalui *Art-Net* ke modul ESP32 melalui jaringan WiFi/*hotspot*.
 
 QLC+ menyediakan fitur tambahan seperti *fixture editor*, *scene* manual, dan visualisasi yang memungkinkan operator melakukan penyesuaian manual jika diperlukan.

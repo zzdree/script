@@ -66,7 +66,11 @@
 
 [30] J. D. Foley, A. van Dam, S. K. Feiner, and J. F. Hughes, *Computer Graphics: Principles and Practice*, 2nd ed. Addison-Wesley, 1996.
 
-[31] P. N. Juslin and P. Laukka, \"Communication of Emotions in Vocal Expression and Music Performance: Different Channels, Same Code?,\" *Psychological Bulletin*, vol. 129, no. 5, pp. 770–814, 2003. doi: 10.1037/0033-2909.129.5.770. [Online]. Available: https://doi.org/10.1037/0033-2909.129.5.770
+[31] P. N. Juslin and P. Laukka, "Communication of Emotions in Vocal Expression and Music Performance: Different Channels, Same Code?," *Psychological Bulletin*, vol. 129, no. 5, pp. 770–814, 2003. doi: 10.1037/0033-2909.129.5.770. [Online]. Available: https://doi.org/10.1037/0033-2909.129.5.770
+
+[32] J. W. Cooley and J. W. Tukey, "An algorithm for the machine calculation of complex Fourier series," *Mathematics of Computation*, vol. 19, no. 90, pp. 297–301, 1965. doi: 10.1090/S0025-5718-1965-0178586-1. [Online]. Available: https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/
+
+[33] M. Müller, *Fundamentals of Music Processing: Audio, Analysis, Algorithms, Applications*, Cham: Springer International Publishing, 2015. doi: 10.1007/978-3-319-21945-5.
 
 ---
 
