@@ -14,14 +14,14 @@ Tanggal     : 27 September 2026
 - Nama Resmi Aplikasi: Fix "ZZLUXORA" (Rilis v10.0.0 dan seterusnya; tidak berganti nama per update).
 - Logo Aplikasi:
   * Rasio aspek 1:1 (persegi).
-  * Latar belakang: Hitam solid (#000000) bernuansa konsol pencahayaan panggung profesional.
-  * Tipografi: Huruf "zz" kecil (lowercase), gaya bold italic tegas.
-  * Efek visual: Glow neon elegan (aksen cyan elektrik & amber emas grandMA3) memancar dari kontur huruf.
-  * Dihasilkan melalui 9Router Image Generation (tersimpan di `ui/assets/logo_zz.png` dan `logo_zz.ico`).
+  * Latar belakang: Hitam solid murni (#000000).
+  * Tipografi: Huruf kapital "ZZ" (uppercase), font Arial Black Italic.
+  * Warna teks: Putih bersih (#ffffff), kontras tajam.
+  * Efek visual: Tanpa glow (no glow effect), clean, on-point, elegan, anti-slop.
+  * Berkas asset: `ui/assets/logo_zz.png` (1024x1024) dan `ui/assets/logo_zz.ico` (multi-size 16x16 s.d. 256x256).
 - Implementasi Icon:
-  * Digunakan sebagai icon window (title bar pojok kiri atas).
+  * Digunakan sebagai icon window (OS title bar pojok kiri atas).
   * Digunakan sebagai icon taskbar Linux Mint & Windows 11.
-  * Format asset: PNG 1024x1024 300 DPI dan format multi-size ICO (16x16 s.d. 256x256).
 
 ================================================================================
 2. TEMA WARNA & TIPOGRAFI (PURE DARK GREY & HIGH CONTRAST WHITE)
