@@ -101,22 +101,14 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
      - Art-Net 4 DMX512 UDP packet generator (530 byte paket biner: 18B header little-endian opcode + 512B payload, Universe 0, Port 6454).
      - Seluruh 11 unit test standar (`tests/test_*.py`) lulus 100%.
 
-2. **Fase 2: UI/UX Console Panggung (GrandMA3 & QLC+ Style) — STATUS: TUNTAS & MODULAR**
-   - Dibangun menggunakan **PySide6 / PyQt6** berbasis `feedback_v1.txt` dan `feedback_v2.txt`.
-   - **Tanpa Splashscreen:** Konsol langsung terbuka seketika (*instant launch*) tanpa jeda splashscreen.
-   - **Arsitektur Modular (`ui/`):**
-     - `styles.py`: Industrial dark theme (`#0e1013`), token warna kanal DMX, dan master QSS.
-     - `icons.py`: Generator ikon SVG prosedural (lampu panggung, hamburger, play/pause, blackout).
-     - `main_window.py`: Header bar terintegrasi, menu bar File/View/Help, indikator Art-Net, tombol play/pause toggle, dan tombol Master Blackout (reset fader ke 0).
-     - `sidebar.py`: Navigasi hamburger responsif dengan indikator aktif.
-     - `panels/address_tab.py`: Grid DMX 512 kanal (24 kolom horizontal, auto-patch sekuensial, inspektor kanal).
-     - `panels/analyze_tab.py`: Core skripsi audio analyzer dengan grafik bidang afektif Russell 2D live dan progress bar saintifik.
-     - `panels/scenes_tab.py` & `chase_tab.py`: Pemetaan cue terstruktur lagu (Verse, Chorus, Bridge) dan BPM timing engine.
-     - `panels/page_tab.py`: Tombol virtual executor playback langsung panggung.
-     - `panels/mixer_tab.py`: 513 slider fader fisik industri (1 Master Dimmer + 512 DMX channels 0–255).
-     - `panels/preview_tab.py`: Visualizer panggung 2D tampak depan dengan rendering cahaya PAR LED dinamis (RGBW glow) dan draggable fixtures.
-     - `panels/output_tab.py`: Pengaturan jaringan Art-Net UDP 6454 (Localhost, ESP32 AP 192.168.4.1, Custom IP).
-     - `panels/fixture_editor.py` & `fixture_list.py`: Editor profil lampu JSON dan drawer perpustakaan lampu.
+2. **Fase 2: UI/UX Console Panggung (GrandMA3 Next-Gen & QLC+ Style) — STATUS: FEEDBACK v3 MASTER PLAN**
+   - Mengintegrasikan perombakan arsitektur dari `notes/feedback_v3.txt` dan panduan visual grandMA3 (Image 01 s.d. 05):
+     * **Tanpa Splashscreen:** Konsol langsung terbuka seketika (*instant cold launch* < 500 ms) seperti QLC+.
+     * **Top Header Terpadu (Sidebar Dihapus):** Navigasi dipindahkan ke header atas terpadu (`File`, `Fixture`, `Editor`, `Preview`, `Setting`, `Help`, `About`) + status Art-Net click-to-setting, tombol Blackout, dan tombol Play/Stop UDP toggle.
+     * **Jendela Pop-up Mandiri:** Fixture List (Drag & Drop), Fixture Definition Editor (.zfx JSON berstandar QLC+), Stage Visualizer 2D/3D (Multi-Screen Support), Settings, Help, About.
+     * **6 Tab Utama Program:** Address (Grid 256 DMX, Undo/Redo), Analyze (Audio loader, YouTube downloader, non-blocking DSP worker), Result (Russell 2D plane, export to perform), Perform (playlist & cue transitions), Page (virtual executor sheet), Mixer (257 fader fisik dengan tactile ribbed cap & illuminated groove rails).
+     * **Logo Resmi:** Dihasilkan via 9Router (huruf `zz` bold italic glowing pada latar hitam pekat 1:1, tersimpan di `ui/assets/logo_zz.png` dan `.ico`).
+     * **Dokumentasi Lengkap di `zzluxora_v10/markdowns/`:** `DESIGN.md`, `PRD.md`, `ARCHITECTURE.md`, `ROADMAP.md`.
 
 ---
 
