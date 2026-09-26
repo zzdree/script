@@ -2,9 +2,9 @@
           FEEDBACK ZZLUXORA — v3 (GrandMA3 Next-Gen Console Architecture)
 ================================================================================
 
-Sumber      : User Review & Feedback v3 (Penyempurnaan Mayor atas Feedback v1 & v2)
+Sumber      : User Review & Feedback v3 (Revisi Presisi Arsitektur Desktop Profesional)
 Referensi   : grandMA3 Full-Size / onPC Console, QLC+ v4 & v5, Studio Fader Calibration
-Dokumentasi : Terstruktur, Rapi, & Siap Implementasi Rekayasa Perangkat Lunak
+Dokumentasi : Terstruktur, Rapi, Standar Rekayasa Perangkat Lunak Senior (Lead Architect)
 Tanggal     : 27 September 2026
 
 ================================================================================
@@ -17,304 +17,186 @@ Tanggal     : 27 September 2026
   * Latar belakang: Hitam solid (#000000) bernuansa konsol pencahayaan panggung profesional.
   * Tipografi: Huruf "zz" kecil (lowercase), gaya bold italic tegas.
   * Efek visual: Glow neon elegan (aksen cyan elektrik & amber emas grandMA3) memancar dari kontur huruf.
-  * Dibuat menggunakan skill 9Router Image Generation (model ag/gemini-3.1-flash-image).
+  * Dihasilkan melalui 9Router Image Generation (tersimpan di `ui/assets/logo_zz.png` dan `logo_zz.ico`).
 - Implementasi Icon:
   * Digunakan sebagai icon window (title bar pojok kiri atas).
   * Digunakan sebagai icon taskbar Linux Mint & Windows 11.
-  * Format asset: PNG resolusi tinggi dan format multi-size ICO / SVG vector.
-- Title Bar Text:
-  * Format: "[Icon] ZZLUXORA - [Nama File Project / Path File]" (contoh: "ZZLUXORA - Untitled.zlx").
+  * Format asset: PNG 1024x1024 300 DPI dan format multi-size ICO (16x16 s.d. 256x256).
 
 ================================================================================
-2. PERILAKU PELUNCURAN (LAUNCH BEHAVIOR)
+2. TEMA WARNA & TIPOGRAFI (PURE DARK GREY & HIGH CONTRAST WHITE)
 ================================================================================
 
-- Splash Screen: DITIADAKAN TOTAL (NO SPLASHSCREEN).
-- Alasan Rekayasa:
-  * Mengeliminasi beban booting (overhead) dan jeda tunggu 3 detik yang tidak esensial.
-  * Konsisten dengan utilitas QLC+ dan grandMA3 onPC: instan terbuka (instant cold launch).
-  * Meminimalkan risiko crash saat peluncuran darurat di panggung pementasan.
-  * Operator dapat langsung membuka software, me-load file project .zlx, dan live control seketika.
+- Skema Warna Utama: **Pure Dark Grey** Industri (bukan hitam legam OLED, nyaman untuk FOH):
+  * Root Background      : `#1e2024` (Deep Charcoal Grey)
+  * Surface / Panels     : `#242830` (Medium Dark Grey)
+  * Elevated Containers  : `#2d323c` (Lighter Slate Grey)
+  * Fader Groove / Rails : `#14161a` (Recessed Black Grey)
+  * Border / Dividers    : `#383e4c` (1px solid crisp border)
+- Tipografi & Kontras:
+  * Teks Utama & Nilai   : **Putih Bersih Kontras Tinggi** (`#ffffff` / `#f8fafc`).
+  * Teks Sekunder/Label  : Abu-abu Terang (`#cbd5e1` / `#94a3b8`).
+  * DMX Values (0–255)   : Monospace putih tebal (JetBrains Mono / Consolas) agar stabil tanpa goyang.
 
 ================================================================================
-3. ARSITEKTUR TOP HEADER & INTEGRASI MENUBAR (NO SIDEBAR)
+3. HIERARKI 3-LEVEL HEADER (STANDAR DESKTOP WINDOWS & LINUX)
 ================================================================================
 
-- Transformasi Layout:
-  * SIDEBAR RESMI DIHAPUS. Seluruh navigasi dipindahkan langsung ke Header Bar bagian atas.
-  * Area kerja visual menjadi jauh lebih luas, lapang, dan terfokus pada fader serta stage visualizer.
+Struktur visual bagian atas jendela aplikasi terdiri dari 3 baris terpadu:
 
-- Layout Header Sisi Kiri (Brand & Menubar Terpadu):
-  [Icon ZZ] [ZZLUXORA] | [File] [Fixture] [Editor] [Preview] [Setting] [Help] [About]
+```text
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ [Icon ZZ] ZZLUXORA    D:\projects\church_live\SundayWorship.zlx                          —  □  ✕ │  <-- Level 1: Title Bar
+├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ File    Fixture    Editor    Preview    Setting    Help    About                                 │  <-- Level 2: Menu Bar
+├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ [Address] [Analyze] [Result] [Perform] [Page] [Mixer]    │ [ART-NET: IDLE]  [○ Blackout]  [▶ Play]│  <-- Level 3: Program Bar
+└──────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-- Layout Header Sisi Kanan (Status Art-Net & Eksekutor Utama):
-  [Art-Net Status Badge] | [Blackout Button] | [Play/Stop Toggle Button]
+--------------------------------------------------------------------------------
+3.1. LEVEL 1: TITLE BAR (JENDELA SISTEM & PATH PROYEK)
+--------------------------------------------------------------------------------
+- Pojok Kiri Atas: Logo icon `zz` (20x20px) + Teks `ZZLUXORA` warna putih bersih.
+- Samping Kanan Nama App: Menampilkan alamat/path proyek lengkap dan nama file `.zlx` aktif
+  (Contoh: `D:\projects\worship\Sunday_Live.zlx` atau `[Untitled.zlx]`).
+- Pojok Kanan Atas: Tombol kontrol jendela OS (Minimize, Maximize, Close).
 
-- Spesifikasi Kontrol Header Sisi Kanan:
-  1. Art-Net Status Badge:
-     * Indikator warna: HIJAU = Connected / Transmitting; MERAH = Disconnected / Idle.
-     * Interaktivitas: Ketika badge diklik, langsung memunculkan pop-up dialog "Setting".
-     * Fungsi diagnostik: Memantau apakah datagram paket DMX512 aktif dikirim ke modul ESP32 / QLC+.
-  2. Blackout Button:
-     * Tombol lingkaran bertema konsol panggung.
-     * Fungsi: Mengunci dan menurunkan nilai Grand Master Fader seketika menjadi 0 (DMX 0).
-  3. Play / Stop Toggle Button:
-     * Desain 1 tombol tunggal yang berganti status (bukan 2 tombol terpisah).
-     * State Play: Icon segitiga hijau (▶), mengaktifkan transmisi paket UDP Art-Net secara real-time.
-     * State Stop: Icon bujur sangkar merah (■), menghentikan/menjeda transmisi paket DMX.
+--------------------------------------------------------------------------------
+3.2. LEVEL 2: MAIN MENU BAR (SISTEM JENDELA POP-UP WINDOWED)
+--------------------------------------------------------------------------------
+- Posisi: Tepat di bawah Title Bar.
+- Items: `File`, `Fixture`, `Editor`, `Preview`, `Setting`, `Help`, `About`.
+- Sifat Interaksi:
+  * `File`: Dropdown menu biasa (`Open Project (Ctrl+O)`, `Save Project (Ctrl+S)`, `Save As (Ctrl+Shift+S)`, `Exit`).
+  * `Fixture`, `Editor`, `Preview`, `Setting`, `Help`, `About`: **SEMUANYA MEMBUKA JENDELA POP-UP INDEPENDEN!**
+  * Sifat Jendela Pop-up:
+    - Default status: **Windowed** (bukan dialog modal kaku yang memblokir layar utama).
+    - Memiliki tombol kontrol window lengkap: *Minimize, Maximize, Close*.
+    - Dapat di-maximize penuh, digeser, atau diletakkan di monitor sekunder.
 
-================================================================================
-4. SPESIFIKASI MENU: FILE
-================================================================================
-
-Menu Dropdown [File]:
-  - Open Project...       (Shortcut: Ctrl+O)
-  - Save Project          (Shortcut: Ctrl+S)
-  - Save As Project...    (Shortcut: Ctrl+Shift+S)
-  - Exit                  (Shortcut: Alt+F4 / Ctrl+Q)
-
-Perilaku & Ketentuan File:
-  - Open, Save, dan Save As memanggil file explorer native OS (Thunar di Linux Mint, Explorer di Windows).
-  - Format Ekstensi File: `.zlx` (ZZLUXORA Project File).
-  - Nama Default File Pertama Kali: `Untitled.zlx`.
-  - Format Internal: JSON terstruktur terkompresi memuat:
-    * Patch table kanal 1-256.
-    * Konfigurasi fixture & profile mapping.
-    * Data analisis audio STFT & mood plane (V-A).
-    * Cue scene, chaser list, dan nilai mixer fader.
-
-================================================================================
-5. SPESIFIKASI MENU: FIXTURE (FIXTURE LIST)
-================================================================================
-
-Menu [Fixture]:
-  - Membuka JENDELA POP-UP INDEPENDEN (bukan tab / drawer).
-  - Tipe Window: Dialog non-modal / tool window yang dapat digeser, di-minimize, di-maximize, dan di-close.
-  - Ukuran: Custom width & height, responsif terhadap resolusi layar.
-  - Isi & Tampilan:
-    * Daftar profil fixture lampu yang tersimpan di sistem (`fixtures/*.zfx` & JSON).
-    * Informasi manufaktur, model, tipe footprint kanal (RGBW 4-ch, 7-ch, 8-ch, dll).
-  - Interaktivitas Utama:
-    * Mendukung **DRAG AND DROP**: Operator dapat menyeret fixture langsung dari list dan melepaskannya (drop) ke atas kotak grid pada Tab Address untuk melakukan patching otomatis.
+--------------------------------------------------------------------------------
+3.3. LEVEL 3: PROGRAM VIEW BAR (SEJAJAR HORIZONTAL)
+--------------------------------------------------------------------------------
+- Posisi: Tepat di atas area kerja workspace program.
+- Sisi Kiri (Tab Switcher):
+  * Tombol navigasi 6 workspace: `[Address]`, `[Analyze]`, `[Result]`, `[Perform]`, `[Page]`, `[Mixer]`.
+  * Status tab aktif ditandai dengan warna highlight dan garis bawah aksen amber grandMA3.
+- Sisi Kanan (Status & Kontrol Utama — Sejajar Langsung dengan Tab):
+  1. **Art-Net Status Badge:**
+     * Menampilkan status transmisi: `[ART-NET: IDLE]` (Merah) atau `[ART-NET: TRANSMITTING]` (Hijau).
+     * Klik pada status badge langsung membuka pop-up dialog `Setting`.
+  2. **Tombol Blackout:**
+     * Berbentuk lingkaran hitam pekat berbingkai kontras (`○ Blackout`).
+     * Menekan tombol ini seketika mereset Grand Master Fader menjadi 0.
+  3. **Tombol Play / Stop Toggle (Satu Tombol Tunggal):**
+     * State Idle (Berhenti)  : Menampilkan icon Play segitiga hijau (`▶ Play`). Begitu diklik, transmisi Art-Net aktif dan tombol otomatis BERUBAH menjadi tombol Stop.
+     * State Active (Berjalan): Menampilkan icon Stop persegi merah (`■ Stop`). Begitu diklik, transmisi berhenti dan tombol BERUBAH kembali menjadi tombol Play.
 
 ================================================================================
-6. SPESIFIKASI MENU: EDITOR (FIXTURE DEFINITION EDITOR)
+4. SISTEM GLOBAL UNDO & REDO (ALL-PROGRAM COMMAND PATTERN)
 ================================================================================
 
-Menu [Editor]:
-  - Membuka JENDELA POP-UP INDEPENDEN berstandar QLC+ Fixture Definition Editor.
-  - Memiliki Header Menubar Mandiri di dalam jendela editor:
-    * [Open] (.zfx / .json)
-    * [Save]
-    * [Save As...]
-  - Format Berkas Fixture: `.zfx` (ZZLUXORA Fixture Profile, berbasis JSON).
-  - Struktur Input Data Fixture:
-    * Header Form: Manufacturer (Pabrikan), Model Name, Channel Count.
-    * Channel Mapping Table:
-      - Kolom 1: Channel Index (1, 2, 3, ...).
-      - Kolom 2: Label / Deskripsi (Dimmer, Red, Green, Blue, White, Strobe, Speed, Macro).
-      - Kolom 3: Type Dropdown:
-        * Dimmer / Intensity
-        * Red (R)
-        * Green (G)
-        * Blue (B)
-        * White (W)
-        * Color Wheel / Macro
-        * Strobe / Shutter
-        * Pan / Tilt
-        * Empty / Unassigned
-  - Tombol Aksi: [Save Fixture] di bagian bawah form.
-  - Editor bekerja per-fixture secara presisi dan terisolasi.
+- Fitur Undo/Redo berlaku untuk **SELURUH PROGRAM SECARA GLOBAL**, bukan hanya di Tab Address:
+  * Undo/Redo aksi patching kanal di Tab Address (Patch, Unpatch, Clear All).
+  * Undo/Redo pergerakan fader di Tab Mixer (mencegah kesalahan fader tersenggol).
+  * Undo/Redo urutan playlist dan perubahan timing cue di Tab Perform.
+- Keyboard Shortcut:
+  * `Ctrl+Z`: Undo aksi terakhir.
+  * `Ctrl+Shift+Z` / `Ctrl+Y`: Redo aksi terakhir.
 
 ================================================================================
-7. SPESIFIKASI MENU: PREVIEW (STAGE VISUALIZER)
+5. SPESIFIKASI JENDELA POP-UP (WINDOWED & DETACHABLE)
 ================================================================================
 
-Menu [Preview]:
-  - Membuka JENDELA POP-UP VISUALIZER INDEPENDEN (Floating Multi-Screen Support).
-  - Dapat dipindahkan ke second monitor (layar eksternal proyektor/FOH) atau diminimalkan di layar utama.
-  - Mode Tampilan Visualizer:
-    1. Mode 2D (Front View - Tampak Depan Panggung):
-       * Rendering fixture PAR LED berbasis lingkaran warna RGBW dinamis.
-       * Efek glow / pendaran cahaya realistis sesuai nilai dimmer dan warna aktual.
-       * Fixture dapat digeser (drag & drop) dengan inspektor koordinat X dan Y.
-    2. Mode 3D (Stage Perspective Space):
-       * Sudut pandang panggung 3D (mengadopsi arsitektur QLC+ 5 3D Stage).
-       * Konus berkas cahaya (*beam cone projection*) mengarah ke lantai panggung.
+1. **Jendela `Fixture` (Fixture Library & Patching):**
+   * Menampilkan daftar fixture yang tersedia dari folder `fixtures/`.
+   * Mendukung **Drag and Drop** langsung dari list ke sel kotak di Tab Address.
+2. **Jendela `Editor` (Fixture Definition Editor):**
+   * Editor profil lampu berstandar QLC+ dengan ekstensi `.zfx` (JSON).
+   * Menubar mandiri: File -> Open, Save, Save As.
+   * Tabel pemetaan: Channel, Label, Type (Dimmer, Red, Green, Blue, White, Strobe, dll).
+3. **Jendela `Preview` (Stage Visualizer):**
+   * Floating multi-screen support (dapat dipindah ke layar kedua FOH).
+   * Visualizer 2D (Tampak Depan Panggung dengan pendaran cahaya PAR LED) dan 3D.
+4. **Jendela `Setting` (Network & Art-Net Config):**
+   * Pemindaian otomatis adapter jaringan lokal.
+   * Preset wajib: `127.0.0.1` (Localhost SITL QLC+), `192.168.4.1` (ESP32 SoftAP), Custom IP.
+   * Konfigurasi Universe 1, Frame rate 44 FPS.
+5. **Jendela `Help` & `About`:**
+   * Help: Panduan penggunaan & tabel shortcut keyboard lengkap.
+   * About: Keterangan resmi skripsi (Andreas, NIM: 5312422036, Dospem: Mario Norman Syah, S.Pd., M.Eng., UNNES).
 
 ================================================================================
-8. SPESIFIKASI MENU: SETTING (ART-NET & NETWORK CONFIG)
-================================================================================
-
-Menu [Setting]:
-  - Membuka POP-UP DIALOG PENGATURAN JARINGAN (Bisa dipanggil via klik badge status Art-Net).
-  - Model Tampilan: Tabel adapter jaringan bergaya QLC+ dengan deteksi IP otomatis.
-  - Pilihan Target IP Wajib (Preset Siap Pakai):
-    1. `127.0.0.1` (Localhost loopback untuk simulasi software SITL bersama QLC+).
-    2. `192.168.4.1` (SoftAP Gateway modul hardware ESP32).
-    3. `Custom IP` (Input manual alamat IP node di jaringan gereja / venue).
-  - Konfigurasi Universe: 1 Universe (Universe 0/1 standar DMX512).
-  - Frame Rate (FPS): Sinkron dengan hardware / modul (default 43–44 FPS, interval ~23 ms).
-  - Tombol: [Scan Interfaces], [Save Configuration], [Close].
-
-================================================================================
-9. SPESIFIKASI MENU: HELP & ABOUT
-================================================================================
-
-Menu [Help]:
-  - Membuka pop-up window Readme & Panduan Operasional Konsol.
-  - Memuat tabel lengkap Keyboard Shortcuts:
-    * Ctrl+O: Open Project
-    * Ctrl+S: Save Project
-    * Ctrl+Shift+S: Save As Project
-    * Spacebar: Toggle Play/Stop Art-Net Transmission
-    * 'B' / Escape: Instant Blackout
-    * Ctrl+Z: Undo Patching
-    * Ctrl+Shift+Z: Redo Patching
-    * F1 s.d. F6: Switch Tab Program (Address, Analyze, Result, Perform, Page, Mixer)
-
-Menu [About]:
-  - Membuka pop-up window informasi resmi akademis:
-    * Nama Software : ZZLUXORA (v10.0.0 Next-Gen Stage Console)
-    * Deskripsi     : Intelligent Audio-Reactive Lighting Controller with STFT & Russell Affective Model
-    * Peneliti / Dev: Andreas Restuawanta Christwara
-    * NIM           : 5312422036
-    * Program Studi : S1 Teknik Komputer
-    * Jurusan       : Teknik Elektro
-    * Fakultas      : Fakultas Teknik
-    * Universitas   : Universitas Negeri Semarang (UNNES)
-    * Dosen Pembimbing: Mario Norman Syah, S.Pd., M.Eng. (NIP: 199304212024061001)
-    * Judul Skripsi : "Rancang Bangun Sistem Audio-Reactive Lighting Design Berbasis Analisis Mood Lagu Rohani dengan Pemetaan Warna HSV-RGBW dan Protokol Art-Net DMX512"
-
-================================================================================
-10. ENAM TAB UTAMA PROGRAM VIEW (WORKSPACES)
+6. SPESIFIKASI ENAM TAB WORKSPACE UTAMA
 ================================================================================
 
 --------------------------------------------------------------------------------
-10.1. TAB 1: ADDRESS (DMX PATCH SHEET)
+6.1. TAB 1: ADDRESS (DMX PATCH SHEET)
 --------------------------------------------------------------------------------
-- Konsep: Matriks DMX Address bergaya QLC+ Fixture Patch Sheet.
-- Geometri Grid:
-  * Maksimal 24 kotak horizontal per baris.
-  * Total 256 kanal DMX (Kanal 1 s.d. 256), dilengkapi scrollbar vertikal halus.
-- Aturan Visualisasi Kotak:
-  * Kotak Kosong (Unpatched):
-    - Warna latar abu-abu gelap industrial (#1a1d24).
-    - Nomor kanal ditampilkan di pojok kanan atas kotak.
-  * Kotak Terisi (Patched):
-    - Warna latar menyesuaikan tipe kanal dari Fixture Profile:
-      * Dimmer  -> Aksen Amber emas (#d97706) dengan icon lampu.
-      * Red     -> Blok Merah cerah (#dc2626).
-      * Green   -> Blok Hijau cerah (#16a34a).
-      * Blue    -> Blok Biru cerah (#2563eb).
-      * White   -> Blok Putih panggung (#f8fafc).
-      * Strobe  -> Blok Kuning kilat (#eab308) dengan icon kilat/petir.
-    - Keterangan label kanal berada di posisi TENGAH kotak.
-    - Nomor kanal DMX tetap berada di POJOK KANAN ATAS kotak.
-- Kontrol Aksi:
-  * Tombol [Clear All Patch]: Mengosongkan seluruh patch dengan pop-up konfirmasi.
-  * Riwayat Aksi (Undo & Redo):
-    - Undo (Ctrl+Z) dan Redo (Ctrl+Shift+Z) memulihkan kondisi patch sebelum di-clear.
+- Matriks 256 kanal DMX (maksimal 24 kotak horizontal per baris, scroll vertikal).
+- Kotak kosong: Pure dark grey `#282c34`, nomor kanal di sudut kanan atas.
+- Kotak terisi: Warna latar mengikuti jenis fungsi kanal:
+  * Dimmer -> Amber (#d97706)
+  * Red -> Merah (#dc2626)
+  * Green -> Hijau (#16a34a)
+  * Blue -> Biru (#2563eb)
+  * White -> Putih (#f8fafc)
+  * Strobe -> Kuning (#eab308)
+- Label kanal di tengah kotak, nomor kanal tetap di kanan atas.
+- Tombol [Clear All Patch] dengan dialog konfirmasi keamanan (tercatat di Undo Stack).
 
 --------------------------------------------------------------------------------
-10.2. TAB 2: ANALYZE (CORE ENGINE SKRIPSI)
+6.2. TAB 2: ANALYZE (AUDIO & DSP CORE ENGINE)
 --------------------------------------------------------------------------------
-- Konsep: Pusat komputasi ekstraksi audio cerdas berbasis formulasi matematis Bab 2 & Bab 3.
-- Komponen Input Audio:
-  1. Tombol [Load Audio]: Membuka file explorer native, mendukung .mp3, .wav, .flac, .ogg.
-  2. Input YouTube Link:
-     * Kolom teks untuk memasukkan URL YouTube.
-     * Fitur download & konversi otomatis ke audio lokal di direktori data aplikasi.
-  3. Tombol [Analyze]: Memulai komputasi sinyal audio STFT & ekstraksi fitur.
-  4. Tombol [Remove Song]: Menghapus lagu terpilih dari sesi analisis.
-- State Management Tombol:
-  * [Analyze] dan [Remove Song] dinonaktifkan (disabled) jika belum ada lagu yang dimuat.
-- Perilaku Saat Analisis Berjalan (Asynchronous Non-Blocking):
-  * Area analisis diberi efek blur/dimmed visual.
-  * Aplikasi tetap responsif (user bebas berpindah ke tab lain tanpa lagging/freeze).
-  * Menampilkan progress bar terkalibrasi disertai teks deskriptif ilmiah yang dinamis:
-    - "Menerapkan Hann Windowing (N=2048, H=512) meredam spectral leakage..."
-    - "Menghitung FFT Cooley-Tukey Radix-2 & Ekstraksi Spectral Centroid..."
-    - "Mengekstrak 12-Semitone Chroma STFT untuk analisis tonalitas harmoni..."
-    - "Menghitung 13 Koefisien MFCC & Deteksi Onset Spectral Flux..."
-    - "Memetakan koordinat ke Russell 2D Plane (Valence-Arousal)..."
-- Output Analisis: Perhitungan mood dan profil panggung per-lagu secara presisi.
+- Input Audio:
+  1. Tombol `[📁 Load Audio File]`: Membuka file explorer lokal (.wav, .mp3, .flac, .ogg).
+  2. Tombol `[🌐 Import from YouTube]`: **MEMBUKA POP-UP KHUSUS YOUTUBE DOWNLOADER**:
+     * Dialog pop-up berisi kolom input URL YouTube.
+     * Tombol Download & Extract Audio ke `data/audio/`.
+     * Progress bar download mandiri. Setelah tuntas, otomatis ter-load ke Analyze.
+- Tombol `[Analyze]` dan `[Remove Song]` (disabled jika lagu belum dimuat).
+- Proses Analisis Asinkron Non-blocking:
+  * Area analisis diberi efek visual blur/dimmed tanpa mengunci antarmuka.
+  * Menampilkan progress bar dan penjelasan ilmiah DSP secara dinamis (STFT Hann, Chroma, MFCC, Russell Plane).
 
 --------------------------------------------------------------------------------
-10.3. TAB 3: RESULT (ANALYSIS DASHBOARD & EXPORT)
+6.3. TAB 3: RESULT (ANALYSIS DASHBOARD & EXPORT)
 --------------------------------------------------------------------------------
-- Konsep: Rekapitulasi hasil komputasi audio dari Tab Analyze.
-- Komponen & Fitur:
-  * Songlist terpilih dengan urutan yang rapi dan terstruktur.
-  * Panel metrik detail per lagu:
-    - Estimasi BPM & Ketukan (Beat Grid).
-    - Nilai Valence ($V$) dan Arousal ($A$).
-    - Kuadran Mood Ibadah (Q1 Praise / Sukacita vs Q3 Worship / Khidmat).
-    - Palet warna dominan (HSV -> RGBW).
-  * Tombol [Re-Analyze]: Memungkinkan analisis ulang jika parameter audio disesuaikan.
-  * Tombol [Export to Perform]: Mengonversi hasil analisis audio menjadi rentetan cue panggung ke Tab Perform.
+- Menampilkan hasil ekstraksi audio rohani:
+  * Koordinat Russell 2D Plane ($V, A$).
+  * Nilai BPM dan estimasi ketukan.
+  * Kuadran Mood Ibadah (*Q1 Praise* vs *Q3 Worship*).
+  * Palet warna pencahayaan panggung (HSV -> RGBW).
+- Tombol `[Re-Analyze]` untuk mengulang kalkulasi.
+- Tombol `[Export to Perform]` untuk mengirim data lagu ke Tab Perform.
 
 --------------------------------------------------------------------------------
-10.4. TAB 4: PERFORM (STAGE SHOW CONTROLLER)
+6.4. TAB 4: PERFORM (STAGE SHOW CONTROLLER & GENERATOR)
 --------------------------------------------------------------------------------
-- Konsep: Pengaturan urutan pertunjukan panggung live ibadah / konser.
-- Komponen & Fitur:
-  * Playlist urutan lagu ibadah (bisa ubah urutan / drag reorder, hapus lagu).
-  * Parameter Scene & Cue Lighting:
-    - Pengaturan section lagu (Intro, Verse, Chorus, Bridge, Ending).
-    - Waktu transisi (*fade-in / fade-out time*).
-    - Kecepatan chase (*chase interval & timing*).
-  * Pemetaan Shortcut keyboard untuk eksekusi cue live saat pertunjukan berlangsung.
+- Pengaturan playlist lagu pertunjukan live (bisa ubah urutan / drag reorder, hapus).
+- Pemetaan cue pencahayaan (Intro, Verse, Chorus, Bridge, Outro).
+- Pengaturan durasi transisi (*fade time*) dan kecepatan *chase*.
+- **Tombol `[⚡ Export / Generate to Page]`**:
+  * Mengonversi urutan scene dan lagu di Perform menjadi tombol-tombol eksekutor otomatis di Tab Page!
 
 --------------------------------------------------------------------------------
-10.5. TAB 5: PAGE (VIRTUAL EXECUTOR SHEET)
+6.5. TAB 5: PAGE (VIRTUAL EXECUTOR SHEET)
 --------------------------------------------------------------------------------
-- Konsep: Lembar tombol virtual interaktif (mengadopsi Virtual Console QLC+ dan Executor Page grandMA3).
-- Komponen & Fitur:
-  * Grid tombol custom untuk eksekusi instan preset suasana (Praise, Worship, Solo, Altar Call).
-  * Tombol Flash (strobe sementara saat tombol ditekan).
-  * Tombol Play dan Stop untuk kontrol pertunjukan per-bagian.
+- Halaman virtual executor buttons berstandar grandMA3 & Virtual Console QLC+.
+- Tombol-tombol eksekutor yang dihasilkan otomatis dari Tab Perform:
+  * Tombol trigger instan suasana lagu (Praise, Worship, Verse, Chorus).
+  * Tombol Flash (strobe sementara).
+  * Tombol Play / Stop kontrol pertunjukan per lagu.
 
 --------------------------------------------------------------------------------
-10.6. TAB 6: MIXER (GRANDMA3 STYLE 513 FADER CONSOLE)
+6.6. TAB 6: MIXER (GRANDMA3 257 FADER CONSOLE)
 --------------------------------------------------------------------------------
-- Konsep: Meja fader virtual profesional berestetika grandMA3 dan konsol studio rekaman.
-- Konfigurasi Fader:
-  * Fader Paling Kiri : Grand Master Fader (Master Dimmer 0–255).
-  * 256 Fader Kanal    : Kanal DMX 1 s.d. 256 (0–255 per fader).
-  * Total Fader       : 257 Fader fisik terkalibrasi.
-  * Dilengkapi horizontal smooth scrollbar untuk menjelajah fader dengan nyaman.
-- Desain & Estetika Fader (Mengacu pada Gambar Referensi Image 01–05):
-  * Fader Cap: Desain taktil bersirip (ribbed texture) dengan lekukan cekung jari dan garis indikator putih presisi di tengah.
-  * Fader Track (Groove): Dilengkapi jalur LED backlight menyala lembut di belakang track slider (aksen amber/cyan khas grandMA3).
-  * Garis Kalibrasi: Skala garis bergradasi di samping track slider menyerupai fader audio/lighting konsol studio kelas atas.
-  * Tombol [Refresh]: Terletak di pojok kanan atas untuk menyinkronkan ulang seluruh status fader.
-
-================================================================================
-11. STANDAR DESAIN UI/UX & RESPONSIVITAS
-================================================================================
-
-- Tema Warna (Dark Stage Industrial Palette):
-  * Background Utama    : #0e1013 (Ultra Dark Slate)
-  * Panel & Card Surface: #15181f (Dark Charcoal Metal)
-  * Border & Divider    : #2a2e39 (Brushed Aluminum Tone)
-  * Aksen Aktif / Highlight: #f59e0b (grandMA Amber Gold) & #06b6d4 (Cyan Glow)
-  * Status Art-Net      : #22c55e (Green Glow) / #ef4444 (Red Alert)
-- Responsivitas Resolusi Layar:
-  * Baseline 1: Layar Laptop Dev Linux Mint ASUS X407MA (1366x768 / 768p).
-  * Baseline 2: Layar Laptop Utama Windows 11 Acer Swift 3 (1920x1080 / 1080p).
-  * Arsitektur layout menggunakan QSplitter dan elastic layouts sehingga seluruh widget, fader, dan grid menyesuaikan proporsi layar secara otomatis tanpa elemen yang terpotong.
-- Filosofi Anti-AI Slop:
-  * Tidak menggunakan gradien ungu generik AI.
-  * Menggunakan tipografi teknis sans-serif monospaced tebal untuk angka kanal.
-  * Presisi garis tepi 1px solid dengan kontras tinggi sesuai standar pencahayaan FOH panggung.
-
-================================================================================
-12. SINKRONISASI REKAYASA & SKRIPSI
-================================================================================
-
-- Core engine Python di folder `core/` tetap terisolasi murni dari GUI (Decoupled Architecture).
-- Seluruh perhitungan pada Tab Analyze mengeksekusi modul `fft_engine.py`, `feature_extractor.py`, `emotion_model.py`, dan `color_engine.py` yang telah lulus 11 unit test.
-- Protokol Art-Net UDP Port 6454 mematuhi format biner Art-Net 4 DMX512 (530 byte datagram).
-- Repositori GitHub `zzdree/zzluxora-v10` dan `zzdree/script` adalah sumber kebenaran tunggal (*Single Source of Truth*).
+- 257 Fader Fisik Virtual: 1 Grand Master Dimmer (paling kiri) + 256 Kanal DMX (1-256).
+- Desain Taktil grandMA3 (Sesuai Gambar Referensi 01 s.d. 05):
+  * *Tactile Ribbed Fader Cap*: Cap berkontur dengan cekungan ergonomis dan garis penunjuk putih presisi.
+  * *Illuminated Groove Rail*: Jalur rel fader dengan efek LED menyala lembut di belakang cap (Amber untuk Master, Cyan untuk DMX channels).
+  * *Calibration Marks*: Garis skala kalibrasi analog di samping rel fader (0%, 50%, 100%).
+  * *Smooth Horizontal Scrolling*: Scrollbar horizontal halus untuk menjelajahi fader kanal.
+  * Tombol `[Refresh]` di pojok kanan atas.
 ================================================================================
