@@ -101,14 +101,17 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
      - Art-Net 4 DMX512 UDP packet generator (530 byte paket biner: 18B header little-endian opcode + 512B payload, Universe 0, Port 6454).
      - Seluruh 11 unit test standar (`tests/test_*.py`) lulus 100%.
 
-2. **Fase 2: UI/UX Console Panggung (GrandMA3 Next-Gen & QLC+ Style) — STATUS: FEEDBACK v3 MASTER PLAN**
-   - Mengintegrasikan perombakan arsitektur dari `notes/feedback_v3.txt` dan panduan visual grandMA3 (Image 01 s.d. 05):
-     * **Tanpa Splashscreen:** Konsol langsung terbuka seketika (*instant cold launch* < 500 ms) seperti QLC+.
-     * **Top Header Terpadu (Sidebar Dihapus):** Navigasi dipindahkan ke header atas terpadu (`File`, `Fixture`, `Editor`, `Preview`, `Setting`, `Help`, `About`) + status Art-Net click-to-setting, tombol Blackout, dan tombol Play/Stop UDP toggle.
-     * **Jendela Pop-up Mandiri:** Fixture List (Drag & Drop), Fixture Definition Editor (.zfx JSON berstandar QLC+), Stage Visualizer 2D/3D (Multi-Screen Support), Settings, Help, About.
-     * **6 Tab Utama Program:** Address (Grid 256 DMX, Undo/Redo), Analyze (Audio loader, YouTube downloader, non-blocking DSP worker), Result (Russell 2D plane, export to perform), Perform (playlist & cue transitions), Page (virtual executor sheet), Mixer (257 fader fisik dengan tactile ribbed cap & illuminated groove rails).
-     * **Logo Resmi:** Dihasilkan via 9Router (huruf `zz` bold italic glowing pada latar hitam pekat 1:1, tersimpan di `ui/assets/logo_zz.png` dan `.ico`).
-     * **Dokumentasi Lengkap di `zzluxora_v10/markdowns/`:** `DESIGN.md`, `PRD.md`, `ARCHITECTURE.md`, `ROADMAP.md`.
+2. **Fase 2: UI/UX Console Panggung (GrandMA Industrial & QLC+ Style) — STATUS: TUNTAS 100% (Feedback v3 Full Alignment)**
+   - Mengintegrasikan perombakan arsitektur dari `notes/feedback_v3.txt` dan panduan visual grandMA2 & grandMA3 onPC:
+     * **Tanpa Splashscreen & Clean Initial State:** Konsol terbuka seketika (*instant cold launch* < 500 ms) dalam kondisi bersih 100% (tanpa demo otomatis). File demo terpisah disediakan di `fixtures/demo_church_worship.zlx`.
+     * **Transmisi Art-Net Play-Gated:** Paket DMX512 UDP Port 6454 (Universe 0) HANYA dikirimkan ketika tombol `[PLAY]` aktif.
+     * **Hierarki Header Desktop Standar:** OS title bar memuat logo resmi `ZZ` & judul aplikasi; native `QMenuBar` murni (`File`, `Fixture`, `Editor`, `Preview`, `Setting`, `Help`, `About`); Program View Bar memuat 6 tab workspace di kiri serta status Art-Net, tombol Blackout, dan tombol Play/Stop di kanan.
+     * **Jendela Pop-up Mandiri Non-Modal:** Fixture List (Drag & Drop), Fixture Definition Editor (.zfx JSON berstandar QLC+), Stage Visualizer 2D/3D (Multi-Screen Support), Settings, Help, About.
+     * **6 Tab Utama Program:** Address (Grid 256 DMX 46x46, Undo/Redo), Analyze (Audio loader, YouTube downloader, non-blocking DSP worker), Result (Russell 2D plane, export to perform), Perform (playlist & cue transitions), Page (virtual executor sheet), Mixer (257 fader fisik 190px compact dengan tactile ribbed cap & illuminated groove rails).
+     * **Logo Resmi Anti-Slop:** Huruf kapital "ZZ" (Arial Black Italic, solid black #000000, pure white #ffffff, tanpa glow, rasio 1:1, tersimpan di `ui/assets/logo_zz.png` dan `.ico`).
+     * **Fixture Sample 8-CH:** Profil resmi di `fixtures/generic_par_rgbw_8ch.json` dan `.zfx` (Dimmer, Red, Green, Blue, White, Strobe, Program, Speed).
+     * **Dokumentasi Lengkap 7 Berkas di `zzluxora_v10/markdowns/`:** `DESIGN.md`, `PRD.md`, `ARCHITECTURE.md`, `COMPONENT_SPEC.md`, `STATE_MANAGEMENT.md`, `TEST_PLAN.md`, `ROADMAP.md`.
+     * **Hasil Uji:** 14 dari 14 unit test lulus 100% (`tests/test_ui_components.py`).
 
 ---
 
