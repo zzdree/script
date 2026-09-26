@@ -121,12 +121,13 @@ Struktur visual bagian atas jendela aplikasi terdiri dari:
   * Disediakan berkas proyek demo resmi: `fixtures/demo_church_worship.zlx`.
   * Memuat patch 4 PAR LED RGBW (Kanal 1–16), data analisis lagu rohani GIA Deliksari, playlist, dan 4 tombol eksekutor virtual.
   * Operator dapat membukanya kapan saja melalui menu: `File -> Open Project...`.
+  * Ekstensi showfile project adalah `.zlx`; ekstensi fixture profile adalah `.zfx`.
 
 ================================================================================
 6. PROFIL FIXTURE SAMPLE RESMI 8-KANAL
 ================================================================================
 
-Tersedia di `fixtures/generic_par_rgbw_8ch.json` dan `.zfx` dengan pemetaan:
+Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salinan sumber bila diperlukan) dengan pemetaan:
   - Kanal 1 : Dimmer
   - Kanal 2 : Red
   - Kanal 3 : Green
