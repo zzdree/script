@@ -84,24 +84,39 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
 ## 💻 4. Arsitektur Software ZZLUXORA
 
 **ZZLUXORA** adalah aplikasi pengontrol pencahayaan panggung pementasan dan ibadah berbasis analisis audio pintar.
+- **Repositori Software:** `https://github.com/zzdree/zzluxora-v10.git` (Folder: `/home/zzdree/ANDREAS/zzluxora_v10/`)
 
 ### Riwayat & Rencana Rilis:
-- Repositori GitHub saat ini: `zzdree/zzluxora-v7`, `zzdree/zzluxora-v8`, `zzdree/zzluxora-v8.5`, `zzdree/zzluxora-v9`.
+- Repositori GitHub lama: `zzdree/zzluxora-v7`, `zzdree/zzluxora-v8`, `zzdree/zzluxora-v8.5`, `zzdree/zzluxora-v9`.
 - **Evaluasi User:** Versi **v7** memiliki basis tata letak/konsep yang paling disukai pengguna, namun fungsionalitasnya belum berjalan sempurna.
-- **Target Rilis Berikutnya:** **ZZLUXORA v10** (fresh development & clean architecture).
+- **Target Rilis Mutakhir:** **ZZLUXORA v10** (Fresh development & clean modular architecture).
 
-### Strategi & Tahapan Pengembangan Software:
-1. **Fase 1: Engine System / Core First (Fokus Utama Saat Ini)**
-   - Pembangunan Audio Engine komputasional murni:
-     - Pipeline FFT (Cooley-Tukey Radix-2 DIT) & STFT (Hann Windowing, $f_s = 22.050\text{ Hz}$, $N=2048$, $H=512$).
-     - Ekstraksi 4 fitur spektral utama: RMS Energy, Spectral Centroid, Chroma STFT (12-semitone pitch classes), dan MFCC (13 koefisien).
-     - Pemetaan afektif Russell 2D Plane (Valence-Arousal).
-     - Konversi ruang warna: $(V, A) \to (H, S)$ ➔ Dimmer $V_{\text{lum}} = \text{RMS}_{\text{norm}}$ ➔ HSV ke RGB ➔ Physical 4-Kanal RGBW ($W = \min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$).
-     - Art-Net 4 DMX512 UDP packet generator (Universe 0, Port 6454, target output 43 FPS).
-2. **Fase 2: UI/UX Console Panggung (GrandMA3 & QLC+ Style)**
-   - Disiapkan sembari mengonsep tata letak (bisa menggunakan Figma / mockups visual).
-   - Mengacu pada `notes/feedback_v2.txt` dan koleksi visual di `image_references/`.
-   - Layout modular: Header bar, Status Art-Net + Blackout, Grid DMX Address (maks 24 kolom), Mixer 513 Fader (Master + 512 DMX), Tab Analyze, Tab Scenes/Chase, Visualizer 2D PAR LED, dan Fixture Editor.
+### Status Implementasi Software ZZLUXORA v10:
+1. **Fase 1: Engine System / Core First — STATUS: TUNTAS 100% & TERVERIFIKASI**
+   - Zero-GUI Pure Python/NumPy core engine di `core/`:
+     - Pipeline FFT (Cooley-Tukey Radix-2 DIT) & STFT (Hann Windowing, $f_s = 22.050\text{ Hz}$, $N=2048$, $H=512$, $43.07\text{ FPS}$).
+     - Ekstraksi 5 fitur spektral: RMS Energy (Parseval), Spectral Centroid, Chroma STFT 12-semitone (C s.d. B), MFCC (13 koefisien), dan Spectral Flux (Onset Detection/Beat Tracking).
+     - Pemetaan afektif Russell 2D Plane ($V, A \in [-1.0, 1.0]$) dengan klasifikasi kuadran ibadah (Q1 Praise vs Q3 Deep Worship).
+     - Konversi ruang warna cross-modal: $(V, A) \to (H, S)$ ➔ Dimmer $V_{\text{lum}} = \text{RMS}_{\text{norm}}$ ➔ HSV ke sRGB ➔ Dekomposisi Physical 4-Kanal RGBW ($W = \min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$) anti-washout.
+     - Art-Net 4 DMX512 UDP packet generator (530 byte paket biner: 18B header little-endian opcode + 512B payload, Universe 0, Port 6454).
+     - Seluruh 11 unit test standar (`tests/test_*.py`) lulus 100%.
+
+2. **Fase 2: UI/UX Console Panggung (GrandMA3 & QLC+ Style) — STATUS: TUNTAS & MODULAR**
+   - Dibangun menggunakan **PySide6 / PyQt6** berbasis `feedback_v1.txt` dan `feedback_v2.txt`.
+   - **Tanpa Splashscreen:** Konsol langsung terbuka seketika (*instant launch*) tanpa jeda splashscreen.
+   - **Arsitektur Modular (`ui/`):**
+     - `styles.py`: Industrial dark theme (`#0e1013`), token warna kanal DMX, dan master QSS.
+     - `icons.py`: Generator ikon SVG prosedural (lampu panggung, hamburger, play/pause, blackout).
+     - `main_window.py`: Header bar terintegrasi, menu bar File/View/Help, indikator Art-Net, tombol play/pause toggle, dan tombol Master Blackout (reset fader ke 0).
+     - `sidebar.py`: Navigasi hamburger responsif dengan indikator aktif.
+     - `panels/address_tab.py`: Grid DMX 512 kanal (24 kolom horizontal, auto-patch sekuensial, inspektor kanal).
+     - `panels/analyze_tab.py`: Core skripsi audio analyzer dengan grafik bidang afektif Russell 2D live dan progress bar saintifik.
+     - `panels/scenes_tab.py` & `chase_tab.py`: Pemetaan cue terstruktur lagu (Verse, Chorus, Bridge) dan BPM timing engine.
+     - `panels/page_tab.py`: Tombol virtual executor playback langsung panggung.
+     - `panels/mixer_tab.py`: 513 slider fader fisik industri (1 Master Dimmer + 512 DMX channels 0–255).
+     - `panels/preview_tab.py`: Visualizer panggung 2D tampak depan dengan rendering cahaya PAR LED dinamis (RGBW glow) dan draggable fixtures.
+     - `panels/output_tab.py`: Pengaturan jaringan Art-Net UDP 6454 (Localhost, ESP32 AP 192.168.4.1, Custom IP).
+     - `panels/fixture_editor.py` & `fixture_list.py`: Editor profil lampu JSON dan drawer perpustakaan lampu.
 
 ---
 
@@ -114,11 +129,31 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
   - Indikator Status: LCD 16x2 I2C (`SDA = GPIO 21`, `SCL = GPIO 22`).
   - Jaringan: Wi-Fi Station Mode & SoftAP Captive Portal (`192.168.4.1`).
   - Output Fisik: DMX512-A standard (250.000 baud, 8N2, Break $\ge 88\ \mu\text{s}$, MAB $\ge 8\ \mu\text{s}$).
-- **Status:** Hardware ini **sudah tuntas dan berfungsi** sebagai prototipe fisik / jembatan skripsi ke lampu nyata.
+- **Status Saat Ini:** Hardware fisik sedang dipinjam rekan untuk kegiatan panggung, sehingga pengujian aktif dialihkan ke lingkungan simulasi **Software-in-the-Loop (SITL)** menggunakan QLC+.
 
 ---
 
-## 🔄 6. Konfigurasi Lingkungan Kerja (2 Laptop Multi-Agent Setup)
+## 🎛️ 6. Lingkungan Simulasi QLC+ (Dual-Version Setup di Linux Mint)
+
+Untuk memungkinkan pengujian visual fader bergerak secara *real-time* tanpa hardware fisik, sistem Linux Mint telah dikonfigurasi dengan dua instalasi QLC+ resmi yang berdampingan:
+
+### Perintah Terminal:
+- `qlc+4` atau `qlcplus4`: Menjalankan **QLC+ v4.14.4 (Latest Stable)** — native C++ Qt Widgets, sangat ringan dan stabil untuk live show.
+- `qlc+5` atau `qlcplus5`: Menjalankan **QLC+ v5.2.2 (Latest Beta)** — modern QML dengan visualizer 3D panggung terpadu (terpasang di `/opt/qlcplus5/`).
+- `qlcplus`: Memunculkan pesan pengingat agar pengguna wajib menyertakan nomor versi (`qlc+4` atau `qlc+5`).
+
+### Berkas Menu Start / App Library:
+1. 💡 **Q Light Controller Plus v4**
+2. 💡 **Q Light Controller Plus v5**
+3. 🛠️ **Fixture Definition Editor**
+
+### Pipeline Pengujian Software-in-the-Loop (SITL):
+- **Template Workspace:** `/home/zzdree/ANDREAS/zzluxora_test.qxw` (memuat 4 unit PAR LED RGBW kanal 1-16, Art-Net loopback `127.0.0.1:6454` Universe 1 dengan Passthrough aktif).
+- **Skrip Jembatan Loopback:** `/home/zzdree/ANDREAS/zzluxora_v10/tools/qlc_bridge_test.py` (mentransmisikan gelombang fader 43 FPS ke QLC+ Simple Desk dan Virtual Console).
+
+---
+
+## 🔄 7. Konfigurasi Lingkungan Kerja (2 Laptop Multi-Agent Setup)
 
 | Parameter | Laptop Dev (Aktif Saat Ini) | Laptop Utama (Server Room) |
 | :--- | :--- | :--- |
@@ -138,7 +173,7 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
 
 ---
 
-## 🛠️ 7. Prinsip Kerja & Panduan Interaksi Claude
+## 🛠️ 8. Prinsip Kerja & Panduan Interaksi Claude
 
 1. **Komunikasi:** Gunakan Bahasa Indonesia yang ramah, jelas, terstruktur, dan berwawasan teknis mendalam.
 2. **Kualitas Akademis:** Naskah skripsi harus menggunakan bahasa baku akademik sesuai kaidah PUEBI, EYD V, dan pedoman resmi Fakultas Teknik UNNES.
