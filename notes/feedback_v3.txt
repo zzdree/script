@@ -124,18 +124,23 @@ Struktur visual bagian atas jendela aplikasi terdiri dari:
   * Ekstensi showfile project adalah `.zlx`; ekstensi fixture profile adalah `.zfx`.
 
 ================================================================================
-6. PROFIL FIXTURE SAMPLE RESMI 8-KANAL
+6. PROFIL FIXTURE RESMI & SHOWFILES SEPARATION
 ================================================================================
 
-Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salinan sumber bila diperlukan) dengan pemetaan:
-  - Kanal 1 : Dimmer
-  - Kanal 2 : Red
-  - Kanal 3 : Green
-  - Kanal 4 : Blue
-  - Kanal 5 : White
-  - Kanal 6 : Strobe
-  - Kanal 7 : Program (Color Macro)
-  - Kanal 8 : Speed
+Folder fixture dan showfile dipisahkan secara ketat sesuai arsitektur konsol panggung profesional:
+- **Direktori `fixtures/`:** Murni hanya memuat berkas profil lampu format `.zfx` (JSON):
+  1. `fixtures/Kumastb-STL47.zfx`: 1 unit uji meja laboratorium (8-CH RGBW).
+     - Ch 1: Dimmer, Ch 2: Red, Ch 3: Green, Ch 4: Blue, Ch 5: White (Physical RGBW), Ch 6: Strobe, Ch 7: Program, Ch 8: Speed.
+  2. `fixtures/Alien-AL36.zfx`: 4 unit panggung utama GIA Deliksari (8-CH RGB).
+     - Ch 1: Dimmer, Ch 2: Red, Ch 3: Green, Ch 4: Blue, Ch 5: Empty, Ch 6: Program, Ch 7: Speed, Ch 8: Emptz.
+  *Catatan: Berkas format master `.qxf` disimpan terpusat di repositori mandiri `zz-fixture`.*
+
+- **Direktori `showfiles/`:** Menyimpan berkas pertunjukan panggung (`.zlx`) dan simulasi QLC+ (`.qxw`):
+  * `showfiles/demo_church_worship.zlx`: Demo resmi ibadah Minggu GIA Deliksari.
+  * `showfiles/gia_deliksari_alien_4x.zlx`: Showfile resmi 4 unit Alien AL36 (DMX 1, 17, 33, 49).
+  * `showfiles/bench_kumastb_stl47.zlx`: Showfile resmi 1 unit Kumastb STL47 bench test RGBW (DMX 1).
+  * `showfiles/qlcplus_template.qxw`: Template SITL loopback QLC+ 8-channel.
+  * `showfiles/zzluxora_test.qxw`: Workspace simulasi loopback real-time.
 
 ================================================================================
 7. SISTEM GLOBAL UNDO & REDO (ALL-PROGRAM COMMAND PATTERN)
@@ -160,12 +165,25 @@ Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salina
    * Editor profil lampu berstandar QLC+ dengan ekstensi `.zfx` (JSON).
    * Menubar mandiri: File -> Open, Save, Save As.
    * Tabel pemetaan: Channel, Label, Type (Dimmer, Red, Green, Blue, White, Strobe, dll).
-3. **Jendela `Preview` (Stage Visualizer):**
+3. **Jendela `Preview` (Stage Visualizer — 2D & 3D Dual-Tab):**
    * Floating multi-screen support (dapat dipindah ke layar kedua FOH).
-   * Visualizer 2D (Tampak Depan Panggung dengan pendaran cahaya PAR LED dinamis).
+   * **Tab 1: 3D Perspective Stage View:**
+     - Struktur overhead aluminum box-truss rigging dengan tiang diagonal cross-bracing.
+     - Model 3D fixture hardware (coupler, yoke bracket, badan silinder, dan array lensa LED).
+     - Volumetric 3D conical beams membelah udara dengan gradient transparan.
+     - Floor reflection light pools pada permukaan lantai panggung 3D.
+     - **Simulasi Efek Asap / Haze Panggung (Atmospheric Haze FX):** 32 partikel kabut organik mengambang lembut pada 30 FPS, tombol toggle `[HAZE FX: ON/OFF]`.
+     - Kamera Orbit 3D interaktif: drag mouse untuk memutar sudut pandang panggung (yaw & pitch).
+   * **Tab 2: 2D Front View:**
+     - Tampak depan datar dengan telemetri lengkap di bawah setiap lampu (Nama, Alamat DMX, Dimmer %, RGBW badge).
 4. **Jendela `Setting` (Network & Art-Net Config):**
-   * Pemindaian otomatis adapter jaringan lokal.
-   * Preset wajib: `127.0.0.1` (Localhost SITL QLC+), `192.168.4.1` (ESP32 SoftAP), Custom IP.
+   * Pemindaian otomatis adapter jaringan lokal (mendeteksi LAN aktif dan Subnet Broadcast).
+   * Preset wajib:
+     - `127.0.0.1` (Localhost — SITL QLC+ loopback)
+     - `192.168.4.1` (ESP32 Hotspot — SoftAP Mode)
+     - `255.255.255.255` (Subnet Broadcast — Auto-Detect ESP32 tanpa perlu tahu IP)
+     - `Custom IP` (Unicast Wi-Fi Router Venue)
+   * Fitur Double-Click: Klik 2x pada tabel adapter langsung mengisi kolom IP tujuan.
    * Konfigurasi Universe 0 (Art-Net SubUni 0x00), Frame rate 44 FPS.
 5. **Jendela `Help` & `About`:**
    * Help: Panduan penggunaan & tabel shortcut keyboard lengkap.
@@ -188,8 +206,15 @@ Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salina
   * Blue -> Biru (#2563eb) [BLU]
   * White -> Putih (#f8fafc) [WHT]
   * Strobe -> Kuning (#eab308) [STR]
+  * Program -> Ungu (#9333ea) [PRG]
+  * Speed -> Abu-abu (#475569) [SPD]
+  * Empty -> Hitam (#1e293b) [EMP]
 - Label kanal di tengah kotak, nomor kanal tetap di kanan atas.
-- Tombol: `[UNDO (Ctrl+Z)]`, `[REDO (Ctrl+Y)]`, `[AUTO PATCH (4 PAR)]`, `[CLEAR PATCH]`.
+- Tombol Action Bar:
+  * `[UNDO (Ctrl+Z)]` & `[REDO (Ctrl+Y)]`
+  * `[PATCH 4x ALIEN (GIA)]`: Patch 4x Alien AL36 di DMX001, DMX017, DMX033, DMX049 (Panggung GIA).
+  * `[PATCH 1x KUMA (BENCH)]`: Patch 1x Kumastb STL47 di DMX001 (Unit Uji Meja RGBW).
+  * `[CLEAR PATCH]`: Mengosongkan matriks dengan konfirmasi dialog.
 
 --------------------------------------------------------------------------------
 9.2. TAB 2: ANALYZE (AUDIO & DSP CORE ENGINE)
@@ -205,11 +230,17 @@ Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salina
 --------------------------------------------------------------------------------
 9.3. TAB 3: RESULT (ANALYSIS DASHBOARD & EXPORT)
 --------------------------------------------------------------------------------
-- Menampilkan hasil ekstraksi audio rohani:
-  * Koordinat Russell 2D Plane ($V, A$).
-  * Nilai BPM dan estimasi ketukan.
-  * Kuadran Mood Ibadah (*Q1 Praise* vs *Q3 Worship*).
-  * Palet warna pencahayaan panggung (HSV -> RGBW).
+- Dashboard Saintifik Lengkap membedah 12 parameter akustik inti skripsi:
+  1. Judul Lagu & Durasi / Total Frame STFT (@ 43.07 FPS DMX sync)
+  2. Estimasi Tempo (BPM Beat Tracking)
+  3. RMS Energy (Teorema Parseval -> Master Dimmer)
+  4. Spectral Centroid Hz (Kecerahan Timbre Audio)
+  5. Chroma STFT 12-Semitone & Deteksi Tonalitas Nada (Mayor = Praise vs Minor = Worship)
+  6. MFCC Acoustic Density (Indeks Tekstur Akustik 13-Koefisien)
+  7. Spectral Flux / Onset Dynamic Index (Kepadatan Ketukan Ritmik)
+  8. Valence & Arousal (Koordinat Bidang Afektif Russell 2D)
+  9. Klasifikasi Kuadran Suasana Ibadah (Q1 Praise vs Q3 Deep Worship)
+  10. Rekomendasi Palet Warna & Dekomposisi Physical 4-Kanal RGBW (Anti-Washout)
 - Tombol `[RE-ANALYZE]` untuk mengulang kalkulasi.
 - Tombol `[EXPORT TO PERFORM]` untuk mengirim data lagu ke Tab Perform.
 
@@ -217,17 +248,24 @@ Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salina
 9.4. TAB 4: PERFORM (STAGE SHOW CONTROLLER & GENERATOR)
 --------------------------------------------------------------------------------
 - Pengaturan playlist lagu pertunjukan live (tombol `[MOVE UP]`, `[MOVE DOWN]`, `[DELETE]`).
-- Pemetaan cue pencahayaan (Intro, Verse, Chorus, Bridge, Outro).
-- Pengaturan durasi transisi (*fade time*) dan kecepatan *chase*.
+- Auto-Populate Section Cues:
+  * Saat lagu dipilih di playlist, tabel kanan otomatis terisi 6 section cues ibadah:
+    - Intro, Verse 1, Chorus, Verse 2, Bridge (Altar Call), Ending.
+- Master Live Playback Toolbar:
+  * `[▶ GO / NEXT CUE]`: Tombol taktis hijau besar untuk mengeksekusi cue aktif dan otomatis melangkah ke cue bagian lagu berikutnya.
+  * `[⏮ PREV]`: Melompat ke cue sebelumnya.
+  * `[⏹ FADE BLACK]`: Meredam panggung ke blackout secara anggun dalam 2.5 detik.
+- Smooth S-Curve Cosine Crossfade Engine:
+  * Berjalan pada laju 43.07 FPS (~23 ms) dengan interpolasi cosinus halus (ease-in-out S-curve).
 - Tombol `[GENERATE EXECUTORS]`:
-  * Mengonversi urutan scene dan lagu di Perform menjadi tombol-tombol eksekutor otomatis di Tab Page!
+  * Mengonversi urutan section cues menjadi tombol-tombol eksekutor otomatis di Tab Page!
 
 --------------------------------------------------------------------------------
 9.5. TAB 5: PAGE (VIRTUAL EXECUTOR SHEET)
 --------------------------------------------------------------------------------
 - Halaman virtual executor buttons berstandar grandMA2/grandMA3 & Virtual Console QLC+.
 - Tombol eksekutor yang dihasilkan otomatis dari Tab Perform:
-  * Tombol trigger instan suasana lagu (Praise, Worship, Verse, Chorus).
+  * Tombol trigger instan suasana lagu (Praise, Worship, Verse, Chorus) dengan smooth fade.
   * Tombol Flash Strobe.
   * Tombol `[CLEAR PAGE]` untuk membersihkan halaman.
 
@@ -235,11 +273,37 @@ Tersedia di `fixtures/generic_par_rgbw_8ch.zfx` (fixture profile; `.json` salina
 9.6. TAB 6: MIXER (GRANDMA CONSOLE 257 FADERS)
 --------------------------------------------------------------------------------
 - 257 Fader Fisik Virtual: 1 Grand Master Dimmer (paling kiri) + 256 Kanal DMX (1-256).
-- Desain Taktil grandMA:
-  * *Tactile Ribbed Fader Cap*: Cap berkontur dengan cekungan ergonomis dan garis penunjuk putih presisi (lebar 30px, tinggi 18px).
+- Desain Taktil grandMA & Penyempurnaan Ergonomis:
+  * **Grand Master Fader Raksasa:** Ditinggikan menjadi 230px dan diperlebar menjadi 68px (terlihat dominan dan berwibawa di sebelah kiri meja).
+  * **Tombol `[✕]` Clear/Zero Cepat:** Terpasang di bawah SETIAP fader (Grand Master & 256 fader kanal). Sekali klik, nilai fader seketika kembali ke 0.
+  * **Bilah Navigasi Bank Fader (Bank Selector Bar):** 7 tombol lompat cepat (Bank 1: 1-16, Bank 2: 17-32, Bank 3: 33-48, Bank 4: 49-64, Bank 5: 65-128, Bank 6: 129-192, Bank 7: 193-256).
+  * *Tactile Ribbed Fader Cap*: Cap berkontur dengan cekungan ergonomis dan garis penunjuk putih presisi.
   * *Illuminated Groove Rail*: Jalur rel fader dengan efek LED menyala lembut di belakang cap (Amber untuk Master, Cyan untuk DMX channels).
   * *Calibration Marks*: Garis skala kalibrasi analog di samping rel fader (0%, 50%, 100%).
-  * *Smooth Horizontal Scrolling*: Scrollbar horizontal halus untuk menjelajahi fader kanal.
   * Tombol: `[RESET DMX]`, `[FULL MASTER]`, `[REFRESH]`.
-- Dioptimalkan untuk responsivitas layar 768p dan 1080p.
+
+================================================================================
+10. ONE-CLICK DESKTOP LAUNCHER (LINUX MINT & WINDOWS)
+================================================================================
+
+- Shortcut Desktop Linux Mint: `/home/zzdree/Desktop/ZZLUXORA.desktop` (dilengkapi logo resmi ZZ).
+- Menu Aplikasi Linux Mint: `~/.local/share/applications/zzluxora.desktop`.
+- Skrip Runner: `run.sh` di root direktori konsol.
+- Operator cukup double-click ikon di desktop untuk membuka konsol tanpa perlu mengetik di terminal.
+
+================================================================================
+11. BUNDEL 10 LAGU ROHANI BENCHMARK ASLI (`data/audio/`)
+================================================================================
+
+Tersedia 10 file audio 16-bit 22.050 Hz PCM WAV di `data/audio/`:
+1. Symphony Worship - Kumenang (128 BPM, D Major, Q1 Praise)
+2. Symphony Worship - Dengan Sayap-Mu (70 BPM, G Minor, Q3 Worship)
+3. Symphony Worship - Kubahagia (130 BPM, G Major, Q1 Praise)
+4. NDC Worship - Waktu Tuhan (68 BPM, C Minor, Q3 Worship)
+5. NDC Worship - Bapa Yang Kekal (72 BPM, F Major, Q3 Worship)
+6. GMS Live - Nyalakan Api-Mu (132 BPM, E Major, Q1 Praise)
+7. GMS Live - Kemenangan Terjadi Di Sini (126 BPM, D Major, Q1 Praise)
+8. JPCC Worship - Sampai Akhir Hidupku (66 BPM, A Minor, Q3 Worship)
+9. JPCC Worship - Tuhan Raja Maha Besar (124 BPM, C Major, Q1 Praise)
+10. Franky Sihombing - Kuberikan Hatiku (64 BPM, G Major, Q3 Worship)
 ================================================================================

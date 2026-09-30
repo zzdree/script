@@ -103,15 +103,22 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
 
 2. **Fase 2: UI/UX Console Panggung (GrandMA Industrial & QLC+ Style) — STATUS: TUNTAS 100% (Feedback v3 Full Alignment)**
    - Mengintegrasikan perombakan arsitektur dari `notes/feedback_v3.txt` dan panduan visual grandMA2 & grandMA3 onPC:
-     * **Tanpa Splashscreen & Clean Initial State:** Konsol terbuka seketika (*instant cold launch* < 500 ms) dalam kondisi bersih 100% (tanpa demo otomatis). File demo terpisah disediakan di `fixtures/demo_church_worship.zlx`.
+     * **Tanpa Splashscreen & Clean Initial State:** Konsol terbuka seketika (*instant cold launch* < 500 ms) dalam kondisi bersih 100% (tanpa demo otomatis). File demo terpisah disediakan di `showfiles/demo_church_worship.zlx`, `showfiles/gia_deliksari_alien_4x.zlx`, dan `showfiles/bench_kumastb_stl47.zlx`.
      * **Transmisi Art-Net Play-Gated:** Paket DMX512 UDP Port 6454 (Universe 0) HANYA dikirimkan ketika tombol `[PLAY]` aktif.
      * **Hierarki Header Desktop Standar:** OS title bar memuat logo resmi `ZZ` & judul aplikasi; native `QMenuBar` murni (`File`, `Fixture`, `Editor`, `Preview`, `Setting`, `Help`, `About`); Program View Bar memuat 6 tab workspace di kiri serta status Art-Net, tombol Blackout, dan tombol Play/Stop di kanan.
-     * **Jendela Pop-up Mandiri Non-Modal:** Fixture List (Drag & Drop), Fixture Definition Editor (.zfx JSON berstandar QLC+), Stage Visualizer 2D/3D (Multi-Screen Support), Settings, Help, About.
-     * **6 Tab Utama Program:** Address (Grid 256 DMX 46x46, Undo/Redo), Analyze (Audio loader, YouTube downloader, non-blocking DSP worker), Result (Russell 2D plane, export to perform), Perform (playlist & cue transitions), Page (virtual executor sheet), Mixer (257 fader fisik 190px compact dengan tactile ribbed cap & illuminated groove rails).
+     * **Jendela Pop-up Mandiri Non-Modal:** Fixture List (Drag & Drop), Fixture Definition Editor (.zfx JSON berstandar QLC+), Stage Visualizer 2D (telemetri lampu & floor bounce) & 3D (overhead box-truss rigging, volumetric conical beams, camera orbit, dan simulasi atmospheric haze/smoke FX), Settings (auto-scan network & subnet broadcast), Help, About.
+     * **6 Tab Utama Program:**
+       - `Address Tab`: Grid 256 DMX 46x46, Undo/Redo, tombol cepat `[PATCH 4x ALIEN (GIA)]` DMX001/017/033/049 & `[PATCH 1x KUMA (BENCH)]` DMX001.
+       - `Analyze Tab`: Audio loader, YouTube downloader, non-blocking DSP worker.
+       - `Result Tab`: Dashboard metrik analisis lengkap (12 parameter: RMS Energy Parseval, Spectral Centroid Hz, Chroma STFT 12-Semitone + Deteksi Tonalitas Mayor/Minor, MFCC, Spectral Flux, Russell 2D plane, dan Dekomposisi Physical RGBW).
+       - `Perform Tab`: Playlist pertunjukan, auto-populate section cues lagu (Intro/Verse/Chorus/Bridge/Ending), master playback `[GO+]`, `[PREV]`, `[FADE BLACK]` dengan smooth S-curve cosine crossfading.
+       - `Page Tab`: Virtual executor sheet & instant flash cues.
+       - `Mixer Tab`: Meja 257 fader fisik dengan Grand Master fader lebih tinggi & dominan (230px, 68px), tombol cepat `[✕]` clear/zero pada setiap fader, bilah navigasi lompat cepat Bank Fader 1 s.d. 7, tactile ribbed cap, dan illuminated groove rails.
      * **Logo Resmi Anti-Slop:** Huruf kapital "ZZ" (Arial Black Italic, solid black #000000, pure white #ffffff, tanpa glow, rasio 1:1, tersimpan di `ui/assets/logo_zz.png` dan `.ico`).
-     * **Fixture Sample 8-CH:** Profil resmi di `fixtures/generic_par_rgbw_8ch.zfx` (Dimmer, Red, Green, Blue, White, Strobe, Program, Speed).
-     * **Dokumentasi Lengkap 7 Berkas di `zzluxora_v10/markdowns/`:** `DESIGN.md`, `PRD.md`, `ARCHITECTURE.md`, `COMPONENT_SPEC.md`, `STATE_MANAGEMENT.md`, `TEST_PLAN.md`, `ROADMAP.md`.
-     * **Hasil Uji:** 14 dari 14 unit test lulus 100% (`tests/test_ui_components.py`).
+     * **Fixture Resmi Asli:** `fixtures/Alien-AL36.zfx` (4 unit panggung GIA 8CH RGB) dan `fixtures/Kumastb-STL47.zfx` (1 unit bench test 8CH RGBW).
+     * **Peluncur Desktop 1-Klik:** `ZZLUXORA.desktop` di Desktop Linux Mint dan Application Menu serta `run.sh` untuk peluncuran instan tanpa terminal.
+     * **Bundel 10 Lagu Rohani Benchmark:** Tersedia 10 file audio WAV di `data/audio/` (Symphony Worship, NDC Worship, GMS Live, JPCC Worship, Franky Sihombing).
+     * **Hasil Uji:** 23 dari 23 unit test lulus 100% (`tests/test_ui_components.py` & `tests/test_core_engine.py`).
 
 ---
 
