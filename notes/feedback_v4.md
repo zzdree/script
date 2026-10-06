@@ -1,6 +1,6 @@
 # 🎛️ Feedback ZZLUXORA — v4 (Precision Console Polish & To-The-Point UX)
 
-- **Sumber:** User Review & Feedback v4 (Penyempurnaan Presisi UI/UX, Anti-Overengineering, Full Control Visualizer & To-the-Point)
+- **Sumber:** User Review & Feedback v4 (Penyempurnaan Presisi UI/UX, Anti-Overengineering, Full Control Visualizer & 100% English Interface)
 - **Referensi:** grandMA2 & grandMA3 onPC Console, QLC+ v4 & v5 Fixture Definition Editor & 3D Stage
 - **Dokumentasi:** Terstruktur, Rapi, Standar Rekayasa Perangkat Lunak Senior (Lead Architect)
 - **Tanggal:** 6 Oktober 2026
@@ -16,7 +16,16 @@ Aplikasi ZZLUXORA secara ketat hanya membaca dan mengelola **dua ekstensi berkas
 
 ---
 
-## 🖥️ 2. Window Title Bar Presisi
+## 🏷️ 2. Standarisasi Profil Fixture Resmi (Alien AL36 & Kumastb STL47)
+
+Nama manufaktur dan model lampu distandarkan secara bersih dan presisi:
+- **Alien AL36:** `Manufacturer = Alien`, `Model = AL36` (File: `fixtures/Alien-AL36.zfx`)
+- **Kumastb STL47:** `Manufacturer = Kumastb`, `Model = STL47` (File: `fixtures/Kumastb-STL47.zfx`)
+- Keterangan teks seperti `8ch`, `8ch rgb`, atau `rgbw` dihilangkan agar tampilan list dan inspektor bersih (*to-the-point*).
+
+---
+
+## 🖥️ 3. Window Title Bar Presisi
 
 - **Nama Aplikasi:** `ZZLUXORA`
 - **Status Saat Baru Dibuka (Cold Launch / Proyek Baru):**
@@ -27,7 +36,7 @@ Aplikasi ZZLUXORA secara ketat hanya membaca dan mengelola **dua ekstensi berkas
 
 ---
 
-## 🧭 3. Main Menu Bar Bersih (Clean QMenuBar)
+## 🧭 4. Main Menu Bar Bersih (Clean QMenuBar)
 
 Menu bar dirampingkan, tidak bertele-tele (*to-the-point*), dan bebas dari *over-engineering*:
 
@@ -37,162 +46,158 @@ Menu bar dirampingkan, tidak bertele-tele (*to-the-point*), dan bebas dari *over
 └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 3.1. Menu `File` (Dropdown Minimalis)
+### 4.1. Menu `File` (Dropdown Minimalis)
 Hanya memuat 4 aksi inti:
 - **Open Project:** `Ctrl+O` (Membuka dialog file explorer / Thunar untuk memilih file `.zlx`)
 - **Save Project:** `Ctrl+S` (Menyimpan proyek saat ini)
 - **Save As Project:** `Ctrl+Shift+S` (Menyimpan proyek dengan nama/lokasi baru)
 - **Exit:** `Alt+F4` (Keluar dari aplikasi)
 
-### 3.2. Menu `Fixture` (Dropdown 2 Menu Inti)
+### 4.2. Menu `Fixture` (Dropdown 2 Menu Inti)
 Mengonsolidasikan seluruh fungsi fixture menjadi 2 menu langsung:
 - **Fixture Library:** `Ctrl+F` (Membuka jendela pop-up *Fixture Library*)
 - **Fixture Editor:** `Ctrl+E` (Membuka jendela pop-up *Fixture Editor*)
 
-### 3.3. Menu `Preview` (Direct Action — Tanpa Dropdown)
-- Menu `Preview` bertindak sebagai aksi langsung (*direct QAction on QMenuBar*): sekali klik langsung membuka jendela pop-up **Stage Visualizer**.
-- Shortcut `Ctrl+P` tersembunyi (tetap aktif secara global di aplikasi tanpa mengotori tampilan).
+### 4.3. Menu `Preview` (Direct Action — Tanpa Dropdown)
+- Sekali klik langsung membuka jendela pop-up **Stage Visualizer**.
+- Shortcut `Ctrl+P` tersembunyi (tetap aktif secara global di aplikasi tanpa mengotori menu).
 
-### 3.4. Menu `Editor` (Dieliminasi)
-- Menu `Editor` di level atas **dihapus** karena fungsinya telah terwakili secara elegan di dalam `Fixture -> Fixture Editor`.
+### 4.4. Menu `Setting` (Direct Action — Tanpa Dropdown)
+- Sekali klik langsung membuka dialog pop-up **Settings**.
+- Shortcut `Ctrl+Shift+P` tersembunyi.
 
-### 3.5. Menu Lainnya
-- `Setting` (`Ctrl+Shift+P`), `Help` (`F1`), dan `About` tetap sebagai floating window independen.
+### 4.5. Menu `Editor` (Dieliminasi)
+- Dihapus total karena fungsinya telah terwakili secara rapi di dalam `Fixture -> Fixture Editor`.
 
 ---
 
-## 📚 4. Jendela Fixture Library (To-The-Point & Resizable)
+## 📚 5. Jendela Fixture Library (To-The-Point & Resizable)
 
 - **Title Bar Jendela:** Langsung **`Fixture Library`**.
-- **Penghapusan Header Dekoratif:** Tanpa judul besar atau deskripsi panjang.
-- **Tata Letak Bersih & Fleksibel (Vertical QSplitter):**
-  - **Bagian Atas:** Daftar profil fixture lampu (eksklusif membaca `fixtures/*.zfx`) dengan dukungan penuh aksi **Drag and Drop** langsung ke matriks Tab Address.
-  - **Bagian Bawah:** Kolom teks penjelasan detail footprint kanal, tanpa judul kotak pembungkus (*no groupbox frame*). Format tampilan kanal selaras dengan Fixture Editor:
-    ```text
-    Model       : Alien AL36 (8CH RGB)
-    Manufacture : Alien
-    Channel     : 8
-    ------------------------------------
-    01 | Dimmer (Dimmer)
-    02 | Red (Red)
-    03 | Green (Green)
-    04 | Blue (Blue)
-    05 | Empty (Empty)
-    06 | Program (Program)
-    07 | Speed (Speed)
-    08 | Emptz (Empty)
-    ```
-  - **Pemisah Interaktif (Resizable):** Splitter dapat digeser naik-turun secara fleksibel.
-- **Tombol Bawah:**
-  - `RELOAD` (Warna hijau solid `#16a34a`, teks tebal putih)
+- **Tanpa Header & Deskripsi:** Menghapus judul dekoratif dan teks deskripsi panjang.
+- **Posisi Splitter Seimbang (50:50):** Pembatas vertikal diletakkan di tengah window (`220px : 220px`) agar nyaman dilihat langsung tanpa perlu digeser manual.
+- **Tampilan Daftar:** Menampilkan `Manufacturer | Model` bersih (misal: `Alien | AL36`, `Kumastb | STL47`).
+- **Format Footprint Inspector:**
+  ```text
+  Model       : AL36
+  Manufacture : Alien
+  Channel     : 8
+  ------------------------------------
+  01 | Dimmer (Dimmer)
+  02 | Red (Red)
+  03 | Green (Green)
+  04 | Blue (Blue)
+  05 | Empty (Empty)
+  06 | Program (Program)
+  07 | Speed (Speed)
+  08 | Emptz (Empty)
+  ```
+- **Tombol Aksi Bawah:**
+  - `RELOAD` (Warna hijau solid `#16a34a`)
   - `CLOSE` (Warna standar console)
 
 ---
 
-## 🛠️ 5. Jendela Fixture Definition Editor (QLC+ Aligned)
+## 🛠️ 6. Jendela Fixture Definition Editor (QLC+ Aligned)
 
 - **Title Bar Jendela:** Langsung **`Fixture Editor`** (atau `Fixture Editor [nama_file.zfx]`).
 - **Menu Bar `File` (Dropdown Mandiri):**
   - **New Fixture:** `Ctrl+N` (Mereset form ke template awal)
-  - **Open Fixture:** `Ctrl+O` (Membuka berkas `.zfx`)
+  - **Open Fixture:** `Ctrl+O` (Dialog file explorer berkas `.zfx`)
   - **Save Fixture:** `Ctrl+S` (Menyimpan berkas `.zfx`)
   - **Save As Fixture:** `Ctrl+Shift+S` (Menyimpan sebagai `.zfx` baru)
   - **Close:** `Alt+F5` (Menutup editor fixture)
 
-- **Form Header Model, Manufacture, & Channel:**
-  - Tanpa banner/groupbox dekoratif.
-  - Langsung form field sejajar:
-    - **Model:** `LED` (Template default)
-    - **Manufacture:** `Generic` (Template default dengan G kapital)
-    - **Channel:** `4` (Template default spinbox)
+- **Form Header Kosongan (Default):**
+  - **Model:** Input teks kosong `""`
+  - **Manufacture:** Input teks kosong `""`
+  - **Channel:** Spinbox angka default `4`
 
 - **Tabel Pemetaan Kanal (Channel Footprint):**
-  - Tanpa judul tabel pemetaan.
-  - **Tiga Kolom Tabel:**
-    1. **Channel:** Format angka 2-digit berpading nol: `01`, `02`, `03`, `04`, dst.
-    2. **Label:** Teks custom yang dapat diketik bebas oleh pengguna (*e.g., Red, Green, Master Dimmer, Pan, Tilt, Shutter*).
-    3. **Type:** Dropdown combo box memuat tipe-tipe fungsi kanal standar industri (QLC+):
-       - `Dimmer`, `Red`, `Green`, `Blue`, `White`, `Amber`, `UV`, `Cyan`, `Magenta`, `Yellow`, `Strobe`, `Shutter`, `Pan`, `Tilt`, `Color Macro`, `Gobo`, `Prism`, `Program`, `Speed`, `Effect`, `Maintenance`, `Empty`.
-  - **Dukungan Multi-Fixture:** Mendukung PAR LED, Moving Head, Strobe, Bar LED, dan fixture panggung lainnya.
-  - **Integrasi Warna dengan Tab Address:** Seluruh tipe fungsi ini terhubung secara visual (*color-coded & short label*) ke tampilan sel kotak DMX di Tab Address.
+  - **Channel:** Format angka 2-digit berpading nol: `01`, `02`, `03`, `04`, dst.
+  - **Label:** Teks custom bebas diketik (*Red, Green, Blue, Dimmer, Pan, Tilt, dll*).
+  - **Type:** Dropdown combo box lengkap berstandar QLC+ (*Dimmer, Red, Green, Blue, White, Amber, UV, Cyan, Magenta, Yellow, Strobe, Shutter, Pan, Tilt, Color Macro, Gobo, Prism, Program, Speed, Effect, Maintenance, Empty*).
 
 - **Tombol Aksi Bawah:**
-  - `Save` (Warna hijau solid `#16a34a`, teks tebal putih)
+  - `Save` (Warna hijau solid `#16a34a`)
   - `Close` (Warna standar console)
 
 ---
 
-## 🎭 6. Jendela Stage Visualizer (2D & 3D Dual-View dengan Full Mouse Control)
+## 🎭 7. Jendela Stage Visualizer (2D & 3D Dual-View dengan Full Mouse Control)
 
 - **Title Bar Jendela:** Langsung **`Stage Visualizer`**.
-- **Tanpa Header & Tombol Close Bawah:** Area visualisasi panggung maksimal tanpa header teks panjang dan tanpa tombol close di bawah.
+- **Tanpa Header & Tombol Close Bawah:** Area panggung luas maksimal.
 - **Default View Ringan (2D First):**
-  - Saat dibuka, default aktif pada **`2D Front View`** (Tab index 0) agar ringan dan tidak membebani komputasi saat peluncuran awal.
-  - Dua Tab Utama:
-    - **`2D Front View`**
-    - **`3D Perspective View`**
+  - Saat dibuka, default aktif pada **`2D Front View`** (Tab index 0) agar ringan dan cepat.
+  - Pilihan Tab: **`2D Front View`** dan **`3D Perspective View`**.
 - **Clean Initial State (Panggung Kosong):**
-  - Pada proyek baru / untitled yang belum di-patch (0 fixture), panggung tampil bersih tanpa lampu tiruan/ghost.
-  - Menampilkan lantai panggung dan struktur truss netral.
-- **Auto-Layout Terpusat (Center Aligned):**
-  - Saat fixture di-patch (misal 1 unit Kumastb atau 4 unit Alien AL36 via drag & drop atau auto-patch), posisi lampu **otomatis tertata simetris di tengah panggung (*center aligned*)**, bukan menumpuk di kiri atas.
-  - **Rigging & Kabel Adaptif:** Panjang bentangan truss overhead dan kabel power/DMX drop dari pipa truss ke masing-masing fixture otomatis menyesuaikan jumlah lampu yang terpasang.
-  - **Label Minimalis:** Hanya menampilkan nama fixture saja (*e.g., "Alien AL36 #1"*), tanpa deretan teks deskripsi atau angka dimmer yang mengotori visual panggung.
+  - Proyek baru / unpatched (0 fixture) menampilkan panggung bersih tanpa lampu tiruan/ghost.
+  - Teks saat kosong: `Stage Ready • Patch fixtures in Address tab to visualize lighting`.
+- **Auto Center-Aligned (Vertikal & Horizontal):**
+  - Lampu tertata rapi simetris di tengah panggung secara horizontal dan vertikal.
+  - Panjang bentangan truss dan drop cable otomatis beradaptasi dengan jumlah fixture.
+  - Label hanya menampilkan nama fixture saja (*e.g., Alien AL36 #1*).
 
-### 6.1. Kontrol Mouse 3D Full Fleksibel
-- **Klik Kiri (Left Click Drag):** Orbit kamera 3D memutari panggung (*yaw* horizontal & *pitch* vertikal).
-- **Klik Tengah (Middle Click):** Netral (*no action*).
-- **Scroll Wheel (Wheel Scroll):** Zoom In / Zoom Out dengan batasan jarak aman (*bounded distance 200 s.d. 1400*) agar kamera tidak tembus lantai atau hilang ke antah-berantah.
-- **Klik Kanan (Right Click Drag):** Pan / Move posisi kamera (menggeser sudut pandang panggung ke kanan, kiri, atas, dan bawah).
+### 7.1. Kontrol Mouse & Posisi Fixture
+- **Di 2D Front View:**
+  - Klik kiri: memilih fixture (*select*).
+  - **Mouse tidak dapat menggeser posisi lampu** (mencegah tata letak rusak tak sengaja).
+  - Posisi lampu hanya diatur melalui **Pivot Position** di drawer kanan.
+- **Di 3D Perspective View:**
+  - **Klik Kiri Tahan (Inverted Orbit):** Memutar kamera mengelilingi panggung (*yaw* & *pitch*) dengan arah inverted natural.
+  - **Klik Kiri Lepas (Select):** Memilih fixture tanpa memindahkan posisinya.
+  - **Klik Kanan Tahan (Pan/Move):** Menggeser posisi kamera horizontal dan vertikal.
+  - **Scroll Wheel (Zoom with Limit):** Zoom in dan zoom out dengan batas jarak aman (*clamped 250 s.d. 1100*) agar kamera tidak hilang atau menembus lantai.
+  - **Klik Tengah:** Netral (*no action*).
+  - **Default Kamera 3D:** Sudut pandang lurus dari depan (*front-facing perspective*, `yaw=0.0`, `pitch=16°`).
 
-### 6.2. Sidebar Drawer / Menu Hamburger `[ ☰ ]` (Kanan Atas)
-Tombol hamburger di pojok kanan atas untuk membuka/menutup panel kontrol samping:
-- **Saat Tab `3D Perspective View` Aktif:**
-  1. **Reset Camera:** Tombol standby warna abu-abu (`#333844`), saat diklik kamera kembali ke posisi default dan tombol memberikan kilatan hijau sesaat (`#16a34a`).
-  2. **Haze FX:** Saklar toggle on/off:
-     - Saat **ON**: Tombol berwarna hijau (`#16a34a`).
-     - Saat **OFF**: Tombol berwarna abu-abu (`#333844`).
-  3. **Posisi Fixture (3 Pivot):**
-     - Pivot X (geser horizontal)
-     - Pivot Y (ketinggian)
-     - Pivot Z (kedalaman maju-mundur)
-- **Saat Tab `2D Front View` Aktif:**
-  - Hanya menampilkan **Posisi Fixture (2 Pivot: X, Y)**.
-  - **Sinkronisasi / Link 2D & 3D:** Nilai Pivot X dan Pivot Y saling terhubung (*linked*) antara 2D dan 3D secara real-time.
-
----
-
-## 🎨 7. Integrasi Pemetaan Warna Tab Address Multi-Fixture
-
-Pembaruan kamus warna dan label pendek (*short label*) pada sel kotak DMX Tab Address:
-
-| Tipe Kanal | Label Singkat | Warna Latar Kotak | Keterangan / Penggunaan |
-| :--- | :---: | :---: | :--- |
-| **Dimmer** | `DIM` | Amber Gold (`#d97706`) | Intensitas lampu |
-| **Red** | `RED` | Merah (`#dc2626`) | Kanal warna merah |
-| **Green** | `GRN` | Hijau (`#16a34a`) | Kanal warna hijau |
-| **Blue** | `BLU` | Biru (`#2563eb`) | Kanal warna biru |
-| **White** | `WHT` | Putih (`#f8fafc`) | Kanal warna putih murni |
-| **Amber** | `AMB` | Amber Warm (`#f59e0b`) | PAR LED RGBA / RGBAW |
-| **UV** | `UV` | Deep Violet (`#7c3aed`) | Sinar Blacklight / UV |
-| **Cyan** | `CYN` | Neon Cyan (`#06b6d4`) | Color mixing CMY |
-| **Magenta** | `MAG` | Vivid Magenta (`#d946ef`) | Color mixing CMY |
-| **Yellow** | `YEL` | Electric Yellow (`#eab308`) | Color mixing CMY |
-| **Strobe / Shutter** | `STR` / `SHT` | Flash Yellow (`#eab308`) | Strobo / Shutter mekanik |
-| **Pan** | `PAN` | Violet (`#8b5cf6`) | Gerakan horizontal moving head |
-| **Tilt** | `TLT` | Violet (`#8b5cf6`) | Gerakan vertikal moving head |
-| **Color Macro** | `MAC` | Rainbow Pink (`#ec4899`) | Makro warna built-in |
-| **Gobo** | `GOB` | Deep Sky Blue (`#0284c7`) | Pola proyeksi roda gobo |
-| **Prism** | `PRS` | Indigo (`#6366f1`) | Prisma pembias cahaya |
-| **Program** | `PRG` | Ungu (`#9333ea`) | Program internal fixture |
-| **Speed** | `SPD` | Slate Grey (`#475569`) | Kecepatan program |
-| **Effect** | `FX` | Hot Pink (`#ec4899`) | Efek visual khusus |
-| **Maintenance** | `MNT` | Slate Dark (`#4a5264`) | Reset motor / lampu |
-| **Empty / Unused** | `EMP` | Dark Grey (`#282c34`) | Kanal kosong |
+### 7.2. Sidebar Drawer Hamburger `[ ☰ ]` (Kanan Atas)
+- Default awal: **Tertutup (Hidden)** agar panggung lega. Dibuka dengan klik ikon `☰`.
+- Tanpa label "Control Panel", langsung aksi to-the-point:
+  - **Tab 3D:**
+    - `Reset Camera`: Tombol standby warna abu-abu (`#333844`), saat diklik memberikan kilatan hijau (`#16a34a`) dan kamera kembali ke posisi depan.
+    - `Haze FX`: Saklar toggle default **OFF** (abu-abu `#333844`, teks `Haze FX: OFF`). Saat ON menjadi hijau (`#16a34a`, teks `Haze FX: ON`).
+    - `FIXTURE POSITION`: 3 Pivot (X, Y, Z) dengan kombinasi slider horizontal + spinbox yang dapat digeser kanan-kiri.
+  - **Tab 2D:**
+    - `FIXTURE POSITION`: 2 Pivot (X, Y) dengan slider + spinbox.
+    - **Sinkronisasi 2D & 3D:** Nilai Pivot X dan Pivot Y saling terhubung secara real-time.
 
 ---
 
-## ⚡ 8. Aturan Transmisi Art-Net & Play-Gated System (Dipertahankan)
+## ⚙️ 8. Jendela Settings (Network & Art-Net Configuration)
 
-- Paket Art-Net UDP 6454 **hanya dikirimkan saat tombol PLAY aktif** (`is_transmitting == True`).
-- Status Idle tetap dalam *Preparation Mode* tanpa memancarkan paket ke jaringan.
+- **Akses:** Direct action dari menu bar atas (`Setting`).
+- **Title Bar:** Langsung **`Settings`**.
+- **Tanpa Header/Deskripsi:** Langsung ke konfigurasi target.
+- **Grup Target:**
+  - **Preset (Tanda Strip Pendek `-`):**
+    - `127.0.0.1 - Localhost (SITL QLC+)`
+    - `192.168.4.1 - ESP32 AP Mode`
+    - `255.255.255.255 - Subnet Broadcast`
+    - `Custom IP`
+  - **IP Address:** Input alamat IP (custom / editable).
+  - **Universe:** Dropdown pilihan angka `0`, `1`, `2`, `3`.
+  - **UDP Port:** Default `6454`.
+  - **FPS:** Spinbox `44` (Frame rate transmisi DMX).
+- **Tabel Scanned Interfaces:**
+  - Header kolom: **`Name`** dan **`Address`**.
+- **Tombol Bawah:**
+  - `Scan Interfaces` (Memindai ulang adapter lokal)
+  - `Save` (Warna hijau `#16a34a`)
+  - `Cancel` (Warna standar console)
+
+---
+
+## 🌐 9. Audit 100% Full Bahasa Inggris (Console-Standard Interface)
+
+Seluruh teks antarmuka, dialog konfirmasi, pesan kesalahan, judul tab, tombol kontrol, dan tabel di seluruh modul `ui/` telah distandarisasi ke dalam Bahasa Inggris murni:
+- Dialog: `"Open Project"`, `"Save Project"`, `"Save As Project"`, `"Exit"`
+- Workspace Tabs: `Address`, `Analyze`, `Result`, `Perform`, `Page`, `Mixer`
+- Actions: `UNDO`, `REDO`, `CLEAR PATCH`, `PATCH 4x ALIEN (GIA)`, `PATCH 1x KUMA (BENCH)`
+- Audio: `Select Audio File`, `Import Audio from YouTube`, `Track ready`, `Audio analysis failed`
+- Metrics: `Song Title`, `Estimated Tempo`, `Duration & STFT Frames`, `RMS Energy`, `Spectral Centroid`, `Chroma STFT & Tonality`, `Valence`, `Arousal`, `Worship Mood`
+- Performance: `Live Show Playlist`, `Section Cues & Stage Lighting Timing`, `GENERATE EXECUTORS`
+- Visualizer: `2D Front View`, `3D Perspective View`, `Reset Camera`, `Haze FX: ON/OFF`, `FIXTURE POSITION`
+- Settings: `Settings`, `Target`, `Preset`, `Universe`, `FPS`, `Scanned Interfaces`, `Name`, `Address`
+- Credentials: `About Developer & System`, `Author / Researcher`, `Thesis Advisor`
