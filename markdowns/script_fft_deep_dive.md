@@ -3,7 +3,7 @@
 ### Dokumen Rekayasa & Suplemen Resmi Skripsi S1 Teknik Komputer FT UNNES
 
 > **Peneliti:** Andreas Restuawanta Christwara (`NIM: 5312422036`)  
-> **Dosen Pembimbing:** Khoirudin Fathoni, S.T., M.T. (`NIP: 19900929292015041001`)  
+> **Dosen Pembimbing:** Mario Norman Syah, S.Pd., M.Eng. (`NIP: 199304212024061001`)  
 > **Tujuan Dokumen:** Memenuhi instruksi pendalaman teori dan perumusan matematis komprehensif mengenai *Fast Fourier Transform* (FFT) dan *Short-Time Fourier Transform* (STFT) sebagai fondasi ilmiah ekstraksi fitur musik pada naskah proposal **`script_andreas_v4.docx`** (Bab II dan Bab III).
 
 ---

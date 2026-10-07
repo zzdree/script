@@ -1011,10 +1011,10 @@ User feedback: "universe dan fps gaada"
 │  ─────────────────────────────────────      │
 │                                             │
 │  JUDUL SKRIPSI                              │
-│  "Implementasi Rule-Based Audio Feature     │
-│  Mapping untuk Sistem Lighting Design       │
-│  RGBW Otomatis dengan Protokol              │
-│  Art-Net DMX512"                            │
+│  "Rancang Bangun Sistem Audio-Reactive      │
+│  Lighting Design Berbasis Analisis Mood     │
+│  Lagu Rohani dengan Pemetaan Warna          │
+│  HSV-RGBW dan Protokol Art-Net DMX512"      │
 │                                             │
 │  ─────────────────────────────────────      │
 │                                             │

@@ -188,7 +188,7 @@ Tidak ada perubahan logika.
 - NIM: 5312422036
 - Program Studi: Teknik Komputer
 - Universitas: Universitas Negeri Semarang (UNNES)
-- Judul Skripsi: "Implementasi Rule-Based Audio Feature Mapping untuk Sistem Lighting Design RGBW Otomatis dengan Protokol Art-Net DMX512"
+- Judul Skripsi: "Rancang Bangun Sistem Audio-Reactive Lighting Design Berbasis Analisis Mood Lagu Rohani dengan Pemetaan Warna HSV-RGBW dan Protokol Art-Net DMX512"
 - Tahun: 2024
 
 ---

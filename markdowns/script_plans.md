@@ -1,13 +1,16 @@
 # Proposal Skripsi ZZLIGHT-Luxora — Implementation Plan (Revisi v3)
 
+> [!NOTE]
+> **Sinkronisasi Identitas Akademik — 7 Okt 2026:** Dokumen rencana ini berasal dari era **v3**, tetapi identitas akademiknya mengikuti **judul resmi final v4** (lihat *Judul Final* di bawah) dan Dosen Pembimbing **Mario Norman Syah, S.Pd., M.Eng. (NIP: 199304212024061001)**. Isi rencana historis di bawah tidak dihapus.
+
 ## Konteks
 **Mahasiswa:** Andreas Restuawanta Christwara (NIM 5312422036)  
 **Prodi:** Teknik Komputer, Jurusan Teknik Elektro, UNNES  
 **Jalur:** Skripsi (Penelitian)  
 **Target:** Menyusun dokumen proposal untuk diajukan ke dosen pembimbing
 
-**Fokus Penelitian:** Rule-Based Audio Feature Mapping untuk Lighting Control  
-**Judul Final:** "Implementasi Rule-Based Audio Feature Mapping untuk Sistem Lighting Design RGBW Otomatis dengan Protokol Art-Net DMX512"
+**Fokus Penelitian:** Analisis Mood Lagu Rohani & Pemetaan Warna HSV-RGBW untuk Lighting Control (implementasi teknis tetap berupa *rule-based* audio feature mapping, tanpa *machine learning*)  
+**Judul Final (v4 — ditetapkan per 7 Okt 2026):** "Rancang Bangun Sistem Audio-Reactive Lighting Design Berbasis Analisis Mood Lagu Rohani dengan Pemetaan Warna HSV-RGBW dan Protokol Art-Net DMX512"
 
 ---
 
@@ -40,6 +43,9 @@
 | Konsistensi rule-based mapping | Akurasi emosi |
 | Tingkat penerimaan pengguna | Klasifikasi emosi |
 | Respon visual | AI mood recognition |
+
+> [!IMPORTANT]
+> **Anotasi Keputusan — 7 Okt 2026:** Larangan terminologi *"mood"* (tabel di atas) adalah aturan era **v3** dan **TIDAK BERLAKU LAGI**. Sesuai **judul resmi final v4**, frasa *"Analisis Mood Lagu Rohani"* menjadi bagian resmi judul skripsi, sehingga istilah **"mood" dipertahankan** dan sah digunakan di seluruh naskah. Tabel di atas tetap dipertahankan sebagai catatan historis rencana v3; hanya penegasan teknis bahwa sistem tetap memakai pemetaan deterministik (*rule-based*, tanpa *machine learning*/klasifikasi AI) yang masih relevan.
 
 ### Segmentasi Lagu
 - **TIDAK** menggunakan segmentasi otomatis verse/chorus/bridge (MIR tingkat lanjut, risiko tinggi)
@@ -187,7 +193,7 @@ Tabel lengkap: fitur audio → range → dampak V-A → HSV → warna visual →
 
 | # | Pertanyaan | Keputusan |
 |---|-----------|-----------|
-| 1 | Judul final | "Implementasi Rule-Based Audio Feature Mapping untuk Sistem Lighting Design RGBW Otomatis dengan Protokol Art-Net DMX512" |
+| 1 | Judul final | "Implementasi Rule-Based Audio Feature Mapping untuk Sistem Lighting Design RGBW Otomatis dengan Protokol Art-Net DMX512" — *keputusan era v3; digantikan judul resmi v4 per 7 Okt 2026 (lihat* **Judul Final** *di bagian Konteks)* |
 | 2 | Segmentasi lagu | Beat tracking + onset detection saja |
 | 3 | Jumlah responden | 25 orang |
 | 4 | Instrumen kuesioner | SUS + Kesesuaian Pencahayaan (UAT dihapus) |
