@@ -60,8 +60,8 @@ START
   │   │
   │   ├── [5] Transformasi Ruang Warna Cross-Modal (HSV -> RGB -> RGBW):
   │   │   ├── Hue H = (atan2(A, V) * 180 / pi + 360) mod 360 (0° - 360°)
-  │   │   ├── Saturation S = sqrt(V^2 + A^2) / sqrt(2) (0.0 - 1.0)
-  │   │   ├── Dimmer Value = RMS_norm * Master_Fader (0.0 - 1.0)
+  │   │   ├── Saturation S = clip(sqrt(V^2 + A^2) / sqrt(2); 0,2; 1,0) (lantai 0,2)
+  │   │   ├── Value = RMS_norm * master_dimmer (0.0 - 1.0, diterapkan pada Value di emotion_to_hsv)
   │   │   ├── HSV -> Standard sRGB (0 - 255)
   │   │   └── Dekomposisi 4-Kanal Physical RGBW: W = min(R,G,B), R'=R-W, G'=G-W, B'=B-W
   │   │
@@ -78,6 +78,7 @@ START
   ├── Transmisi Paket Art-Net 4 (UDP Port 6454)
   │   ├── Format paket biner ArtDmx 530 byte (Universe 0)
   │   ├── Opsi IP Target: Localhost 127.0.0.1, AP ESP32 192.168.4.1, atau Custom IP
+  │   ├── Grand Master fader: DMX_out[ch] = round(DMX_raw[ch] * M / 255) (diskalakan terpisah dari Value)
   │   └── Tombol instan Blackout (reset fader ke 0)
   │
 END
@@ -248,7 +249,7 @@ Teknik pengumpulan data yang digunakan dalam penelitian ini meliputi:
 
 ### 3.7.2 Kuesioner
 
-1. **Kuesioner SUS (*System Usability Scale*):** 10 item standar yang diadaptasi untuk konteks ZZLUXORA, menggunakan skala Likert 5 poin [19][20].
+1. **Kuesioner SUS (*System Usability Scale*):** 10 item standar yang diadaptasi untuk konteks ZZLUXORA, menggunakan skala Likert 5 poin [20][27].
 2. **Kuesioner Kesesuaian Pencahayaan:** 6 item untuk mengukur kesesuaian pencahayaan yang dihasilkan sistem dengan karakteristik audio lagu rohani, di mana responden mendengarkan lagu sambil melihat pencahayaan yang dihasilkan, kemudian menilai kesesuaiannya menggunakan skala Likert 5 poin.
 
 ### 3.7.3 Observasi
@@ -331,22 +332,28 @@ Perancangan model matematis mengintegrasikan seluruh tahapan transformasi dari s
    - *Chroma 12-Semitone*: $\text{Chroma}[m, c] = \sum_{k \in \mathcal{K}_c} |X[m, k]|$ dengan $c = \text{round}(12 \log_2(f_k / 440) + 69) \pmod{12}$
 
 3. **Pemetaan ke Ruang Afektif 2D Russell (Valence-Arousal):**
-   - $V = w_1 \cdot \text{Mode}_{\text{ratio}} + w_2 \cdot \text{Centroid}_{\text{norm}} + w_3 \cdot \text{MFCC}_{\text{norm}} \in [-1{,}0, +1{,}0]$
-   - $A = w_4 \cdot \text{RMS}_{\text{norm}} + w_5 \cdot \text{Tempo}_{\text{norm}} + w_6 \cdot \text{Onset}_{\text{norm}} \in [-1{,}0, +1{,}0]$
+   - $V = \text{clip}\big( 0{,}50 \cdot \text{Mode}_{\text{score}} + 0{,}30 \cdot \text{score}(\text{SC}_{\text{norm}}) + 0{,}20 \cdot \text{score}(\text{MFCC}_{\text{norm}}),\ -1{,}0,\ +1{,}0 \big)$
+   - $A = \text{clip}\big( 0{,}50 \cdot \text{score}(\text{RMS}_{\text{norm}}) + 0{,}30 \cdot \text{Tempo}_{\text{score}} + 0{,}20 \cdot \text{score}(\text{Onset}_{\text{norm}}),\ -1{,}0,\ +1{,}0 \big)$
+
+   dengan bobot tetap pada kedua domain: $w_1 = 0{,}50$, $w_2 = 0{,}30$, $w_3 = 0{,}20$ untuk $V$ (mode, centroid, MFCC) dan $w_4 = 0{,}50$, $w_5 = 0{,}30$, $w_6 = 0{,}20$ untuk $A$ (RMS, tempo, onset). Pemetaan skor masukan $[0, 1] \to [-1, 1]$ memakai $\text{score}(x) = 2 \cdot \text{clip}(x, 0, 1) - 1$, sedangkan skor tempo memakai jendela $[50, 170]$: $\text{Tempo}_{\text{score}} = 2 \cdot \frac{\text{clip}(B, 50, 170) - 50}{120} - 1$.
 
 4. **Transformasi Cross-Modal ke Parameter Warna HSV:**
    - $H = (\text{atan2}(A, V) \cdot \frac{180^\circ}{\pi} + 360^\circ) \pmod{360^\circ}$
-   - $S = \frac{\sqrt{V^2 + A^2}}{\sqrt{2}} \in [0{,}0, 1{,}0]$
-   - $V_{\text{lum}} = \text{RMS}_{\text{norm}} \cdot V_{\text{master}} \in [0{,}0, 1{,}0]$
+   - $S = \text{clip}\!\left( \frac{\sqrt{V^2 + A^2}}{\sqrt{2}},\ 0{,}2,\ 1{,}0 \right)$ — lantai $S_{\min} = 0{,}2$ menjaga warna tetap bernada meskipun emosi mendekati netral ($V = A = 0 \Rightarrow S = 0{,}2$).
+   - $V_{\text{hsv}} = \text{clip}\!\left( \text{RMS}_{\text{norm}} \cdot D_{\text{master}},\ 0,\ 1 \right)$ — *master dimmer* $D_{\text{master}} \in [0, 1]$ diterapkan pada *Value* di dalam `emotion_to_hsv`, bukan pada keluaran DMX.
 
 5. **Dekomposisi 4-Kanal Physical RGBW Lampu Panggung:**
+   Dengan $R, G, B$ sebagai nilai 8-bit hasil konversi HSV→RGB, dekomposisi dijalankan pada nilai 8-bit tersebut:
    $$\begin{aligned}
    W &= \min(R, G, B) \\
    R' &= R - W \\
    G' &= G - W \\
    B' &= B - W \\
-   \text{DMX}[1\dots 4] &= \text{round}([R', G', B', W] \cdot 255 \cdot V_{\text{master}})
+   \text{DMX}_{\text{raw}}[1\dots 4] &= \text{round}\big([R', G', B', W] \cdot d\big), \quad d = \text{clip}(\text{dimmer},\ 0,\ 1)
    \end{aligned}$$
+   *Grand Master* fader **tidak** digabung ke dalam rumus output di atas: penskalaannya dilakukan terpisah pada buffer DMX,
+   $$\text{DMX}_{\text{out}}[ch] = \text{round}\!\left( \text{DMX}_{\text{raw}}[ch] \cdot \frac{M}{255} \right), \qquad M \in [0, 255]$$
+   sehingga penskalaan kecerahan tidak dilakukan dua kali: $D_{\text{master}}$ hanya menyetel *Value* (kecerahan warna), sedangkan $M$ hanya menyetel keluaran fader/DMX.
 
 Rincian tabel pemetaan *rule-based mapping* dan pembuktian matematis selengkapnya disajikan pada dokumen pendukung `script_math_model.md` dan `script_fft_deep_dive.md`.
 

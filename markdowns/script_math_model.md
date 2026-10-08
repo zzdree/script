@@ -114,7 +114,7 @@ $$V = \text{clip}\!\left( 0{,}50 \cdot \text{Mode}_{\text{score}} + 0{,}30 \cdot
 
 $$A = \text{clip}\!\left( 0{,}50 \cdot \text{score}(\text{RMS}_{\text{norm}}) + 0{,}30 \cdot \text{Tempo}_{\text{score}} + 0{,}20 \cdot \text{score}(\text{Onset}_{\text{norm}}),\ -1,\ 1 \right) \tag{16}$$
 
-> **Catatan implementasi.** Pemanggilan pada `core/feature_extractor.py` hanya meneruskan `rms_norm`, `centroid_norm`, `chroma_12`, dan `tempo_bpm`. Parameter `onset_norm` dan `mfcc_norm` memakai nilai default $0{,}5$, sehingga `score`-nya $0{,}0$ dan kontribusi $0{,}20$ pada kedua persamaan di atas bernilai nol pada alur analisis yang berjalan saat ini.
+> **Catatan implementasi.** Pemanggilan pada `core/feature_extractor.py` kini meneruskan seluruh parameter fitur secara aktif: `rms_norm`, `centroid_norm`, `chroma_12`, `tempo_bpm`, `onset_norm` (dari *spectral flux envelope*), dan `mfcc_norm` (kontras 12 koefisien Mel-cepstral). Seluruh komponen bobot ($0{,}50$, $0{,}30$, $0{,}20$) beroperasi penuh pada alur analisis berjalan, dengan nilai cadangan (*fallback*) $0{,}5$ bila data frame audio hening atau tidak terdefinisi.
 
 ### 3.5 Interpretasi Kuadran V–A
 
@@ -301,7 +301,7 @@ Seluruh angka berikut **dihitung dengan menjalankan mesin v10** (`EmotionModel.e
 | $\text{SC}_{\text{norm}}$ | $0{,}289$ |
 | $B$ (BPM) | $73$ |
 | Chroma (mayor, 12 dimensi) | $[1{,}0;\ 0{,}1;\ 0{,}1;\ 0{,}1;\ 0{,}9;\ 0{,}1;\ 0{,}1;\ 0{,}8;\ 0{,}1;\ 0{,}1;\ 0{,}1;\ 0{,}1]$ |
-| `onset_norm`, `mfcc_norm` | default $0{,}5$ (alur analisis) |
+| `onset_norm`, `mfcc_norm` | $0{,}500$ (contoh ilustrasi bernilai netral) |
 
 **Langkah 1 — Skor masukan:**
 
@@ -309,7 +309,7 @@ Seluruh angka berikut **dihitung dengan menjalankan mesin v10** (`EmotionModel.e
 - $\text{score}(\text{SC}_{\text{norm}}) = 2(0{,}289) - 1 = -0{,}4220$
 - $\text{score}(\text{RMS}_{\text{norm}}) = 2(0{,}143) - 1 = -0{,}7140$
 - $\text{Tempo}_{\text{score}} = 2\frac{73 - 50}{120} - 1 = -0{,}6167$
-- `score(onset) = score(mfcc) = 0` (masukan default)
+- $\text{score}(\text{Onset}_{\text{norm}}) = \text{score}(\text{MFCC}_{\text{norm}}) = 2(0{,}5) - 1 = 0$ (ilustrasi masukan netral)
 
 **Langkah 2 — Valence & Arousal:**
 

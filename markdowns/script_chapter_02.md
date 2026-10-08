@@ -105,7 +105,7 @@ Jika panjang frame yang digunakan adalah $N = 2048$ sampel, maka satu kali evalu
 
 #### c. Algoritma Fast Fourier Transform (FFT) Cooley-Tukey Radix-2
 
-Untuk mengatasi inefisiensi komputasi DFT langsung, sistem memanfaatkan algoritma *Fast Fourier Transform* (FFT) yang dirumuskan oleh J. W. Cooley dan J. W. Tukey pada tahun 1965 [5]. Algoritma ini mengeksploitasi periodisitas dan simetri dari faktor fase (*twiddle factor*) $W_N = e^{-j \frac{2\pi}{N}}$ melalui pendekatan *divide-and-conquer* berbasis desimasi waktu (*Decimation-in-Time* / DIT).
+Untuk mengatasi inefisiensi komputasi DFT langsung, sistem memanfaatkan algoritma *Fast Fourier Transform* (FFT) yang dirumuskan oleh J. W. Cooley dan J. W. Tukey pada tahun 1965 [32]. Algoritma ini mengeksploitasi periodisitas dan simetri dari faktor fase (*twiddle factor*) $W_N = e^{-j \frac{2\pi}{N}}$ melalui pendekatan *divide-and-conquer* berbasis desimasi waktu (*Decimation-in-Time* / DIT).
 
 Dengan mengasumsikan panjang frame $N$ adalah bilangan genap kelipatan dua ($N = 2^p$), deret penjumlahan $n$ pada DFT dipecah menjadi dua kelompok:
 1. Sub-deret indeks genap ($n = 2m$, dengan $m = 0, 1, \dots, \frac{N}{2}-1$)
@@ -226,13 +226,13 @@ Matriks hasil STFT $X[m, k]$ merupakan representasi bilangan kompleks $X[m, k] =
 2. ***Root Mean Square* (RMS) Energy:**
    RMS Energy merepresentasikan kenyaringan (*loudness*) dan intensitas daya dinamika lagu pada frame ke-$m$. Berdasarkan Teorema Parseval, total energi dalam domain waktu setara dengan total energi dalam domain frekuensi:
    $$\text{RMS}[m] = \sqrt{ \frac{1}{N} \sum_{n=0}^{N-1} \left| x[n + mH] \cdot w[n] \right|^2 }$$
-   Nilai RMS ini kemudian dinormalisasi ke skala $[0{,}0, 1{,}0]$ dan dipetakan secara linier sebagai pengatur intensitas **Master Dimmer** lampu panggung:
-   $$\text{RMS}_{\text{norm}}[m] = \frac{\text{RMS}[m] - \text{RMS}_{\min}}{\text{RMS}_{\max} - \text{RMS}_{\min}}$$
+   Nilai RMS ini kemudian dinormalisasi terhadap nilai maksimum pada keseluruhan lagu ke rentang $[0{,}0, 1{,}0]$ dan menjadi masukan kecerahan (*Value*) lampu panggung:
+   $$\text{RMS}_{\text{norm}}[m] = \text{clip}\!\left( \frac{\text{RMS}[m]}{\max_{m}\text{RMS}[m]},\ 0,\ 1 \right)$$
 
 3. ***Spectral Centroid* (Kecerahan Timbre / Brightness):**
    *Spectral Centroid* merupakan titik pusat massa (*center of mass*) dari spektrum frekuensi audio pada frame ke-$m$. Nilai centroid menunjukkan apakah energi frekuensi lagu didominasi oleh rentang frekuensi rendah (karakter instrumen bass/drum, bernuansa hangat dan berat) atau frekuensi tinggi (karakter instrumen simbal/gitar melodi/vokal tinggi, bernuansa cerah dan tajam). Formulasi matematis eksak berbasis bin frekuensi FFT:
    $$\text{Centroid}[m] = \frac{\sum_{k=0}^{N/2} f_k \cdot |X[m, k]|}{\sum_{k=0}^{N/2} |X[m, k]|} = \frac{\sum_{k=0}^{N/2} \left( \frac{k \cdot f_s}{N} \right) \cdot |X[m, k]|}{\sum_{k=0}^{N/2} |X[m, k]|}$$
-   di mana $f_k$ adalah frekuensi fisik bin ke-$k$ dan $|X[m, k]|$ adalah bobot magnitudo spektral. Pada sistem ZZLUXORA, nilai centroid dinormalisasi dan dihubungkan ke koordinat Arousal serta rona warna (*Hue*). Nilai centroid tinggi memicu warna-warna cerah tersaturasi (*vibrant gold/amber/white*), sedangkan centroid rendah memicu warna kontemplatif (*cool deep blue/purple*).
+   di mana $f_k$ adalah frekuensi fisik bin ke-$k$ dan $|X[m, k]|$ adalah bobot magnitudo spektral. Pada sistem ZZLUXORA, nilai centroid dinormalisasi terhadap nilai maksimum pada keseluruhan lagu dan menjadi salah satu masukan perhitungan *Valence* (bobot $0{,}30$); *Valence* dan *Arousal* selanjutnya menentukan rona warna (*Hue*) melalui fungsi `atan2`. Nilai centroid tinggi memicu warna-warna cerah tersaturasi (*vibrant gold/amber/white*), sedangkan centroid rendah memicu warna kontemplatif (*cool deep blue/purple*).
 
 4. ***Chroma STFT* (Pitch Class Profile 12-Semitone):**
    Fitur *Chroma* memproyeksikan seluruh energi spektral frekuensi FFT ke dalam 12 kelas nada kromatik musik barat:
@@ -243,9 +243,17 @@ Matriks hasil STFT $X[m, k]$ merupakan representasi bilangan kompleks $X[m, k] =
    $$c(k) = \text{round}(p(f_k)) \pmod{12}$$
    Energi pada kelas nada $c$ pada frame ke-$m$ dihitung dengan mengintegrasikan magnitudo seluruh bin FFT yang bersesuaian:
    $$\text{Chroma}[m, c] = \sum_{k \in \mathcal{K}_c} |X[m, k]|$$
-   Vektor Chroma 12 dimensi $\mathbf{Chroma}[m]$ dikorelasikan dengan template profil tonal Krumhansl-Schmuckler untuk tangga nada Mayor ($\mathbf{T}_{\text{major}}$) dan Minor ($\mathbf{T}_{\text{minor}}$) guna mengevaluasi polaritas tangga nada lagu:
-   $$\rho_{\text{major}} = \text{corr}(\mathbf{Chroma}[m], \mathbf{T}_{\text{major}}), \quad \rho_{\text{minor}} = \text{corr}(\mathbf{Chroma}[m], \mathbf{T}_{\text{minor}})$$
-   Korelasi mayor yang lebih tinggi ($\rho_{\text{major}} > \rho_{\text{minor}}$) mengindikasikan suasana sukacita (*happy/uplifting*) dan menghasilkan nilai **Valence positif ($V > 0$)**, sedangkan korelasi minor yang dominan mengindikasikan suasana khidmat dan menghasilkan nilai **Valence negatif ($V < 0$)**.
+   Vektor Chroma 12 dimensi $\mathbf{Chroma}[m]$ dinormalisasi terhadap norma Euclidean, begitu pula profil tonal Krumhansl-Schmuckler untuk tangga nada Mayor ($\mathbf{T}_{\text{major}}$) dan Minor ($\mathbf{T}_{\text{minor}}$):
+   $$\mathbf{T}_{\text{major}} = [6{,}35;\ 2{,}23;\ 3{,}48;\ 2{,}33;\ 4{,}38;\ 4{,}09;\ 2{,}52;\ 5{,}19;\ 2{,}39;\ 3{,}66;\ 2{,}29;\ 2{,}88]$$
+   $$\mathbf{T}_{\text{minor}} = [6{,}33;\ 2{,}68;\ 3{,}52;\ 5{,}38;\ 2{,}60;\ 3{,}53;\ 2{,}54;\ 4{,}75;\ 3{,}98;\ 2{,}69;\ 3{,}34;\ 3{,}17]$$
+   Kedua profil dikorelasikan terhadap **seluruh 12 transposisi** vektor chroma (geseran melingkar/*circular shift* sebanyak $s$ semitone, $s = 0, 1, \dots, 11$) guna mengevaluasi polaritas tangga nada lagu, dan dari 12 transposisi tersebut diambil korelasi maksimum $\rho_{\text{maj}}$ dan $\rho_{\text{min}}$:
+   $$\rho_{\text{maj}} = \max_{s} \ \text{corr}\big(\text{roll}(\mathbf{Chroma}[m], s),\ \mathbf{T}_{\text{major}}\big), \qquad \rho_{\text{min}} = \max_{s} \ \text{corr}\big(\text{roll}(\mathbf{Chroma}[m], s),\ \mathbf{T}_{\text{minor}}\big)$$
+   Skor polaritas modus kemudian dihitung sebagai rasio kontras yang diskalakan faktor 2 dan di-*clamp* ke $[-1, 1]$:
+   $$\text{Mode}_{\text{polarity}} = \frac{\rho_{\text{maj}} - \rho_{\text{min}}}{\rho_{\text{maj}} + \rho_{\text{min}}}, \qquad \text{Mode}_{\text{score}} = \text{clip}\!\left( 2 \cdot \text{Mode}_{\text{polarity}},\ -1,\ 1 \right)$$
+   dengan nilai $0{,}0$ bila penyebut mendekati nol atau vektor chroma tidak valid (bukan 12 dimensi). Skor $+1$ menandakan modus Mayor dominan dan $-1$ menandakan modus Minor dominan; korelasi mayor yang lebih tinggi ($\text{Mode}_{\text{score}} > 0$) mengindikasikan suasana sukacita (*happy/uplifting*) dan menghasilkan **Valence positif ($V > 0$)**, sedangkan korelasi minor yang dominan ($\text{Mode}_{\text{score}} < 0$) mengindikasikan suasana khidmat dan menghasilkan **Valence negatif ($V < 0$)**.
+   Masukan lain yang masih berada pada rentang $[0, 1]$ — $\text{SC}_{\text{norm}}$, $\text{RMS}_{\text{norm}}$, $\text{MFCC}_{\text{norm}}$, dan $\text{Onset}_{\text{norm}}$ — dipetakan ke skor $[-1, 1]$ melalui
+   $$\text{score}(x) = 2 \cdot \text{clip}(x,\ 0,\ 1) - 1$$
+   Skor-skor tersebut kemudian dikombinasikan secara linear dengan bobot fitur pada bagian 3.9.3 untuk membentuk koordinat $(V, A)$.
 
 5. ***Mel-Frequency Cepstral Coefficients* (MFCC):**
    MFCC mengekstraksi amplop spektral (*spectral envelope*) yang merepresentasikan karakteristik tekstur timbre suara vokal dan instrumen berdasarkan respons pendengaran telinga manusia. Spektrum daya FFT $S[m, k]$ disaring menggunakan $B = 40$ filter segitiga pada skala Mel ($m_{\text{mel}} = 2595 \log_{10}(1 + f/700)$), ditransformasikan ke skala logaritmik, lalu didekorelasikan melalui *Discrete Cosine Transform* (DCT-II):
@@ -329,11 +337,17 @@ Pendekatan ini menghasilkan warna yang lebih kaya dan cahaya putih yang lebih al
 
 #### d. Normalisasi Fitur Audio
 
-Normalisasi *min-max* digunakan untuk menskala setiap fitur audio ke rentang [0, 1]:
+Sistem ZZLUXORA menggunakan **normalisasi terhadap nilai maksimum pada keseluruhan lagu** (bukan rentang min–maks tetap), dengan penguncian hasil ke rentang $[0, 1]$:
 
-$$x_{norm} = \frac{x - x_{min}}{x_{max} - x_{min}}$$
+$$\text{RMS}_{\text{norm}} = \text{clip}\!\left( \frac{\text{RMS}[m]}{\max_{m}\text{RMS}[m]},\ 0,\ 1 \right)$$
 
-Rentang referensi ditentukan berdasarkan karakteristik lagu rohani (misalnya BPM: 60–180, *RMS*: 0.01–0.5, *Spectral Centroid*: 500–5000 Hz). Nilai hasil normalisasi di-*clip* ke rentang [0, 1] untuk menghindari nilai di luar batas.
+$$\text{SC}_{\text{norm}} = \text{clip}\!\left( \frac{\text{Centroid}[m]}{\max_{m}\text{Centroid}[m]},\ 0,\ 1 \right)$$
+
+Pencarian tempo dilakukan pada rentang 60–180 BPM, kemudian hasil estimasi di-*clamp* ke $[50, 190]$ BPM. Untuk masukan tempo, normalisasi linier ke skor $[-1, 1]$ dilakukan pada tahap perhitungan Arousal dengan jendela $[50, 170]$:
+
+$$\text{Tempo}_{\text{score}} = 2 \cdot \frac{\text{clip}(B,\ 50,\ 170) - 50}{120} - 1$$
+
+Masukan ter-normalisasi lainnya dipetakan ke skor $[-1, 1]$ melalui $\text{score}(x) = 2 \cdot \text{clip}(x, 0, 1) - 1$ (lihat bagian 2.2.1 h.4). Seluruh masukan yang diterima model afektif berada pada rentang $[0, 1]$.
 
 ### 2.2.4 Lampu PAR LED RGBW
 
@@ -411,7 +425,7 @@ Kerangka berpikir penelitian ini didasarkan pada asumsi bahwa fitur-fitur audio 
          │
          ▼
 ┌─────────────────┐
-│   Normalisasi   │  Min-Max Scaling [0, 1]
+│   Normalisasi   │  Per-maksimum-lagu → [0, 1]
 │   Fitur         │
 └────────┬────────┘
          │
@@ -426,7 +440,7 @@ Kerangka berpikir penelitian ini didasarkan pada asumsi bahwa fitur-fitur audio 
 ┌─────────────────┐
 │   Pemetaan      │  V-A → H (jenis warna)
 │   V-A → HSV     │  V-A → S (kejenuhan)
-│   (Rule-Based)  │  V-A → V (kecerahan)
+│   (Rule-Based)  │  RMS × D_master → V (kecerahan)
 └────────┬────────┘
          │
          ▼

@@ -118,7 +118,7 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
      * **Fixture Resmi Asli:** `fixtures/Alien-AL36.zfx` (4 unit panggung GIA 8CH RGB) dan `fixtures/Kumastb-STL47.zfx` (1 unit bench test 8CH RGBW).
      * **Peluncur Desktop 1-Klik:** `ZZLUXORA.desktop` di Desktop Linux Mint dan Application Menu serta `run.sh` untuk peluncuran instan tanpa terminal.
      * **Bundel 10 Lagu Rohani Benchmark:** Tersedia 10 file audio WAV di `data/audio/` (Symphony Worship, NDC Worship, GMS Live, JPCC Worship, Franky Sihombing).
-     * **Hasil Uji:** 51/51 unit test lulus 100% (per 7 Okt 2026).
+     * **Hasil Uji:** 65/65 unit test lulus 100% (per 8 Okt 2026).
 
 ---
 
