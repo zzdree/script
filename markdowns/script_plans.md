@@ -202,3 +202,19 @@ Tabel lengkap: fitur audio → range → dampak V-A → HSV → warna visual →
 
 > [!WARNING]
 > File `script_andreas_v1.docx` dan `script_andreas_v2.docx` **tidak akan diubah**. Output baru → `script_andreas_v3.docx`.
+
+---
+
+## 📈 Status Kemajuan Naskah Skripsi (per 8 Okt 2026)
+
+### 1. Naskah Proposal v4 (STATUS: TUNTAS 100%)
+- Berkas utama: `script_projects/script_andreas_v4.docx` (2.58 MB, 555 paragraf).
+- Memuat 8 gambar ilmiah resmi (monokrom IEEE standard), 20 persamaan bernomor Cambria Math murni, dan 33 referensi IEEE.
+- PR Dosen Pembimbing (Mario Norman Syah, S.Pd., M.Eng.) terkait teori komprehensif FFT, STFT, dan MIR tuntas terjawab di Bab 2 & Bab 3.
+
+### 2. Kesiapan Menuju Naskah Lengkap v5 (Bab 1 s.d. Bab 5)
+- **Bab 1–3**: Diselaraskan 1:1 ke formalisme kanonik software v10 (normalisasi per-maksimum-lagu, 12 transposisi Krumhansl-Schmuckler, lantai saturasi $S \ge 0{,}2$, pemisahan fader master) dan 33 nomor sitasi IEEE bracket dirapikan.
+- **Bab 4 (`script_chapter_04.md`) & Bab 5 (`script_chapter_05.md`)**: Kerangka lengkap siap isi data FASE 6 (zero data rekayasa, pemetaan RM1–3 dan H1–3 transparan, penanda `[BELUM DIUKUR]`/`[VERIFIKASI LAPANGAN]`).
+- **Protokol Uji Lapangan (`script_test_protocols.md`)**: 243 baris mencakup latensi end-to-end, packet loss, templat CSV 41-kolom, 24 kasus uji black-box, protokol pilot Cronbach alpha >= 0.6, kriteria 25 responden, dan checklist hardware GIA Deliksari.
+- **Software Pendukung (`zzluxora_v10`)**: 65/65 unit test lulus 100% (commit `b223414`).
+- **Langkah Tersisa Menuju Sempro/Ujian Skripsi**: Pengujian lapangan fisik modul ESP32 + 4 unit PAR LED Alien AL36 di GIA Deliksari (FASE 6), pembuktian laju DMX fisik (K5), dan build installer Windows 11 di Acer Swift 3.
