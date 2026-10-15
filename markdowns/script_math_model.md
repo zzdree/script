@@ -108,6 +108,8 @@ berlaku untuk $\text{SC}_{\text{norm}}$, $\text{RMS}_{\text{norm}}$, $\text{MFCC
 
 $$\text{Tempo}_{\text{score}} = 2 \cdot \frac{\text{clip}(B,\ 50,\ 170) - 50}{120} - 1 \tag{14}$$
 
+Perlu dibedakan dua jendela tempo yang berbeda pada sistem. **Pertama**, *clamp* estimasi BPM pada fungsi `estimate_tempo_bpm()` memakai jendela $[50, 190]$ BPM. **Kedua**, normalisasi $\text{Tempo}_{\text{score}}$ pada `evaluate_frame()` memakai jendela $[50, 170]$ BPM sebagaimana Persamaan (14). Akibatnya, BPM pada rentang 170 sampai 190 akan di-*clamp* ke batas atas dan menghasilkan $\text{Tempo}_{\text{score}} = +1{,}0$. Kedua jendela ini disengaja dan berbeda peran: yang pertama untuk menampung rentang tempo lagu rohani secara luas, yang kedua untuk menskalakan masukan arousal.
+
 ### 3.4 Valence dan Arousal
 
 $$V = \text{clip}\!\left( 0{,}50 \cdot \text{Mode}_{\text{score}} + 0{,}30 \cdot \text{score}(\text{SC}_{\text{norm}}) + 0{,}20 \cdot \text{score}(\text{MFCC}_{\text{norm}}),\ -1,\ 1 \right) \tag{15}$$
