@@ -169,20 +169,27 @@ Daftar nama aktual di `zzluxora_v10/data/audio/`:
 9. `Symphony_Worship_-_Kubahagia.wav`
 10. `Symphony_Worship_-_Kumenang.wav`
 
-Nama penyanyi/lagu di atas adalah nama berkas yang tersedia, bukan klasifikasi mood atau bukti karakter musiknya. Dengarkan dan lakukan analisis awal seluruh kandidat; catat durasi/format, BPM dan/atau segmen yang benar-benar terukur, bagian yang dipakai, serta alasan inklusi. Pilih **3–5 lagu** sesuai rancangan kuesioner yang ada, dengan variasi karakter yang diverifikasi dari materi aktual dan relevan dengan ibadah. Jangan menyebut lagu “Praise”, “Worship”, cepat/lambat, atau mewakili mood tertentu hanya berdasarkan nama berkas. Minta persetujuan pembimbing atas jumlah dan judul final; gunakan nama berkas yang sama pada form, log, dan hasil.
+Nama penyanyi/lagu di atas adalah nama berkas yang tersedia, bukan klasifikasi mood atau bukti karakter musiknya.
 
-| Kandidat berkas (nama persis) | Durasi/segmen yang dipakai (isi setelah verifikasi) | Hasil analisis awal yang relevan | Keputusan inklusi dan alasan |
-|---|---|---|---|
-| `Franky_Sihombing_-_Kuberikan_Hatiku.wav` | | | |
-| `GMS_Live_-_Kemenangan_Terjadi_Di_Sini.wav` | | | |
-| `GMS_Live_-_Nyalakan_ApiMu.wav` | | | |
-| `JPCC_Worship_-_Sampai_Akhir_Hidupku.wav` | | | |
-| `JPCC_Worship_-_Tuhan_Raja_Maha_Besar.wav` | | | |
-| `NDC_Worship_-_Bapa_Yang_Kekal.wav` | | | |
-| `NDC_Worship_-_Waktu_Tuhan.wav` | | | |
-| `Symphony_Worship_-_Dengan_SayapMu.wav` | | | |
-| `Symphony_Worship_-_Kubahagia.wav` | | | |
-| `Symphony_Worship_-_Kumenang.wav` | | | |
+> **PENTING - status bahan audio.** Sepuluh berkas di atas **bukan rekaman lagu rohani asli**. Seluruhnya dibangkitkan secara sintetis oleh `zzluxora_v10/tools/generate_benchmark_audio.py` untuk keperluan pengujian perangkat lunak: durasi seragam 12,00 detik, laju sampel 22.050 Hz, dan kanal tunggal (mono). Nama penyanyi pada nama berkas dipakai hanya sebagai penanda himpunan uji, bukan penanda asal materi. Konsekuensinya:
+> 1. Berkas ini sah dipakai untuk pengujian fungsional dan pengujian perangkat lunak, tetapi **tidak memadai** untuk penilaian persepsi pengguna terhadap kesesuaian pencahayaan, karena tidak mengandung karakter musik yang sesungguhnya dari lagu yang dimaksud.
+> 2. Untuk keperluan penelitian persepsi (H₁) dan sajian pada Bab 4, **materi uji harus berupa rekaman lagu rohani nyata** yang dipilih, diverifikasi, dan disetujui pembimbing. Sumber, izin pemakaian, dan identitas materi dicatat pada tabel di bawah.
+> 3. Naskah tidak boleh menyebut berkas sintetis sebagai lagu dengan judul tertentu, seolah-olah hasil persepsi berlaku untuk lagu itu.
+
+Dengarkan dan lakukan analisis awal seluruh kandidat; catat durasi/format, BPM dan/atau segmen yang benar-benar terukur, bagian yang dipakai, serta alasan inklusi. Pilih **3–5 lagu** sesuai rancangan kuesioner yang ada, dengan variasi karakter yang diverifikasi dari materi aktual dan relevan dengan ibadah. Jangan menyebut lagu “Praise”, “Worship”, cepat/lambat, atau mewakili mood tertentu hanya berdasarkan nama berkas. Minta persetujuan pembimbing atas jumlah dan judul final; gunakan nama berkas yang sama pada form, log, dan hasil.
+
+| Kandidat berkas (nama persis) | Asal materi (sintetis/rekaman nyata) | Durasi/segmen yang dipakai (isi setelah verifikasi) | Hasil analisis awal yang relevan | Keputusan inklusi dan alasan |
+|---|---|---|---|---|
+| `Franky_Sihombing_-_Kuberikan_Hatiku.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `GMS_Live_-_Kemenangan_Terjadi_Di_Sini.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `GMS_Live_-_Nyalakan_ApiMu.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `JPCC_Worship_-_Sampai_Akhir_Hidupku.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `JPCC_Worship_-_Tuhan_Raja_Maha_Besar.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `NDC_Worship_-_Bapa_Yang_Kekal.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `NDC_Worship_-_Waktu_Tuhan.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `Symphony_Worship_-_Dengan_SayapMu.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `Symphony_Worship_-_Kubahagia.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
+| `Symphony_Worship_-_Kumenang.wav` | Sintetis (`generate_benchmark_audio.py`) | | | |
 
 ## 6. Persiapan dan pelaksanaan lapangan di GIA Deliksari
 

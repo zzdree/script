@@ -117,8 +117,8 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
      * **Logo Resmi Anti-Slop:** Huruf kapital "ZZ" (Arial Black Italic, solid black #000000, pure white #ffffff, tanpa glow, rasio 1:1, tersimpan di `ui/assets/logo_zz.png` dan `.ico`).
      * **Fixture Resmi Asli:** `fixtures/Alien-AL36.zfx` (4 unit panggung GIA 8CH RGB) dan `fixtures/Kumastb-STL47.zfx` (1 unit bench test 8CH RGBW).
      * **Peluncur Desktop 1-Klik:** `ZZLUXORA.desktop` di Desktop Linux Mint dan Application Menu serta `run.sh` untuk peluncuran instan tanpa terminal.
-     * **Bundel 10 Lagu Rohani Benchmark:** Tersedia 10 file audio WAV di `data/audio/` (Symphony Worship, NDC Worship, GMS Live, JPCC Worship, Franky Sihombing).
-     * **Hasil Uji:** 65/65 unit test lulus 100% (per 8 Okt 2026).
+     * **Bundel 10 Berkas Audio Uji (SINTETIS):** 10 file WAV di `data/audio/`, dibangkitkan oleh `tools/generate_benchmark_audio.py` (durasi seragam 12,00 detik, 22.050 Hz, mono). Nama penyanyi pada nama berkas hanya penanda himpunan uji, **bukan rekaman lagu asli**. Sah untuk pengujian perangkat lunak, tidak memadai untuk penilaian persepsi; materi uji persepsi harus berupa rekaman lagu rohani nyata.
+     * **Hasil Uji:** 74/74 unit test lulus 100% (per 15 Okt 2026, commit `48ca2bd`).
 
 ---
 
