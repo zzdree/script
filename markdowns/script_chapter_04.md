@@ -1,6 +1,19 @@
 # BAB 4 HASIL DAN PEMBAHASAN
 
-Bab ini menyajikan hasil pengujian dan pembahasan sistem ZZLUXORA. Naskah yang tersedia masih berupa templat; data pengujian lapangan, hasil pengukuran, dan tanggapan responden belum dimasukkan. Setiap penanda **[BELUM DIUKUR]**, **[BELUM DIISI]**, dan **[VERIFIKASI LAPANGAN]** harus diganti hanya setelah bukti pengujian atau dokumen pendukung tersedia. Target sampel bukan jumlah responden aktual.
+Bab ini menyajikan hasil pengujian dan pembahasan sistem ZZLUXORA. Sebagian tabel telah terisi dengan bukti perangkat lunak yang terverifikasi; data pengujian lapangan, hasil pengukuran perangkat keras, dan tanggapan responden belum dimasukkan. Setiap penanda yang tersisa harus diganti hanya setelah bukti pengujian atau dokumen pendukung tersedia. Target sampel bukan jumlah responden aktual.
+
+**Daftar penanda status yang dipakai pada Bab 4:**
+
+| Penanda | Makna |
+|---|---|
+| **[TERVERIFIKASI SOFTWARE]** | Dibuktikan oleh pengujian unit dan/atau pengujian loopback pada perangkat lunak. Tidak melibatkan perangkat keras fisik. |
+| **[VERIFIKASI LAPANGAN]** | Menunggu pengujian pada perangkat keras fisik di lokasi. |
+| **[BELUM DIUKUR]** | Nilai numerik belum tersedia karena pengukuran belum dilakukan. |
+| **[BELUM DIISI]** / **[BELUM DIPILIH]** | Sel belum diisi karena keputusan atau pemilihan belum ditetapkan. |
+| **[BELUM DIUJI]** / **[BELUM DINILAI]** | Kasus uji belum dijalankan. |
+| **[BELUM DIHITUNG]** | Statistik belum dihitung karena data sumber belum lengkap. |
+
+Status **[TERVERIFIKASI SOFTWARE]** menyatakan kebenaran pada tataran perangkat lunak saja dan tidak boleh dibaca sebagai keberhasilan integrasi perangkat keras.
 
 Pemetaan pembahasan mengikuti rumusan masalah pada Bab 1 §1.3 dan hipotesis pada Bab 3 §3.5. Rumusan masalah ketiga mencakup seluruh pengukuran teknis, persepsi kesesuaian pencahayaan, dan *usability*. Karena itu, latensi, *packet loss*, serta hasil *black-box* dibahas di §4.3, bukan ditempatkan sebagai hasil Rumusan Masalah Kedua. Tabel 4.1 merangkum pemetaan tersebut.
 
@@ -22,11 +35,13 @@ Alur yang dirancang untuk ZZLUXORA mencakup pemuatan berkas audio, prapemrosesan
 
 | No. | Modul/tahap | Fungsi sesuai rancangan | Status implementasi dan bukti |
 |---|---|---|---|
-| 1 | Prapemrosesan dan STFT/FFT | [LENGKAPI BERDASARKAN IMPLEMENTASI] | [BELUM DIVERIFIKASI] |
-| 2 | Ekstraksi fitur akustik | [LENGKAPI BERDASARKAN IMPLEMENTASI] | [BELUM DIVERIFIKASI] |
-| 3 | Model *valence-arousal* dan pemetaan HSV | [LENGKAPI BERDASARKAN IMPLEMENTASI] | [BELUM DIVERIFIKASI] |
-| 4 | Dekomposisi RGBW algoritmik serta generator *scene/chase* | [LENGKAPI BERDASARKAN IMPLEMENTASI] | [BELUM DIVERIFIKASI] |
-| 5 | Antarmuka dan pengirim Art-Net | [LENGKAPI BERDASARKAN IMPLEMENTASI] | [BELUM DIVERIFIKASI] |
+| 1 | Prapemrosesan dan STFT/FFT | Pemuatan multi-format; segmentasi frame geser $N=2048$, $H=512$; pembobotan Hann; transformasi FFT melalui `np.fft.rfft`; laju analisis $43{,}07$ frame per detik | Terverifikasi perangkat lunak: `tests/test_fft_engine.py` (3 uji) dan `tests/test_audio_loader.py` (3 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
+| 2 | Ekstraksi fitur akustik | RMS energy (Parseval), spectral centroid, Chroma 12-semitone, 13 MFCC (40 Mel + DCT-II), spectral flux, onset strength ternormalisasi, estimasi tempo autokorelasi FFT pada rentang $[50, 190]$ BPM | Terverifikasi perangkat lunak: `tests/test_feature_extractor.py` (9 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
+| 3 | Model *valence-arousal* dan pemetaan HSV | Bobot $V = 0{,}50/0{,}30/0{,}20$ (mode, centroid, MFCC); bobot $A = 0{,}50/0{,}30/0{,}20$ (RMS, tempo, onset); polaritas mode 12 transposisi Krumhansl-Schmuckler; pemetaan $(V,A) \to (H,S)$ melalui `atan2` dengan lantai saturasi $S \ge 0{,}2$ | Terverifikasi perangkat lunak: `tests/test_emotion_model.py` (2 uji); contoh perhitungan `script_math_model.md` [9] direproduksi langsung dari mesin pada masukan yang sama |
+| 4 | Dekomposisi RGBW algoritmik serta generator *scene/chase* | Dekomposisi 4-kanal fisik $W=\min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$; pembangkitan scene/chase berbasis segmen dan tempo | Terverifikasi perangkat lunak: `tests/test_color_engine.py` (2 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
+| 5 | Antarmuka dan pengirim Art-Net | Enam tab workspace; paket ArtDmx 530 byte (Universe 0, port 6454); transmisi ter-gate tombol Play; blackout atomik; antarmuka patch DMX | Terverifikasi perangkat lunak: `tests/test_ui_components.py` (40 uji) dan `tests/test_artnet_sender.py` (2 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
+
+Catatan: status "Terverifikasi perangkat lunak" menyatakan bahwa modul lulus pengujian unit dan pengujian pengulangan pada perangkat lunak, bukan bahwa modul telah divalidasi pada perangkat keras fisik. Validasi perangkat keras tetap berstatus **[VERIFIKASI LAPANGAN]** pada §4.2.
 
 **Gambar 4.1** [BELUM DIISI: diagram arsitektur berdasarkan implementasi yang diverifikasi]
 
@@ -34,7 +49,7 @@ Alur yang dirancang untuk ZZLUXORA mencakup pemuatan berkas audio, prapemrosesan
 
 Dengan parameter rancangan Bab 3, laju hop STFT dihitung sebesar $f_s/H = 22.050/512 \approx 43{,}07$ frame per detik. Nilai tersebut adalah laju pembaruan frame pada perhitungan STFT secara teoretis. Nilai itu tidak menunjukkan *frame rate* komputasi aktual dan tidak dapat digunakan untuk menyimpulkan laju *refresh* DMX. Laju aktual DMX, bila akan dilaporkan, memerlukan pengukuran tersendiri dan metode yang disetujui.
 
-Protokol penelitian merencanakan pemilihan 3–5 lagu dari 10 berkas kandidat. Judul dan bagian lagu yang benar-benar dipakai masih perlu diverifikasi dan disetujui; daftar kandidat tidak berarti seluruh 10 lagu telah diuji. Hasil fitur hanya diisi untuk lagu yang akhirnya dipilih dan dianalisis.
+Protokol penelitian merencanakan pemilihan 3–5 lagu dari 10 berkas kandidat. Judul dan bagian lagu yang benar-benar dipakai masih perlu diverifikasi dan disetujui; daftar kandidat tidak berarti seluruh 10 lagu telah diuji. Hasil fitur hanya diisi untuk lagu yang akhirnya dipilih dan dianalisis. Tabel menyediakan lima slot; **hapus baris slot yang tidak dipakai setelah jumlah lagu final ditetapkan** (3, 4, atau 5 lagu).
 
 **Tabel 4.3** Hasil Ekstraksi Fitur pada Lagu Terpilih
 
@@ -52,25 +67,36 @@ Protokol penelitian merencanakan pemilihan 3–5 lagu dari 10 berkas kandidat. J
 
 Bab 3 merumuskan uji pengulangan untuk memeriksa apakah masukan dan setelan yang sama menghasilkan keluaran algoritmik yang sama. Rumusan tersebut menjelaskan metode yang direncanakan, bukan hasil uji deterministik yang telah diperoleh. Bab 3 juga menyebut korelasi Pearson antara fitur audio dan kanal keluaran. Nilai korelasi perlu dihitung dari data yang benar-benar direkam; korelasi tidak dengan sendirinya membuktikan ketepatan persepsi warna. Unit analisis dan agregasi data untuk korelasi perlu dijelaskan sebelum hasil ditafsirkan.
 
-**Tabel 4.4** Templat Uji Pengulangan Keluaran Algoritmik
+**Tabel 4.4** Hasil Uji Pengulangan Keluaran Algoritmik
+
+Uji dijalankan pada perangkat lunak dengan masukan dan setelan identik, sebanyak tiga pengulangan per berkas. Perbedaan keluaran diperiksa pada tiga ringkasan: jumlah frame, jumlah RMS, jumlah spectral centroid, dan RGBW frame pertama.
 
 | No. | Berkas dan setelan masukan | Jumlah pengulangan | Perbedaan keluaran yang teramati | Bukti/log |
 |---|---|---|---|---|
-| 1 | [BELUM DIISI] | [BELUM DIUJI] | [BELUM DIUKUR] | [BELUM DIISI] |
-| 2 | [BELUM DIISI] | [BELUM DIUJI] | [BELUM DIUKUR] | [BELUM DIISI] |
-| 3 | [BELUM DIISI] | [BELUM DIUJI] | [BELUM DIUKUR] | [BELUM DIISI] |
+| 1 | `NDC_Worship_-_Bapa_Yang_Kekal.wav`, STFTEngine($f_s=22050$, $N=2048$, $H=512$), EmotionModel bobot bawaan | 3 | 0 (identik bit-for-bit; 513 frame; RMS 354,536054; centroid 136141,287305; RGBW frame pertama $(33,0,37,104)$) | `tools/export_correlation.py --repeats 3`, commit `48ca2bd` |
+| 2 | Berkas lagu terpilih berikutnya | [BELUM DIISI setelah pemilihan lagu final] | [BELUM DIUKUR] | Perintah reproduksi sama seperti baris 1 |
+| 3 | Berkas lagu terpilih berikutnya | [BELUM DIISI setelah pemilihan lagu final] | [BELUM DIUKUR] | Perintah reproduksi sama seperti baris 1 |
 
-**Tabel 4.5** Templat Korelasi Fitur Audio dan Keluaran Algoritmik
+Uji keluaran algoritmik ini membuktikan bahwa pipeline pemrosesan bersifat deterministik pada masukan identik. Uji ini **bukan** pengukuran lapangan dan tidak menyatakan apa pun tentang respons lampu fisik.
+
+**Tabel 4.5** Korelasi Fitur Audio dan Keluaran Algoritmik
 
 | Fitur audio | Dimmer | R algoritmik | G algoritmik | B algoritmik | W algoritmik |
 |---|---|---|---|---|---|
-| BPM | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] |
-| RMS energy | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] |
-| *Spectral centroid* | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] |
+| BPM | tidak terdefinisi | tidak terdefinisi | tidak terdefinisi | tidak terdefinisi | tidak terdefinisi |
+| RMS energy | tidak terdefinisi | $+0{,}163$ | $+0{,}289$ | $-0{,}946$ | $+0{,}992$ |
+| *Spectral centroid* | tidak terdefinisi | $+0{,}274$ | $-0{,}503$ | $+0{,}236$ | $-0{,}160$ |
+
+Nilai pada tabel ini dihitung dari keluaran perangkat lunak untuk berkas `NDC_Worship_-_Bapa_Yang_Kekal.wav` melalui `tools/export_correlation.py` (commit `48ca2bd`), dengan unit analisis satu frame STFT ($n = 513$ frame). Sel bertanda **tidak terdefinisi** dijelaskan sebagai berikut:
+
+1. **BPM** merupakan nilai skalar per lagu, bukan nilai per frame. Korelasi Pearson antar-frame antara BPM dan kanal keluaran tidak bermakna karena vektor BPM konstan pada satu lagu. Bila korelasi BPM diperlukan, perhitungan harus dilakukan pada tingkat antarlagu (satu titik data per lagu), bukan antar-frame.
+2. **Dimmer** pada keluaran `ColorRGBW` selalu bernilai $1{,}0$ (lihat `ColorEngine.process_frame`); kecerahan sesungguhnya dibawa oleh komponen Value pada ruang HSV, bukan oleh medan dimmer. Karena itu korelasinya terhadap fitur audio selalu tidak terdefinisi.
+
+Korelasi terkuat yang teramati adalah antara RMS energy dan kanal putih algoritmik ($r = +0{,}992$) serta antara RMS energy dan kanal biru algoritmik ($r = -0{,}946$). Nilai ini menunjukkan hubungan matematis antara kenyaringan dan keluaran kanal, dan **tidak** menyatakan bahwa kanal putih atau biru telah diverifikasi pada lampu fisik. Tabel ini mengisi korelasi fitur audio terhadap kanal keluaran algoritmik; korelasi pada butir yang sama juga disebut pada Bab 3 sebagai metode yang direncanakan.
 
 ### 4.1.4 Keluaran Valence-Arousal, HSV, dan RGBW Algoritmik
 
-Tabel 4.6 disediakan untuk menyajikan keluaran perangkat lunak berdasarkan segmen lagu yang dianalisis. Istilah **RGBW algoritmik** di sini merujuk pada empat nilai yang dihasilkan oleh model perangkat lunak. Nilai tersebut tidak membuktikan bahwa lampu fisik menghasilkan kanal putih terpisah.
+Tabel 4.6 disediakan untuk menyajikan keluaran perangkat lunak berdasarkan segmen lagu yang dianalisis. Tabel menyediakan lima slot; **hapus baris slot yang tidak dipakai setelah jumlah lagu final ditetapkan**. Istilah **RGBW algoritmik** di sini merujuk pada empat nilai yang dihasilkan oleh model perangkat lunak. Nilai tersebut tidak membuktikan bahwa lampu fisik menghasilkan kanal putih terpisah.
 
 Profil Alien AL36 yang dicantumkan pada dokumen penelitian memiliki delapan kanal: dimmer, R, G, B, kanal kosong, program, speed, dan kanal kosong; profil itu tidak mencantumkan kanal putih khusus. Kesesuaian model, mode kanal pada unit fisik, serta pemetaan nilai W algoritmik ke fixture harus ditetapkan melalui **[VERIFIKASI LAPANGAN]**. Sebelum verifikasi dan pengujian optik dilakukan, naskah tidak menyatakan bahwa keluaran RGBW fisik telah diuji.
 
@@ -96,14 +122,20 @@ Profil Alien AL36 yang dicantumkan pada dokumen penelitian memiliki delapan kana
 
 Rancangan integrasi menghubungkan keluaran aplikasi ke tujuan Art-Net melalui jaringan, kemudian ke penerima ESP32 dan antarmuka DMX512. Jalur virtual ke QLC+ dan jalur menuju perangkat keras merupakan kondisi pengujian yang berbeda. Hasil pada QLC+ hanya menjadi bukti jalur simulasi yang benar-benar diamati; hasil tersebut tidak membuktikan paket diterima ESP32 atau lampu fisik merespons.
 
-**Tabel 4.7** Templat Bukti Integrasi Sistem
+**Tabel 4.7** Bukti Integrasi Sistem
 
 | Jalur yang direncanakan | Titik yang perlu diverifikasi | Status aktual | Bukti/log |
 |---|---|---|---|
-| ZZLUXORA ke QLC+ melalui *virtual adapter*/loopback | Alamat tujuan, port, Universe, paket diterima dan perubahan kanal | [BELUM DIUJI] | [BELUM DIISI] |
+| ZZLUXORA ke QLC+ melalui *virtual adapter*/loopback | Alamat tujuan, port, Universe, paket diterima dan perubahan kanal | Terverifikasi perangkat lunak (SITL loopback) | `tools/qlc_bridge_test.py --duration 5 --fixture alien` ke penerima UDP `127.0.0.1:6454`; 112 paket ArtDmx diterima, 105 nomor urut unik, urutan awal monotonik dari 1, blackout akhir mengembalikan seluruh kanal ke 0. Commit `48ca2bd` |
 | ZZLUXORA ke ESP32 melalui Wi-Fi/*hotspot* | Alamat tujuan, koneksi, penerimaan paket di firmware | [BELUM DIUJI] | [BELUM DIISI] |
 | ESP32 ke keluaran DMX512 melalui MAX485 | Sinyal DMX dan nilai kanal yang teramati | [BELUM DIUJI] | [BELUM DIISI] |
 | Keluaran DMX ke setiap fixture fisik | Profil, mode kanal, alamat, perubahan cahaya dan blackout | [VERIFIKASI LAPANGAN] | [BELUM DIISI] |
+
+Baris pertama hanya membuktikan jalur perangkat lunak ke penerima UDP pada mesin yang sama (*loopback*). Baris ini **tidak** membuktikan paket diterima ESP32, tidak membuktikan keluaran DMX512, dan tidak membuktikan lampu fisik merespons. Ketiga jalur tersebut berstatus belum diuji pada berkas ini.
+
+Catatan teknis: pada sesi uji ini ditemukan bahwa berkas showfile GIA (`gia_deliksari_alien_4x.zlx`) masih menyimpan `target_ip` bernilai `127.0.0.1`, sehingga sebelum pengujian lapangan tujuan harus diubah ke alamat node aktual (misalnya SoftAP `192.168.4.1`) dan diverifikasi pada penerima, bukan diasumsikan.
+
+Catatan pengukuran: perdana nomor urut ArtDmx pada sesi ini dimulai dari nilai 1, sesuai perbaikan pada `core/artnet_sender.py` (commit `7c566d9`). Sebelum perbaikan, penghitung dimulai dari 0, sementara nilai 0 pada medan Sequence Art-Net berarti "sequence disabled", sehingga paket pertama tidak valid. Pengujian lanjutan perlu memastikan tidak ada dua pengirim yang berbagi port/UDP yang sama dalam satu sesi, karena hal itu dapat menampilkan nomor urut yang tampak tidak monotonik pada penerima.
 
 **Gambar 4.4** [BELUM DIISI: topologi jalur yang benar-benar digunakan, tandai jalur virtual dan fisik secara terpisah]
 
