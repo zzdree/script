@@ -293,7 +293,7 @@ $$\text{DMX}[ch] = \text{round}\big( \text{DMX}_{\text{start}}[ch] + \big( \text
 
 ## [9] Contoh Perhitungan Satu Frame (Karakter Worship)
 
-Seluruh angka berikut **dihitung dengan menjalankan mesin v10** (`EmotionModel.evaluate_frame()` dan `ColorEngine`) terhadap masukan ilustratif berikut (nilai fitur diwarisi dari contoh versi lama dokumen ini, sedangkan hasil akhir dihitung ulang dengan formalisme kanonik):
+Seluruh angka berikut **dihitung dengan menjalankan mesin v10** (`EmotionModel.evaluate_frame()` dan `ColorEngine`) terhadap masukan ilustratif berikut (nilai fitur diwarisi dari contoh versi lama dokumen ini, sedangkan hasil akhir dihitung ulang dengan formalisme kanonik). Angka keluaran pada tabel ini merupakan hasil reproduksi langsung dari kode, bukan hasil transkripsi manual, sehingga dapat diverifikasi ulang dengan menjalankan mesin pada masukan yang sama:
 
 | Masukan | Nilai |
 |---------|-------|

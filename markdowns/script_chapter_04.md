@@ -154,20 +154,46 @@ Bab 3 menetapkan penyajian *black-box testing* secara deskriptif berdasarkan *te
 
 **Tabel 4.11** Templat Hasil *Black-Box Testing*
 
-| No. | Fitur/kasus uji | Hasil yang diharapkan | Hasil aktual | Status | Bukti |
+Baris mengikuti 24 kasus uji pada protokol pengujian (`script_test_protocols.md` §3, kode FB-01 s.d. FB-24). Kolom hasil dan status diisi hanya setelah kasus benar-benar dijalankan pada versi aplikasi/firmware yang dicatat.
+
+| ID | Fitur/kasus uji | Hasil yang diharapkan | Hasil aktual | Status | Bukti |
 |---|---|---|---|---|---|
-| 1 | Pemuatan berkas audio dan penanganan input | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
-| 2 | Analisis audio dan keluaran algoritmik | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
-| 3 | Pengiriman Art-Net ke QLC+ | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
-| 4 | Pengiriman Art-Net ke ESP32 | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
-| 5 | Konfigurasi fixture dan kanal | [TETAPKAN SESUAI PROFIL YANG DIVERIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
-| 6 | Konektivitas ESP32/Wi-Fi/*captive portal* | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-01 | Peluncuran aplikasi | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-02 | Muat profil `.zfx` valid | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-03 | Profil `.zfx` tidak valid | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-04 | Patch satu fixture | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-05 | Patch cepat GIA 4x | [TETAPKAN SESUAI PROFIL YANG DIVERIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-06 | Undo/redo patch | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-07 | Muat audio valid | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-08 | Audio tidak didukung/rusak | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-09 | Analisis audio | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-10 | Validitas tampilan hasil | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-11 | Analisis ulang deterministik | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-12 | Ekspor ke Perform | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-13 | Muat showfile `.zlx` GIA | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-14 | Simpan dan muat ulang `.zlx` | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-15 | Perform GO+ | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-16 | Perform PREV | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-17 | Crossfade | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-18 | Page/executor | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-19 | Mixer kanal DMX | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-20 | Grand Master dan reset | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-21 | Play-gated dan Stop | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-22 | Blackout | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-23 | Loopback QLC+ | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
+| FB-24 | ESP32 dan empat fixture | [TETAPKAN SESUAI SPESIFIKASI] | [BELUM DIUJI] | [BELUM DINILAI] | [BELUM DIISI] |
 
 **Tabel 4.12** Templat Rekapitulasi Hasil *Black-Box Testing*
 
+Penyebut persentase Pass adalah jumlah kasus FB yang benar-benar dijalankan (maksimum 24), bukan jumlah kasus yang direncanakan. Kasus yang tidak dijalankan diberi status N/A beserta alasannya dan tidak dihitung sebagai Fail.
+
 | Kelompok fitur | Jumlah kasus yang dijalankan | Pass | Fail | N/A beserta alasan | Persentase Pass |
 |---|---:|---:|---:|---|---:|
-| Semua kasus yang dilaporkan | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIISI] | [BELUM DIHITUNG] |
+| Aplikasi dan patch (FB-01 s.d. FB-06) | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIISI] | [BELUM DIHITUNG] |
+| Audio dan hasil (FB-07 s.d. FB-12) | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIISI] | [BELUM DIHITUNG] |
+| Showfile dan Perform (FB-13 s.d. FB-18) | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIISI] | [BELUM DIHITUNG] |
+| Output dan jaringan (FB-19 s.d. FB-24) | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIISI] | [BELUM DIHITUNG] |
+| Semua kasus yang dijalankan | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIHITUNG] | [BELUM DIISI] | [BELUM DIHITUNG] |
 
 Persentase Pass dihitung mengikuti rumus pada Bab 3 §3.9.1.b dan penyebutnya harus konsisten dengan kasus yang benar-benar dijalankan. Laporkan kasus N/A beserta alasannya; jangan memberi status Pass berdasarkan spesifikasi saja.
 
