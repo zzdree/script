@@ -12,6 +12,7 @@
 #include <LiquidCrystal_I2C.h>
 #include <WiFiUdp.h>
 #include <ESPmDNS.h>
+#include <esp_timer.h>
 #include <string.h>
 
 // --- PINS CONFIGURATION ---
@@ -260,34 +261,53 @@ const char RUN_HTML[] PROGMEM = R"rawliteral(
 
 
 // --- DMX ENGINE TASK (CORE 0) ---
+// Absolute-time periodic pacing. A frame of 512 DMX bytes at 250000 baud, 8N2
+// (11 bits/byte) takes about 22.5 ms to transmit, and Serial2.flush() blocks for
+// that long. A relative vTaskDelay() added after the flush therefore yields a
+// period of delay + transmit time, and any drift accumulates. Scheduling against
+// an absolute deadline keeps the period equal to DMX_PERIOD_US.
+static const uint32_t DMX_PERIOD_US = 23220;  // 512 / 22050 s, i.e. 43.07 fps
+static uint64_t next_dmx_frame_us = 0;
+
 void DMXCoreTask(void *pvParameters) {
   for (;;) {
     digitalWrite(DMX_EN_PIN, HIGH);
-    
+
     if (frameReady) {
-      portENTER_CRITICAL(&mux); 
+      portENTER_CRITICAL(&mux);
       uint8_t* temp = readBuffer;
       readBuffer = writeBuffer;
       writeBuffer = temp;
       frameReady = false;
-      portEXIT_CRITICAL(&mux);  
+      portEXIT_CRITICAL(&mux);
     }
-    
+
     Serial2.updateBaudRate(96000);
     Serial2.write(0);
     Serial2.flush();
-    
+
     Serial2.updateBaudRate(250000);
-    Serial2.write(0); 
-    
+    Serial2.write(0);
+
     if (millis() - lastArtNetTime > 10000) {
       for (int i = 0; i < 512; i++) Serial2.write(0);
     } else {
-      Serial2.write(readBuffer, 512); 
+      Serial2.write(readBuffer, 512);
     }
     Serial2.flush();
-    
-    vTaskDelay(pdMS_TO_TICKS(22)); 
+
+    // Schedule the next frame against an absolute deadline so the transmit time
+    // is absorbed into the period instead of added to it.
+    uint64_t now_us = esp_timer_get_time();
+    if (next_dmx_frame_us == 0 || next_dmx_frame_us <= now_us) {
+      next_dmx_frame_us = now_us + DMX_PERIOD_US;
+    } else {
+      next_dmx_frame_us += DMX_PERIOD_US;
+    }
+    int64_t wait_us = (int64_t)next_dmx_frame_us - (int64_t)esp_timer_get_time();
+    if (wait_us > 0) {
+      vTaskDelay(pdMS_TO_TICKS(wait_us / 1000));
+    }
   }
 }
 

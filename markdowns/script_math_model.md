@@ -57,7 +57,7 @@ $$\hat{\mathbf{Chroma}}[m] = \frac{\mathbf{Chroma}[m]}{\|\mathbf{Chroma}[m]\|_2}
 
 ### 1.5 Estimasi Tempo
 
-Tempo global $B$ (BPM) diestimasi dari puncak autokorelasi *envelope* ketukan pada rentang pencarian 60–180 BPM, kemudian di-*clamp*:
+Tempo global $B$ (BPM) diestimasi dari puncak autokorelasi *envelope* ketukan pada rentang pencarian 50–190 BPM, kemudian di-*clamp*:
 
 $$B = \text{clip}(B,\ 50,\ 190) \tag{7}$$
 

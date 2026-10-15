@@ -44,8 +44,8 @@ START
   │   ├── [2] Transformasi Domain Waktu-ke-Frekuensi:
   │   │   ├── Segmentasi frame geser: Window Size N = 2048, Hop Length H = 512 (overlap 75%)
   │   │   ├── Pembobotan Hann Window w[n] = 0.5 * (1 - cos(2*pi*n / (N-1))) (redam leakage -31.5 dB)
-  │   │   └── Fast Fourier Transform (FFT Radix-2 DIT) menghasilkan matriks X[m, k] (1025 bin x M frame)
-  │   │   └── Laju pembaruan frame visual: 22050 / 512 = 43.07 FPS (sinkron standar DMX512 44 FPS)
+  │   │   └── Fast Fourier Transform (FFT) menghasilkan matriks X[m, k] (1025 bin x M frame)
+  │   │   └── Laju pembaruan frame analisis: 22050 / 512 = 43.07 FPS (laju STFT, bukan laju keluaran DMX)
   │   │
   │   ├── [3] Ekstraksi Fitur Akustik Spektral:
   │   │   ├── RMS Energy (Parseval's theorem): Pengukur kenyaringan dinamika lagu
@@ -85,6 +85,8 @@ END
 ```
 
 > **Gambar 3.1** Diagram Alur Komputasi End-to-End Sistem ZZLUXORA dari Masukan Sinyal Audio hingga Transmisi Paket Art-Net UDP 6454.
+
+> **Catatan Implementasi Modul DSP:** Transformasi FFT pada ZZLUXORA dijalankan melalui fungsi `np.fft.rfft` dari pustaka NumPy, yang secara internal memakai implementasi *pocketfft*. Kelas `STFTEngine` pada `core/fft_engine.py` bertanggung jawab atas segmentasi frame, pembobotan Hann window, dan pengelolaan matriks spektrum, bukan atas algoritma FFT tingkat rendah. Uraian teori Cooley-Tukey pada Bab 2 disajikan sebagai landasan teoretis mengenai cara kerja FFT, bukan sebagai klaim bahwa algoritma tersebut ditulis ulang dari awal pada perangkat lunak ini.
 
 **Perancangan Perangkat Keras Modul Penerima ARTNET-DMX Node:**
 

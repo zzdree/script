@@ -105,7 +105,7 @@ Jika panjang frame yang digunakan adalah $N = 2048$ sampel, maka satu kali evalu
 
 #### c. Algoritma Fast Fourier Transform (FFT) Cooley-Tukey Radix-2
 
-Untuk mengatasi inefisiensi komputasi DFT langsung, sistem memanfaatkan algoritma *Fast Fourier Transform* (FFT) yang dirumuskan oleh J. W. Cooley dan J. W. Tukey pada tahun 1965 [32]. Algoritma ini mengeksploitasi periodisitas dan simetri dari faktor fase (*twiddle factor*) $W_N = e^{-j \frac{2\pi}{N}}$ melalui pendekatan *divide-and-conquer* berbasis desimasi waktu (*Decimation-in-Time* / DIT).
+Untuk mengatasi inefisiensi komputasi DFT langsung, sistem memanfaatkan algoritma *Fast Fourier Transform* (FFT) yang dirumuskan oleh J. W. Cooley dan J. W. Tukey pada tahun 1965 [32]. Algoritma ini mengeksploitasi periodisitas dan simetri dari faktor fase (*twiddle factor*) $W_N = e^{-j \frac{2\pi}{N}}$ melalui pendekatan *divide-and-conquer* berbasis desimasi waktu (*Decimation-in-Time* / DIT). Prinsip inilah yang mendasari implementasi FFT pada pustaka-pustaka numerik modern, termasuk fungsi `np.fft.rfft` pada NumPy yang dipakai oleh perangkat lunak ZZLUXORA.
 
 Dengan mengasumsikan panjang frame $N$ adalah bilangan genap kelipatan dua ($N = 2^p$), deret penjumlahan $n$ pada DFT dipecah menjadi dua kelompok:
 1. Sub-deret indeks genap ($n = 2m$, dengan $m = 0, 1, \dots, \frac{N}{2}-1$)
@@ -137,9 +137,9 @@ $$\text{Kompleksitas FFT} = \mathcal{O}(N \log_2 N)$$
 
 Pada ukuran frame $N = 2048$ sampel, algoritma FFT hanya membutuhkan:
 
-$$N \log_2 N = 2048 \times 11 = 22.528 \text{ operasi dasar}$$
+$$N \log_2 N = 2048 \times 11 = 22.528 \text{ operasi perkalian kompleks}$$
 
-Dibandingkan dengan DFT langsung ($4.194.304$ operasi), algoritma FFT Cooley-Tukey memberikan **faktor percepatan sebesar 186,2 kali lipat** atau memangkas beban komputasi sebesar **$99{,}46\%$**. Efisiensi komputasi ini sangat krusial agar sistem ZZLUXORA dapat mengekstrak seluruh spektrum frekuensi audio secara instan (< 5 ms per frame) tanpa membebani prosesor komputer kontrol pencahayaan.
+Jumlah tersebut setara dengan $\frac{N}{2} \log_2 N = 1.024 \times 11 = 11.264$ operasi kupu-kupu (*butterfly*), karena setiap kupu-kupu menyelesaikan dua operasi perkalian kompleks sekaligus. Dibandingkan dengan DFT langsung ($4.194.304$ operasi perkalian kompleks), algoritma FFT Cooley-Tukey secara teoretis memberikan **faktor percepatan sebesar 186,2 kali lipat** atau memangkas beban komputasi sebesar **$99{,}46\%$**. Angka tersebut merupakan perbandingan teoretis berbasis jumlah operasi perkalian kompleks dan belum memperhitungkan operasi penjumlahan kompleks pada setiap tahap kupu-kupu; percepatan yang terukur pada praktiknya juga dipengaruhi oleh implementasi pustaka, vektorisasi, dan *overhead* memori. Efisiensi komputasi ini krusial agar sistem ZZLUXORA dapat mengekstrak spektrum frekuensi audio secara cepat tanpa membebani prosesor komputer kontrol pencahayaan.
 
 #### d. Karakteristik Sinyal Musik Non-Stasioner dan Short-Time Fourier Transform (STFT)
 
@@ -172,7 +172,7 @@ Fungsi Hann memiliki nilai $w[0] = w[N-1] = 0$ dan puncak $w[(N-1)/2] = 1$. Keun
 
 #### f. Formulasi Diskrit STFT dan Konversi Parameter Fisik
 
-Dengan menggabungkan fungsi pembobotan Hann window dan algoritma FFT Cooley-Tukey, formulasi matematis STFT diskrit yang diimplementasikan pada komputasi perangkat lunak ZZLUXORA didefinisikan sebagai:
+Dengan menggabungkan fungsi pembobotan Hann window dan algoritma FFT secara umum, formulasi matematis STFT diskrit yang diterapkan pada komputasi perangkat lunak ZZLUXORA didefinisikan sebagai:
 
 $$X[m, k] = \sum_{n=0}^{N-1} x[n + m \cdot H] \cdot w[n] \cdot e^{-j \frac{2\pi}{N} kn}$$
 
@@ -199,7 +199,7 @@ Laju pembaruan data visual (*frame rate*) yang dihasilkan oleh algoritma adalah:
 
 $$\text{FPS} = \frac{1}{\Delta t_{\text{hop}}} = \frac{22050}{512} \approx 43{,}07\text{ frame per detik (fps)}$$
 
-Nilai **43,07 FPS** ini secara presisi selaras dengan laju penyegaran transmisi fisik standar **DMX512-A (44 frame per detik)**, sehingga data pencahayaan dapat langsung dialirkan ke lampu PAR LED panggung tanpa membutuhkan interpolasi atau penahanan buffer tambahan, menghasilkan transisi visual yang sangat halus (*smooth fading*) dan bebas getaran (*visual stepping*).
+Nilai **43,07 FPS** ini merupakan laju pembaruan frame pada **tataran analisis STFT**. Laju tersebut adalah laju perhitungan fitur akustik, bukan laju keluaran fisik DMX. Laju keluaran DMX ditetapkan secara terpisah oleh pensakelaran firmware pada modul ESP32 dan diukur tersendiri; satu frame DMX512 penuh (512 byte payload pada 250.000 baud, 8N2 atau 11 bit per byte) memerlukan waktu transmisi teoretis sekitar 22,53 ms, sehingga laju maksimum yang dapat dicapai tanpa jeda tambahan adalah sekitar 44 frame per detik.
 
 #### g. Prinsip Ketidakpastian Waktu-Frekuensi (Heisenberg-Gabor Limit)
 
@@ -343,7 +343,7 @@ $$\text{RMS}_{\text{norm}} = \text{clip}\!\left( \frac{\text{RMS}[m]}{\max_{m}\t
 
 $$\text{SC}_{\text{norm}} = \text{clip}\!\left( \frac{\text{Centroid}[m]}{\max_{m}\text{Centroid}[m]},\ 0,\ 1 \right)$$
 
-Pencarian tempo dilakukan pada rentang 60–180 BPM, kemudian hasil estimasi di-*clamp* ke $[50, 190]$ BPM. Untuk masukan tempo, normalisasi linier ke skor $[-1, 1]$ dilakukan pada tahap perhitungan Arousal dengan jendela $[50, 170]$:
+Pencarian tempo dilakukan pada rentang 50–190 BPM, kemudian hasil estimasi di-*clamp* ke $[50, 190]$ BPM. Untuk masukan tempo, normalisasi linier ke skor $[-1, 1]$ dilakukan pada tahap perhitungan Arousal dengan jendela $[50, 170]$:
 
 $$\text{Tempo}_{\text{score}} = 2 \cdot \frac{\text{clip}(B,\ 50,\ 170) - 50}{120} - 1$$
 

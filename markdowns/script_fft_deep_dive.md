@@ -139,14 +139,16 @@ X\left[k + \frac{N}{2}\right] &= E[k] - W_N^k \cdot O[k]
 Proses dekomposisi ini diulang secara rekursif sebanyak $\log_2 N$ tahapan (*stages*). Pada setiap tahap dilakukan $N$ operasi dasar.
 $$\text{Kompleksitas FFT} = \mathcal{O}(N \log_2 N)$$
 
-| Parameter Panjang Frame ($N$) | Operasi DFT $\mathcal{O}(N^2)$ | Operasi FFT $\mathcal{O}(N \log_2 N)$ | Faktor Percepatan (*Speedup Factor*) |
+| Parameter Panjang Frame ($N$) | Operasi DFT $\mathcal{O}(N^2)$ | Operasi FFT $\mathcal{O}(N \log_2 N)$ | Faktor Percepatan Teoretis (*Speedup Factor*) |
 | :---: | :---: | :---: | :---: |
 | **512** | 262.144 | 4.608 | **56,9 kali lebih cepat** |
 | **1024** | 1.048.576 | 10.240 | **102,4 kali lebih cepat** |
 | **2048** (Standar ZZLUXORA) | 4.194.304 | 22.528 | **186,2 kali lebih cepat** |
 | **4096** | 16.777.216 | 49.152 | **341,3 kali lebih cepat** |
 
-**Kesimpulan Ilmiah:** Penggunaan algoritma FFT mereduksi beban komputasi hingga **99,46%** pada frame 2048 sampel, memungkinkan sistem ZZLUXORA mengekstraksi seluruh fitur audio secara instan dengan waktu komputasi < 5 ms per frame.
+Catatan: angka kolom DFT dan FFT di atas menyatakan jumlah **operasi perkalian kompleks**. Jumlah operasi kupu-kupu (*butterfly*) sebenarnya adalah setengah dari nilai kolom FFT, yaitu $\frac{N}{2}\log_2 N$; pada $N=2048$ menjadi 11.264 kupu-kupu. Perbandingan ini bersifat teoretis dan belum memperhitungkan operasi penjumlahan kompleks.
+
+**Kesimpulan Ilmiah:** Penggunaan algoritma FFT mereduksi beban komputasi hingga **99,46%** pada frame 2048 sampel secara teoretis. Waktu tempuh nyata per frame bergantung pada implementasi pustaka dan perangkat keras, dan dilaporkan berdasarkan hasil *benchmark* pada Bab 4, bukan sebagai angka yang diasumsikan.
 
 ---
 

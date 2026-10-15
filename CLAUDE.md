@@ -36,7 +36,7 @@ PR ini telah dikuliti secara matematis dan dijabarkan tuntas pada Bab 2 dan Bab 
 1. **Dasar Matematika Fourier Transform:**
    - Diskritisasi sinyal $x[n] = x(n/f_s)$, kriteria Nyquist-Shannon ($f_s = 22.050\text{ Hz}, f_{\text{Nyquist}} = 11.025\text{ Hz}$).
    - Discrete Fourier Transform (DFT), simetri konjugat Hermitian $X[N-k] = X^*[k]$, kompleksitas $\mathcal{O}(N^2)$.
-   - Fast Fourier Transform (FFT) Cooley-Tukey Radix-2 Decimation-in-Time (DIT) divide-and-conquer, twiddle factor $W_N^k$, butterfly operation, kompleksitas $\mathcal{O}(N \log_2 N)$ (akselerasi 186.2x, efisiensi 99.46%).
+   - Fast Fourier Transform (FFT) Cooley-Tukey Radix-2 Decimation-in-Time (DIT) divide-and-conquer, twiddle factor $W_N^k$, butterfly operation, kompleksitas $\mathcal{O}(N \log_2 N)$ sebagai **landasan teori** Bab 2; implementasi perangkat lunak menggunakan `np.fft.rfft` (pustaka NumPy/pocketfft) — akselerasi teoretis 186,2x / efisiensi 99,46% berbasis jumlah operasi, bukan hasil pengukuran.
 2. **Short-Time Fourier Transform (STFT):**
    - Penanganan sinyal musik non-stasioner via sliding windowing ($N=2048, H=512$, overlap 75%).
    - Pembobotan Hann Window $w[n] = \sin^2(\pi n / (N-1))$ meredam spectral leakage hingga $-31.5\text{ dB}$.
@@ -94,7 +94,7 @@ Dalam menyusun naskah dan dokumen skripsi, Claude wajib merujuk pada:
 ### Status Implementasi Software ZZLUXORA v10:
 1. **Fase 1: Engine System / Core First — STATUS: TUNTAS 100% & TERVERIFIKASI**
    - Zero-GUI Pure Python/NumPy core engine di `core/`:
-     - Pipeline FFT (Cooley-Tukey Radix-2 DIT) & STFT (Hann Windowing, $f_s = 22.050\text{ Hz}$, $N=2048$, $H=512$, $43.07\text{ FPS}$).
+     - Pipeline STFT (Hann Windowing, $f_s = 22.050\text{ Hz}$, $N=2048$, $H=512$, laju analisis $43.07$ FPS) dengan transformasi FFT melalui `np.fft.rfft` (pustaka NumPy/pocketfft). Teori Cooley-Tukey Radix-2 DIT di Bab 2 bersifat landasan teoretis, bukan kode yang ditulis sendiri. Laju 43,07 FPS adalah laju analisis STFT, bukan laju keluaran DMX.
      - Ekstraksi 5 fitur spektral: RMS Energy (Parseval), Spectral Centroid, Chroma STFT 12-semitone (C s.d. B), MFCC (13 koefisien), dan Spectral Flux (Onset Detection/Beat Tracking).
      - Pemetaan afektif Russell 2D Plane ($V, A \in [-1.0, 1.0]$) dengan klasifikasi kuadran ibadah (Q1 Praise vs Q3 Deep Worship).
      - Konversi ruang warna cross-modal: $(V, A) \to (H, S)$ ➔ Dimmer $V_{\text{lum}} = \text{RMS}_{\text{norm}}$ ➔ HSV ke sRGB ➔ Dekomposisi Physical 4-Kanal RGBW ($W = \min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$) anti-washout.

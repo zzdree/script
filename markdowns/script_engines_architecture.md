@@ -28,7 +28,7 @@ Sistem ZZLUXORA bukanlah sekadar kalkulator FFT sederhana, melainkan sebuah **ar
 │ - Sliding Windowing (N = 2048, H = 512, Overlap 75%)   │
 │ - Hann Windowing w[n] (Meredam Leakage hingga -31.5 dB)│
 │ - O(N log2 N) FFT -> Matriks Kompleks X[m, k]          │
-│ - Laju Pembaruan 43.07 FPS (Sinkron DMX512 44 FPS)     │
+│ - Laju Analisis 43.07 FPS (laju STFT, bukan laju DMX)   │
 └────────────────────────────┬───────────────────────────┘
                              │
                              ▼
@@ -110,7 +110,7 @@ Oleh karena itu digunakan **Short-Time Fourier Transform (STFT)** yang memotong 
 - **Laju Frame Visual:**
   $$\text{FPS} = \frac{1}{\Delta t_{\text{hop}}} = \frac{22050}{512} \approx 43{,}07\text{ frame per detik (fps)}$$
 
-> **SINKRONISASI KRUSIAL:** Standar transmisi fisik DMX512-A adalah **44 paket per detik**. Pemilihan $H=512$ menghasilkan **43,07 FPS**, yang secara alami sinkron dengan refresh rate kabel DMX tanpa perlu buffer tambahan!
+> **CATATAN LAJU:** Pemilihan $H=512$ menghasilkan laju hop **43,07 frame per detik pada tataran analisis STFT**. Laju ini adalah laju perhitungan fitur dan **tidak menentukan laju keluaran DMX**. Laju keluaran fisik ditetapkan secara terpisah oleh pensakelaran firmware pada modul ESP32; satu frame DMX512 penuh (512 byte payload pada 250.000 baud, 8N2 atau 11 bit per byte) memerlukan waktu transmisi teoretis sekitar 22,53 ms, sehingga laju maksimum yang dapat dicapai tanpa jeda tambahan adalah sekitar 44 frame per detik.
 
 ### 2.3 Mitigasi Spectral Leakage via Hann Window
 Pemotongan frame secara mendadak menimbulkan diskontinuitas yang membocorkan energi frekuensi (*spectral leakage*). Untuk mencegahnya, sinyal dikalikan dengan **Hann Window**:
@@ -121,11 +121,12 @@ Hann window meredam kebocoran spektral hingga **-31,5 dB** (jauh lebih bersih di
 $$X[m, k] = \sum_{n=0}^{N-1} x[n + mH] \cdot w[n] \cdot e^{-j \frac{2\pi}{N} kn}$$
 di mana $m$ adalah indeks waktu frame dan $k \in \{0, 1, \dots, 1024\}$ adalah indeks bin frekuensi positif.
 
-### 2.5 Kecepatan Algoritma FFT Cooley-Tukey Radix-2
+### 2.5 Kecepatan Algoritma FFT Cooley-Tukey Radix-2 (Landasan Teoretis)
 Dengan membagi deret genap dan ganjil secara rekursif (*butterfly operation*):
-- Kompleksitas DFT biasa: $\mathcal{O}(N^2) = 2048^2 = 4.194.304$ operasi.
-- Kompleksitas FFT Cooley-Tukey: $\mathcal{O}(N \log_2 N) = 2048 \times 11 = 22.528$ operasi.
-- **Hasil:** Algoritma FFT berjalan **186,2 kali lebih cepat** (menghemat $99{,}46\%$ beban CPU), sehingga evaluasi STFT per frame selesai dalam waktu kurang dari **1 milidetik**!
+- Kompleksitas DFT biasa: $\mathcal{O}(N^2) = 2048^2 = 4.194.304$ operasi perkalian kompleks.
+- Kompleksitas FFT Cooley-Tukey: $\mathcal{O}(N \log_2 N) = 2048 \times 11 = 22.528$ operasi perkalian kompleks, setara dengan $\frac{N}{2}\log_2 N = 11.264$ operasi kupu-kupu.
+- Implementasi perangkat lunak memakai `np.fft.rfft` dari NumPy (pocketfft); uraian ini menjelaskan dasar teori algoritmanya, bukan kode yang ditulis ulang.
+- **Hasil:** Algoritma FFT secara teoretis berjalan **186,2 kali lebih cepat** berdasarkan perbandingan jumlah operasi perkalian kompleks ($N^2$ terhadap $N \log_2 N$), memangkas beban komputasi sebesar $99{,}46\%$. Nilai ini adalah perbandingan teoretis, bukan hasil pengukuran waktu tempuh; waktu tempuh nyata per frame bergantung pada implementasi pustaka dan perangkat keras, dan diukur tersendiri melalui *benchmark*.
 
 ---
 
@@ -249,5 +250,5 @@ Mikrokontroler ESP32 DevKit V1 membagi beban kerja secara mandiri pada dua inti 
 
 Jika Pak Mario Norman Syah menanyakan mekanisme sistem, peneliti dapat memaparkan intisari berikut:
 1. **Bukan hanya FFT:** FFT hanyalah mesin pengubah domain pada Engine 2. Sistem ini adalah sebuah rantai komputasi lengkap (*closed-loop audio-to-light pipeline*) yang mengintegrasikan 6 sub-engine dari sampel sinyal digital hingga radiasi foton lampu LED.
-2. **Sinkronisasi Ilmiah FPS:** Pemilihan hop size $H=512$ pada sampling $22.050\text{ Hz}$ menghasilkan laju tepat **$43{,}07\text{ FPS}$**, yang sinkron dengan laju transmisi fisik **DMX512 (44 FPS)**.
+2. **Laju Hop Analisis:** Pemilihan hop size $H=512$ pada sampling $22.050\text{ Hz}$ menghasilkan laju tepat **$43{,}07\text{ FPS}$** pada tataran analisis. Laju keluaran fisik DMX ditetapkan oleh pensakelaran firmware ESP32 dan diukur tersendiri, bukan diturunkan dari laju hop ini.
 3. **Penyelesaian Masalah Nyata:** Di gereja lokal (seperti GIA Deliksari), sistem ini menyelesaikan keterbatasan operator manual, menghadirkan konsistensi visual lagu pujian vs penyembahan, dan memperdalam pengalaman peribadatan jemaat dalam merasakan hadirat Tuhan Yesus.
