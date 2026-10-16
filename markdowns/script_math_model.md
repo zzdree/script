@@ -73,6 +73,8 @@ $$\text{SC}_{\text{norm}} = \text{clip}\!\left( \frac{\text{Centroid}[m]}{\max_{
 
 Untuk tempo, normalisasi linier ke skor $[-1, 1]$ dilakukan pada tahap perhitungan Arousal dengan jendela $[50, 170]$ (lihat Persamaan (14)). Semua masukan ter-normalisasi yang diterima model afektif berada pada rentang $[0, 1]$.
 
+> **Catatan penting mengenai sifat relatif $\text{SC}_{\text{norm}}$ (hasil pengukuran, 16 Oktober 2026).** Karena penyebut pada Persamaan (9) adalah maksimum lagu itu sendiri, **setiap lagu selalu memiliki satu frame dengan $\text{SC}_{\text{norm}} = 1{,}0$**, yaitu frame paling terang miliknya. Akibatnya $\text{SC}_{\text{norm}}$ bersifat **relatif di dalam lagu**, bukan ukuran kecerahan timbre absolut. Pada sepuluh berkas uji, rerata $\text{SC}_{\text{norm}}$ berada pada rentang $0{,}66$ sampai $0{,}84$, sehingga skor $\text{score}(\text{SC}_{\text{norm}}) = 2\,\text{SC}_{\text{norm}} - 1$ bernilai positif pada seluruh lagu dan kontribusi suku centroid bersama MFCC berada pada $+0{,}214$ sampai $+0{,}352$. **Konsekuensi yang harus dinyatakan apa adanya:** pada materi uji ini, $V$ bernilai positif untuk semua lagu, termasuk tiga lagu yang terdeteksi bermodus minor. Meniadakan $V$ tidak dapat dicapai dengan mengubah bobot suku mode saja: pada bobot $0{,}80$ pun (diuji), tiga lagu minor tetap menghasilkan $V > 0$. Yang benar-benar dibedakan oleh suku centroid karena itu adalah **perubahan kecerahan di dalam lagu**, bukan perbedaan timbre antar-lagu. Klaim absolut "SC rendah $\to$ timbre gelap" hanya berlaku bila skala tetap dipakai, dan skala tetap bukan pilihan implementasi v10.
+
 ---
 
 ## [3] Perhitungan Valence & Arousal (Model Afektif Russell)
@@ -94,11 +96,13 @@ $$\mathbf{T}_{\text{major}} = [6{,}35;\ 2{,}23;\ 3{,}48;\ 2{,}33;\ 4{,}38;\ 4{,}
 
 $$\mathbf{T}_{\text{minor}} = [6{,}33;\ 2{,}68;\ 3{,}52;\ 5{,}38;\ 2{,}60;\ 3{,}53;\ 2{,}54;\ 4{,}75;\ 3{,}98;\ 2{,}69;\ 3{,}34;\ 3{,}17] \tag{11}$$
 
-Kedua profil dan vektor chroma dinormalisasi terhadap norma Euclidean, lalu dikorelasikan terhadap **seluruh 12 transposisi** (geseran circular). Diperoleh korelasi maksimum $\rho_{\text{maj}}$ dan $\rho_{\text{min}}$, sehingga skor polaritas modus menjadi
+Kedua profil dan vektor chroma **dipusatkan (dikurangi rata-ratanya)** lalu dinormalisasi terhadap norma Euclidean, kemudian dikorelasikan terhadap **seluruh 12 transposisi** (geseran circular). Pemusatan ini yang menjadikan korelasinya **Pearson**, bukan *cosine*. Diperoleh korelasi maksimum $\rho_{\text{maj}}$ dan $\rho_{\text{min}}$, sehingga skor polaritas modus menjadi
 
-$$\text{Mode}_{\text{polarity}} = \frac{\rho_{\text{maj}} - \rho_{\text{min}}}{\rho_{\text{maj}} + \rho_{\text{min}}}, \qquad \text{Mode}_{\text{score}} = \text{clip}\!\left( 2 \cdot \text{Mode}_{\text{polarity}},\ -1,\ 1 \right) \tag{12}$$
+$$\text{Mode}_{\text{score}} = \text{clip}\!\left( \frac{\rho_{\text{maj}} - \rho_{\text{min}}}{|\rho_{\text{maj}}| + |\rho_{\text{min}}|},\ -1,\ 1 \right) \tag{12}$$
 
-dengan nilai $0{,}0$ bila penyebut mendekati nol atau vektor chroma tidak valid (bukan 12 dimensi). Skor $+1$ menandakan modus Mayor dominan dan $-1$ menandakan modus Minor dominan.
+dengan nilai $0{,}0$ bila penyebut mendekati nol atau vektor chroma tidak valid (bukan 12 dimensi).
+
+> **Mengapa pemusatan wajib (hasil pengukuran, 16 Oktober 2026).** Profil Mayor dan Minor sama-sama bernilai positif dengan rerata berdekatan, sehingga tanpa pemusatan kemiripan arah keduanya mencapai $0{,}9495$ — hampir sejajar — dan kontras antar-profil nyaris hilang. Terukur: vektor chroma yang disetel **persis sama** dengan profil Mayor hanya menghasilkan $+0{,}0373$, dan batas atas seluruh ruang yang dapat dicapai adalah $0{,}1782$. Sesudah pemusatan, kemiripan profil turun ke $0{,}5121$, skor untuk profil Mayor persis menjadi $+0{,}2124$ (Minor $-0{,}2124$), dan batas atas terukur naik ke $0{,}6123$. Karena itu Persamaan (12) memakai **korelasi Pearson**; pemakaian *cosine* membuat skala $\pm 1$ yang didefinisikan rumus ini tidak pernah tercapai.
 
 ### 3.3 Pemetaan Skor Masukan $[0, 1] \to [-1, 1]$
 
@@ -230,8 +234,8 @@ Tabel berikut merupakan aturan pemetaan eksplisit yang menjadi dasar sistem ZZLU
 | 5 | $\text{RMS}_{\text{norm}} > 0{,}8$ (keras) | $\text{score} > +0{,}60$ | $A \uparrow$, $V_{hsv} \uparrow$ | Juslin & Laukka (2003): *loudness* tinggi $\to$ *high arousal* [31] |
 | 6 | Korelasi profil Mayor dominan | $\text{Mode}_{\text{score}} > 0$ | $V \uparrow$ | Palmer *et al.* (2013): modus mayor $\to$ valence positif [24] |
 | 7 | Korelasi profil Minor dominan | $\text{Mode}_{\text{score}} < 0$ | $V \downarrow$ | Palmer *et al.* (2013): modus minor $\to$ valence negatif [24] |
-| 8 | SC rendah (timbre gelap) | $\text{score}(\text{SC}_{\text{norm}}) < 0$ | $V \downarrow$ (hue bergeser melalui Persamaan (17)) | Lindborg (2021): frekuensi rendah $\to$ warna hangat [10] |
-| 9 | SC tinggi (timbre cerah) | $\text{score}(\text{SC}_{\text{norm}}) > 0$ | $V \uparrow$ (hue bergeser melalui Persamaan (17)) | Lindborg (2021): frekuensi tinggi $\to$ warna dingin [10] |
+| 8 | SC rendah **relatif di dalam lagu** (bagian yang lebih gelap) | $\text{score}(\text{SC}_{\text{norm}}) < 0$ | $V \downarrow$ (hue bergeser melalui Persamaan (17)) | Lindborg (2021): frekuensi rendah $\to$ warna hangat [10] |
+| 9 | SC tinggi **relatif di dalam lagu** (bagian yang lebih cerah) | $\text{score}(\text{SC}_{\text{norm}}) > 0$ | $V \uparrow$ (hue bergeser melalui Persamaan (17)) | Lindborg (2021): frekuensi tinggi $\to$ warna dingin [10] |
 | 10 | Onset strength tinggi | $\text{score}(\text{Onset}_{\text{norm}}) > 0$ | $A \uparrow$, transisi cepat | Juslin & Laukka (2003): artikulasi cepat $\to$ arousal tinggi [31] |
 
 ### 7.2 Pemetaan $V$–$A \to$ Warna (HSV Polar)
@@ -256,8 +260,8 @@ Interval hue pada tabel berikut **diturunkan secara kritis** dari Persamaan (17)
 | 3 | $\text{RMS}_{\text{norm}}$ tinggi | $0{,}8$–$1{,}0$ | $V_{hsv}$ (skala 8-bit $= v \times 255$) | $204$–$255$ | Persamaan (19) dan (22) |
 | 4 | Jarak $\sqrt{V^2+A^2}$ besar | $r \to \sqrt{2}$ | Saturasi $S$ | $\to 1{,}0$ (maksimum) | Persamaan (18) |
 | 5 | Jarak $\sqrt{V^2+A^2}$ kecil | $r \to 0$ | Saturasi $S$ | $0{,}2$ (lantai) | Persamaan (18) |
-| 6 | SC rendah (timbre gelap) | $\text{score} < 0 \Rightarrow V \downarrow$ | Hue | Pada $A > 0$: $H$ bergeser menuju $90^\circ$ | Persamaan (15) dan (17) |
-| 7 | SC tinggi (timbre cerah) | $\text{score} > 0 \Rightarrow V \uparrow$ | Hue | Pada $A > 0$: $H$ bergeser menuju $0^\circ$ | Persamaan (15) dan (17) |
+| 6 | SC rendah **relatif di dalam lagu** | $\text{score} < 0 \Rightarrow V \downarrow$ | Hue | Pada $A > 0$: $H$ bergeser menuju $90^\circ$ | Persamaan (15) dan (17) |
+| 7 | SC tinggi **relatif di dalam lagu** | $\text{score} > 0 \Rightarrow V \uparrow$ | Hue | Pada $A > 0$: $H$ bergeser menuju $0^\circ$ | Persamaan (15) dan (17) |
 
 ---
 

@@ -74,4 +74,25 @@ Bab 4 dan Bab 5 sudah tersusun sebagai kerangka dengan penanda data transparan (
 
 ---
 
-*Disiapkan berdasarkan audit lintas-repo 15 Oktober 2026. Setelah keputusan ini disetujui, seluruh tabel Bab 4 dapat diisi dan pengujian hipotesis dapat dijalankan.*
+## Keputusan 9 — Normalisasi Fitur: Relatif per-Lagu atau Skala Absolut
+
+**Lokasi naskah:** Bagian [2] `script_math_model.md`, tabel pemetaan Bagian 7.1 dan 7.3, Bab 2 §2.2.2.
+**Masalah:** Implementasi v10 menormalkan `SC_norm`, `RMS_norm`, dan `MFCC_norm` terhadap **nilai maksimum lagu itu sendiri** (Persamaan 8, 9). Konsekuensi yang terukur: setiap lagu selalu memuat satu frame dengan nilai 1,0, sehingga rerata `SC_norm` pada sepuluh berkas uji berada pada rentang 0,66 sampai 0,84 dan skor centroid menjadi **positif pada seluruh lagu**. Kontribusi centroid bersama MFCC terukur +0,214 sampai +0,352. Akibatnya **seluruh lagu menghasilkan $V > 0$**, termasuk tiga lagu yang terdeteksi bermodus minor, sehingga pernyataan pada tabel pemetaan "modus minor $\to V$ turun" dan "SC rendah (timbre gelap) $\to V$ turun" **tidak dapat terjadi pada materi uji ini**.
+**Catatan penting:** menaikkan bobot suku mode **tidak menyelesaikan** hal ini. Pada bobot 0,80 (diuji), tiga lagu minor tetap menghasilkan $V > 0$, karena suku mode hanya dapat mencapai $\pm 0{,}61$ sedangkan konstanta dari dua suku lain selalu positif.
+**Usulan untuk dibahas:** pilih salah satu arah, karena keduanya mengubah arti angka pada Bab 4.
+- **(a) Pertahankan normalisasi relatif per-lagu** (kondisi sekarang). Kelebihan: sistem responsif terhadap dinamika di dalam lagu, dan itu memang tujuan pemetaan audio-reaktif. Konsekuensi: naskah harus menyatakan bahwa $V$ tidak membedakan timbre antar-lagu, dan tabel pemetaan dibatasi pada perubahan **relatif di dalam lagu**. Bab 2 dan `script_math_model.md` sudah diberi catatan kejujuran untuk arah ini.
+- **(b) Ubah ke skala absolut** (mis. centroid 0 sampai 5.000 Hz, RMS 0 sampai 1,0 skala penuh). Kelebihan: klaim "timbre gelap $\to V$ turun" menjadi benar-benar berlaku dan nuansa Mayor/Minor sampai ke warna. Konsekuensi: **seluruh angka warna pada Bab 4 harus diregenerasi**, dan tabel pemetaan Bab 2 perlu ditinjau ulang.
+
+**Rekomendasi teknis (untuk dipertimbangkan, bukan keputusan):** arah (a) lebih aman secara metodologis karena tidak mengubah data yang sudah ada, dan sifat relatif itu justru sesuai untuk sistem reaktif. Namun bila penelitian ingin membuktikan bahwa lagu khidmat menghasilkan pencahayaan berbeda dari lagu sukacita **antar-lagu**, maka arah (b) yang diperlukan.
+
+---
+
+## Keputusan 10 — Status Statistik Validitas dan Reliabilitas Instrumen
+
+**Lokasi naskah:** Bab 4 §4.3.1, Tabel 4.9 dan Tabel 4.10.
+**Masalah:** Bab 3 dan Bab 4 menyebut perhitungan Cronbach's Alpha dengan acuan $\alpha \ge 0{,}6$ serta penelaahan validitas konten oleh pembimbing, tetapi **belum ada data instrumen** sehingga kedua tabel masih berstatus `[BELUM DIHITUNG]`. Perlu dipastikan bahwa angka reliabilitas tidak dilaporkan sebelum ada responden nyata, dan bahwa klaim "instrumen reliabel" tidak muncul di Bab 4 sebelum dihitung.
+**Usulan untuk dibahas:** konfirmasi urutan pelaporan (reliabilitas dihitung setelah pilot, sebelum sesi utama), dan penegasan bahwa Bab 4 tidak boleh menyatakan instrumen valid/reliabel sebelum ada angka.
+
+---
+
+*Disiapkan berdasarkan audit lintas-repo 15 Oktober 2026. Diperbarui 16 Oktober 2026: Keputusan 9 dan 10 ditambahkan setelah audit perangkat lunak menemukan sifat normalisasi relatif yang membatasi rentang $V$ secara terukur.*

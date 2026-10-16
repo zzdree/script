@@ -37,7 +37,7 @@ Alur yang dirancang untuk ZZLUXORA mencakup pemuatan berkas audio, prapemrosesan
 |---|---|---|---|
 | 1 | Prapemrosesan dan STFT/FFT | Pemuatan multi-format; segmentasi frame geser $N=2048$, $H=512$; pembobotan Hann; transformasi FFT melalui `np.fft.rfft`; laju analisis $43{,}07$ frame per detik | Terverifikasi perangkat lunak: `tests/test_fft_engine.py` (3 uji) dan `tests/test_audio_loader.py` (3 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
 | 2 | Ekstraksi fitur akustik | RMS energy (Parseval), spectral centroid, Chroma 12-semitone, 13 MFCC (40 Mel + DCT-II), spectral flux, onset strength ternormalisasi, estimasi tempo autokorelasi FFT pada rentang $[50, 190]$ BPM | Terverifikasi perangkat lunak: `tests/test_feature_extractor.py` (9 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
-| 3 | Model *valence-arousal* dan pemetaan HSV | Bobot $V = 0{,}50/0{,}30/0{,}20$ (mode, centroid, MFCC); bobot $A = 0{,}50/0{,}30/0{,}20$ (RMS, tempo, onset); polaritas mode 12 transposisi Krumhansl-Schmuckler; pemetaan $(V,A) \to (H,S)$ melalui `atan2` dengan lantai saturasi $S \ge 0{,}2$ | Terverifikasi perangkat lunak: `tests/test_emotion_model.py` (2 uji); contoh perhitungan `script_math_model.md` [9] direproduksi langsung dari mesin pada masukan yang sama |
+| 3 | Model *valence-arousal* dan pemetaan HSV | Bobot $V = 0{,}50/0{,}30/0{,}20$ (mode, centroid, MFCC); bobot $A = 0{,}50/0{,}30/0{,}20$ (RMS, tempo, onset); polaritas mode 12 transposisi Krumhansl-Schmuckler dengan **korelasi Pearson**; pemetaan $(V,A) \to (H,S)$ melalui `atan2` dengan lantai saturasi $S \ge 0{,}2$ | Terverifikasi perangkat lunak: `tests/test_emotion_model.py` (6 uji); contoh perhitungan `script_math_model.md` [9] direproduksi langsung dari mesin pada masukan yang sama |
 | 4 | Dekomposisi RGBW algoritmik serta generator *scene/chase* | Dekomposisi 4-kanal fisik $W=\min(R,G,B)$, $R'=R-W$, $G'=G-W$, $B'=B-W$; pembangkitan scene/chase berbasis segmen dan tempo | Terverifikasi perangkat lunak: `tests/test_color_engine.py` (2 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
 | 5 | Antarmuka dan pengirim Art-Net | Enam tab workspace; paket ArtDmx 530 byte (Universe 0, port 6454); transmisi ter-gate tombol Play; blackout atomik; antarmuka patch DMX | Terverifikasi perangkat lunak: `tests/test_ui_components.py` (40 uji) dan `tests/test_artnet_sender.py` (2 uji). Bukti: commit `48ca2bd`, 74/74 uji lulus |
 
@@ -75,7 +75,7 @@ Uji dijalankan pada perangkat lunak dengan masukan dan setelan identik, sebanyak
 
 | No. | Berkas dan setelan masukan | Jumlah pengulangan | Perbedaan keluaran yang teramati | Bukti/log |
 |---|---|---|---|---|
-| 1 | `NDC_Worship_-_Bapa_Yang_Kekal.wav`, STFTEngine($f_s=22050$, $N=2048$, $H=512$), EmotionModel bobot bawaan | 3 | 0 (identik bit-for-bit; 513 frame; RMS 354,536054; centroid 136141,287305; RGBW frame pertama $(33,0,37,104)$) | `tools/export_correlation.py --repeats 3`, commit `48ca2bd` |
+| 1 | `NDC_Worship_-_Bapa_Yang_Kekal.wav`, STFTEngine($f_s=22050$, $N=2048$, $H=512$), EmotionModel bobot bawaan | 3 | 0 (identik bit-for-bit; 513 frame; RMS 354,536054; centroid 136141,287305; RGBW frame pertama $(38,0,39,102)$) | `tools/export_correlation.py --repeats 3` |
 | 2 | Berkas lagu terpilih berikutnya | [BELUM DIISI setelah pemilihan lagu final] | [BELUM DIUKUR] | Perintah reproduksi sama seperti baris 1 |
 | 3 | Berkas lagu terpilih berikutnya | [BELUM DIISI setelah pemilihan lagu final] | [BELUM DIUKUR] | Perintah reproduksi sama seperti baris 1 |
 
@@ -86,10 +86,10 @@ Uji keluaran algoritmik ini membuktikan bahwa pipeline pemrosesan bersifat deter
 | Fitur audio | Dimmer | R algoritmik | G algoritmik | B algoritmik | W algoritmik |
 |---|---|---|---|---|---|
 | BPM | tidak terdefinisi | tidak terdefinisi | tidak terdefinisi | tidak terdefinisi | tidak terdefinisi |
-| RMS energy | tidak terdefinisi | $+0{,}163$ | $+0{,}289$ | $-0{,}946$ | $+0{,}992$ |
-| *Spectral centroid* | tidak terdefinisi | $+0{,}274$ | $-0{,}503$ | $+0{,}236$ | $-0{,}160$ |
+| RMS energy | tidak terdefinisi | $+0{,}271$ | $+0{,}288$ | $-0{,}948$ | $+0{,}988$ |
+| *Spectral centroid* | tidak terdefinisi | $+0{,}204$ | $-0{,}502$ | $+0{,}245$ | $-0{,}166$ |
 
-Nilai pada tabel ini dihitung dari keluaran perangkat lunak untuk berkas `NDC_Worship_-_Bapa_Yang_Kekal.wav` melalui `tools/export_correlation.py` (commit `48ca2bd`), dengan unit analisis satu frame STFT ($n = 513$ frame). Sel bertanda **tidak terdefinisi** dijelaskan sebagai berikut:
+Nilai pada tabel ini dihitung dari keluaran perangkat lunak untuk berkas `NDC_Worship_-_Bapa_Yang_Kekal.wav` melalui `tools/export_correlation.py`, dengan unit analisis satu frame STFT ($n = 513$ frame). Nilai ini menggantikan angka sebelumnya yang dihitung saat korelasi modus masih memakai kemiripan *cosine* (lihat Bagian [3.2] `script_math_model.md`). Sebagai pembanding, RMS energy dan spectral centroid rata-rata tidak berubah ($354{,}536054$ dan $136141{,}287305$), sehingga perbaikan model tidak mengubah struktur hasil; hanya dua koefisien yang bergeser secara berarti. Sel bertanda **tidak terdefinisi** dijelaskan sebagai berikut:
 
 1. **BPM** merupakan nilai skalar per lagu, bukan nilai per frame. Korelasi Pearson antar-frame antara BPM dan kanal keluaran tidak bermakna karena vektor BPM konstan pada satu lagu. Bila korelasi BPM diperlukan, perhitungan harus dilakukan pada tingkat antarlagu (satu titik data per lagu), bukan antar-frame.
 2. **Dimmer** pada keluaran `ColorRGBW` selalu bernilai $1{,}0$ (lihat `ColorEngine.process_frame`); kecerahan sesungguhnya dibawa oleh komponen Value pada ruang HSV, bukan oleh medan dimmer. Karena itu korelasinya terhadap fitur audio selalu tidak terdefinisi.
