@@ -43,7 +43,9 @@ Alur yang dirancang untuk ZZLUXORA mencakup pemuatan berkas audio, prapemrosesan
 
 Catatan: status "Terverifikasi perangkat lunak" menyatakan bahwa modul lulus pengujian unit dan pengujian pengulangan pada perangkat lunak, bukan bahwa modul telah divalidasi pada perangkat keras fisik. Validasi perangkat keras tetap berstatus **[VERIFIKASI LAPANGAN]** pada §4.2.
 
-**Gambar 4.1** [BELUM DIISI: diagram arsitektur berdasarkan implementasi yang diverifikasi]
+**Gambar 4.1** Diagram Arsitektur Implementasi Terverifikasi Rantai Pemrosesan Sinyal Audio ZZLUXORA v10, dari Modul AudioLoader hingga ArtNetSender, Disusun dari Berkas Nyata pada Direktori `core/`.
+
+> Gambar 4.1 dibangkitkan secara terprogram oleh `tools/make_chapter4_figures.py` dari berkas yang benar-benar ada di repositori perangkat lunak, bukan digambar ulang sebagai ilustrasi. Karena itu gambar ini tidak dapat memuat modul atau parameter yang tidak ada di kode; bila kode berubah, gambar dibangkitkan ulang dan ikut berubah.
 
 ### 4.1.2 Hasil Ekstraksi Fitur Audio
 
@@ -137,7 +139,9 @@ Catatan teknis: pada sesi uji ini ditemukan bahwa berkas showfile GIA (`gia_deli
 
 Catatan pengukuran: perdana nomor urut ArtDmx pada sesi ini dimulai dari nilai 1, sesuai perbaikan pada `core/artnet_sender.py` (commit `7c566d9`). Sebelum perbaikan, penghitung dimulai dari 0, sementara nilai 0 pada medan Sequence Art-Net berarti "sequence disabled", sehingga paket pertama tidak valid. Pengujian lanjutan perlu memastikan tidak ada dua pengirim yang berbagi port/UDP yang sama dalam satu sesi, karena hal itu dapat menampilkan nomor urut yang tampak tidak monotonik pada penerima.
 
-**Gambar 4.4** [BELUM DIISI: topologi jalur yang benar-benar digunakan, tandai jalur virtual dan fisik secara terpisah]
+**Gambar 4.4** Topologi Jalur Pengukuran, Memisahkan Jalur Virtual *Software-in-the-Loop* yang Telah Terverifikasi Perangkat Lunak dari Jalur Fisik ESP32 dan Fixture yang Belum Diuji.
+
+> Gambar 4.4 memisahkan kedua jalur secara visual agar batas bukti tidak terbaca ambigu: jalur A (kiri) memuat angka hasil pengujian loopback yang tercatat, sedangkan jalur B (kanan) memuat hal-hal yang masih harus diukur di lokasi. Tanda panah putus-putus pada jalur B menandai langkah yang belum diverifikasi. Gambar ini juga dibangkitkan oleh `tools/make_chapter4_figures.py`.
 
 ### 4.2.2 Profil Fixture dan Batas Keluaran Fisik
 

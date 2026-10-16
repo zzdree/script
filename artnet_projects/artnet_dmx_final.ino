@@ -35,6 +35,11 @@ const int artNetPort = 6454;
 volatile unsigned long lastArtNetTime = 0;
 TaskHandle_t DMXTask;
 
+// Penghitung paket ArtDmx valid yang benar-benar diterima node.
+// Dibaca oleh handler HTTP pada core lain, karena itu bertipe volatile dan
+// dinaikkan di dalam bagian kritis yang sama dengan penulisan buffer DMX.
+volatile uint32_t artnet_rx_count = 0;
+
 // --- SYSTEM & WIFI VARIABLES ---
 Preferences prefs;
 WebServer server(80);
@@ -220,6 +225,7 @@ const char RUN_HTML[] PROGMEM = R"rawliteral(
         
         let dmxColor = d.dmx == "Active" ? "clr-g" : (d.dmx == "No Signal" ? "clr-y" : "clr-r");
         document.getElementById('dx-val').innerHTML = `<span class="${dmxColor}">${d.dmx}</span>`;
+        document.getElementById('rx-val').innerHTML = `<span class="val">${d.rx_count} paket</span>`;
       }).catch(e => console.log(e));
     } 
     
@@ -246,6 +252,7 @@ const char RUN_HTML[] PROGMEM = R"rawliteral(
     <div><span class="lbl">Status</span>: <span id="st-val" class="val">Loading...</span></div>
     <div><span class="lbl">Strength</span>: <span id="sg-val" class="val">Loading...</span></div>
     <div><span class="lbl">DMX</span>: <span id="dx-val" class="val">Loading...</span></div>
+    <div><span class="lbl">RX</span>: <span id="rx-val" class="val">Loading...</span></div>
   </div>
 
   <div class="btn-container">
@@ -368,6 +375,9 @@ void loop() {
           if (length > 512) length = 512;
           
           portENTER_CRITICAL(&mux);
+          // Dihitung di dalam bagian kritis agar hanya paket yang benar-benar
+          // menulis ke writeBuffer yang tercatat.
+          artnet_rx_count++;
           memset(writeBuffer, 0, 512); 
           for (int i = 0; i < length; i++) {
             writeBuffer[i] = packetBuffer[18 + i];
@@ -497,10 +507,17 @@ void setupAPServer() {
     else if (dmxDelta < 10000) dmxStat = "No Signal";
 
     String json = "{";
-    json += "\"ip\":\"192.168.4.1\",";
-    json += "\"wifi\":\"ARTNET-DMX\",";
+    json += "\"ip\":\"" + WiFi.softAPIP().toString() + "\",";
+    json += "\"wifi\":\"" + String(WiFi.softAPSSID()) + "\",";
+    // Mode AP selalu siap menerima: status "Connected" agar halaman /monitor
+    // tetap menandainya hijau, sementara jumlah station nyata dilaporkan
+    // terpisah pada "stations" dan "clients".
     json += "\"status\":\"Connected\",";
     json += "\"strength\":\"Direct Mode\",";
+    json += "\"ssid\":\"" + String(WiFi.softAPSSID()) + "\",";
+    json += "\"stations\":" + String(WiFi.softAPgetStationNum()) + ",";
+    json += "\"clients\":" + String(WiFi.softAPgetStationNum()) + ",";
+    json += "\"rx_count\":" + String(artnet_rx_count) + ",";
     json += "\"dmx\":\"" + dmxStat + "\"";
     json += "}";
     
@@ -564,6 +581,9 @@ void setupRunServer() {
     json += "\"wifi\":\"" + WiFi.SSID() + "\",";
     json += "\"status\":\"" + String(WiFi.status() == WL_CONNECTED ? "Connected" : "Disconnected") + "\",";
     json += "\"strength\":\"" + String(WiFi.RSSI()) + "\",";
+    json += "\"ssid\":\"" + WiFi.SSID() + "\",";
+    json += "\"rssi\":" + String(WiFi.RSSI()) + ",";
+    json += "\"rx_count\":" + String(artnet_rx_count) + ",";
     json += "\"dmx\":\"" + dmxStat + "\"";
     json += "}";
     
