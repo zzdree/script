@@ -205,7 +205,7 @@ Tabel lengkap: fitur audio → range → dampak V-A → HSV → warna visual →
 
 ---
 
-## 📈 Status Kemajuan Naskah Skripsi (per 8 Okt 2026)
+## 📈 Status Kemajuan Naskah Skripsi (diperbarui 17 Okt 2026)
 
 ### 1. Naskah Proposal v4 (STATUS: TUNTAS 100%)
 - Berkas utama: `script_projects/script_andreas_v4.docx` (2.58 MB, 555 paragraf).
@@ -216,5 +216,35 @@ Tabel lengkap: fitur audio → range → dampak V-A → HSV → warna visual →
 - **Bab 1–3**: Diselaraskan 1:1 ke formalisme kanonik software v10 (normalisasi per-maksimum-lagu, 12 transposisi Krumhansl-Schmuckler, lantai saturasi $S \ge 0{,}2$, pemisahan fader master) dan 33 nomor sitasi IEEE bracket dirapikan.
 - **Bab 4 (`script_chapter_04.md`) & Bab 5 (`script_chapter_05.md`)**: Kerangka lengkap siap isi data FASE 6 (zero data rekayasa, pemetaan RM1–3 dan H1–3 transparan, penanda `[BELUM DIUKUR]`/`[VERIFIKASI LAPANGAN]`).
 - **Protokol Uji Lapangan (`script_test_protocols.md`)**: 243 baris mencakup latensi end-to-end, packet loss, templat CSV 41-kolom, 24 kasus uji black-box, protokol pilot Cronbach alpha >= 0.6, kriteria 25 responden, dan checklist hardware GIA Deliksari.
-- **Software Pendukung (`zzluxora_v10`)**: 65/65 unit test lulus 100% (commit `b223414`).
-- **Langkah Tersisa Menuju Sempro/Ujian Skripsi**: Pengujian lapangan fisik modul ESP32 + 4 unit PAR LED Alien AL36 di GIA Deliksari (FASE 6), pembuktian laju DMX fisik (K5), dan build installer Windows 11 di Acer Swift 3.
+- **Software Pendukung (`zzluxora_v10`)**: **163 test** (136 unittest + 27 pytest), commit `bb9cc33`. Lihat catatan di bawah.
+- **Langkah Tersisa Menuju Sempro/Ujian Skripsi**: Pengujian lapangan fisik modul ESP32 + 4 unit PAR LED Alien-AL36 di GIA Deliksari (FASE 6), pembuktian laju DMX fisik (K5), dan build installer Windows 11 di Acer Swift 3.
+
+### ⚠️ Pembaruan 17 Okt 2026 — baca sebelum mempercayai angka naskah
+
+**Empat hal di bawah ditemukan setelah tanggal di atas, dan sebagian mengubah
+klaim naskah. Rinciannya di `../zzluxora_v10/HANDOFF.md` §2b dan §2c.**
+
+1. **Korelasi modus salah metode.** `compute_mode_ratio` memakai kemiripan arah
+   (cosine), bukan korelasi Pearson seperti yang ditulis Eq.(12). Skor terkurung
+   di ±0,1782 padahal naskah menjanjikan ±1. Sudah diperbaiki: profil Mayor
+   persis naik dari +0,0373 ke +0,2124, batas atas ke 0,6123. **Eq.(12) di
+   `script_math_model.md` dan `script_chapter_02.md` sudah dikoreksi.**
+2. **Rentang `V` terbatas oleh normalisasi relatif per-lagu.** Karena
+   `centroid_max = max(centroids)` per lagu, rerata `SC_norm` pada sepuluh berkas
+   uji adalah 0,66-0,84, sehingga **`V` positif untuk SEMUA lagu** termasuk yang
+   bermodus minor. Menaikkan bobot mode sampai 0,80 pun tidak mengubahnya.
+   Naskah sudah diberi catatan kejujuran; **keputusan metodologinya menunggu
+   pembimbing (Keputusan 9)**.
+3. **Kanal putih terbuang ke fixture RGB.** `W = min(R,G,B)` diekstrak
+   ColorEngine tetapi Alien-AL36 tidak punya kanal white, sehingga 22-78 persen
+   intensitas hilang; cue putih murni membuat fixture **padam total**. Sudah
+   diperbaiki di `ui/main_window.py`.
+4. **Standar nama fixture ditegakkan.** v4 §2 mewajibkan `Alien-AL36` dan
+   `Kumastb-STL47` tanpa keterangan teks, tetapi quick-patch dan **kedua showfile
+   resmi** menulis bentuk yang melanggar. Sudah diseragamkan menjadi
+   `Alien-AL36 #1..#4` dan `Kumastb-STL47`.
+
+**Catatan operasional:** jangan menambah test dengan `cat >>` pada repo software.
+Test akan mendarat setelah blok `if __name__ == "__main__"` sehingga `unittest`
+tidak mengumpulkannya dan suite melaporkan `OK` tanpa menjalankannya. Tujuh belas
+test pernah lolos seperti itu, termasuk verifikasi perbaikan paling kritis.
